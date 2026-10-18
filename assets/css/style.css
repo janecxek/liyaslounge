@@ -74,6 +74,9 @@
   --btn-bg: #5b3a28;
   --btn-fg: #ffffff;
   --btn-light-fg: #19154e;
+  --brand: #5b3a28;         /* names on white review cards */
+  --card-text: #19154e;
+  --footer-bg: #5b3a28;
   --overlay: rgba(25, 14, 8, .38);
   --shadow: 0 30px 60px -38px rgba(91, 58, 40, .55);
 
@@ -121,10 +124,68 @@
   --btn-bg: #e8cfb6;
   --btn-fg: #2a1a12;
   --btn-light-fg: #2a1a12;
+  --brand: #5b3a28;
+  --card-text: #19154e;
+  --footer-bg: #2a1a12;
   --overlay: rgba(8, 5, 3, .55);
   --shadow: 0 30px 60px -38px rgba(0, 0, 0, .9);
   color-scheme: dark;
 }
+
+/* ---------- Colour variants for client comparison (light theme only) ----------
+   Set via the "Farbvariante" picker (assets/js/main.js) or ?palette=gold|noir|rose.
+   Default without attribute = espresso (original template). */
+:root[data-palette="gold"]:not([data-theme="dark"]) {
+  --bg: #f8f4ee; --bg-alt: #f8f4ee; --surface: #fffdf9;
+  --text: #2e2621; --text-soft: #6f645b; --text-mute: #8a7f75;
+  --heading: #3b2d24; --brown: #2e2621; --line: #e6ddd1;
+  --timeline: #b08d57; --accent: #b08d57;
+  --btn-bg: #b08d57; --btn-fg: #ffffff; --btn-light-fg: #2e2621;
+  --brand: #3b2d24; --card-text: #2e2621; --footer-bg: #2e2621;
+}
+:root[data-palette="noir"]:not([data-theme="dark"]) {
+  --bg: #ffffff; --bg-alt: #ffffff; --surface: #ffffff;
+  --text: #1c1c1c; --text-soft: #5e5e5e; --text-mute: #7a7a7a;
+  --heading: #111111; --brown: #141414; --line: #e8e8e8;
+  --timeline: #c5a467; --accent: #c5a467;
+  --btn-bg: #141414; --btn-fg: #ffffff; --btn-light-fg: #141414;
+  --brand: #141414; --card-text: #1c1c1c; --footer-bg: #141414;
+}
+:root[data-palette="rose"]:not([data-theme="dark"]) {
+  --bg: #fcf7f4; --bg-alt: #fcf7f4; --surface: #fffdfb;
+  --text: #3b2b2a; --text-soft: #7a6461; --text-mute: #8f7a77;
+  --heading: #8c5d56; --brown: #8c5d56; --line: #efe2dc;
+  --timeline: #c4968c; --accent: #c9a27e;
+  --btn-bg: #8c5d56; --btn-fg: #ffffff; --btn-light-fg: #3b2b2a;
+  --brand: #8c5d56; --card-text: #3b2b2a; --footer-bg: #8c5d56;
+}
+
+/* ---------- Colour picker (preview tool) ---------- */
+.palette-picker { position: fixed; left: 16px; bottom: 16px; z-index: 95; font-family: var(--font-body); font-size: 14px; color: #19154e; }
+.palette-picker__toggle {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px 10px 12px; border: 0; border-radius: var(--pill);
+  background: #ffffff; color: #19154e; font: 700 14px/1 var(--font-body); cursor: pointer;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .35);
+}
+.palette-picker__dots { display: inline-flex; }
+.palette-picker__dots i { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; margin-left: -5px; }
+.palette-picker__dots i:first-child { margin-left: 0; }
+.palette-picker__panel {
+  position: absolute; left: 0; bottom: calc(100% + 10px); width: 250px;
+  background: #ffffff; border-radius: 20px; padding: 16px; box-shadow: 0 20px 50px -15px rgba(0, 0, 0, .35);
+  opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .3s, transform .3s var(--ease-out), visibility .3s;
+}
+.palette-picker.is-open .palette-picker__panel { opacity: 1; visibility: visible; transform: none; }
+.palette-picker__title { font-family: var(--font-script); font-size: 22px; color: #5b3a28; margin: 0 0 2px; }
+.palette-picker__hint { font-size: 12px; color: #757575; margin: 0 0 10px; }
+.palette-picker__option {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; margin: 2px 0;
+  border: 1px solid transparent; border-radius: 12px; background: none; color: #19154e;
+  font: 500 14px/1.3 var(--font-body); text-align: left; cursor: pointer;
+}
+.palette-picker__option:hover { background: #f5f2ee; }
+.palette-picker__option[aria-checked="true"] { border-color: #19154e; }
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -419,7 +480,7 @@ body.menu-open { overflow: hidden; }
 .review {
   margin: 0;
   background: #ffffff;
-  color: #19154e;
+  color: var(--card-text);
   border-radius: var(--radius-lg);
   padding: 29px;
   display: flex; flex-direction: column; gap: 22px;
@@ -429,10 +490,10 @@ body.menu-open { overflow: hidden; }
 .review-top { display: flex; align-items: center; gap: 11px; }
 .avatar { width: 47px; height: 47px; border-radius: 50%; overflow: hidden; flex: 0 0 47px; background: #e9dccd; }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
-.review-name { font-family: var(--font-script); font-size: 22px; line-height: 1.2; color: #5b3a28; }
-.stars { display: flex; gap: 3px; margin-top: 6px; color: #b6963b; }
+.review-name { font-family: var(--font-script); font-size: 22px; line-height: 1.2; color: var(--brand); }
+.stars { display: flex; gap: 3px; margin-top: 6px; color: var(--accent); }
 .stars svg { width: 12px; height: 12px; }
-.review blockquote { margin: 0; flex: 1; color: #19154e; }
+.review blockquote { margin: 0; flex: 1; color: var(--card-text); }
 .review .ph { display: inline; white-space: normal; }
 .review figcaption { font-family: var(--font-label); font-size: 14px; letter-spacing: -.02em; line-height: 1.5; color: #757575; }
 
@@ -500,8 +561,7 @@ body.menu-open { overflow: hidden; }
 .faq details p { padding: 0 32px 26px; margin: 0; }
 
 /* ---------- Footer (espresso, contact + giant wordmark) ---------- */
-.site-footer { background: #5b3a28; color: #ffffff; padding: 72px 0 0; overflow: hidden; }
-:root[data-theme="dark"] .site-footer { background: #2a1a12; }
+.site-footer { background: var(--footer-bg); color: #ffffff; padding: 72px 0 0; overflow: hidden; }
 .site-footer .container { max-width: calc(1128px + 2 * var(--gutter)); }
 .site-footer a { text-decoration: none; transition: opacity .3s; }
 .site-footer a:hover { opacity: .7; }
@@ -549,6 +609,7 @@ body.menu-open { overflow: hidden; }
   .timeline-fill { transform: none !important; }
   *, *::before, *::after { transition-duration: .01s !important; }
 }
+@media print { .palette-picker { display: none; } }
 
 /* ---------- Tablet (810–1199) ---------- */
 @media (max-width: 1199.98px) {
