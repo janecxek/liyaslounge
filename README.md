@@ -17,13 +17,17 @@ Kein Build-Schritt nötig: reines HTML/CSS/JS.
 
 ## Design & Animationen
 
-- Aufbau angelehnt an ein editoriales Salon-Template: grosses Hero-Bild, Script-Headlines (*Kaushan Script*) + *Figtree*,
-  Pill-Buttons, braune Karten mit runden Ecken, Zickzack-Ablauf mit Linie, Kundenstimmen auf Foto, Galerie-Mosaik,
-  Buchungs-CTA und braune Fusszeile mit grossem Schriftzug. Code komplett neu geschrieben, keine Template-Assets.
+- Optik 1:1 nach dem Salon-Template: *Kaushan Script* für Headlines, Navigation und Footer-Links, *Manrope* 500
+  für Text (18 px / 1.7), *Manrope* 700 für Pill-Buttons, *Inter* für kleine Labels.
+- Farben: weisser Grund, Navy-Text `#19154e`, Espresso `#5b3a28` für Headlines, Karten und Footer.
+- Transparenter Header mit weisser Schrift über dem Hero-Bild, beim Scrollen weiss.
+- Aufbau: grosses Hero-Bild, Split-Sektion, Espresso-Karten (Bild bündig), Zickzack-Ablauf mit Linie,
+  Kundenstimmen auf Foto, Galerie-Mosaik, Buchungs-CTA, Footer mit grossem Verlaufs-Schriftzug.
+  Code komplett neu geschrieben, keine Template-Assets.
 - Hero: Bild gleitet ein (100px, Fade) und zoomt von 1.2 auf 1; Headline wächst von 50 % und steigt auf (2 s).
-- Parallax auf Bildern, Scroll-Reveal, Ablauf-Linie füllt sich beim Scrollen, Header blendet beim Runterscrollen aus.
+- Parallax auf Bildern, Scroll-Reveal (100px), Ablauf-Linie füllt sich beim Scrollen, Header blendet beim Runterscrollen aus.
 - `prefers-reduced-motion` schaltet alle Bewegungen ab. Kein Framework, keine externen Skripte.
-- Schriften/Farben zentral als CSS-Variablen in `assets/css/style.css` (`--font-script`, `--brown`, `--gold` …).
+- Schriften/Farben/Grössen zentral als CSS-Variablen in `assets/css/style.css`; Breakpoints wie im Template (1200 / 810).
 
 ## Sprache & Motiv
 
