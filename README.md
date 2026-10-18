@@ -35,7 +35,24 @@ Kein Build-Schritt nötig: reines HTML/CSS/JS.
   Aktive Sprache mit feiner goldener Linie. Er führt immer auf die **entsprechende** Seite der anderen Sprache.
 - Das Motiv (hell/dunkel) bleibt beim Sprachwechsel erhalten: die Sprachlinks erhalten automatisch `?theme=…`,
   zusätzlich wird die Wahl in `localStorage` gespeichert.
-- Priorität beim Laden: `?theme=light|dark` → gespeicherte Wahl → Systemeinstellung.
+- Priorität beim Laden: `?theme=light|dark` → gespeicherte Wahl → hell (Standard). Dunkel nur über den Schalter.
+- Schriften liegen lokal in `assets/fonts` (keine Anfrage an Google, DSG/DSGVO-freundlich).
+
+## Farbvarianten (Vorschau für die Kundin)
+
+Unten links auf jeder Seite: Auswahl „Farbvariante“ zum direkten Vergleichen. Die Wahl bleibt beim Sprach- und
+Seitenwechsel erhalten (wie das Hell/Dunkel-Motiv). Direktlinks: `?palette=gold`, `?palette=noir`, `?palette=rose`.
+
+| Variante | Grund | Akzent / Karten & Footer |
+|---|---|---|
+| Espresso (Original, Standard) | Weiss `#ffffff`, Text Navy `#19154e` | Espresso `#5b3a28` |
+| Gold & Creme | Creme `#f8f4ee`, Text `#2e2621` | Gold `#b08d57`, Karten `#2e2621` |
+| Schwarz & Gold | Weiss, Text `#1c1c1c` | Schwarz `#141414`, Gold `#c5a467` |
+| Nude & Rosé | Nude `#fcf7f4`, Text `#3b2b2a` | Rosé-Braun `#8c5d56`, Akzent `#c9a27e` |
+| Dunkel | `#120e0b` | Espresso `#3a2519`, Sand `#e8cfb6` |
+
+Farben je Variante stehen in `assets/css/style.css` (Abschnitt „Colour variants“). Nach der Entscheidung:
+gewünschte Werte als Standard in `:root` übernehmen und in `assets/js/main.js` `SHOW_PALETTE_PICKER = false` setzen.
 
 ## SEO
 
