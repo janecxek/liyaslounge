@@ -215,7 +215,7 @@ function header(active, key) {
 <a class="skip" href="#main">${S.skip}</a>
 <header class="hdr" id="top">
   <div class="container hdr__in">
-    <a class="logo" href="${P('home')}" aria-label="${S.homeAria}" data-top>${logoWord()}</a>
+    <a class="logo" href="${P('home')}" aria-label="${S.homeAria}" data-top><span class="logo__mark" aria-hidden="true">LL</span>${logoWord()}</a>
     <nav class="nav" aria-label="${S.mainNav}">
       <ul class="nav__list">
         <li class="nav__item has-mega"><a href="${P('treatments')}" class="nav__link"${a('treatments')} aria-haspopup="true" aria-expanded="false">${S.nav.treatments} ${icon('chevron')}</a>
@@ -442,33 +442,39 @@ function categoryList(list, { catTag = 'h3', itemTag = 'h4', open = -1 } = {}) {
   }).join('')}</div>`;
 }
 
-// Startseite: Behandlungen als hochformatige Karten zum seitlichen Wischen, mit Kategorie-Filter
+// Startseite: Behandlungen nach Kategorie – je Kategorie eine Reihe hochformatiger Karten zum seitlichen Wischen
 function treatRail(list) {
   const de = LANG === 'de';
-  const catName = Object.fromEntries(D.CATEGORIES.map((c) => [c.id, c.name]));
-  return `<div class="trail__tools" data-reveal>
-      <div class="trail__filters" role="group" aria-label="${de ? 'Nach Kategorie filtern' : 'Filter by category'}">
-        <button type="button" aria-pressed="true" data-filter="all">${de ? 'Alle' : 'All'} <sup>${list.length}</sup></button>
-        ${D.CATEGORIES.map((c) => `<button type="button" aria-pressed="false" data-filter="${c.id}">${esc(c.name)} <sup>${list.filter((t) => t.category === c.id).length}</sup></button>`).join('')}
+  const count = (n) => (de ? `${n} ${n === 1 ? 'Behandlung' : 'Behandlungen'}` : `${n} ${n === 1 ? 'treatment' : 'treatments'}`);
+  return `</div>${D.CATEGORIES.map((c, ci) => {
+    const items = list.filter((t) => t.category === c.id);
+    if (!items.length) return '';
+    return `<div class="tcat" data-rail-wrap>
+    <div class="container">
+      <div class="tcat__head" data-reveal>
+        <span class="tcat__num">${String(ci + 1).padStart(2, '0')}</span>
+        <div class="tcat__title"><h3 class="tcat__name">${esc(c.name)}</h3><p class="tcat__short">${esc(c.short)}</p></div>
+        <p class="tcat__meta"><span>${count(items.length)}</span><span>${S.from} ${chf(Math.min(...items.map(minPrice)))}</span></p>
+        <div class="trail__arrows"><button type="button" class="arrow-circle" data-dir="-1" aria-label="${de ? 'Zurück' : 'Previous'}">${icon('left')}</button><button type="button" class="arrow-circle" data-dir="1" aria-label="${de ? 'Weiter' : 'Next'}">${icon('right')}</button></div>
       </div>
-      <div class="trail__arrows"><button type="button" class="arrow-circle" data-dir="-1" aria-label="${de ? 'Zurück' : 'Previous'}">${icon('left')}</button><button type="button" class="arrow-circle" data-dir="1" aria-label="${de ? 'Weiter' : 'Next'}">${icon('right')}</button></div>
     </div>
-  </div>
-  <div class="trail" data-rail>
-    <ul class="trail__track">${list.map((t, i) => `<li class="tcard" data-cat="${t.category}">
-      <a class="tcard__link" href="${tPath(t)}">
-        <span class="tcard__media">${pic(t.image, t.imageAlt, { sizes: '(max-width: 640px) 76vw, 340px' })}</span>
-        <span class="tcard__top"><span>${String(i + 1).padStart(2, '0')}</span><span>${esc(catName[t.category])}</span></span>
-        <span class="tcard__body">
-          <span class="tcard__name">${esc(t.name)}</span>
-          <span class="tcard__text">${esc(t.card)}</span>
-          <span class="tcard__foot"><span>${S.from} ${chf(minPrice(t))}</span>${icon('arrow')}</span>
-        </span>
-      </a>
-    </li>`).join('')}</ul>
-  </div>
-  <div class="container">
-    <div class="trail__bar" aria-hidden="true"><span data-progress></span></div>`;
+    <div class="trail" data-rail>
+      <ul class="trail__track">${items.map((t, i) => `<li class="tcard">
+        <a class="tcard__link" href="${tPath(t)}">
+          <span class="tcard__media">${pic(t.image, t.imageAlt, { sizes: '(max-width: 640px) 76vw, 330px' })}</span>
+          <span class="tcard__top"><span>${String(i + 1).padStart(2, '0')}</span>${t.chips && t.chips[0] ? `<span>${esc(t.chips[0])}</span>` : ''}</span>
+          <span class="tcard__body">
+            <span class="tcard__name">${esc(t.name)}</span>
+            <span class="tcard__text">${esc(t.card)}</span>
+            <span class="tcard__foot"><span>${S.from} ${chf(minPrice(t))}</span>${icon('arrow')}</span>
+          </span>
+        </a>
+      </li>`).join('')}</ul>
+    </div>
+    <div class="container"><div class="trail__bar" aria-hidden="true"><span data-progress></span></div></div>
+  </div>`;
+  }).join('')}
+  <div class="container">`;
 }
 
 const priceRow = (p) => `<li class="prow">

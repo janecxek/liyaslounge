@@ -431,14 +431,14 @@
     }
   });
 
-  /* ---------- Behandlungs-Karten (Startseite): Pfeile, Filter, Ziehen mit der Maus ---------- */
+  /* ---------- Behandlungs-Karten (Startseite, je Kategorie): Pfeile, Ziehen mit der Maus ---------- */
   $$('[data-rail]').forEach(function (rail) {
-    var section = rail.closest('section') || doc;
+    var section = rail.closest('[data-rail-wrap]') || doc;
     var cards = $$('.tcard', rail);
     var bar = $('[data-progress]', section);
     var prev = $('[data-dir="-1"]', section), next = $('[data-dir="1"]', section);
     var gap = 16;
-    var step = function () { var c = cards.filter(function (x) { return !x.hidden; })[0]; return c ? c.getBoundingClientRect().width + gap : 300; };
+    var step = function () { var c = cards[0]; return c ? c.getBoundingClientRect().width + gap : 300; };
     var update = function () {
       var max = rail.scrollWidth - rail.clientWidth;
       var w = max > 0 ? Math.max(12, rail.clientWidth / rail.scrollWidth * 100) : 100;
@@ -448,15 +448,6 @@
     };
     [prev, next].forEach(function (b) {
       if (b) b.addEventListener('click', function () { rail.scrollBy({ left: Number(b.getAttribute('data-dir')) * step() * (window.innerWidth > 1000 ? 2 : 1), behavior: reduceMotion ? 'auto' : 'smooth' }); });
-    });
-    $$('[data-filter]', section).forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var f = btn.getAttribute('data-filter');
-        $$('[data-filter]', section).forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
-        cards.forEach(function (c) { c.hidden = f !== 'all' && c.getAttribute('data-cat') !== f; });
-        rail.scrollTo({ left: 0 });
-        update();
-      });
     });
     var down = false, moved = false, sx = 0, sl = 0;
     rail.addEventListener('pointerdown', function (e) {
