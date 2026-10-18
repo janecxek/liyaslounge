@@ -15,6 +15,16 @@ Kein Build-Schritt nötig: reines HTML/CSS/JS.
 /assets/img/                         → gemeinsame Bilder
 ```
 
+## Design & Animationen
+
+- Aufbau angelehnt an ein editoriales Salon-Template: grosses Hero-Bild, Script-Headlines (*Kaushan Script*) + *Figtree*,
+  Pill-Buttons, braune Karten mit runden Ecken, Zickzack-Ablauf mit Linie, Kundenstimmen auf Foto, Galerie-Mosaik,
+  Buchungs-CTA und braune Fusszeile mit grossem Schriftzug. Code komplett neu geschrieben, keine Template-Assets.
+- Hero: Bild gleitet ein (100px, Fade) und zoomt von 1.2 auf 1; Headline wächst von 50 % und steigt auf (2 s).
+- Parallax auf Bildern, Scroll-Reveal, Ablauf-Linie füllt sich beim Scrollen, Header blendet beim Runterscrollen aus.
+- `prefers-reduced-motion` schaltet alle Bewegungen ab. Kein Framework, keine externen Skripte.
+- Schriften/Farben zentral als CSS-Variablen in `assets/css/style.css` (`--font-script`, `--brown`, `--gold` …).
+
 ## Sprache & Motiv
 
 - Sprachumschalter „DE / EN“ im Header (neben dem Hell/Dunkel-Schalter), im mobilen Menü und in der Fusszeile.
