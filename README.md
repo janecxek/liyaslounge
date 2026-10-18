@@ -30,7 +30,7 @@ Der Build erzeugt alle Seiten, `sitemap.xml` (mit hreflang-Alternates), `robots.
 - Jede Seite hat `canonical` + `hreflang` de-CH / en / x-default (→ DE).
 - Sprachumschalter DE | EN im Header und im mobilen Menü, aktive Sprache mit feiner goldener Linie;
   er verlinkt immer die entsprechende Seite der anderen Sprache.
-- Behandlungen haben SEO-Slugs, z. B. `/dermal-filler-olten` ↔ `/en/dermal-fillers-olten`.
+- Behandlungsseiten (nur mit `DETAIL_PAGES = true`) haben SEO-Slugs, z. B. `/dermal-filler-olten` ↔ `/en/dermal-fillers-olten`.
 - Rechtstexte (AGB, Datenschutz, Impressum) gibt es nur auf Deutsch.
 - Hosting: Vercel mit `cleanUrls` (`vercel.json`, inkl. Weiterleitungen der alten URLs).
   Lokal z. B. mit `npx serve .` und einer `serve.json` mit `{ "cleanUrls": true }` testen.
@@ -44,6 +44,20 @@ python3 scripts/add-image.py <quelle.png> <name>
 Erzeugt WebP in mehreren Breiten, JPG und Vorschau und trägt alles in `scripts/imgmeta.json` ein.
 Optional: `<name>-portrait` als Ausschnitt für Handys; Fokuspunkt `fx`/`fy` (in %) in `imgmeta.json`.
 Prompts für noch fehlende Bilder: `docs/bild-prompts.md`.
+
+## Behandlungen: vorerst nur Kategorien
+
+Die Website zeigt im Moment nur die 3 Kategorien (Startseite) und die Preisliste. Alle 13 Behandlungen mit
+Texten, Ablauf, FAQ und Preisen sind in `scripts/content.mjs` / `content.en.mjs` gespeichert.
+Für eigene Behandlungsseiten (+ Übersicht, Mega-Menü) in `scripts/build.mjs` `DETAIL_PAGES = true` setzen und
+die vorübergehenden Weiterleitungen (302) der Behandlungs-URLs in `vercel.json` entfernen.
+
+## ⚠ Demo-Inhalte – vor dem Livegang ersetzen
+
+- **Bewertungen** (`REVIEWS` in `content.mjs`, `EN_REVIEW_TEXTS` in `content.en.mjs`) sind erfunden und nur zur
+  Präsentation. Erfundene Bewertungen zu veröffentlichen ist irreführend (UWG) – durch echte ersetzen.
+- **Google-Wertung** `googleRating: 4.9` / `googleReviewCount: 87` (`SITE`) ebenfalls Demo – echte Werte eintragen
+  oder auf `null` setzen (dann wird die Wertung ausgeblendet). Die Demo-Werte stehen nicht im JSON-LD.
 
 ## Platzhalter – vor dem Livegang ausfüllen
 
