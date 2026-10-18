@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://www.liyaslounge.ch/">
   <meta name="theme-color" content="#ffffff">
 
-  <script>(function(){var d=document.documentElement,q=null,t,c,P=["espresso","gold","noir","rose"];d.classList.remove("no-js");d.classList.add("js");function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}try{q=new URLSearchParams(location.search)}catch(e){}t=q&&q.get("theme");if(t==="light"||t==="dark")s("ll-theme",t);else t=g("ll-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);c=q&&q.get("palette");if(P.indexOf(c)>-1)s("ll-palette",c);else c=g("ll-palette");if(P.indexOf(c)>0)d.setAttribute("data-palette",c)})();</script>
+  <script>(function(){var d=document.documentElement,q=null,t,c,P=["espresso","gold","noir","rose"];d.classList.remove("no-js");d.classList.add("js");function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}try{q=new URLSearchParams(location.search)}catch(e){}t=q&&q.get("theme");if(t==="light"||t==="dark")s("ll-theme",t);else t=g("ll-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);c=q&&q.get("palette");if(P.indexOf(c)>-1)s("ll-palette",c);else c=g("ll-palette");if(P.indexOf(c)<0)c="noir";if(c!=="espresso")d.setAttribute("data-palette",c)})();</script>
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -36,7 +36,9 @@
     "telephone": "[TELEFON FOLGT]",
     "email": "[E-MAIL FOLGT]",
     "image": "https://www.liyaslounge.ch/assets/img/[BILD FOLGT].jpg",
-    "priceRange": "CHF",
+    "priceRange": "CHF 25–1450",
+    "paymentAccepted": "Cash, TWINT, Credit Card",
+    "currenciesAccepted": "CHF",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "[STRASSE FOLGT]",
@@ -61,17 +63,17 @@
         { "@type": "OfferCatalog", "name": "Medical Aesthetic", "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dermal Filler", "url": "https://www.liyaslounge.ch/behandlungen/dermal-filler.html" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Faltenrelaxing (Botulinum-Behandlung)" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skinbooster" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mesotherapie & Skinbooster" } }
         ] },
         { "@type": "OfferCatalog", "name": "Haut & Gesicht", "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Individuelle Gesichtsbehandlung" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facial Treatments" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Microneedling" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chemisches Peeling" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HIFU 5D Lift" } }
         ] },
         { "@type": "OfferCatalog", "name": "Beauty", "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wimpernlifting" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Augenbrauen-Styling" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Waxing" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Micropigmentierung (Permanent Make-up)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Volume Lashes" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IPL-Haarentfernung" } }
         ] }
       ]
     }
@@ -90,6 +92,7 @@
             <li><a href="#philosophie">Philosophie</a></li>
             <li><a href="#behandlungen">Behandlungen</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="preise.html">Preise</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
@@ -118,6 +121,7 @@
         <li><a href="#philosophie">Philosophie</a></li>
         <li><a href="#behandlungen">Behandlungen</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="preise.html">Preise</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
@@ -137,7 +141,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-media">
-        <img src="assets/img/placeholder-1.jpg" alt="Platzhalter: Bild der Lounge in Olten" width="1600" height="1200" fetchpriority="high">
+        <img src="assets/img/hero.jpg" alt="Platzhalter: Bild der Lounge in Olten" width="1600" height="1200" fetchpriority="high">
         <span class="ph-badge">[Bild folgt]</span>
       </div>
       <div class="hero-text">
@@ -153,7 +157,7 @@
     <!-- Philosophie -->
     <section class="split" id="philosophie">
       <div class="split-media">
-        <div class="parallax"><img src="assets/img/placeholder-2.jpg" alt="Platzhalter: Behandlungsraum" width="1600" height="1200" loading="lazy"></div>
+        <div class="parallax"><img src="assets/img/philosophie.jpg" alt="Platzhalter: Behandlungsraum" width="1600" height="1200" loading="lazy"></div>
         <span class="ph-badge">[Bild folgt]</span>
       </div>
       <div class="split-content">
@@ -178,62 +182,69 @@
         <div class="service-list">
           <article class="service-card reveal">
             <div class="card-media">
-              <img src="assets/img/placeholder-3.jpg" alt="Platzhalter: Medical Aesthetic" width="1600" height="1200" loading="lazy">
+              <img src="assets/img/kategorie-medical.jpg" alt="Platzhalter: medical" width="1600" height="1200" loading="lazy">
               <span class="ph-badge">[Bild folgt]</span>
             </div>
             <div class="card-body">
               <h3>Medical Aesthetic</h3>
-              <p class="card-sub">Nur nach persönlicher Beratung und Anamnese.</p>
+              <p class="card-sub">Filler, Faltenrelaxing, Mesotherapie, Lipolyse und Fadenlifting – nur nach persönlicher Beratung.</p>
               <ul class="treatment-list">
-                <li><a class="name" href="behandlungen/dermal-filler.html">Dermal Filler</a><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
-                <li><span class="name">Faltenrelaxing (Botulinum-Behandlung)</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
-                <li><span class="name">Skinbooster</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
+                <li><a class="name" href="behandlungen/dermal-filler.html">Dermal Filler</a><span class="price">ab CHF 130.–</span></li>
+                <li><span class="name">Faltenrelaxing (Botulinum-Behandlung)</span><span class="price">ab CHF 130.–</span></li>
+                <li><span class="name">Mesotherapie &amp; Skinbooster</span><span class="price">ab CHF 200.–</span></li>
+                <li><span class="name">Fadenlifting (PDO)</span><span class="price">ab CHF 350.–</span></li>
               </ul>
               <div class="card-actions">
                 <a class="btn btn--light" href="#kontakt">Kostenlose Beratung</a>
-                <a class="btn btn--ghost-light" href="behandlungen/dermal-filler.html">Mehr zu Filler</a>
+                <a class="btn btn--ghost-light" href="preise.html#medical">Alle Preise</a>
               </div>
             </div>
           </article>
 
           <article class="service-card reveal">
             <div class="card-media">
-              <img src="assets/img/placeholder-4.jpg" alt="Platzhalter: Haut &amp; Gesicht" width="1600" height="1200" loading="lazy">
+              <img src="assets/img/kategorie-haut.jpg" alt="Platzhalter: haut" width="1600" height="1200" loading="lazy">
               <span class="ph-badge">[Bild folgt]</span>
             </div>
             <div class="card-body">
               <h3>Haut &amp; Gesicht</h3>
-              <p class="card-sub">Pflege mit Tiefenwirkung, abgestimmt auf deine Haut.</p>
+              <p class="card-sub">Facials, HIFU 5D, Morpheus8 und Plasma Pen – abgestimmt auf deine Haut.</p>
               <ul class="treatment-list">
-                <li><span class="name">Individuelle Gesichtsbehandlung</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
-                <li><span class="name">Microneedling</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
-                <li><span class="name">Chemisches Peeling</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
+                <li><span class="name">Facial Treatments (Microneedling, BB Glow …)</span><span class="price">ab CHF 150.–</span></li>
+                <li><span class="name">HIFU 5D Lift</span><span class="price">ab CHF 150.–</span></li>
+                <li><span class="name">Morpheus8</span><span class="price">ab CHF 350.–</span></li>
+                <li><span class="name">Plasma Pen</span><span class="price">ab CHF 200.–</span></li>
               </ul>
               <div class="card-actions">
                 <a class="btn btn--light" href="#kontakt">Termin buchen</a>
+                <a class="btn btn--ghost-light" href="preise.html#haut">Alle Preise</a>
               </div>
             </div>
           </article>
 
           <article class="service-card reveal">
             <div class="card-media">
-              <img src="assets/img/placeholder-5.jpg" alt="Platzhalter: Beauty" width="1600" height="1200" loading="lazy">
+              <img src="assets/img/kategorie-beauty.jpg" alt="Platzhalter: beauty" width="1600" height="1200" loading="lazy">
               <span class="ph-badge">[Bild folgt]</span>
             </div>
             <div class="card-body">
               <h3>Beauty</h3>
-              <p class="card-sub">Die feinen Details für Wimpern, Brauen und Haut.</p>
+              <p class="card-sub">Permanent Make-up, Wimpern, IPL-Haarentfernung und Zahnbleaching.</p>
               <ul class="treatment-list">
-                <li><span class="name">Wimpernlifting</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
-                <li><span class="name">Augenbrauen-Styling</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
-                <li><span class="name">Waxing</span><span class="price">ab CHF <span class="ph">[Preis folgt]</span></span></li>
+                <li><span class="name">Micropigmentierung (Permanent Make-up)</span><span class="price">ab CHF 200.–</span></li>
+                <li><span class="name">Volume Lashes</span><span class="price">ab CHF 100.–</span></li>
+                <li><span class="name">IPL-Haarentfernung</span><span class="price">ab CHF 49.–</span></li>
+                <li><span class="name">Zahnbleaching</span><span class="price">ab CHF 80.–</span></li>
               </ul>
               <div class="card-actions">
                 <a class="btn btn--light" href="#kontakt">Termin buchen</a>
+                <a class="btn btn--ghost-light" href="preise.html#beauty">Alle Preise</a>
               </div>
             </div>
           </article>
         </div>
+
+        <div class="services-more reveal"><a class="btn" href="preise.html">Komplette Preisliste</a></div>
 
         <p class="services-note reveal">Ergebnisse sind individuell und können nicht garantiert werden. Medizinisch-ästhetische Behandlungen erfolgen ausschliesslich nach persönlicher Beratung. <span class="ph">[Angaben zur ärztlichen Verantwortung ergänzen]</span></p>
       </div>
@@ -248,19 +259,19 @@
         <div class="timeline">
           <div class="timeline-track" aria-hidden="true"><div class="timeline-fill"></div></div>
           <div class="step">
-            <div class="step-media reveal"><div class="parallax"><img src="assets/img/placeholder-6.jpg" alt="Platzhalter: Beratungsgespräch" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
+            <div class="step-media reveal"><div class="parallax"><img src="assets/img/ablauf-1-beratung.jpg" alt="Platzhalter: Beratungsgespräch" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
             <div class="step-text reveal"><span class="step-num">01</span><h3>Beratung</h3><p>Wir hören zu: Wünsche, Gesundheit, Erwartungen. Kostenlos und ohne Verpflichtung.</p></div>
           </div>
           <div class="step">
-            <div class="step-media reveal"><div class="parallax"><img src="assets/img/placeholder-2.jpg" alt="Platzhalter: Planung" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
+            <div class="step-media reveal"><div class="parallax"><img src="assets/img/ablauf-2-plan.jpg" alt="Platzhalter: Planung" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
             <div class="step-text reveal"><span class="step-num">02</span><h3>Individueller Plan</h3><p>Gemeinsam legen wir fest, was sinnvoll ist – mit transparenten Kosten und offenen Antworten.</p></div>
           </div>
           <div class="step">
-            <div class="step-media reveal"><div class="parallax"><img src="assets/img/placeholder-4.jpg" alt="Platzhalter: Behandlung" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
+            <div class="step-media reveal"><div class="parallax"><img src="assets/img/ablauf-3-behandlung.jpg" alt="Platzhalter: Behandlung" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
             <div class="step-text reveal"><span class="step-num">03</span><h3>Behandlung</h3><p>In ruhiger Atmosphäre, ohne Zeitdruck und mit Erklärungen zu jedem Schritt.</p></div>
           </div>
           <div class="step">
-            <div class="step-media reveal"><div class="parallax"><img src="assets/img/placeholder-3.jpg" alt="Platzhalter: Nachsorge" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
+            <div class="step-media reveal"><div class="parallax"><img src="assets/img/ablauf-4-nachsorge.jpg" alt="Platzhalter: Nachsorge" width="1600" height="1200" loading="lazy"></div><span class="ph-badge">[Bild folgt]</span></div>
             <div class="step-text reveal"><span class="step-num">04</span><h3>Nachsorge</h3><p>Klare Pflegehinweise und auf Wunsch ein Kontrolltermin – wir bleiben für dich da.</p></div>
           </div>
         </div>
@@ -269,7 +280,7 @@
 
     <!-- Kundenstimmen -->
     <section class="testimonials" id="stimmen">
-      <div class="parallax"><img src="assets/img/placeholder-5.jpg" alt="" width="1600" height="1200" loading="lazy"></div>
+      <div class="parallax"><img src="assets/img/stimmen-hintergrund.jpg" alt="" width="1600" height="1200" loading="lazy"></div>
       <div class="container">
         <h2 class="reveal">Was unsere Kundinnen sagen</h2>
         <div class="reviews">
@@ -319,17 +330,17 @@
           </div>
         </div>
         <div class="mosaic">
-          <figure class="tile tile--tall reveal"><img src="assets/img/placeholder-2.jpg" alt="Platzhalter: Portrait" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Portrait folgt]</span></figure>
-          <figure class="tile reveal" style="--d:.08s"><img src="assets/img/placeholder-4.jpg" alt="Platzhalter: Empfang" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Bild folgt]</span></figure>
-          <figure class="tile tile--tall reveal" style="--d:.16s"><img src="assets/img/placeholder-6.jpg" alt="Platzhalter: Behandlungsraum" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Bild folgt]</span></figure>
-          <figure class="tile reveal" style="--d:.24s"><img src="assets/img/placeholder-1.jpg" alt="Platzhalter: Produkte" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Bild folgt]</span></figure>
+          <figure class="tile tile--tall reveal"><img src="assets/img/galerie-1-portrait.jpg" alt="Platzhalter: Portrait" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Portrait folgt]</span></figure>
+          <figure class="tile reveal" style="--d:.08s"><img src="assets/img/galerie-2-empfang.jpg" alt="Platzhalter: Empfang" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Bild folgt]</span></figure>
+          <figure class="tile tile--tall reveal" style="--d:.16s"><img src="assets/img/galerie-3-raum.jpg" alt="Platzhalter: Behandlungsraum" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Bild folgt]</span></figure>
+          <figure class="tile reveal" style="--d:.24s"><img src="assets/img/galerie-4-details.jpg" alt="Platzhalter: Produkte" width="1600" height="1200" loading="lazy"><span class="ph-badge">[Bild folgt]</span></figure>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="cta">
-      <div class="parallax"><img src="assets/img/placeholder-3.jpg" alt="" width="1600" height="1200" loading="lazy"></div>
+      <div class="parallax"><img src="assets/img/cta-hintergrund.jpg" alt="" width="1600" height="1200" loading="lazy"></div>
       <div class="container">
         <h2 class="reveal">Dein Termin.<br>Deine Zeit.</h2>
         <p class="reveal">Kostenlose Erstberatung in Olten – persönlich, ehrlich und ganz ohne Verpflichtung.</p>
@@ -364,6 +375,7 @@
             <li><span>Sa</span><span>nach Vereinbarung</span></li>
             <li><span>So</span><span>geschlossen</span></li>
           </ul>
+          <p class="footer-pay">Zahlung: Bar, TWINT, Karte</p>
           <h3>Folgen</h3>
           <ul class="contact-lines">
             <li><a href="#">Instagram <span class="ph">[Link folgt]</span></a></li>
@@ -375,6 +387,7 @@
             <li><a href="#philosophie">Philosophie</a></li>
             <li><a href="#behandlungen">Behandlungen</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="preise.html">Preise</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
