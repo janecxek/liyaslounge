@@ -1,6 +1,6 @@
 /* Liyas Lounge – shared script (DE + EN)
    The initial theme is set by a small inline script in <head> (no flash).
-   Priority: ?theme=light|dark  >  saved choice  >  system preference. */
+   Priority: ?theme=light|dark  >  saved choice  >  light (default). */
 (function () {
   "use strict";
 
@@ -11,8 +11,8 @@
   /* ---------- Theme ---------- */
   function currentTheme() {
     var t = root.getAttribute("data-theme");
-    if (t === "light" || t === "dark") return t;
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    // light is the default; dark only when chosen via the toggle (or ?theme=dark)
+    return t === "dark" ? "dark" : "light";
   }
 
   function saveTheme(t) {

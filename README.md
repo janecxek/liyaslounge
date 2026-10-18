@@ -35,7 +35,8 @@ Kein Build-Schritt nötig: reines HTML/CSS/JS.
   Aktive Sprache mit feiner goldener Linie. Er führt immer auf die **entsprechende** Seite der anderen Sprache.
 - Das Motiv (hell/dunkel) bleibt beim Sprachwechsel erhalten: die Sprachlinks erhalten automatisch `?theme=…`,
   zusätzlich wird die Wahl in `localStorage` gespeichert.
-- Priorität beim Laden: `?theme=light|dark` → gespeicherte Wahl → Systemeinstellung.
+- Priorität beim Laden: `?theme=light|dark` → gespeicherte Wahl → hell (Standard). Dunkel nur über den Schalter.
+- Schriften liegen lokal in `assets/fonts` (keine Anfrage an Google, DSG/DSGVO-freundlich).
 
 ## SEO
 
