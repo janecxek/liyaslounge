@@ -711,3 +711,12 @@ body.menu-open { overflow: hidden; }
   .faq summary::after { right: 18px; }
   .faq details p { padding: 0 22px 22px; }
 }
+
+/* Homepage hero photo: keep the woman's face in frame on wide and narrow screens */
+.hero-media img[src$="/hero.jpg"] { object-position: 58% 22%; }
+@media (max-width: 809.98px) {
+  /* colour picker: dots only on phones so it never covers buttons */
+  .palette-picker { left: 12px; bottom: 12px; }
+  .palette-picker__toggle { padding: 10px; }
+  .palette-picker__toggle > span:last-child { display: none; }
+}
