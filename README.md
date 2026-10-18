@@ -1,102 +1,62 @@
 # Liyas Lounge – Website (DE / EN)
 
 Statische, zweisprachige Website für Liyas Lounge, Olten – Medizinische Ästhetik & Beauty.
-Kein Build-Schritt nötig: reines HTML/CSS/JS.
+Aufbau, Design und Animationen basieren auf dem Perfect-Shape-System (Generator + editoriales Layout),
+alle Texte, Preise, Bilder und Farben (Schwarz/Gold) sind neu für Liyas Lounge.
 
-## Struktur
+## Inhalte bearbeiten
+
+Nie die generierten `.html`-Dateien direkt bearbeiten – sie werden überschrieben. Stattdessen:
+
+| Was | Datei |
+| --- | --- |
+| Kontaktdaten, Öffnungszeiten, Adresse, Kategorien, Behandlungen & Preise (DE), Team, Bewertungen, FAQ, AGB | `scripts/content.mjs` |
+| Englische Texte & Preise (gleiche Struktur, nach DE-Slug) | `scripts/content.en.mjs` |
+| Seitenaufbau, UI-Texte, SEO, JSON-LD | `scripts/build.mjs` |
+| Design | `assets/css/style.css` (Farben als Variablen in `:root`) |
+| Interaktionen | `assets/js/main.js` |
+
+Danach neu bauen:
 
 ```
-/index.html                          → DE  Startseite (Standard, lang="de-CH")
-/behandlungen/dermal-filler.html     → DE  Behandlungsseite
-/en/index.html                       → EN  Homepage (lang="en")
-/en/treatments/dermal-filler.html    → EN  Treatment page
-/preise.html                         → DE  Preisliste (aus der Preisliste der Kundin, Okt. 2026)
-/en/prices.html                      → EN  Price list
-/docs/bild-prompts.md                → fertige ChatGPT-Prompts für alle Bilder
-/assets/css/style.css                → gemeinsam für beide Sprachen
-/assets/js/main.js                   → gemeinsam für beide Sprachen
-/assets/img/                         → gemeinsame Bilder
+node scripts/build.mjs
 ```
 
-## Design & Animationen
+Der Build erzeugt alle Seiten, `sitemap.xml` (mit hreflang-Alternates), `robots.txt` und `assets/css/style.min.css`.
 
-- Optik 1:1 nach dem Salon-Template: *Kaushan Script* für Headlines, Navigation und Footer-Links, *Manrope* 500
-  für Text (18 px / 1.7), *Manrope* 700 für Pill-Buttons, *Inter* für kleine Labels.
-- Farben: weisser Grund, Navy-Text `#19154e`, Espresso `#5b3a28` für Headlines, Karten und Footer.
-- Transparenter Header mit weisser Schrift über dem Hero-Bild, beim Scrollen weiss.
-- Aufbau: grosses Hero-Bild, Split-Sektion, Espresso-Karten (Bild bündig), Zickzack-Ablauf mit Linie,
-  Kundenstimmen auf Foto, Galerie-Mosaik, Buchungs-CTA, Footer mit grossem Verlaufs-Schriftzug.
-  Code komplett neu geschrieben, keine Template-Assets.
-- Hero: Bild gleitet ein (100px, Fade) und zoomt von 1.2 auf 1; Headline wächst von 50 % und steigt auf (2 s).
-- Parallax auf Bildern, Scroll-Reveal (100px), Ablauf-Linie füllt sich beim Scrollen, Header blendet beim Runterscrollen aus.
-- `prefers-reduced-motion` schaltet alle Bewegungen ab. Kein Framework, keine externen Skripte.
-- Schriften/Farben/Grössen zentral als CSS-Variablen in `assets/css/style.css`; Breakpoints wie im Template (1200 / 810).
+## Sprachen & URLs
 
-## Sprache & Motiv
-
-- Sprachumschalter „DE / EN“ im Header (neben dem Hell/Dunkel-Schalter), im mobilen Menü und in der Fusszeile.
-  Aktive Sprache mit feiner goldener Linie. Er führt immer auf die **entsprechende** Seite der anderen Sprache.
-- Das Motiv (hell/dunkel) bleibt beim Sprachwechsel erhalten: die Sprachlinks erhalten automatisch `?theme=…`,
-  zusätzlich wird die Wahl in `localStorage` gespeichert.
-- Priorität beim Laden: `?theme=light|dark` → gespeicherte Wahl → hell (Standard). Dunkel nur über den Schalter.
-- Schriften liegen lokal in `assets/fonts` (keine Anfrage an Google, DSG/DSGVO-freundlich).
-
-## Farbvarianten (Vorschau für die Kundin)
-
-Unten links auf jeder Seite: Auswahl „Farbvariante“ zum direkten Vergleichen. Die Wahl bleibt beim Sprach- und
-Seitenwechsel erhalten (wie das Hell/Dunkel-Motiv). Direktlinks: `?palette=noir` (Standard), `?palette=espresso`, `?palette=gold`, `?palette=rose`.
-
-| Variante | Grund | Akzent / Karten & Footer |
-|---|---|---|
-| Espresso (Template) | Weiss `#ffffff`, Text Navy `#19154e` | Espresso `#5b3a28` |
-| Gold & Creme | Creme `#f8f4ee`, Text `#2e2621` | Gold `#b08d57`, Karten `#2e2621` |
-| **Schwarz & Gold (Standard, Logo-Farben)** | Weiss, Text `#1c1c1c` | Schwarz `#141414`, Gold `#c5a467` |
-| Nude & Rosé | Nude `#fcf7f4`, Text `#3b2b2a` | Rosé-Braun `#8c5d56`, Akzent `#c9a27e` |
-| Dunkel | `#120e0b` | Espresso `#3a2519`, Sand `#e8cfb6` |
-
-Farben je Variante stehen in `assets/css/style.css` (Abschnitt „Colour variants“). Nach der Entscheidung:
-gewünschte Werte als Standard in `:root` übernehmen und in `assets/js/main.js` `SHOW_PALETTE_PICKER = false` setzen.
+- DE ist Standard (`lang="de-CH"`) unter `/`, EN (`lang="en"`) unter `/en/…`.
+- Jede Seite hat `canonical` + `hreflang` de-CH / en / x-default (→ DE).
+- Sprachumschalter DE | EN im Header und im mobilen Menü, aktive Sprache mit feiner goldener Linie;
+  er verlinkt immer die entsprechende Seite der anderen Sprache.
+- Behandlungen haben SEO-Slugs, z. B. `/dermal-filler-olten` ↔ `/en/dermal-fillers-olten`.
+- Rechtstexte (AGB, Datenschutz, Impressum) gibt es nur auf Deutsch.
+- Hosting: Vercel mit `cleanUrls` (`vercel.json`, inkl. Weiterleitungen der alten URLs).
+  Lokal z. B. mit `npx serve .` und einer `serve.json` mit `{ "cleanUrls": true }` testen.
 
 ## Bilder
 
-Jeder Bildplatz hat einen eigenen Dateinamen in `assets/img/` (z. B. `hero.jpg`, `kategorie-medical.jpg`, `ablauf-1-beratung.jpg`).
-Neues Bild unter dem gleichen Namen speichern – fertig. Prompts: `docs/bild-prompts.md`.
-
-## SEO
-
-- `hreflang` auf jeder Seite: `de-CH`, `en`, `x-default` (→ DE).
-- Eigene Title/Description je Sprache, JSON-LD (`HealthAndBeautyBusiness`, `Service`, `BreadcrumbList`, `FAQPage`) in beiden Sprachen.
-- Domain in `canonical`/`hreflang`/JSON-LD ist als `https://www.liyaslounge.ch` angenommen – vor dem Livegang prüfen.
-
-## Vorschau
-
 ```
-python3 -m http.server 8000
+python3 scripts/add-image.py <quelle.png> <name>
 ```
 
-- http://localhost:8000/index.html?theme=light
-- http://localhost:8000/index.html?theme=dark
-- http://localhost:8000/en/index.html?theme=light
-- http://localhost:8000/en/index.html?theme=dark
-- http://localhost:8000/behandlungen/dermal-filler.html
-- http://localhost:8000/en/treatments/dermal-filler.html
+Erzeugt WebP in mehreren Breiten, JPG und Vorschau und trägt alles in `scripts/imgmeta.json` ein.
+Optional: `<name>-portrait` als Ausschnitt für Handys; Fokuspunkt `fx`/`fy` (in %) in `imgmeta.json`.
+Prompts für noch fehlende Bilder: `docs/bild-prompts.md`.
 
-## Platzhalter (vor dem Livegang ersetzen)
+## Platzhalter – vor dem Livegang ausfüllen
 
-Alle Platzhalter sind sichtbar gestrichelt-gold markiert (`class="ph"` bzw. `ph-img`) und in eckigen Klammern:
+Werte in eckigen Klammern gelten als „nicht gesetzt“ (z. B. wird die Telefonnummer im Header dann ausgeblendet).
 
-| DE | EN |
-|---|---|
-| `[Preis folgt]` | `[Price to follow]` |
-| `[Platzhalter – echte Kundenstimme folgt]` | `[Placeholder – genuine review to follow]` |
-| `[Bild folgt]`, `[Portrait folgt]`, `[Karte folgt]` | `[Image to follow]`, `[Portrait to follow]`, `[Map to follow]` |
-| `[Name folgt]`, `[Strasse folgt]`, `[Telefon folgt]`, `[E-Mail folgt]` | `[Name to follow]`, `[Street to follow]`, … |
-| `[Angaben zur ärztlichen Verantwortung ergänzen]` | `[Add details of medical responsibility]` |
+- Telefon + `phoneHref`, WhatsApp-Nummer, Strasse (`scripts/content.mjs → SITE`)
+- Name & Foto der Inhaberin (`TEAM`), echte Kundenbewertungen (`REVIEWS`)
+- Instagram/Facebook (leer = ausgeblendet)
+- Datenschutz: Hosting-Anbieter, medizinisch verantwortliche Person, UID im Impressum, Gebühr in den AGB
 
-Ausserdem: `tel:+41000000000`, `wa.me/41000000000`, `info@liyaslounge.ch`, Impressum/Datenschutz-Links und die JSON-LD-Felder in GROSSBUCHSTABEN.
+## Rechtliche Hinweise (Schweiz) – bitte prüfen lassen
 
-## Inhaltliche Regeln
-
-- Keine Wirkversprechen; Hinweis „Ergebnisse sind individuell“ bei medizinischen Behandlungen.
-- Kein Markenname „Botox“ – DE: „Faltenrelaxing (Botulinum-Behandlung)“, EN: „Wrinkle relaxing (botulinum treatment)“.
-- Beide Sprachversionen haben identischen Aufbau; neue Sektionen immer in beiden Dateien ergänzen.
+- Botulinum ist verschreibungspflichtig: Publikumswerbung mit Preisen ist heikel. Genannt wird nur der Wirkstoff, keine Marke
+  („Faltenrelaxing“), die Preise sollten trotzdem rechtlich geprüft werden.
+- Keine Markennamen von Fillern / Arzneimitteln, keine Wirkversprechen, keine Vorher/Nachher-Bilder.
+- Zahnbleaching mit höheren Peroxid-Konzentrationen ist Zahnärzt:innen vorbehalten.
