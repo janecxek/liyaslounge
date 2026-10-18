@@ -498,10 +498,10 @@ export const EN_HOME_FAQ = [
   ['Will the result look natural?', 'That is our aim. We dose to suit you and tell you honestly when a treatment is not right for you. The goal is for you to look refreshed – not “done”.'],
   ['Is the consultation really free?', 'Yes. The initial consultation is free and without obligation. We take time for your questions and explain every option clearly.'],
   ['Is the treatment painful?', 'Most treatments are very tolerable. Where it helps, we use numbing cream or cooling. We explain beforehand exactly what you will feel.'],
-  ['Can I go out straight after the treatment?', 'With many treatments, straight away or after a few hours. Mild redness or swelling is possible depending on the method. You will find details on each treatment page.'],
+  ['Can I go out straight after the treatment?', 'With many treatments, straight away or after a few hours. Mild redness or swelling is possible depending on the method. You will find details with each treatment.'],
   ['Where is Liyas Lounge?', 'Our lounge is in 4600 Olten [exact address to follow]. We are happy to send you directions via WhatsApp.'],
   ['How do I book an appointment?', 'The easiest way is via WhatsApp (messages only) or by phone. We will get back to you as soon as possible and find a time that suits you.'],
   ['Who carries out the treatments?', 'Treatments are carried out by qualified professionals with over 15 years of experience. [Add details of medical responsibility]'],
-  ['How much does a treatment cost?', 'You will find all prices on our price page – e.g. IPL hair removal from CHF 49, facials from CHF 150 or dermal fillers from CHF 130. We confirm the final cost in your consultation.'],
+  ['How much does a treatment cost?', 'You will find all prices in our price list – e.g. IPL hair removal from CHF 49, facials from CHF 150 or dermal fillers from CHF 130. We confirm the final cost in your consultation.'],
   ['How can I pay?', 'Payment is made directly after the treatment – in cash, with TWINT or by card.'],
 ];
