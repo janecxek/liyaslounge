@@ -12,14 +12,23 @@ do opinii ani zdjęć „przed/po”. Wygenerowane „efekty zabiegów” wprowa
 
 ---
 
-## 1. `hero.jpg` – duże zdjęcie na górze strony głównej
+## 1. `hero.jpg` – duże zdjęcie na górze strony głównej (kobieta jako główny motyw)
+Twarz w środku kadru: na telefonie zdjęcie jest przycinane do środka. Góra spokojna, bo leży na niej białe menu.
+
+**Wariant A – portret (polecany)**
 ```
-Photorealistic editorial photograph, wide landscape 3:2. An elegant, calm medical-aesthetics treatment lounge in Switzerland: a cream leather treatment bed with crisp white linen, black marble side table with brushed-gold details, a tall glass vase of white calla lilies, soft natural daylight through sheer curtains, warm beige walls, plenty of calm empty space. Luxury but minimal, serene, premium spa-clinic atmosphere, black and gold accents, shallow depth of field, shot on a full-frame camera, 35mm lens, natural colour grading. No people, no text, no logos, no watermarks.
+Photorealistic luxury beauty campaign photograph, wide landscape 3:2. A beautiful woman in her early thirties with radiant, natural, healthy skin and minimal make-up, face and bare shoulders, positioned in the centre of the frame, looking softly into the camera with a calm, confident, gentle smile. Sleek hair tied back, small gold earrings. Behind her a softly blurred background of white calla lilies and cream tones, with deep black shadows at the edges. Warm golden side light, soft glow on the skin, natural skin texture with visible pores, not over-retouched. Plenty of calm space to the left and right of her face, calm and slightly darker area at the top of the image. Elegant black, gold and cream palette, premium medical-aesthetics brand look, shot on a full-frame camera, 85mm lens, shallow depth of field. No text, no logos, no watermarks, no exaggerated lips or features.
 ```
+
+**Wariant B – spokojniejszy, z kwiatem**
+```
+Photorealistic editorial beauty photograph, wide landscape 3:2. A serene woman in her thirties with luminous, natural skin, eyes gently closed, head slightly tilted, holding a single white calla lily close to her cheek, centred in the frame. Soft cream background fading into deep black at the edges, warm golden light from the side, delicate glow on her cheekbones, natural skin texture, minimal make-up, sleek hair. Lots of calm negative space left and right, darker calm area at the top. Luxury black, gold and cream palette, timeless and elegant, 85mm lens, shallow depth of field. No text, no logos, no watermarks, no exaggerated features.
+```
+Jeśli twarz wyjdzie za bardzo z boku: *„Same image, but place her face exactly in the centre with more empty space on both sides.”*
 
 ## 2. `philosophie.jpg` – zdjęcie obok sekcji Philosophie (pionowe)
 ```
-Photorealistic beauty portrait, vertical portrait 2:3. A woman in her mid-thirties with natural, healthy, glowing skin and minimal make-up, eyes gently closed, relaxed and serene expression, shoulders up, wearing a soft white robe. A few white orchid blossoms softly out of focus in the foreground. Soft diffused window light, warm beige background, subtle golden highlights. Natural and authentic, not retouched-looking, no exaggerated features. Luxury medical-aesthetics brand style in black, gold and cream. No text, no logos, no watermarks.
+Photorealistic close-up beauty detail, vertical portrait 2:3. A woman's hand with natural, elegant nails gently touching her cheek and jawline, only the lower half of the face and neck visible, radiant natural skin, soft white robe, a white orchid blossom softly out of focus in the foreground. Warm diffused golden light, cream background with deep black shadows, natural skin texture, calm and intimate mood, luxury black, gold and cream palette. No text, no logos, no watermarks.
 ```
 
 ## 3. `kategorie-medical.jpg` – karta „Medical Aesthetic” (kwadrat)
