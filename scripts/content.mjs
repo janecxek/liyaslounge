@@ -753,11 +753,11 @@ export const HOME_FAQ = [
   ['Sieht das Ergebnis natürlich aus?', 'Das ist unser Anspruch. Wir dosieren typgerecht und sagen ehrlich, wenn eine Behandlung nicht zu Ihnen passt. Ziel ist, dass Sie frischer aussehen – nicht «gemacht».'],
   ['Ist die Beratung wirklich kostenlos?', 'Ja. Die Erstberatung ist kostenlos und unverbindlich. Wir nehmen uns Zeit für Ihre Fragen und erklären alle Möglichkeiten verständlich.'],
   ['Ist die Behandlung schmerzhaft?', 'Die meisten Behandlungen sind gut verträglich. Wo sinnvoll, verwenden wir eine Betäubungscreme oder Kühlung. Vorab besprechen wir genau, was Sie spüren werden.'],
-  ['Bin ich nach der Behandlung gesellschaftsfähig?', 'Bei vielen Behandlungen sofort oder nach wenigen Stunden. Leichte Rötungen oder Schwellungen sind je nach Methode möglich. Details finden Sie bei der jeweiligen Behandlung.'],
+  ['Bin ich nach der Behandlung gesellschaftsfähig?', 'Bei vielen Behandlungen sofort oder nach wenigen Stunden. Leichte Rötungen oder Schwellungen sind je nach Methode möglich. Details finden Sie auf der jeweiligen Behandlungsseite.'],
   ['Wo befindet sich die Liyas Lounge?', 'Unsere Lounge befindet sich in 4600 Olten [genaue Adresse folgt]. Gerne senden wir Ihnen die Wegbeschreibung per WhatsApp.'],
   ['Wie kann ich einen Termin buchen?', 'Am einfachsten per WhatsApp (nur Nachrichten) oder telefonisch. Wir melden uns schnellstmöglich und finden gemeinsam einen passenden Termin.'],
   ['Wer führt die Behandlungen durch?', 'Die Behandlungen werden von qualifizierten Fachpersonen mit über 15 Jahren Erfahrung durchgeführt. [Angaben zur ärztlichen Verantwortung ergänzen]'],
-  ['Was kostet eine Behandlung?', 'In unserer Preisliste finden Sie alle Preise – z. B. IPL-Haarentfernung ab CHF 49, Facials ab CHF 150 oder Dermal Filler ab CHF 130. Die finalen Kosten besprechen wir in der Beratung.'],
+  ['Was kostet eine Behandlung?', 'Auf unserer Preisseite finden Sie alle Preise – z. B. IPL-Haarentfernung ab CHF 49, Facials ab CHF 150 oder Dermal Filler ab CHF 130. Die finalen Kosten besprechen wir in der Beratung.'],
   ['Wie kann ich bezahlen?', 'Die Zahlung erfolgt direkt nach der Behandlung – bar, mit TWINT oder per Karte.'],
 ];
 
