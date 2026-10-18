@@ -30,6 +30,10 @@ const DATA = {
   },
 };
 
+// Einzelseiten pro Behandlung (+ Übersicht). Vorerst aus: die Website zeigt nur die 3 Kategorien.
+// Alle Inhalte bleiben in content.mjs / content.en.mjs erhalten – zum Ausbauen einfach auf true setzen.
+const DETAIL_PAGES = false;
+
 // Seiten-Schlüssel → Pfade je Sprache (für hreflang & Sprachumschalter). Rechtliches nur auf Deutsch.
 const PATHS = {
   home: { de: '/', en: '/en' },
@@ -43,6 +47,7 @@ const PATHS = {
   notfound: { de: '/404' },
 };
 for (const t of DE.TREATMENTS) PATHS['t:' + t.slug] = { de: '/' + t.slug, en: '/en/' + EN_TREATMENTS[t.slug].slug };
+if (!DETAIL_PAGES) PATHS.treatments = { de: '/#behandlungen', en: '/en#behandlungen' };
 
 /* ---------- UI-Texte ---------- */
 const STR = {
@@ -87,7 +92,8 @@ let LANG = 'de';
 let S = STR.de;
 let D = DATA.de;
 const P = (key) => (PATHS[key] && (PATHS[key][LANG] || PATHS[key].de)) || '/';
-const tPath = (t) => P('t:' + t.deSlug);
+// ohne Einzelseiten führt jeder Behandlungs-Link zum passenden Abschnitt der Preisliste
+const tPath = (t) => (DETAIL_PAGES ? P('t:' + t.deSlug) : `${P('prices')}#${t.deSlug}`);
 
 /* ---------- Helpers ---------- */
 const SMALL = new Set(['a', 'an', 'the', 'and', 'or', 'of', 'in', 'with', 'by', 'for', 'to', 'from', 'on', 'at', '&']);
@@ -141,6 +147,10 @@ const ICONS = {
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
   calendar: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
   chevron: '<path d="m6 9 6 6 6-6"/>',
+  shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+  heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  gift: '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v9h14v-9M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
   star: '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z" fill="currentColor" stroke="none"/>',
   whatsapp: '<path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.3-1.8-1-1 .8a4 4 0 0 1-2.2-2.2l.8-1-1-1.8z" fill="currentColor" stroke="none"/>',
   instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>',
@@ -218,12 +228,12 @@ function header(active, key) {
     <a class="logo" href="${P('home')}" aria-label="${S.homeAria}" data-top><span class="logo__mark" aria-hidden="true">LL</span>${logoWord()}</a>
     <nav class="nav" aria-label="${S.mainNav}">
       <ul class="nav__list">
-        <li class="nav__item has-mega"><a href="${P('treatments')}" class="nav__link"${a('treatments')} aria-haspopup="true" aria-expanded="false">${S.nav.treatments} ${icon('chevron')}</a>
+        ${DETAIL_PAGES ? `<li class="nav__item has-mega"><a href="${P('treatments')}" class="nav__link"${a('treatments')} aria-haspopup="true" aria-expanded="false">${S.nav.treatments} ${icon('chevron')}</a>
           <div class="mega"><div class="mega__in">
             ${D.CATEGORIES.map((c) => `<div class="mega__col"><p class="mega__title">${esc(c.name)}</p><ul>${D.TREATMENTS.filter((t) => t.category === c.id).map((t) => `<li><a href="${tPath(t)}">${esc(t.navName)}</a></li>`).join('')}</ul></div>`).join('')}
             <div class="mega__cta"><p class="title">${esc(S.megaTitle)} <em>${esc(S.megaAccent)}</em></p><p>${esc(S.megaText)}</p><button type="button" class="btn btn--dark btn--sm" data-contact data-intent="consult" aria-haspopup="dialog" aria-controls="contact"><span>${S.consult}</span>${icon('arrow')}</button></div>
           </div></div>
-        </li>
+        </li>` : `<li class="nav__item"><a href="${P('treatments')}" class="nav__link">${S.nav.treatments}</a></li>`}
         <li class="nav__item"><a href="${P('prices')}" class="nav__link"${a('prices')}>${S.nav.prices}</a></li>
         <li class="nav__item"><a href="${P('about')}" class="nav__link"${a('about')}>${S.nav.about}</a></li>
         <li class="nav__item"><a href="${P('contact')}" class="nav__link"${a('contact')}>${S.nav.contact}</a></li>
@@ -242,10 +252,10 @@ function header(active, key) {
     <nav aria-label="${S.mobileNav}">
       <ul class="mnav__list">
         <li><a href="${P('home')}">${S.nav.home}</a></li>
-        <li><details><summary>${S.nav.treatments} ${icon('plus')}</summary>
+        ${DETAIL_PAGES ? `<li><details><summary>${S.nav.treatments} ${icon('plus')}</summary>
           ${D.CATEGORIES.map((c) => `<p class="mnav__cat">${esc(c.name)}</p><ul>${D.TREATMENTS.filter((t) => t.category === c.id).map((t) => `<li><a href="${tPath(t)}">${esc(t.navName)}</a></li>`).join('')}</ul>`).join('')}
           <p class="mnav__cat"><a href="${P('treatments')}">${S.allTreatments}</a></p>
-        </details></li>
+        </details></li>` : `<li><a href="${P('treatments')}">${S.nav.treatments}</a></li>`}
         <li><a href="${P('prices')}">${S.nav.prices}</a></li>
         <li><a href="${P('about')}">${S.nav.about}</a></li>
         <li><a href="${P('contact')}">${S.nav.contact}</a></li>
@@ -300,7 +310,8 @@ function footer({ cta = true, topic = '' } = {}) {
         <p>${S.ftrText}</p>
         <div class="ftr__social">${social.map(([u, l, i]) => `<a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${l}">${icon(i)}</a>`).join('')}</div>
       </div>
-      <nav aria-label="${S.ftrPopular}"><p class="ftr__title">${S.ftrPopular}</p><ul>${popular.map((t) => `<li><a href="${tPath(t)}">${esc(t.navName)}</a></li>`).join('')}<li><a class="ftr__more" href="${P('treatments')}">${S.allTreatments}</a></li></ul></nav>
+      ${DETAIL_PAGES ? `<nav aria-label="${S.ftrPopular}"><p class="ftr__title">${S.ftrPopular}</p><ul>${popular.map((t) => `<li><a href="${tPath(t)}">${esc(t.navName)}</a></li>`).join('')}<li><a class="ftr__more" href="${P('treatments')}">${S.allTreatments}</a></li></ul></nav>`
+        : `<nav aria-label="${S.nav.treatments}"><p class="ftr__title">${S.nav.treatments}</p><ul>${D.CATEGORIES.map((c) => `<li><a href="${P('home')}#kat-${c.id}">${esc(c.name)}</a></li>`).join('')}<li><a class="ftr__more" href="${P('prices')}">${S.nav.prices}</a></li></ul></nav>`}
       <nav aria-label="${S.ftrStudio}"><p class="ftr__title">${S.ftrStudio}</p><ul><li><a href="${P('treatments')}">${S.nav.treatments}</a></li><li><a href="${P('prices')}">${S.nav.prices}</a></li><li><a href="${P('about')}">${S.nav.about}</a></li><li><a href="${P('contact')}">${S.nav.contact}</a></li></ul></nav>
       <div>
         <p class="ftr__title">${S.ftrContact}</p>
@@ -673,8 +684,37 @@ function buildLang(lang) {
         <span class="cat__arrow">${icon('arrow')}</span>
       </a></li>`).join('')}</ul>`;
 
-  /* Startseite – Angebot → Lounge → Vertrauen → Einwände → Abschluss */
+  /* Startseite – psychologisch aufgebaut: Versprechen → Vertrauen → Wiedererkennen → Angebot → Beweis → einfacher Weg → Einwände → Abschluss */
   {
+    const C = de ? {
+      trustReviews: 'Google-Bewertungen', trustYears: '15+ Jahre Erfahrung', trustFree: 'Erstberatung kostenlos',
+      usp: [['gift', 'Kostenlose Erstberatung', 'Unverbindlich und ohne Verkaufsdruck'], ['heart', 'Ehrlich beraten', 'Wir raten auch ab, wenn etwas nicht passt'], ['star', 'Über 15 Jahre Erfahrung', 'Sorgfalt von der Beratung bis zur Nachsorge'], ['shield', 'Zugelassene Produkte', 'Hochwertige, geprüfte Präparate und Geräte']],
+      pEyebrow: 'Kennen Sie das?', pTitle: 'Frischer aussehen –', pAccent: 'aber nicht «gemacht»',
+      pains: ['Sie wünschen sich ein frischeres Aussehen, aber keine sichtbaren Veränderungen.', 'Sie wissen nicht, welche Behandlung für Sie wirklich sinnvoll ist.', 'Sie möchten ehrlich beraten werden – statt etwas verkauft zu bekommen.'],
+      pSolve: 'Genau dafür sind wir da.', pText: 'In der Liyas Lounge beginnt jede Behandlung mit Zuhören. Wir empfehlen nur, was zu Ihnen passt – und sagen offen, wenn wir abraten.', pCta: 'Kostenlos beraten lassen',
+      kEyebrow: 'Behandlungen', kTitle: 'Was dürfen wir', kAccent: 'für Sie tun?', kText: 'Drei Bereiche, ein Anspruch: natürliche, typgerechte Ergebnisse. Welche Behandlung zu Ihnen passt, finden wir gemeinsam in der kostenlosen Beratung heraus.',
+      kAsk: 'Beratung anfragen', kPrices: 'Preise', kWa: (n) => `Hallo Liyas Lounge, ich interessiere mich für ${n} und hätte gerne eine kostenlose Beratung.`,
+      rEyebrow: 'Kundenstimmen', rTitle: 'Was unsere Kundinnen', rAccent: 'sagen', rOf: 'von 5', rFrom: (n) => `aus ${n} Google-Bewertungen`, rAll: 'Alle Bewertungen auf Google',
+      sEyebrow: 'So einfach geht’s', sTitle: 'In drei Schritten', sAccent: 'zu Ihrem Termin',
+      steps: [['Nachricht senden', 'Per WhatsApp, Telefon oder E-Mail – gerne mit Foto und Ihren Wünschen.'], ['Kostenlose Beratung', 'Wir besprechen Möglichkeiten, Ablauf und Kosten – ehrlich und unverbindlich.'], ['Ihre Behandlung', 'In ruhiger Atmosphäre, ohne Zeitdruck und mit klarer Nachsorge.']],
+      sCta: 'Jetzt Nachricht schreiben', sNote: 'Unverbindlich · Wir melden uns schnellstmöglich',
+    } : {
+      trustReviews: 'Google reviews', trustYears: '15+ years of experience', trustFree: 'Free consultation',
+      usp: [['gift', 'Free consultation', 'No obligation and no sales pressure'], ['heart', 'Honest advice', 'We will tell you if something isn’t right for you'], ['star', 'Over 15 years of experience', 'Care from consultation to aftercare'], ['shield', 'Approved products', 'High-quality, tested products and devices']],
+      pEyebrow: 'Sound familiar?', pTitle: 'Looking fresher –', pAccent: 'but not “done”',
+      pains: ['You would like to look fresher, without any visible change.', 'You are not sure which treatment really makes sense for you.', 'You want honest advice – not a sales pitch.'],
+      pSolve: 'That is exactly what we are here for.', pText: 'At Liyas Lounge, every treatment begins with listening. We only recommend what suits you – and we will tell you openly if we advise against something.', pCta: 'Get free advice',
+      kEyebrow: 'Treatments', kTitle: 'How can we', kAccent: 'help you?', kText: 'Three areas, one standard: natural results that suit you. Which treatment is right for you is something we work out together in your free consultation.',
+      kAsk: 'Request a consultation', kPrices: 'Prices', kWa: (n) => `Hello Liyas Lounge, I am interested in ${n} and would like a free consultation.`,
+      rEyebrow: 'Client reviews', rTitle: 'What our clients', rAccent: 'say', rOf: 'out of 5', rFrom: (n) => `from ${n} Google reviews`, rAll: 'All reviews on Google',
+      sEyebrow: 'It’s that simple', sTitle: 'Three steps', sAccent: 'to your appointment',
+      steps: [['Send a message', 'Via WhatsApp, phone or email – photos and your wishes are welcome.'], ['Free consultation', 'We discuss options, process and costs – honestly and without obligation.'], ['Your treatment', 'In a calm setting, never rushed, with clear aftercare.']],
+      sCta: 'Send a message now', sNote: 'No obligation · We will get back to you as soon as possible',
+    };
+    const rating = SITE.googleRating && SITE.googleReviewCount;
+    const ratingTxt = rating ? String(SITE.googleRating).replace('.', de ? ',' : '.') : '';
+    const waTo = (text) => esc(`${SITE.whatsapp}?text=${encodeURIComponent(text)}`);
+    const firstOf = (c) => TR.find((t) => t.category === c.id);
     const body = `
 <section class="hero" aria-labelledby="hero-title">
   ${heroMedia(HOME.heroImage, H.heroAlt, HOME.heroPos, HOME.heroPosMobile)}
@@ -683,28 +723,90 @@ function buildLang(lang) {
       <h1 class="title title--xl title--light hero__title" id="hero-title"><span class="ln"><span>${H.l1}</span></span><span class="ln"><span><em>${H.l2}</em></span></span><span class="ln"><span>${H.l3}</span></span></h1>
       <div class="hero__side">
         <p class="hero__lead fade-up d1">${H.heroLead}</p>
-        <div class="hero__ctas fade-up d2">${bookBtn(S.book, 'btn btn--light btn--lg')}<button type="button" class="btn btn--line-light btn--lg" data-contact data-intent="consult" aria-haspopup="dialog" aria-controls="contact"><span>${H.second}</span></button></div>
+        <div class="hero__ctas fade-up d2">${bookBtn(S.book, 'btn btn--light btn--lg')}<a class="btn btn--line-light btn--lg" href="${waTo(S.waConsult)}" target="_blank" rel="noopener"><span>${H.second}</span></a></div>
+        <ul class="hero__proof fade-up d3">
+          ${rating ? `<li><span class="hero__stars" aria-hidden="true">${icon('star').repeat(5)}</span><b>${ratingTxt}</b> · ${SITE.googleReviewCount} ${C.trustReviews}</li>` : ''}
+          <li>${icon('check')}${C.trustYears}</li><li>${icon('check')}${C.trustFree}</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt section--rail" id="behandlungen" aria-labelledby="treat-title">
+<section class="usp" aria-label="${de ? 'Ihre Vorteile' : 'Why Liyas Lounge'}">
+  <ul class="container usp__list">${C.usp.map(([ic, t, d], i) => `<li data-reveal style="--d:${i * 80}ms"><span class="usp__ico">${icon(ic)}</span><div><b>${t}</b><span>${d}</span></div></li>`).join('')}</ul>
+</section>
+
+<section class="section pain" aria-labelledby="pain-title">
+  <div class="container pain__grid">
+    <div><p class="eyebrow" data-reveal>${C.pEyebrow}</p>${title(C.pTitle, C.pAccent, { id: 'pain-title' })}</div>
+    <div>
+      <ul class="pain__list">${C.pains.map((x, i) => `<li data-reveal style="--d:${i * 90}ms"><span>0${i + 1}</span><p>${x}</p></li>`).join('')}</ul>
+      <div class="pain__solve" data-reveal><p class="pain__answer">${C.pSolve}</p><p>${C.pText}</p><a class="btn btn--dark" href="${waTo(S.waConsult)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.pCta}</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="behandlungen" aria-labelledby="treat-title">
   <div class="container">
     <div class="head">
-      <div><p class="eyebrow" data-reveal>${H.tEyebrow}</p>${title(H.tTitle, H.tAccent, { id: 'treat-title' })}</div>
-      <div class="head__text" data-reveal><p>${H.tText}</p></div>
+      <div><p class="eyebrow" data-reveal>${C.kEyebrow}</p>${title(C.kTitle, C.kAccent, { id: 'treat-title' })}</div>
+      <div class="head__text" data-reveal><p>${C.kText}</p></div>
     </div>
-    ${treatRail(TR)}
-    <div class="tl__more" data-reveal>${bookBtn()}<a class="btn btn--line" href="${P('prices')}"><span>${H.allPrices}</span>${icon('arrow')}</a></div>
+  </div>
+  <div class="kats" data-kats>
+    <ul class="kats__track">${D.CATEGORIES.map((c, i) => {
+      const items = TR.filter((t) => t.category === c.id);
+      return `<li class="kat" id="kat-${c.id}" data-reveal style="--d:${i * 100}ms">
+      <div class="kat__media">${pic(c.image, c.name, { sizes: '(max-width: 900px) 80vw, 31vw' })}<span class="kat__num">0${i + 1}</span></div>
+      <div class="kat__body">
+        <h3 class="kat__name">${esc(c.name)}</h3>
+        <p class="kat__claim">${esc(c.claim)}</p>
+        <p class="kat__text">${esc(c.text)}</p>
+        <p class="kat__incl">${esc(c.short)}</p>
+        <p class="kat__from">${S.from} <b>${chf(Math.min(...items.map(minPrice)))}</b></p>
+        <div class="kat__ctas"><a class="btn btn--dark btn--sm" href="${waTo(C.kWa(c.name))}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.kAsk}</span></a><a class="link" href="${P('prices')}#${firstOf(c).deSlug}">${C.kPrices} ${icon('right')}</a></div>
+      </div>
+    </li>`;
+    }).join('')}</ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="rev-title">
+  <div class="container">
+    <div class="rhead">
+      <div><p class="eyebrow" data-reveal>${C.rEyebrow}</p>${title(C.rTitle, C.rAccent, { id: 'rev-title' })}</div>
+      ${rating ? `<a class="rscore" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-reveal><b>${ratingTxt}</b><span><span class="rscore__stars" aria-hidden="true">${icon('star').repeat(5)}</span>${C.rOf} · ${C.rFrom(SITE.googleReviewCount)}</span></a>` : ''}
+    </div>
+  </div>
+  <div data-rail-wrap>
+    <div class="trail" data-rail>
+      <ul class="trail__track">${D.REVIEWS.map((rv) => `<li class="rcard">
+        <figure>
+          <div class="rcard__stars" aria-label="${H.stars}">${icon('star').repeat(5)}</div>
+          <blockquote><p>${de ? '„' : '“'}${esc(rv.text)}${de ? '“' : '”'}</p></blockquote>
+          <figcaption><span class="rcard__avatar" aria-hidden="true">${esc(rv.name.charAt(0))}</span><span><b>${esc(rv.name)}</b>${rv.place ? `<small>${esc(rv.place)} · ${esc(rv.tag)}</small>` : `<small>${esc(rv.tag)}</small>`}</span></figcaption>
+        </figure>
+      </li>`).join('')}</ul>
+    </div>
+    <div class="container rfoot"><div class="trail__bar" aria-hidden="true"><span data-progress></span></div><div class="trail__arrows"><button type="button" class="arrow-circle" data-dir="-1" aria-label="${H.prev}">${icon('left')}</button><button type="button" class="arrow-circle" data-dir="1" aria-label="${H.next}">${icon('right')}</button></div></div>
+    ${rating ? '' : `<div class="container"><p class="reviews__google" data-reveal>${googleLink()}</p></div>`}
+  </div>
+</section>
+
+<section class="section section--dark how" aria-labelledby="how-title">
+  <div class="container">
+    <div class="head">
+      <div><p class="eyebrow eyebrow--light" data-reveal>${C.sEyebrow}</p>${title(C.sTitle, C.sAccent, { id: 'how-title', cls: 'title--light' })}</div>
+    </div>
+    <ol class="how__steps">${C.steps.map(([t, d], i) => `<li data-reveal style="--d:${i * 100}ms"><span class="how__n">0${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
+    <div class="how__cta" data-reveal><a class="btn btn--light btn--lg" href="${waTo(S.waConsult)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.sCta}</span></a><small>${C.sNote}</small></div>
   </div>
 </section>
 
 ${studioBand()}
 
 ${expertsSection()}
-
-${reviewsSection()}
 
 <section class="section" aria-labelledby="faq-title">
   <div class="container faq-grid">
@@ -739,7 +841,7 @@ ${visitBlock()}
     faqOf: 'FAQ', fTitle: 'Frequent', fAccent: 'Questions', fText: 'Any questions? We’re happy to advise you personally – via WhatsApp, by phone or in the lounge.',
     relEyebrow: 'Goes well with', relTitle: 'More', relAccent: 'Treatments', allT: 'All treatments', and: 'and',
   };
-  for (const t of TR) {
+  if (DETAIL_PAGES) for (const t of TR) {
     const cat = CAT[t.category];
     const key = 't:' + t.deSlug;
     const path = tPath(t);
@@ -879,7 +981,7 @@ ${trustSection({ first: 0, alt: true })}
   }
 
   /* Behandlungen Übersicht */
-  {
+  if (DETAIL_PAGES) {
     const n = TR.length;
     const T = de
       ? { l1: 'Behandlungen', l2: 'in Olten', eyebrow: `${n} Behandlungen · ${D.CATEGORIES.length} Kategorien`, h2: 'Finden Sie', h2a: 'Ihre Behandlung', text: `Medical Aesthetic, Haut &amp; Gesicht und Beauty – alle ${n} Behandlungen der Liyas Lounge in Olten im Überblick.`, alt: 'Lounge der Liyas Lounge in Olten', title: 'Alle Behandlungen – Ästhetik & Beauty Olten | Liyas Lounge', description: 'Alle Behandlungen im Überblick: Dermal Filler, Faltenrelaxing, Mesotherapie, Fadenlifting, Facials, HIFU, Morpheus8, Permanent Make-up, Lashes & IPL in Olten.' }
@@ -939,7 +1041,7 @@ ${reviewsSection({ alt: false })}
         <div class="pgroup__img">${pic(t.image, t.imageAlt, { sizes: '(max-width: 900px) 92vw, 26vw' })}</div>
         <p class="eyebrow">${esc(CAT[t.category].name)}</p>
         <h2 id="pg-${t.deSlug}">${esc(t.navName)}</h2>
-        <a class="link" href="${tPath(t)}">${T.to} ${icon('right')}</a>
+        ${DETAIL_PAGES ? `<a class="link" href="${tPath(t)}">${T.to} ${icon('right')}</a>` : ''}
       </div>
       <div data-reveal><ul class="plist">${t.prices.map(priceRow).join('')}</ul>${t.priceNote ? `<p class="note">${esc(t.priceNote)}</p>` : ''}</div>
     </article>`).join('')}

@@ -21,17 +21,18 @@ export const SITE = {
   mapEmbed: 'https://www.google.com/maps?q=Olten%2C%20Schweiz&output=embed',
   geo: { lat: 47.3505, lng: 7.9033 },
   // ▼ Von der Kundin zu ergänzen – leer/null lassen = wird nicht angezeigt
-  googleRating: null,
-  googleReviewCount: null,
+  // ⚠ DEMO-Werte nur für die Präsentation – vor dem Livegang durch echte Google-Werte ersetzen oder auf null setzen
+  googleRating: 4.9,
+  googleReviewCount: 87,
   hours: [{ days: ['Mo', 'Tu', 'We', 'Th', 'Fr'], de: 'Mo–Fr', en: 'Mon–Fri', opens: '10:00', closes: '19:00' }],
   hoursNote: { de: 'Sa nach Vereinbarung', en: 'Sat by appointment' },
   payment: { de: 'Bar, TWINT, Karte', en: 'Cash, TWINT, card' },
 };
 
 export const CATEGORIES = [
-  { id: 'medical', name: 'Medical Aesthetic', short: 'Filler, Faltenrelaxing, Fäden & Mesotherapie', image: 'medical-aesthetic-olten' },
-  { id: 'haut', name: 'Haut & Gesicht', short: 'Facials, HIFU 5D, Morpheus8 & Plasma Pen', image: 'facial-treatment-olten' },
-  { id: 'beauty', name: 'Beauty', short: 'Permanent Make-up, Lashes, IPL & Bleaching', image: 'beauty-wimpern-olten' },
+  { id: 'medical', name: 'Medical Aesthetic', short: 'Filler, Faltenrelaxing, Fäden & Mesotherapie', claim: 'Frischer aussehen – nicht verändert.', text: 'Dezente, typgerechte Behandlungen für Gesicht und Kontur – sorgfältig dosiert und ehrlich beraten.', image: 'medical-aesthetic-olten' },
+  { id: 'haut', name: 'Haut & Gesicht', short: 'Facials, HIFU 5D, Morpheus8 & Plasma Pen', claim: 'Haut, die sich gepflegt anfühlt.', text: 'Von der Tiefenreinigung bis zur Hautstraffung – abgestimmt auf Ihren Hauttyp und Ihre Ziele.', image: 'facial-treatment-olten' },
+  { id: 'beauty', name: 'Beauty', short: 'Permanent Make-up, Lashes, IPL & Bleaching', claim: 'Jeden Morgen bereit.', text: 'Augenbrauen, Wimpern, glatte Haut und ein strahlendes Lächeln – mit feinem Gespür für Proportionen.', image: 'beauty-wimpern-olten' },
 ];
 
 const NOTE = 'Ob eine Behandlung für Sie geeignet ist, klären wir in der persönlichen Beratung.';
@@ -743,10 +744,15 @@ export const TEAM = [
   },
 ];
 
-// Platzhalter – bitte durch echte Bewertungen (z. B. aus Google, mit Einverständnis) ersetzen
+// ⚠ DEMO-Bewertungen – nur zur Präsentation des Designs. NICHT so veröffentlichen:
+// erfundene Bewertungen sind irreführend (UWG). Vor dem Livegang durch echte Bewertungen ersetzen (mit Einverständnis).
 export const REVIEWS = [
-  { name: '[Name]', text: '[Platzhalter – hier erscheint eine echte Kundenbewertung]', tag: '[Behandlung]' },
-  { name: '[Name]', text: '[Platzhalter – hier erscheint eine echte Kundenbewertung]', tag: '[Behandlung]' },
+  { name: 'Sandra M.', place: 'Olten', text: 'Ich hatte grosse Bedenken, danach «gemacht» auszusehen. Die Beratung war ehrlich und ruhig – ich sehe einfach frischer aus, und niemand fragt, was ich gemacht habe.', tag: 'Dermal Filler', demo: true },
+  { name: 'Elena K.', place: 'Aarau', text: 'Man nimmt sich wirklich Zeit. Ich wurde nicht zu etwas überredet – im Gegenteil, mir wurde von einer Behandlung abgeraten. Genau deshalb komme ich wieder.', tag: 'Beratung', demo: true },
+  { name: 'Nadine B.', place: 'Olten', text: 'Die Atmosphäre ist wunderschön und sehr diskret. Das Facial war pure Entspannung und meine Haut fühlt sich so gepflegt an wie lange nicht mehr.', tag: 'Facial Treatment', demo: true },
+  { name: 'Laura S.', place: 'Zofingen', text: 'Meine Wimpern sehen natürlich aus und halten super. Termin per WhatsApp war in zwei Minuten vereinbart – einfacher geht es nicht.', tag: 'Wimpernverlängerung', demo: true },
+  { name: 'Melanie R.', place: 'Solothurn', text: 'Sehr professionell und sauber. Alles wurde Schritt für Schritt erklärt, auch die Kosten waren vorher klar. Ich habe mich zu jeder Zeit gut aufgehoben gefühlt.', tag: 'HIFU 5D Lift', demo: true },
+  { name: 'Jasmin T.', place: 'Olten', text: 'Endlich keine Zeit mehr mit Augenbrauen-Schminken am Morgen. Das Ergebnis passt perfekt zu meinem Gesicht – genau so dezent, wie ich es wollte.', tag: 'Permanent Make-up', demo: true },
 ];
 
 export const HOME_FAQ = [

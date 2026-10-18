@@ -14,16 +14,6 @@
       "permanent": true
     },
     {
-      "source": "/behandlungen/dermal-filler(\\.html)?",
-      "destination": "/dermal-filler-olten",
-      "permanent": true
-    },
-    {
-      "source": "/en/treatments/dermal-filler(\\.html)?",
-      "destination": "/en/dermal-fillers-olten",
-      "permanent": true
-    },
-    {
       "source": "/preise.html",
       "destination": "/preise",
       "permanent": true
@@ -32,6 +22,156 @@
       "source": "/en/prices.html",
       "destination": "/en/prices",
       "permanent": true
+    },
+    {
+      "source": "/behandlungen/dermal-filler(\\.html)?",
+      "destination": "/preise#dermal-filler-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/treatments/dermal-filler(\\.html)?",
+      "destination": "/en/prices#dermal-filler-olten",
+      "permanent": false
+    },
+    {
+      "source": "/behandlungen",
+      "destination": "/#behandlungen",
+      "permanent": false
+    },
+    {
+      "source": "/en/treatments",
+      "destination": "/en#behandlungen",
+      "permanent": false
+    },
+    {
+      "source": "/dermal-filler-olten",
+      "destination": "/preise#dermal-filler-olten",
+      "permanent": false
+    },
+    {
+      "source": "/faltenrelaxing-olten",
+      "destination": "/preise#faltenrelaxing-olten",
+      "permanent": false
+    },
+    {
+      "source": "/mesotherapie-olten",
+      "destination": "/preise#mesotherapie-olten",
+      "permanent": false
+    },
+    {
+      "source": "/lipolyse-olten",
+      "destination": "/preise#lipolyse-olten",
+      "permanent": false
+    },
+    {
+      "source": "/fadenlifting-olten",
+      "destination": "/preise#fadenlifting-olten",
+      "permanent": false
+    },
+    {
+      "source": "/facial-treatments-olten",
+      "destination": "/preise#facial-treatments-olten",
+      "permanent": false
+    },
+    {
+      "source": "/hifu-olten",
+      "destination": "/preise#hifu-olten",
+      "permanent": false
+    },
+    {
+      "source": "/morpheus8-olten",
+      "destination": "/preise#morpheus8-olten",
+      "permanent": false
+    },
+    {
+      "source": "/plasma-pen-olten",
+      "destination": "/preise#plasma-pen-olten",
+      "permanent": false
+    },
+    {
+      "source": "/permanent-make-up-olten",
+      "destination": "/preise#permanent-make-up-olten",
+      "permanent": false
+    },
+    {
+      "source": "/wimpernverlaengerung-olten",
+      "destination": "/preise#wimpernverlaengerung-olten",
+      "permanent": false
+    },
+    {
+      "source": "/ipl-haarentfernung-olten",
+      "destination": "/preise#ipl-haarentfernung-olten",
+      "permanent": false
+    },
+    {
+      "source": "/zahnbleaching-olten",
+      "destination": "/preise#zahnbleaching-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/dermal-fillers-olten",
+      "destination": "/en/prices#dermal-filler-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/wrinkle-relaxing-olten",
+      "destination": "/en/prices#faltenrelaxing-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/mesotherapy-olten",
+      "destination": "/en/prices#mesotherapie-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/lipolysis-olten",
+      "destination": "/en/prices#lipolyse-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/thread-lift-olten",
+      "destination": "/en/prices#fadenlifting-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/facial-treatments-olten",
+      "destination": "/en/prices#facial-treatments-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/hifu-olten",
+      "destination": "/en/prices#hifu-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/morpheus8-olten",
+      "destination": "/en/prices#morpheus8-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/plasma-pen-olten",
+      "destination": "/en/prices#plasma-pen-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/permanent-make-up-olten",
+      "destination": "/en/prices#permanent-make-up-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/eyelash-extensions-olten",
+      "destination": "/en/prices#wimpernverlaengerung-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/ipl-hair-removal-olten",
+      "destination": "/en/prices#ipl-haarentfernung-olten",
+      "permanent": false
+    },
+    {
+      "source": "/en/teeth-whitening-olten",
+      "destination": "/en/prices#zahnbleaching-olten",
+      "permanent": false
     }
   ],
   "headers": [

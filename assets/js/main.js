@@ -434,7 +434,7 @@
   /* ---------- Behandlungs-Karten (Startseite, je Kategorie): Pfeile, Ziehen mit der Maus ---------- */
   $$('[data-rail]').forEach(function (rail) {
     var section = rail.closest('[data-rail-wrap]') || doc;
-    var cards = $$('.tcard', rail);
+    var cards = $$('.trail__track > li', rail);
     var bar = $('[data-progress]', section);
     var prev = $('[data-dir="-1"]', section), next = $('[data-dir="1"]', section);
     var gap = 16;

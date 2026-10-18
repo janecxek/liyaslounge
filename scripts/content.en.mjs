@@ -5,9 +5,9 @@ const NOTE = 'Whether a treatment is right for you is something we discuss in yo
 const RESULT_NOTE = '*Results and longevity vary from person to person and cannot be guaranteed.';
 
 export const EN_CATEGORIES = {
-  medical: { name: 'Medical Aesthetic', short: 'Fillers, wrinkle relaxing, threads & mesotherapy' },
-  haut: { name: 'Skin & Face', short: 'Facials, HIFU 5D, Morpheus8 & Plasma Pen' },
-  beauty: { name: 'Beauty', short: 'Permanent make-up, lashes, IPL & whitening' },
+  medical: { name: 'Medical Aesthetic', short: 'Fillers, wrinkle relaxing, threads & mesotherapy', claim: 'Look refreshed – not changed.', text: 'Subtle treatments for face and contour, tailored to you – carefully dosed and honestly advised.' },
+  haut: { name: 'Skin & Face', short: 'Facials, HIFU 5D, Morpheus8 & Plasma Pen', claim: 'Skin that feels cared for.', text: 'From deep cleansing to skin tightening – matched to your skin type and your goals.' },
+  beauty: { name: 'Beauty', short: 'Permanent make-up, lashes, IPL & whitening', claim: 'Ready every morning.', text: 'Brows, lashes, smooth skin and a bright smile – with a fine sense for proportion.' },
 };
 
 const CHF2 = (a, b, x = '0.5 ml', y = '1 ml') => `CHF ${a} (${x}) · CHF ${b} (${y})`;
@@ -491,8 +491,16 @@ export const EN_TEAM = [
   },
 ];
 
-export const EN_REVIEW_TAGS = ['[Treatment]', '[Treatment]'];
-export const EN_REVIEW_TEXTS = ['[Placeholder – a genuine client review will appear here]', '[Placeholder – a genuine client review will appear here]'];
+// ⚠ DEMO reviews – for presenting the design only; replace with genuine reviews before going live
+export const EN_REVIEW_TAGS = ['Dermal Fillers', 'Consultation', 'Facial Treatment', 'Eyelash Extensions', 'HIFU 5D Lift', 'Permanent Make-up'];
+export const EN_REVIEW_TEXTS = [
+  'I was really worried about looking ‘done’. The advice was honest and calm – I simply look fresher, and nobody asks what I have had done.',
+  'They genuinely take their time. I wasn’t talked into anything – in fact, they advised me against one treatment. That is exactly why I keep coming back.',
+  'The atmosphere is beautiful and very discreet. The facial was pure relaxation, and my skin feels more cared for than it has in a long time.',
+  'My lashes look natural and last really well. Booking via WhatsApp took two minutes – it couldn’t be easier.',
+  'Very professional and spotless. Everything was explained step by step, and the costs were clear beforehand. I felt in good hands the whole time.',
+  'No more time spent drawing on my brows in the morning. The result suits my face perfectly – just as subtle as I wanted.',
+];
 
 export const EN_HOME_FAQ = [
   ['Will the result look natural?', 'That is our aim. We dose to suit you and tell you honestly when a treatment is not right for you. The goal is for you to look refreshed – not “done”.'],
