@@ -684,14 +684,10 @@ function buildLang(lang) {
         <span class="cat__arrow">${icon('arrow')}</span>
       </a></li>`).join('')}</ul>`;
 
-  /* Startseite – psychologisch aufgebaut: Versprechen → Vertrauen → Wiedererkennen → Angebot → Beweis → einfacher Weg → Einwände → Abschluss */
+  /* Startseite – Versprechen & Vertrauen → Angebot → einfacher Weg → Lounge & Team → Beweis → Einwände → Abschluss */
   {
     const C = de ? {
       trustReviews: 'Google-Bewertungen', trustYears: '15+ Jahre Erfahrung', trustFree: 'Erstberatung kostenlos',
-      usp: [['gift', 'Kostenlose Erstberatung', 'Unverbindlich und ohne Verkaufsdruck'], ['heart', 'Ehrlich beraten', 'Wir raten auch ab, wenn etwas nicht passt'], ['star', 'Über 15 Jahre Erfahrung', 'Sorgfalt von der Beratung bis zur Nachsorge'], ['shield', 'Zugelassene Produkte', 'Hochwertige, geprüfte Präparate und Geräte']],
-      pEyebrow: 'Kennen Sie das?', pTitle: 'Frischer aussehen –', pAccent: 'aber nicht «gemacht»',
-      pains: ['Sie wünschen sich ein frischeres Aussehen, aber keine sichtbaren Veränderungen.', 'Sie wissen nicht, welche Behandlung für Sie wirklich sinnvoll ist.', 'Sie möchten ehrlich beraten werden – statt etwas verkauft zu bekommen.'],
-      pSolve: 'Genau dafür sind wir da.', pText: 'In der Liyas Lounge beginnt jede Behandlung mit Zuhören. Wir empfehlen nur, was zu Ihnen passt – und sagen offen, wenn wir abraten.', pCta: 'Kostenlos beraten lassen',
       kEyebrow: 'Behandlungen', kTitle: 'Was dürfen wir', kAccent: 'für Sie tun?', kText: 'Drei Bereiche, ein Anspruch: natürliche, typgerechte Ergebnisse. Welche Behandlung zu Ihnen passt, finden wir gemeinsam in der kostenlosen Beratung heraus.',
       kAsk: 'Beratung anfragen', kPrices: 'Preise', kWa: (n) => `Hallo Liyas Lounge, ich interessiere mich für ${n} und hätte gerne eine kostenlose Beratung.`,
       rEyebrow: 'Kundenstimmen', rTitle: 'Was unsere Kundinnen', rAccent: 'sagen', rOf: 'von 5', rFrom: (n) => `aus ${n} Google-Bewertungen`, rAll: 'Alle Bewertungen auf Google',
@@ -700,10 +696,6 @@ function buildLang(lang) {
       sCta: 'Jetzt Nachricht schreiben', sNote: 'Unverbindlich · Wir melden uns schnellstmöglich',
     } : {
       trustReviews: 'Google reviews', trustYears: '15+ years of experience', trustFree: 'Free consultation',
-      usp: [['gift', 'Free consultation', 'No obligation and no sales pressure'], ['heart', 'Honest advice', 'We will tell you if something isn’t right for you'], ['star', 'Over 15 years of experience', 'Care from consultation to aftercare'], ['shield', 'Approved products', 'High-quality, tested products and devices']],
-      pEyebrow: 'Sound familiar?', pTitle: 'Looking fresher –', pAccent: 'but not “done”',
-      pains: ['You would like to look fresher, without any visible change.', 'You are not sure which treatment really makes sense for you.', 'You want honest advice – not a sales pitch.'],
-      pSolve: 'That is exactly what we are here for.', pText: 'At Liyas Lounge, every treatment begins with listening. We only recommend what suits you – and we will tell you openly if we advise against something.', pCta: 'Get free advice',
       kEyebrow: 'Treatments', kTitle: 'How can we', kAccent: 'help you?', kText: 'Three areas, one standard: natural results that suit you. Which treatment is right for you is something we work out together in your free consultation.',
       kAsk: 'Request a consultation', kPrices: 'Prices', kWa: (n) => `Hello Liyas Lounge, I am interested in ${n} and would like a free consultation.`,
       rEyebrow: 'Client reviews', rTitle: 'What our clients', rAccent: 'say', rOf: 'out of 5', rFrom: (n) => `from ${n} Google reviews`, rAll: 'All reviews on Google',
@@ -720,7 +712,7 @@ function buildLang(lang) {
   ${heroMedia(HOME.heroImage, H.heroAlt, HOME.heroPos, HOME.heroPosMobile)}
   <div class="container hero__content">
     <div class="hero__grid">
-      <h1 class="title title--xl title--light hero__title" id="hero-title"><span class="ln"><span>${H.l1}</span></span><span class="ln"><span><em>${H.l2}</em></span></span><span class="ln"><span>${H.l3}</span></span></h1>
+      <h1 class="title title--xl title--light hero__title hero__title--wide" id="hero-title"><span class="ln"><span>${H.l1} <em>${H.l2}</em></span></span><span class="ln"><span>${H.l3}</span></span></h1>
       <div class="hero__side">
         <p class="hero__lead fade-up d1">${H.heroLead}</p>
         <div class="hero__ctas fade-up d2">${bookBtn(S.book, 'btn btn--light btn--lg')}<a class="btn btn--line-light btn--lg" href="${waTo(S.waConsult)}" target="_blank" rel="noopener"><span>${H.second}</span></a></div>
@@ -729,20 +721,6 @@ function buildLang(lang) {
           <li>${icon('check')}${C.trustYears}</li><li>${icon('check')}${C.trustFree}</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="usp" aria-label="${de ? 'Ihre Vorteile' : 'Why Liyas Lounge'}">
-  <ul class="container usp__list">${C.usp.map(([ic, t, d], i) => `<li data-reveal style="--d:${i * 80}ms"><span class="usp__ico">${icon(ic)}</span><div><b>${t}</b><span>${d}</span></div></li>`).join('')}</ul>
-</section>
-
-<section class="section pain" aria-labelledby="pain-title">
-  <div class="container pain__grid">
-    <div><p class="eyebrow" data-reveal>${C.pEyebrow}</p>${title(C.pTitle, C.pAccent, { id: 'pain-title' })}</div>
-    <div>
-      <ul class="pain__list">${C.pains.map((x, i) => `<li data-reveal style="--d:${i * 90}ms"><span>0${i + 1}</span><p>${x}</p></li>`).join('')}</ul>
-      <div class="pain__solve" data-reveal><p class="pain__answer">${C.pSolve}</p><p>${C.pText}</p><a class="btn btn--dark" href="${waTo(S.waConsult)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.pCta}</span></a></div>
     </div>
   </div>
 </section>
@@ -772,7 +750,21 @@ function buildLang(lang) {
   </div>
 </section>
 
-<section class="section" aria-labelledby="rev-title">
+<section class="section section--dark how" aria-labelledby="how-title">
+  <div class="container">
+    <div class="head">
+      <div><p class="eyebrow eyebrow--light" data-reveal>${C.sEyebrow}</p>${title(C.sTitle, C.sAccent, { id: 'how-title', cls: 'title--light' })}</div>
+    </div>
+    <ol class="how__steps">${C.steps.map(([t, d], i) => `<li data-reveal style="--d:${i * 100}ms"><span class="how__n">0${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
+    <div class="how__cta" data-reveal><a class="btn btn--light btn--lg" href="${waTo(S.waConsult)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.sCta}</span></a><small>${C.sNote}</small></div>
+  </div>
+</section>
+
+${studioBand()}
+
+${expertsSection()}
+
+<section class="section section--alt" aria-labelledby="rev-title">
   <div class="container">
     <div class="rhead">
       <div><p class="eyebrow" data-reveal>${C.rEyebrow}</p>${title(C.rTitle, C.rAccent, { id: 'rev-title' })}</div>
@@ -793,20 +785,6 @@ function buildLang(lang) {
     ${rating ? '' : `<div class="container"><p class="reviews__google" data-reveal>${googleLink()}</p></div>`}
   </div>
 </section>
-
-<section class="section section--dark how" aria-labelledby="how-title">
-  <div class="container">
-    <div class="head">
-      <div><p class="eyebrow eyebrow--light" data-reveal>${C.sEyebrow}</p>${title(C.sTitle, C.sAccent, { id: 'how-title', cls: 'title--light' })}</div>
-    </div>
-    <ol class="how__steps">${C.steps.map(([t, d], i) => `<li data-reveal style="--d:${i * 100}ms"><span class="how__n">0${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
-    <div class="how__cta" data-reveal><a class="btn btn--light btn--lg" href="${waTo(S.waConsult)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.sCta}</span></a><small>${C.sNote}</small></div>
-  </div>
-</section>
-
-${studioBand()}
-
-${expertsSection()}
 
 <section class="section" aria-labelledby="faq-title">
   <div class="container faq-grid">
