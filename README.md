@@ -10,6 +10,9 @@ Kein Build-Schritt nötig: reines HTML/CSS/JS.
 /behandlungen/dermal-filler.html     → DE  Behandlungsseite
 /en/index.html                       → EN  Homepage (lang="en")
 /en/treatments/dermal-filler.html    → EN  Treatment page
+/preise.html                         → DE  Preisliste (aus der Preisliste der Kundin, Okt. 2026)
+/en/prices.html                      → EN  Price list
+/docs/bild-prompts.md                → fertige ChatGPT-Prompts für alle Bilder
 /assets/css/style.css                → gemeinsam für beide Sprachen
 /assets/js/main.js                   → gemeinsam für beide Sprachen
 /assets/img/                         → gemeinsame Bilder
@@ -41,18 +44,23 @@ Kein Build-Schritt nötig: reines HTML/CSS/JS.
 ## Farbvarianten (Vorschau für die Kundin)
 
 Unten links auf jeder Seite: Auswahl „Farbvariante“ zum direkten Vergleichen. Die Wahl bleibt beim Sprach- und
-Seitenwechsel erhalten (wie das Hell/Dunkel-Motiv). Direktlinks: `?palette=gold`, `?palette=noir`, `?palette=rose`.
+Seitenwechsel erhalten (wie das Hell/Dunkel-Motiv). Direktlinks: `?palette=noir` (Standard), `?palette=espresso`, `?palette=gold`, `?palette=rose`.
 
 | Variante | Grund | Akzent / Karten & Footer |
 |---|---|---|
-| Espresso (Original, Standard) | Weiss `#ffffff`, Text Navy `#19154e` | Espresso `#5b3a28` |
+| Espresso (Template) | Weiss `#ffffff`, Text Navy `#19154e` | Espresso `#5b3a28` |
 | Gold & Creme | Creme `#f8f4ee`, Text `#2e2621` | Gold `#b08d57`, Karten `#2e2621` |
-| Schwarz & Gold | Weiss, Text `#1c1c1c` | Schwarz `#141414`, Gold `#c5a467` |
+| **Schwarz & Gold (Standard, Logo-Farben)** | Weiss, Text `#1c1c1c` | Schwarz `#141414`, Gold `#c5a467` |
 | Nude & Rosé | Nude `#fcf7f4`, Text `#3b2b2a` | Rosé-Braun `#8c5d56`, Akzent `#c9a27e` |
 | Dunkel | `#120e0b` | Espresso `#3a2519`, Sand `#e8cfb6` |
 
 Farben je Variante stehen in `assets/css/style.css` (Abschnitt „Colour variants“). Nach der Entscheidung:
 gewünschte Werte als Standard in `:root` übernehmen und in `assets/js/main.js` `SHOW_PALETTE_PICKER = false` setzen.
+
+## Bilder
+
+Jeder Bildplatz hat einen eigenen Dateinamen in `assets/img/` (z. B. `hero.jpg`, `kategorie-medical.jpg`, `ablauf-1-beratung.jpg`).
+Neues Bild unter dem gleichen Namen speichern – fertig. Prompts: `docs/bild-prompts.md`.
 
 ## SEO
 

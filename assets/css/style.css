@@ -134,7 +134,7 @@
 
 /* ---------- Colour variants for client comparison (light theme only) ----------
    Set via the "Farbvariante" picker (assets/js/main.js) or ?palette=gold|noir|rose.
-   Default without attribute = espresso (original template). */
+   Default = noir (black & gold, the client's logo colours); espresso = the original template (no attribute). */
 :root[data-palette="gold"]:not([data-theme="dark"]) {
   --bg: #f8f4ee; --bg-alt: #f8f4ee; --surface: #fffdf9;
   --text: #2e2621; --text-soft: #6f645b; --text-mute: #8a7f75;
@@ -360,11 +360,11 @@ strong { font-weight: 700; }
 .mobile-menu .btn { align-self: flex-start; }
 .mobile-menu-meta { display: flex; flex-direction: column; gap: 2px; font-size: 15px; color: var(--text-soft); }
 
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .main-nav, .header-tools > .btn, .header-tools > .lang-switch { display: none; }
   .menu-toggle { display: block; }
 }
-@media (min-width: 1081px) { .mobile-menu { display: none; } }
+@media (min-width: 1241px) { .mobile-menu { display: none; } }
 body.menu-open { overflow: hidden; }
 
 /* ---------- Hero (full-bleed image + growing script headline) ---------- */
@@ -595,6 +595,45 @@ body.menu-open { overflow: hidden; }
   user-select: none;
 }
 
+/* ---------- Price list page ---------- */
+.services-more { text-align: center; margin-top: 40px; }
+.footer-pay { font-size: 15px; color: rgba(255, 255, 255, .75); margin: -16px 0 28px; }
+.keyfacts-wrap--3 .keyfacts { grid-template-columns: repeat(3, 1fr); }
+.price-chips { margin-bottom: 24px; }
+.price-chips ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0; padding: 0; }
+.price-chips a {
+  display: inline-block; padding: 12px 24px; border-radius: var(--pill);
+  border: 1px solid var(--line); font-family: var(--font-script); font-size: 22px; line-height: 1.2;
+  color: var(--heading); text-decoration: none; transition: background-color .3s, color .3s, border-color .3s;
+}
+.price-chips a:hover { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-fg); }
+.price-group { padding: 100px 0 40px; scroll-margin-top: var(--header-h); }
+.price-group .container { max-width: calc(1200px + 2 * var(--gutter)); }
+.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.price-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 44px 44px 36px; scroll-margin-top: calc(var(--header-h) + 20px); }
+.price-card h3 { margin-bottom: 10px; }
+.price-intro { color: var(--text-soft); font-size: 16px; margin-bottom: 14px; }
+.price-list { list-style: none; margin: 0; padding: 0; }
+.price-list li { display: flex; align-items: baseline; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.price-list li:last-child { border-bottom: 0; }
+.price-name { flex: 1 1 auto; display: flex; flex-direction: column; }
+.price-detail { font-family: var(--font-label); font-size: 13px; line-height: 1.4; color: var(--text-mute); margin-top: 2px; }
+.price-value { flex: 0 0 auto; font-weight: 700; color: var(--heading); white-space: nowrap; }
+.price-value::before { content: "CHF "; font-weight: 500; font-size: .85em; color: var(--text-mute); }
+.price-note { margin: 16px 0 0; padding: 14px 18px; border-radius: 16px; background: var(--bg-alt); border: 1px dashed var(--line); font-size: 15px; line-height: 1.5; color: var(--text-soft); }
+@media (max-width: 1199.98px) {
+  .price-card { padding: 36px 32px 28px; }
+  .keyfacts-wrap--3 .keyfact:nth-child(3) { border-left: 1px solid var(--line-on-brown); border-top: 0; }
+}
+@media (max-width: 809.98px) {
+  .keyfacts-wrap--3 .keyfacts { grid-template-columns: 1fr; }
+  .keyfacts-wrap--3 .keyfact:nth-child(3) { border-left: 0; border-top: 1px solid var(--line-on-brown); }
+  .price-group { padding: 64px 0 16px; }
+  .price-grid { grid-template-columns: 1fr; gap: 20px; }
+  .price-card { padding: 28px 20px 22px; }
+  .price-chips a { font-size: 18px; padding: 10px 18px; }
+}
+
 /* ---------- Scroll reveal (template: opacity 0, translateY 100px) ---------- */
 .js .reveal { opacity: 0; transform: translateY(100px); transition: opacity 1s var(--ease-out), transform 1.1s var(--ease-out); transition-delay: var(--d, 0s); }
 .js .reveal.is-visible { opacity: 1; transform: none; }
@@ -671,4 +710,13 @@ body.menu-open { overflow: hidden; }
   .faq summary { font-size: 22px; padding: 20px 70px 20px 22px; }
   .faq summary::after { right: 18px; }
   .faq details p { padding: 0 22px 22px; }
+}
+
+/* Homepage hero photo: keep the woman's face in frame on wide and narrow screens */
+.hero-media img[src$="/hero.jpg"] { object-position: 58% 22%; }
+@media (max-width: 809.98px) {
+  /* colour picker: dots only on phones so it never covers buttons */
+  .palette-picker { left: 12px; bottom: 12px; }
+  .palette-picker__toggle { padding: 10px; }
+  .palette-picker__toggle > span:last-child { display: none; }
 }

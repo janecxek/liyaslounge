@@ -1,7 +1,7 @@
 /* Liyas Lounge – shared script (DE + EN)
    The initial theme and colour variant are set by a small inline script in <head> (no flash).
    Theme priority:   ?theme=light|dark       >  saved choice  >  light (default).
-   Palette priority: ?palette=gold|noir|rose >  saved choice  >  espresso (default). */
+   Palette priority: ?palette=noir|espresso|gold|rose >  saved choice  >  noir (default, client's logo colours). */
 (function () {
   "use strict";
 
@@ -39,8 +39,7 @@
   /* Language links always carry the active theme and colour variant, so switching DE <-> EN keeps them
      (also works when localStorage is blocked, e.g. private mode or file://). */
   function syncLangLinks() {
-    var query = "?theme=" + currentTheme();
-    if (currentPalette() !== "espresso") query += "&palette=" + currentPalette();
+    var query = "?theme=" + currentTheme() + "&palette=" + currentPalette();
     document.querySelectorAll("[data-lang-link]").forEach(function (a) {
       var base = a.getAttribute("data-href") || a.getAttribute("href");
       a.setAttribute("data-href", base);
@@ -78,9 +77,9 @@
   /* ---------- Colour picker (lets the client compare variants live) ---------- */
   var isEn = (root.getAttribute("lang") || "").indexOf("en") === 0;
   var VARIANTS = [
-    { id: "espresso", de: "Espresso (Original)", en: "Espresso (original)", dots: ["#ffffff", "#5b3a28", "#19154e"] },
+    { id: "noir", de: "Schwarz & Gold (Logo)", en: "Black & gold (logo)", dots: ["#ffffff", "#141414", "#c5a467"] },
+    { id: "espresso", de: "Espresso (Template)", en: "Espresso (template)", dots: ["#ffffff", "#5b3a28", "#19154e"] },
     { id: "gold", de: "Gold & Creme", en: "Gold & cream", dots: ["#f8f4ee", "#b08d57", "#2e2621"] },
-    { id: "noir", de: "Schwarz & Gold", en: "Black & gold", dots: ["#ffffff", "#141414", "#c5a467"] },
     { id: "rose", de: "Nude & Rosé", en: "Nude & rosé", dots: ["#fcf7f4", "#8c5d56", "#c9a27e"] },
     { id: "dark", de: "Dunkel", en: "Dark", dots: ["#120e0b", "#3a2519", "#e8cfb6"] }
   ];
