@@ -33,8 +33,13 @@
     var P = activePane().el;
     return (($('.hdr', P) || {}).offsetHeight || 0) + 16;
   }
+  var samePath = function (a, b) {
+    var n = function (p) { return p.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '') || '/'; };
+    return n(a) === n(b);
+  };
   function scrollToEl(el) {
-    if (lenis) lenis.scrollTo(el, { offset: -headerOffset(), duration: 1.4 });
+    // weiche Kurve (langsam an, langsam aus), damit es «gleitet» statt zu springen
+    if (lenis) lenis.scrollTo(el, { offset: -headerOffset(), duration: 1.3, easing: function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; } });
     else window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - headerOffset(), behavior: reduceMotion ? 'auto' : 'smooth' });
   }
 
@@ -419,17 +424,29 @@
       }
       return;
     }
-    // Anker
-    var a = e.target.closest('a[href^="#"]');
-    if (a) {
-      var id = a.getAttribute('href');
-      if (id.length < 2) return;
-      var el = doc.getElementById(decodeURIComponent(id.slice(1)));
+    // Anker auf derselben Seite (auch "/#abschnitt" von der Startseite aus): sanft scrollen statt springen
+    var a = e.target.closest('a[href]');
+    if (!a || a.target || a.hasAttribute('download') || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return;
+    if (a.origin !== location.origin) return;
+    if (samePath(a.pathname, location.pathname) && a.hash.length > 1) {
+      var el = doc.getElementById(decodeURIComponent(a.hash.slice(1)));
       if (!el) return;
       e.preventDefault();
-      scrollToEl(el);
+      var wasOpen = pane.menuOpen && pane.menuOpen();
+      if (wasOpen) pane.setMenu(false);
+      try { history.pushState(null, '', a.hash); } catch (err) {}
+      setTimeout(function () { scrollToEl(el); }, wasOpen ? 320 : 0);
+      return;
+    }
+    // andere Seite: kurz ausblenden, dann wechseln (neue Seite blendet sich ein)
+    if (!samePath(a.pathname, location.pathname) && !reduceMotion && !/\.(pdf|jpe?g|png|webp|zip)$/i.test(a.pathname)) {
+      e.preventDefault();
+      root.classList.add('is-leaving');
+      setTimeout(function () { location.href = a.href; }, 260);
     }
   });
+  // Zurück-Taste (bfcache): Seite wieder sichtbar machen
+  window.addEventListener('pageshow', function () { root.classList.remove('is-leaving'); });
 
   /* ---------- Behandlungs-Karten (Startseite, je Kategorie): Pfeile, Ziehen mit der Maus ---------- */
   $$('[data-rail]').forEach(function (rail) {
@@ -504,13 +521,19 @@
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  /* ---------- Anker beim Laden ---------- */
-  if (location.hash && location.hash.length > 1) {
-    window.addEventListener('load', function () {
-      var id = decodeURIComponent(location.hash.slice(1));
-      var el = doc.getElementById(id);
-      if (el) setTimeout(function () { scrollToEl(el); }, 60);
-    });
+  /* ---------- Anker beim Laden: von oben sanft zum Abschnitt gleiten statt springen ---------- */
+  // Das Inline-Skript im <head> nimmt den #Anker vorab aus der URL (window.__hash), damit der Browser nicht springt
+  var startHash = window.__hash || location.hash;
+  if (startHash && startHash.length > 1) {
+    var hashEl = doc.getElementById(decodeURIComponent(startHash.slice(1)));
+    if (hashEl) {
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          try { history.replaceState(null, '', startHash); } catch (err) {}
+          scrollToEl(hashEl);
+        }, 150);
+      });
+    } else if (window.__hash) { try { history.replaceState(null, '', startHash); } catch (err) {} }
   }
 
   activePane().frame();
