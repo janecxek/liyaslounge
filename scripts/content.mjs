@@ -5,21 +5,22 @@
 export const SITE = {
   name: 'Liyas Lounge',
   shortName: 'Liyas Lounge',
-  url: 'https://www.liyaslounge.ch',
+  url: 'https://www.liyas-lounge.com',
+  // Instagram-Profil: WhatsApp +41 79 509 06 60 – nur Nachrichten, daher keine Anruf-Nummer auf der Website
   phone: '[Telefon folgt]',
-  phoneHref: 'tel:+41000000000',
-  whatsapp: 'https://wa.me/41000000000',
-  email: 'info@liyaslounge.ch',
-  street: '[Strasse folgt]',
+  phoneHref: 'tel:+41795090660',
+  whatsapp: 'https://wa.me/41795090660',
+  email: 'info@liyas-lounge.com', // ⚠ bitte bestätigen
+  street: 'Hammerallee 23',
   floor: '',
   zip: '4600',
   city: 'Olten',
-  instagram: '', // z. B. 'https://www.instagram.com/liyaslounge/' – leer = wird nicht angezeigt
+  instagram: 'https://www.instagram.com/liyas_lounge/',
   facebook: '',
-  googleMaps: 'https://www.google.com/maps/search/?api=1&query=Liyas+Lounge+Olten',
-  route: 'https://www.google.com/maps/dir/?api=1&destination=Liyas+Lounge+Olten',
-  mapEmbed: 'https://www.google.com/maps?q=Olten%2C%20Schweiz&output=embed',
-  geo: { lat: 47.3505, lng: 7.9033 },
+  googleMaps: 'https://maps.app.goo.gl/RDhmrkrBE8D6r3Zg9',
+  route: 'https://www.google.com/maps/dir/?api=1&destination=Liyas+Lounge,+Hammerallee+23,+4600+Olten',
+  mapEmbed: 'https://www.google.com/maps?q=Liyas%20Lounge%2C%20Hammerallee%2023%2C%204600%20Olten&output=embed',
+  geo: null, // { lat, lng } aus Google Maps eintragen
   // ▼ Von der Kundin zu ergänzen – leer/null lassen = wird nicht angezeigt
   // ⚠ DEMO-Werte nur für die Präsentation – vor dem Livegang durch echte Google-Werte ersetzen oder auf null setzen
   googleRating: 4.9,
@@ -781,10 +782,10 @@ export const AGB = [
 
 // Bilder der Startseite – zum Austauschen einfach den Bildnamen ändern (Dateien in assets/img, siehe README)
 export const HOME = {
-  heroImage: 'liyas-lounge-olten-hero', // + automatisch '…-portrait' für Smartphones im Hochformat
-  heroAlt: 'Frau mit natürlich strahlender Haut in der Liyas Lounge Olten',
-  heroPos: '58% 22%',
-  heroPosMobile: '50% 30%',
+  heroImage: 'inhaberin-liyas-lounge-olten', // Inhaberin im Studio (Hochformat 4:5)
+  heroAlt: 'Die Inhaberin der Liyas Lounge in ihrem Studio in Olten',
+  heroPos: '50% 18%',
+  heroPosMobile: '50% 14%',
   ctaImage: 'termin-liyas-lounge-olten',
   ctaAlt: 'Weisse Calla-Lilien vor schwarzem Hintergrund – Termin in der Liyas Lounge Olten',
   aboutHero: 'studio-liyas-lounge-empfang',
