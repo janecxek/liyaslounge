@@ -46,6 +46,14 @@ Bis 4K (3840 px Breite), Qualität 90 – die Grösse des Originals ist die Ober
 Optional: `<name>-portrait` als Ausschnitt für Handys; Fokuspunkt `fx`/`fy` (in %) in `imgmeta.json` (bleibt beim erneuten Import erhalten).
 Prompts für noch fehlende Bilder: `docs/bild-prompts.md`.
 
+## Vorerst nur die Startseite (Landing)
+
+`LANDING_ONLY = true` in `scripts/build.mjs`: Es gibt nur die Startseite (DE `/`, EN `/en`) plus die Rechtstexte.
+Die Navigation scrollt zu den Abschnitten Behandlungen, Über uns, Bewertungen, FAQ und Kontakt.
+Preise-, Über-uns- und Kontaktseite werden nicht erzeugt (Inhalte bleiben im Code); die alten URLs leiten
+vorübergehend (302) auf die passenden Abschnitte um. Für Unterseiten wieder auf `false` setzen und die
+Weiterleitungen in `vercel.json` entfernen.
+
 ## Behandlungen: vorerst nur Kategorien
 
 Die Website zeigt im Moment nur die 3 Kategorien (Startseite) und die Preisliste. Alle 13 Behandlungen mit

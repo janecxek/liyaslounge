@@ -33,6 +33,9 @@ const DATA = {
 // Einzelseiten pro Behandlung (+ Übersicht). Vorerst aus: die Website zeigt nur die 3 Kategorien.
 // Alle Inhalte bleiben in content.mjs / content.en.mjs erhalten – zum Ausbauen einfach auf true setzen.
 const DETAIL_PAGES = false;
+// Vorerst nur die Startseite (Landing): Preise, Über uns und Kontakt sind Abschnitte der Startseite,
+// die Navigation scrollt dorthin. Rechtstexte bleiben eigene Seiten. Für Unterseiten auf false setzen.
+const LANDING_ONLY = true;
 
 // Seiten-Schlüssel → Pfade je Sprache (für hreflang & Sprachumschalter). Rechtliches nur auf Deutsch.
 const PATHS = {
@@ -48,12 +51,18 @@ const PATHS = {
 };
 for (const t of DE.TREATMENTS) PATHS['t:' + t.slug] = { de: '/' + t.slug, en: '/en/' + EN_TREATMENTS[t.slug].slug };
 if (!DETAIL_PAGES) PATHS.treatments = { de: '/#behandlungen', en: '/en#behandlungen' };
+if (LANDING_ONLY) {
+  const at = (id) => ({ de: '/#' + id, en: '/en#' + id });
+  Object.assign(PATHS, { prices: at('behandlungen'), about: at('ueber-uns'), reviews: at('bewertungen'), faq: at('faq'), contact: at('kontakt') });
+}
+// Menüpunkte nach den Behandlungen (Header, mobiles Menü, Footer)
+const NAV_KEYS = LANDING_ONLY ? ['about', 'reviews', 'faq', 'contact'] : ['prices', 'about', 'contact'];
 
 /* ---------- UI-Texte ---------- */
 const STR = {
   de: {
     htmlLang: 'de-CH', ogLocale: 'de_CH', ogAlt: 'en_GB', skip: 'Zum Inhalt springen', homeAria: 'Liyas Lounge Olten – Startseite', mainNav: 'Hauptnavigation',
-    nav: { treatments: 'Behandlungen', prices: 'Preise', about: 'Über uns', contact: 'Kontakt', home: 'Startseite' },
+    nav: { treatments: 'Behandlungen', prices: 'Preise', about: 'Über uns', reviews: 'Bewertungen', faq: 'FAQ', contact: 'Kontakt', home: 'Startseite' },
     book: 'Termin buchen', bookOnline: 'Termin anfragen', bookNow: 'Jetzt Termin anfragen', bookSecure: 'Termin anfragen', bookShort: 'Anfragen', consult: 'Kostenlose Beratung',
     megaTitle: 'Unsicher?', megaAccent: 'Wir beraten Sie.', megaText: 'Ehrlich und persönlich – wir raten auch ab, wenn etwas nicht zu Ihnen passt. Die Erstberatung ist kostenlos.',
     noticeText: 'Wir verwenden keine Cookies und kein Tracking. Gespeichert wird nur, dass Sie diesen Hinweis gelesen haben.', noticeLink: 'Datenschutzerklärung', noticeOk: 'Verstanden', noticeAria: 'Hinweis zum Datenschutz',
@@ -70,7 +79,7 @@ const STR = {
   },
   en: {
     htmlLang: 'en', ogLocale: 'en_GB', ogAlt: 'de_CH', skip: 'Skip to content', homeAria: 'Liyas Lounge Olten – Home', mainNav: 'Main navigation',
-    nav: { treatments: 'Treatments', prices: 'Prices', about: 'About', contact: 'Contact', home: 'Home' },
+    nav: { treatments: 'Treatments', prices: 'Prices', about: 'About', reviews: 'Reviews', faq: 'FAQ', contact: 'Contact', home: 'Home' },
     book: 'Book appointment', bookOnline: 'Request an appointment', bookNow: 'Request your appointment', bookSecure: 'Request an appointment', bookShort: 'Enquire', consult: 'Free consultation',
     megaTitle: 'Not sure?', megaAccent: 'We’ll advise you.', megaText: 'Honest and personal – we even advise against what doesn’t suit you. The initial consultation is free.',
     noticeText: 'We use no cookies and no tracking. We only store that you have read this notice.', noticeLink: 'Privacy policy (DE)', noticeOk: 'Got it', noticeAria: 'Privacy notice',
@@ -93,7 +102,7 @@ let S = STR.de;
 let D = DATA.de;
 const P = (key) => (PATHS[key] && (PATHS[key][LANG] || PATHS[key].de)) || '/';
 // ohne Einzelseiten führt jeder Behandlungs-Link zum passenden Abschnitt der Preisliste
-const tPath = (t) => (DETAIL_PAGES ? P('t:' + t.deSlug) : `${P('prices')}#${t.deSlug}`);
+const tPath = (t) => (DETAIL_PAGES ? P('t:' + t.deSlug) : LANDING_ONLY ? P('treatments') : `${P('prices')}#${t.deSlug}`);
 
 /* ---------- Helpers ---------- */
 const SMALL = new Set(['a', 'an', 'the', 'and', 'or', 'of', 'in', 'with', 'by', 'for', 'to', 'from', 'on', 'at', '&']);
@@ -234,9 +243,7 @@ function header(active, key) {
             <div class="mega__cta"><p class="title">${esc(S.megaTitle)} <em>${esc(S.megaAccent)}</em></p><p>${esc(S.megaText)}</p><button type="button" class="btn btn--dark btn--sm" data-contact data-intent="consult" aria-haspopup="dialog" aria-controls="contact"><span>${S.consult}</span>${icon('arrow')}</button></div>
           </div></div>
         </li>` : `<li class="nav__item"><a href="${P('treatments')}" class="nav__link">${S.nav.treatments}</a></li>`}
-        <li class="nav__item"><a href="${P('prices')}" class="nav__link"${a('prices')}>${S.nav.prices}</a></li>
-        <li class="nav__item"><a href="${P('about')}" class="nav__link"${a('about')}>${S.nav.about}</a></li>
-        <li class="nav__item"><a href="${P('contact')}" class="nav__link"${a('contact')}>${S.nav.contact}</a></li>
+        ${NAV_KEYS.map((k) => `<li class="nav__item"><a href="${P(k)}" class="nav__link"${a(k)}>${S.nav[k]}</a></li>`).join('')}
       </ul>
     </nav>
     <div class="hdr__actions">
@@ -256,9 +263,7 @@ function header(active, key) {
           ${D.CATEGORIES.map((c) => `<p class="mnav__cat">${esc(c.name)}</p><ul>${D.TREATMENTS.filter((t) => t.category === c.id).map((t) => `<li><a href="${tPath(t)}">${esc(t.navName)}</a></li>`).join('')}</ul>`).join('')}
           <p class="mnav__cat"><a href="${P('treatments')}">${S.allTreatments}</a></p>
         </details></li>` : `<li><a href="${P('treatments')}">${S.nav.treatments}</a></li>`}
-        <li><a href="${P('prices')}">${S.nav.prices}</a></li>
-        <li><a href="${P('about')}">${S.nav.about}</a></li>
-        <li><a href="${P('contact')}">${S.nav.contact}</a></li>
+        ${NAV_KEYS.map((k) => `<li><a href="${P(k)}">${S.nav[k]}</a></li>`).join('')}
       </ul>
     </nav>
     <div class="mnav__foot">
@@ -311,8 +316,8 @@ function footer({ cta = true, topic = '' } = {}) {
         <div class="ftr__social">${social.map(([u, l, i]) => `<a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${l}">${icon(i)}</a>`).join('')}</div>
       </div>
       ${DETAIL_PAGES ? `<nav aria-label="${S.ftrPopular}"><p class="ftr__title">${S.ftrPopular}</p><ul>${popular.map((t) => `<li><a href="${tPath(t)}">${esc(t.navName)}</a></li>`).join('')}<li><a class="ftr__more" href="${P('treatments')}">${S.allTreatments}</a></li></ul></nav>`
-        : `<nav aria-label="${S.nav.treatments}"><p class="ftr__title">${S.nav.treatments}</p><ul>${D.CATEGORIES.map((c) => `<li><a href="${P('home')}#kat-${c.id}">${esc(c.name)}</a></li>`).join('')}<li><a class="ftr__more" href="${P('prices')}">${S.nav.prices}</a></li></ul></nav>`}
-      <nav aria-label="${S.ftrStudio}"><p class="ftr__title">${S.ftrStudio}</p><ul><li><a href="${P('treatments')}">${S.nav.treatments}</a></li><li><a href="${P('prices')}">${S.nav.prices}</a></li><li><a href="${P('about')}">${S.nav.about}</a></li><li><a href="${P('contact')}">${S.nav.contact}</a></li></ul></nav>
+        : `<nav aria-label="${S.nav.treatments}"><p class="ftr__title">${S.nav.treatments}</p><ul>${D.CATEGORIES.map((c) => `<li><a href="${P('home')}#kat-${c.id}">${esc(c.name)}</a></li>`).join('')}</ul></nav>`}
+      <nav aria-label="${S.ftrStudio}"><p class="ftr__title">${S.ftrStudio}</p><ul>${['treatments', ...NAV_KEYS].map((k) => `<li><a href="${P(k)}">${S.nav[k]}</a></li>`).join('')}</ul></nav>
       <div>
         <p class="ftr__title">${S.ftrContact}</p>
         <address>
@@ -507,7 +512,7 @@ const mapBox = () => `<div class="map" data-map="${esc(SITE.mapEmbed)}" data-map
     </div>`;
 
 function visitBlock() {
-  return `<section class="section" aria-labelledby="visit-title">
+  return `<section class="section" id="kontakt" aria-labelledby="visit-title">
   <div class="container visit">
     <div>
       <p class="eyebrow" data-reveal>${S.visitEyebrow}</p>
@@ -608,14 +613,14 @@ function buildLang(lang) {
   // Startseite: Inhaberin – Text links, grosses Porträt rechts
   const ownerSection = () => {
     const p = D.TEAM[0];
-    return `<section class="section owner" aria-labelledby="team-title">
+    return `<section class="section owner" id="ueber-uns" aria-labelledby="team-title">
   <div class="container owner__grid">
     <div class="owner__text">
       <p class="eyebrow" data-reveal>${H.teamEyebrow}</p>
       ${title(H.teamTitle, H.teamAccent, { id: 'team-title' })}
       <p class="owner__lead" data-reveal>${esc(H.teamText)}</p>
       <ul class="owner__values">${H.values.map(([t, d], i) => `<li data-reveal style="--d:${i * 90}ms"><span>0${i + 1}</span><div><b>${esc(t)}</b><p>${esc(d)}</p></div></li>`).join('')}</ul>
-      <div class="owner__ctas" data-reveal>${bookBtn()}<a class="link" href="${P('about')}">${H.teamLink} ${icon('right')}</a></div>
+      <div class="owner__ctas" data-reveal>${bookBtn()}${LANDING_ONLY ? '' : `<a class="link" href="${P('about')}">${H.teamLink} ${icon('right')}</a>`}</div>
     </div>
     <div class="owner__media" data-reveal>
       <figure class="owner__main">${pic(p.image, p.alt, { sizes: '(max-width: 900px) 92vw, 48vw' })}</figure>
@@ -739,7 +744,7 @@ function buildLang(lang) {
     <ul class="kats__track">${D.CATEGORIES.map((c, i) => {
       const items = TR.filter((t) => t.category === c.id);
       return `<li class="kat" id="kat-${c.id}" data-reveal style="--d:${i * 100}ms">
-      <a class="kat__link" href="${P('prices')}#${firstOf(c).deSlug}">
+      <a class="kat__link" href="${LANDING_ONLY ? waTo(S.waMsg.replace('{t}', c.name)) : `${P('prices')}#${firstOf(c).deSlug}`}"${LANDING_ONLY ? ' target="_blank" rel="noopener"' : ''}>
         ${pic(c.image, c.name, { sizes: '(max-width: 900px) 80vw, 31vw' })}
         <span class="kat__cap"><span class="kat__name">${esc(c.name)}</span><span class="kat__from">${S.from} ${chf(Math.min(...items.map(minPrice)))} ${icon('arrow')}</span></span>
       </a>
@@ -752,7 +757,7 @@ ${studioBand()}
 
 ${ownerSection()}
 
-<section class="section section--alt" aria-labelledby="rev-title">
+<section class="section section--alt" id="bewertungen" aria-labelledby="rev-title">
   <div class="container">
     <div class="rhead">
       <div><p class="eyebrow" data-reveal>${C.rEyebrow}</p>${title(C.rTitle, C.rAccent, { id: 'rev-title' })}</div>
@@ -774,7 +779,7 @@ ${ownerSection()}
   </div>
 </section>
 
-<section class="section" aria-labelledby="faq-title">
+<section class="section" id="faq" aria-labelledby="faq-title">
   <div class="container faq-grid">
     <div class="faq-grid__head">
       <p class="eyebrow" data-reveal>FAQ</p>
@@ -982,7 +987,7 @@ ${reviewsSection({ alt: false })}
   }
 
   /* Preise */
-  {
+  if (!LANDING_ONLY) {
     const PRICE_FAQ = D.HOME_FAQ.filter(([q]) => /kostet|cost|bezahlen|pay|kostenlos|free/i.test(q));
     const T = de
       ? { l1: 'Preise', l2: 'transparent &amp; fair', text: 'Alle Preise pro Behandlung in CHF. Die finalen Kosten besprechen wir in der kostenlosen Beratung – ehrlich und ohne versteckte Kosten.', toc: 'Preiskategorien', to: 'Zur Behandlung', note: 'Alle Preise in Schweizer Franken (CHF). Preisänderungen vorbehalten. Zahlung bar, mit TWINT oder per Karte. Es gelten unsere', terms: 'AGB', title: 'Preise – Ästhetik & Beauty Olten | Liyas Lounge', description: 'Alle Preise der Liyas Lounge in Olten: IPL ab CHF 49, Dermal Filler ab CHF 130, Faltenrelaxing ab CHF 130, Facials ab CHF 150, HIFU ab CHF 150.' }
@@ -1021,7 +1026,7 @@ ${faqSection(PRICE_FAQ)}
   }
 
   /* Über uns */
-  {
+  if (!LANDING_ONLY) {
     const T = de
       ? { l1: 'Ihre Lounge', l2: 'in Olten', text: 'Ehrliche Beratung, Sorgfalt und viel Feingefühl – in ruhiger, persönlicher Atmosphäre.', team: 'Team', alt: 'Empfang der Liyas Lounge in Olten', eyebrow: 'Über Liyas Lounge', intro: 'Wir verändern nicht, wer Sie sind – wir unterstützen, was Sie ausmacht. Jede Behandlung in der Liyas Lounge beginnt mit Zuhören, einer ehrlichen Einschätzung und einem Plan, der zu Ihrem Gesicht und Ihrem Alltag passt. <em>Natürlich</em>, persönlich und ohne Zeitdruck.', tEyebrow: 'Ihre Expertin', tTitle: 'Das', tAccent: 'Team', sTitle: 'Unsere', sAccent: 'Lounge', sText: 'Ruhig, hell und diskret – ein Ort zum Ankommen, mitten in Olten.', title: 'Über uns – Liyas Lounge Olten | Ästhetik & Beauty', description: 'Liyas Lounge in Olten: Leidenschaft für Ästhetik und Beauty, ehrliche Beratung und natürliche Ergebnisse – persönlich und ohne Zeitdruck.' }
       : { l1: 'Your lounge', l2: 'in Olten', text: 'Honest advice, care and a fine touch – in a calm, personal setting.', team: 'Team', alt: 'Reception of Liyas Lounge in Olten', eyebrow: 'About Liyas Lounge', intro: 'We don’t set out to change who you are – we enhance what makes you, you. Every treatment at Liyas Lounge begins with listening, an honest assessment and a plan that suits your features and your everyday life. <em>Natural</em>, personal and never rushed.', tEyebrow: 'Your expert', tTitle: 'The', tAccent: 'Team', sTitle: 'Our', sAccent: 'Lounge', sText: 'Calm, bright and discreet – a place to arrive, in the heart of Olten.', title: 'About Us – Liyas Lounge Olten | Aesthetics & Beauty', description: 'Liyas Lounge in Olten: a passion for aesthetics and beauty, honest advice and natural results – personal and never rushed.' };
@@ -1063,7 +1068,7 @@ ${visitBlock()}
   }
 
   /* Kontakt */
-  {
+  if (!LANDING_ONLY) {
     const CONTACT_FAQ = D.HOME_FAQ.filter(([q]) => !/natürlich|natural|schmerz|painful|gesellschaft|go out/i.test(q));
     const T = de
       ? { l1: 'Kontakt', l2: '&amp; Termin', text: 'Am schnellsten per WhatsApp (nur Nachrichten) – oder rufen Sie uns an. Wir melden uns schnellstmöglich und finden gemeinsam einen Termin.', direct: 'Direkt erreichen', title: 'Kontakt & Termin – Liyas Lounge Olten', description: 'Kontakt zur Liyas Lounge in Olten: WhatsApp (nur Nachrichten), Telefon & E-Mail. Mo–Fr 10–19 Uhr, Sa nach Vereinbarung. Kostenlose Erstberatung.' }
