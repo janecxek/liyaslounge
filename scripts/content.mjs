@@ -782,10 +782,10 @@ export const AGB = [
 
 // Bilder der Startseite – zum Austauschen einfach den Bildnamen ändern (Dateien in assets/img, siehe README)
 export const HOME = {
-  heroImage: 'liyas-lounge-olten-hero', // + automatisch '…-portrait' für Smartphones im Hochformat
-  heroAlt: 'Frau mit natürlich strahlender Haut in der Liyas Lounge Olten',
-  heroPos: '58% 22%',
-  heroPosMobile: '50% 30%',
+  heroImage: 'liyas-lounge-olten-hero-inhaberin', // Inhaberin im Studio; + automatisch '…-portrait' für Smartphones im Hochformat
+  heroAlt: 'Die Inhaberin der Liyas Lounge in ihrem Studio in Olten',
+  heroPos: '62% 30%',
+  heroPosMobile: '50% 20%',
   ctaImage: 'termin-liyas-lounge-olten',
   ctaAlt: 'Weisse Calla-Lilien vor schwarzem Hintergrund – Termin in der Liyas Lounge Olten',
   aboutHero: 'studio-liyas-lounge-empfang',

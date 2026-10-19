@@ -578,7 +578,7 @@ function buildLang(lang) {
     revEyebrow: 'Client reviews', revTitle: 'Real', revAccent: 'Experiences', stars: '5 out of 5 stars', prev: 'Previous review', next: 'Next review', google: 'Reviews on Google',
     fTitle: 'Frequent', fAccent: 'Questions', fText: 'Your question isn’t listed? Send us a WhatsApp message or give us a call – we’re happy to help.', fLink: 'Get in touch',
     title: 'Liyas Lounge | Medical Aesthetics & Beauty in Olten', description: 'Medical aesthetics & beauty in Olten: dermal fillers, wrinkle relaxing, facials, HIFU, permanent make-up & IPL – honest advice. Free initial consultation.',
-    heroAlt: 'Woman with naturally radiant skin at Liyas Lounge Olten',
+    heroAlt: 'The owner of Liyas Lounge in her studio in Olten',
     trustEyebrow: 'Real experiences', trustTitle: 'In the best', trustAccent: 'hands', cnEyebrow: 'Free consultation', cnText: 'Not sure which treatment is right for you? Send us a short WhatsApp message – photos welcome – or give us a call. We’ll advise you honestly and free of charge, and only recommend what truly makes sense.', cnWa: 'Ask on WhatsApp',
     gReviews: 'Google reviews', studioNav: ['Reception', 'Treatment room', 'Details'], studioShow: 'Show image:',
   };
