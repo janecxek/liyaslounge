@@ -101,6 +101,11 @@ figure { margin: 0; }
 .arrow-circle .ico { width: 18px; height: 18px; }
 .arrow-circle--dark { background: var(--ink); color: #fff; border-color: var(--ink); }
 
+/* Seitenwechsel: sanft aus- und einblenden */
+html.js body { animation: pageIn .6s var(--ease) both; }
+html.is-leaving body { opacity: 0; transition: opacity .26s var(--ease); }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+
 /* ---------- Header ---------- */
 .hdr { position: fixed; inset: 0 0 auto; z-index: 60; height: var(--hh); color: var(--ink); transition: background .5s var(--ease), color .5s var(--ease), border-color .5s, transform .5s var(--ease-out); border-bottom: 1px solid transparent; }
 .hdr__in { height: 100%; display: flex; align-items: center; gap: 32px; }
