@@ -22,9 +22,9 @@ export const SITE = {
   mapEmbed: 'https://www.google.com/maps?q=Liyas%20Lounge%2C%20Hammerallee%2023%2C%204600%20Olten&output=embed',
   geo: null, // { lat, lng } aus Google Maps eintragen
   // ▼ Von der Kundin zu ergänzen – leer/null lassen = wird nicht angezeigt
-  // Anzahl laut Google-Profil; ⚠ Durchschnitt (googleRating) bitte im Google-Profil prüfen
-  googleRating: 4.9,
-  googleReviewCount: 27, // laut Google-Profil
+  // Google-Bewertung laut Profil (4,8 · 44)
+  googleRating: 4.8,
+  googleReviewCount: 44, // laut Google-Profil
   hours: [{ days: ['Mo', 'Tu', 'We', 'Th', 'Fr'], de: 'Mo–Fr', en: 'Mon–Fri', opens: '10:00', closes: '19:00' }],
   hoursNote: { de: 'Sa nach Vereinbarung', en: 'Sat by appointment' },
   payment: { de: 'Bar, TWINT, Karte', en: 'Cash, TWINT, card' },

@@ -92,7 +92,7 @@ function pic(name, alt, { sizes = '100vw', eager = false, pos = '', cls = '' } =
   return `<picture${cls ? ` class="${cls}"` : ''}>${portrait}<source type="image/webp" srcset="${set(name)}" sizes="${sizes}"><img src="/assets/img/${name}.jpg" alt="${esc(alt)}" width="${m.w}" height="${m.h}"${style ? ` style="${style}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
 }
 const I = {
-  arrow: '<path d="M7 17 17 7M8 7h9v9"/>', down: '<path d="M12 5v14M6 13l6 6 6-6"/>',
+  arrow: '<path d="M7 17 17 7M8 7h9v9"/>', left: '<path d="M19 12H5M11 6l-6 6 6 6"/>', right: '<path d="M5 12h14M13 6l6 6-6 6"/>', down: '<path d="M12 5v14M6 13l6 6 6-6"/>',
   wa: '<path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.3-1.8-1-1 .8a4 4 0 0 1-2.2-2.2l.8-1-1-1.8z" fill="currentColor" stroke="none"/>',
   ig: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>',
   pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
@@ -181,7 +181,10 @@ function page(L) {
 <section class="rev" id="bewertungen">
   ${head(t.revScript, t.revH)}
   <a class="rev__score" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><b>${rating}</b>${stars(t.stars)}<span>${SITE.googleReviewCount} Google</span></a>
-  <ul class="rev__list">${reviewsList.map((r, i) => `<li data-up style="--d:${(i % 3) * .08}s"><figure>${stars(t.stars)}<b>„${esc(t.revTitles[i])}“</b><blockquote>${esc(r.text)}</blockquote><figcaption>– ${esc(r.name)}${r.tag ? ` · ${esc(r.tag)}` : ''}</figcaption></figure></li>`).join('')}</ul>
+  <div class="rs" data-slider data-up>
+    <div class="rs__view"><ul class="rs__track" data-track>${reviewsList.map((r, i) => `<li class="rs__card" aria-roledescription="slide" aria-label="${i + 1} / ${reviewsList.length}"><figure>${stars(t.stars)}<blockquote>„${esc(r.text)}“</blockquote><figcaption><b>${esc(r.name)}</b>${r.tag ? `<span>${esc(r.tag)}</span>` : ''}</figcaption></figure></li>`).join('')}</ul></div>
+    <div class="rs__nav"><button type="button" class="rs__btn" data-prev aria-label="${L === 'de' ? 'Vorherige Bewertung' : 'Previous review'}">${ico('left')}</button><span class="rs__count"><b data-cur>01</b> / ${String(reviewsList.length).padStart(2, '0')}</span><span class="rs__bar"><i data-bar></i></span><button type="button" class="rs__btn" data-next aria-label="${L === 'de' ? 'Nächste Bewertung' : 'Next review'}">${ico('right')}</button></div>
+  </div>
   <a class="btn btn--line" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><span>${t.revG}</span>${ico('arrow')}</a>
 </section>
 
