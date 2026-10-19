@@ -57,7 +57,7 @@ die vorübergehenden Weiterleitungen (302) der Behandlungs-URLs in `vercel.json`
 
 - **Bewertungen** (`REVIEWS` in `content.mjs`, `EN_REVIEW_TEXTS` in `content.en.mjs`) sind erfunden und nur zur
   Präsentation. Erfundene Bewertungen zu veröffentlichen ist irreführend (UWG) – durch echte ersetzen.
-- **Google-Wertung** `googleRating: 4.9` / `googleReviewCount: 87` (`SITE`) ebenfalls Demo – echte Werte eintragen
+- **Google-Wertung** `googleReviewCount: 27` laut Profil; der Durchschnitt `googleRating: 4.9` ist noch zu prüfen – echte Werte eintragen
   oder auf `null` setzen (dann wird die Wertung ausgeblendet). Die Demo-Werte stehen nicht im JSON-LD.
 
 ## Platzhalter – vor dem Livegang ausfüllen

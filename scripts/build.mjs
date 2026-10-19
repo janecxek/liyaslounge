@@ -179,7 +179,7 @@ const businessSchema = () => ({
   logo: SITE.url + '/icon-512.png',
   image: [SITE.url + '/assets/img/og-image.jpg', imgUrl(HOME.heroImage), ...HOME.studio.map(imgUrl)],
   ...(isSet(SITE.phone) ? { telephone: SITE.phoneHref.replace('tel:', '') } : {}),
-  email: SITE.email,
+  ...(SITE.email ? { email: SITE.email } : {}),
   priceRange: 'CHF 25 – CHF 1450',
   openingHoursSpecification: SITE.hours.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days.map((d) => `https://schema.org/${{ Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' }[d]}`), opens: h.opens, closes: h.closes })),
   currenciesAccepted: 'CHF',
@@ -291,7 +291,7 @@ const waLink = (topic) => `${SITE.whatsapp}?text=${encodeURIComponent(S.waMsg.re
 const channels = (topic, cls = '') => `<ul class="channels${cls}">
   <li><a class="channel channel--primary channel--wa" href="${esc(waLink(topic))}" data-wa-consult="${esc(`${SITE.whatsapp}?text=${encodeURIComponent(S.waConsult)}`)}" target="_blank" rel="noopener"><span class="channel__ico">${icon('whatsapp')}</span><span class="channel__txt"><b>WhatsApp</b><small>${S.chWa}</small></span><span class="channel__go">${icon('arrow')}</span></a></li>
   ${isSet(SITE.phone) ? `<li><a class="channel" href="${SITE.phoneHref}"><span class="channel__ico">${icon('phone')}</span><span class="channel__txt"><b>${S.call}</b><small>${esc(SITE.phone)}</small></span><span class="channel__go">${icon('arrow')}</span></a></li>` : ''}
-  <li><a class="channel" href="mailto:${SITE.email}"><span class="channel__ico">${icon('mail')}</span><span class="channel__txt"><b>${S.email}</b><small>${esc(SITE.email)}</small></span><span class="channel__go">${icon('arrow')}</span></a></li>
+  ${SITE.email ? `<li><a class="channel" href="mailto:${SITE.email}"><span class="channel__ico">${icon('mail')}</span><span class="channel__txt"><b>${S.email}</b><small>${esc(SITE.email)}</small></span><span class="channel__go">${icon('arrow')}</span></a></li>` : ''}
   ${IG_HANDLE ? `<li><a class="channel" href="https://ig.me/m/${esc(IG_HANDLE)}" target="_blank" rel="noopener"><span class="channel__ico">${icon('instagram')}</span><span class="channel__txt"><b>Instagram</b><small>${S.chIg}${esc(IG_HANDLE)}</small></span><span class="channel__go">${icon('arrow')}</span></a></li>` : ''}
 </ul>`;
 
@@ -319,7 +319,7 @@ function footer({ cta = true, topic = '' } = {}) {
           <a href="${SITE.route}" target="_blank" rel="noopener">${esc(SITE.street)}<br>${SITE.zip} ${esc(S.city)}</a>
           ${isSet(SITE.phone) ? `<a href="${SITE.phoneHref}">${esc(SITE.phone)}</a>` : ''}
           <a href="${SITE.whatsapp}" target="_blank" rel="noopener">WhatsApp ${LANG === 'de' ? '(nur Nachrichten)' : '(messages only)'}</a>
-          <a href="mailto:${SITE.email}">${esc(SITE.email)}</a>
+          ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : ''}
           <span>${hoursText()}</span>
         </address>
         ${bookBtn(S.book, 'btn btn--light btn--sm ftr__book')}
@@ -516,7 +516,7 @@ function visitBlock() {
         <li><b>${S.address}</b><a href="${SITE.route}" target="_blank" rel="noopener">${addr()}</a></li>
         ${isSet(SITE.phone) ? `<li><b>${S.phone}</b><a href="${SITE.phoneHref}">${esc(SITE.phone)}</a></li>` : ''}
         <li><b>WhatsApp</b><a href="${SITE.whatsapp}" target="_blank" rel="noopener">${S.whatsappText}</a></li>
-        <li><b>${S.email}</b><a href="mailto:${SITE.email}">${esc(SITE.email)}</a></li>
+        ${SITE.email ? `<li><b>${S.email}</b><a href="mailto:${SITE.email}">${esc(SITE.email)}</a></li>` : ''}
         <li><b>${S.hours}</b><span>${hoursText()}</span></li>
         <li><b>${S.payment}</b><span>${esc(SITE.payment[LANG])}</span></li>
       </ul>
@@ -546,7 +546,7 @@ function buildLang(lang) {
 
   /* Texte der gemeinsamen Bausteine */
   const H = de ? {
-    l1: 'Ihre Schönheit.', l2: 'Meine Leidenschaft.', heroEyebrow: 'Medical Aesthetic Expert · Olten',
+    l1: 'Ihre Schönheit.', l2: 'Meine Leidenschaft.',
     heroLead: 'Medical Aesthetic &amp; Beauty in Olten – persönlich betreut, ehrlich beraten und mit Blick für natürliche, typgerechte Ergebnisse.',
     second: 'Kostenlose Beratung',
     aTitle: 'Ihre Lounge', aAccent: 'für Ästhetik &amp; Beauty',
@@ -564,7 +564,7 @@ function buildLang(lang) {
     trustEyebrow: 'Echte Erfahrungen', trustTitle: 'In besten', trustAccent: 'Händen', cnEyebrow: 'Kostenlose Beratung', cnText: 'Sie wissen noch nicht, welche Behandlung zu Ihnen passt? Schreiben Sie uns kurz per WhatsApp – gerne mit Foto – oder rufen Sie an. Wir beraten Sie ehrlich und kostenlos und empfehlen nur, was wirklich sinnvoll ist.', cnWa: 'Per WhatsApp fragen',
     gReviews: 'Google-Bewertungen', studioNav: ['Empfang', 'Behandlungsraum', 'Details'], studioShow: 'Bild anzeigen:',
   } : {
-    l1: 'Your beauty.', l2: 'My passion.', heroEyebrow: 'Medical Aesthetic Expert · Olten',
+    l1: 'Your beauty.', l2: 'My passion.',
     heroLead: 'Medical aesthetics &amp; beauty in Olten – personally looked after, honestly advised, with an eye for natural results that suit you.',
     second: 'Free consultation',
     aTitle: 'Your lounge', aAccent: 'for aesthetics &amp; beauty',
@@ -698,19 +698,11 @@ function buildLang(lang) {
     const C = de ? {
       trustReviews: 'Google-Bewertungen', trustYears: 'Persönliche Betreuung', trustFree: 'Erstberatung kostenlos', trustShort: ['Google', 'Persönlich betreut', 'Gratis-Beratung'],
       kEyebrow: 'Behandlungen', kTitle: 'Was dürfen wir', kAccent: 'für Sie tun?', kText: 'Drei Bereiche, ein Anspruch: natürliche, typgerechte Ergebnisse. Welche Behandlung zu Ihnen passt, finden wir gemeinsam in der kostenlosen Beratung heraus.',
-      kAsk: 'Beratung anfragen', kPrices: 'Preise', kWa: (n) => `Hallo Liyas Lounge, ich interessiere mich für ${n} und hätte gerne eine kostenlose Beratung.`,
-      rEyebrow: 'Kundenstimmen', rTitle: 'Was unsere Kundinnen', rAccent: 'sagen', rOf: 'von 5', rFrom: (n) => `aus ${n} Google-Bewertungen`, rAll: 'Alle Bewertungen auf Google',
-      sEyebrow: 'So einfach geht’s', sTitle: 'In drei Schritten', sAccent: 'zu Ihrem Termin',
-      steps: [['Nachricht senden', 'Per WhatsApp, Telefon oder E-Mail – gerne mit Foto und Ihren Wünschen.'], ['Kostenlose Beratung', 'Wir besprechen Möglichkeiten, Ablauf und Kosten – ehrlich und unverbindlich.'], ['Ihre Behandlung', 'In ruhiger Atmosphäre, ohne Zeitdruck und mit klarer Nachsorge.']],
-      sCta: 'Jetzt Nachricht schreiben', sNote: 'Unverbindlich · Wir melden uns schnellstmöglich',
+      rEyebrow: 'Kundenstimmen', rTitle: 'Was unsere Kundinnen', rAccent: 'sagen', rFrom: (n) => `aus ${n} Google-Bewertungen`, rAll: 'Alle Bewertungen auf Google',
     } : {
       trustReviews: 'Google reviews', trustYears: 'Personal care', trustFree: 'Free consultation', trustShort: ['Google', 'Personal care', 'Free consultation'],
       kEyebrow: 'Treatments', kTitle: 'How can we', kAccent: 'help you?', kText: 'Three areas, one standard: natural results that suit you. Which treatment is right for you is something we work out together in your free consultation.',
-      kAsk: 'Request a consultation', kPrices: 'Prices', kWa: (n) => `Hello Liyas Lounge, I am interested in ${n} and would like a free consultation.`,
-      rEyebrow: 'Client reviews', rTitle: 'What our clients', rAccent: 'say', rOf: 'out of 5', rFrom: (n) => `from ${n} Google reviews`, rAll: 'All reviews on Google',
-      sEyebrow: 'It’s that simple', sTitle: 'Three steps', sAccent: 'to your appointment',
-      steps: [['Send a message', 'Via WhatsApp, phone or email – photos and your wishes are welcome.'], ['Free consultation', 'We discuss options, process and costs – honestly and without obligation.'], ['Your treatment', 'In a calm setting, never rushed, with clear aftercare.']],
-      sCta: 'Send a message now', sNote: 'No obligation · We will get back to you as soon as possible',
+      rEyebrow: 'Client reviews', rTitle: 'What our clients', rAccent: 'say', rFrom: (n) => `from ${n} Google reviews`, rAll: 'All reviews on Google',
     };
     const rating = SITE.googleRating && SITE.googleReviewCount;
     const ratingTxt = rating ? String(SITE.googleRating).replace('.', de ? ',' : '.') : '';
@@ -723,7 +715,6 @@ function buildLang(lang) {
   ${heroMedia(HOME.heroImage, H.heroAlt, HOME.heroPos, HOME.heroPosMobile)}
   <div class="container hero__content">
     <div class="hero__grid">
-      <p class="eyebrow eyebrow--light hero__eyebrow fade-up">${H.heroEyebrow}</p>
       <h1 class="title title--xl title--light hero__title hero__title--wide" id="hero-title"><span class="ln"><span>${H.l1}</span></span><span class="ln"><span><em>${H.l2}</em></span></span></h1>
       <div class="hero__side">
         <p class="hero__lead fade-up d1">${H.heroLead}</p>
@@ -748,27 +739,12 @@ function buildLang(lang) {
     <ul class="kats__track">${D.CATEGORIES.map((c, i) => {
       const items = TR.filter((t) => t.category === c.id);
       return `<li class="kat" id="kat-${c.id}" data-reveal style="--d:${i * 100}ms">
-      <div class="kat__media">${pic(c.image, c.name, { sizes: '(max-width: 900px) 80vw, 31vw' })}<span class="kat__num">0${i + 1}</span></div>
-      <div class="kat__body">
-        <h3 class="kat__name">${esc(c.name)}</h3>
-        <p class="kat__claim">${esc(c.claim)}</p>
-        <p class="kat__text">${esc(c.text)}</p>
-        <p class="kat__incl">${esc(c.short)}</p>
-        <p class="kat__from">${S.from} <b>${chf(Math.min(...items.map(minPrice)))}</b></p>
-        <div class="kat__ctas"><a class="btn btn--dark btn--sm" href="${waTo(C.kWa(c.name))}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.kAsk}</span></a><a class="link" href="${P('prices')}#${firstOf(c).deSlug}">${C.kPrices} ${icon('right')}</a></div>
-      </div>
+      <a class="kat__link" href="${P('prices')}#${firstOf(c).deSlug}">
+        ${pic(c.image, c.name, { sizes: '(max-width: 900px) 80vw, 31vw' })}
+        <span class="kat__cap"><span class="kat__name">${esc(c.name)}</span><span class="kat__from">${S.from} ${chf(Math.min(...items.map(minPrice)))} ${icon('arrow')}</span></span>
+      </a>
     </li>`;
     }).join('')}</ul>
-  </div>
-</section>
-
-<section class="section section--dark how" aria-labelledby="how-title">
-  <div class="container">
-    <div class="head">
-      <div><p class="eyebrow eyebrow--light" data-reveal>${C.sEyebrow}</p>${title(C.sTitle, C.sAccent, { id: 'how-title', cls: 'title--light' })}</div>
-    </div>
-    <ol class="how__steps">${C.steps.map(([t, d], i) => `<li data-reveal style="--d:${i * 100}ms"><span class="how__n">0${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
-    <div class="how__cta" data-reveal><a class="btn btn--light btn--lg" href="${waTo(S.waConsult)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${C.sCta}</span></a><small>${C.sNote}</small></div>
   </div>
 </section>
 
@@ -780,7 +756,7 @@ ${ownerSection()}
   <div class="container">
     <div class="rhead">
       <div><p class="eyebrow" data-reveal>${C.rEyebrow}</p>${title(C.rTitle, C.rAccent, { id: 'rev-title' })}</div>
-      ${rating ? `<a class="rscore" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-reveal><b>${ratingTxt}</b><span><span class="rscore__stars" aria-hidden="true">${icon('star').repeat(5)}</span>${C.rOf} · ${C.rFrom(SITE.googleReviewCount)}</span></a>` : ''}
+      ${rating ? `<a class="rscore" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-reveal><b>${ratingTxt}</b><span class="rscore__stars" aria-hidden="true">${icon('star').repeat(5)}</span><span>${C.rFrom(SITE.googleReviewCount)}</span></a>` : ''}
     </div>
   </div>
   <div data-rail-wrap>
@@ -1131,7 +1107,7 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
       `<p class="note">Entwurf – bitte vor der Veröffentlichung prüfen und ergänzen.</p>
 <p>Der Schutz Ihrer Personendaten ist uns wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber, welche Personendaten wir im Zusammenhang mit unserer Website und unseren Dienstleistungen bearbeiten. Massgebend ist das Schweizer Bundesgesetz über den Datenschutz (DSG).</p>
 <h2>1. Verantwortliche Stelle</h2>
-<p>Liyas Lounge<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}, Schweiz<br>E-Mail: <a href="mailto:${SITE.email}">${esc(SITE.email)}</a>${isSet(SITE.phone) ? `<br>Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a>` : ''}</p>
+<p>Liyas Lounge<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}, Schweiz<br>E-Mail: ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}${isSet(SITE.phone) ? `<br>Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a>` : ''}</p>
 <h2>2. Besuch der Website</h2>
 <p>Beim Aufruf unserer Website werden durch unseren Hosting-Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles verarbeitet. Diese Daten dienen ausschliesslich dem sicheren und stabilen Betrieb der Website. [Hosting-Anbieter ergänzen, z. B. Vercel Inc., USA – dabei kann eine Übermittlung von Daten in die USA erfolgen, abgesichert durch geeignete Garantien wie Standardvertragsklauseln.]</p>
 <p>Wir verwenden keine Analyse-, Tracking- oder Marketing-Tools. Schriftarten werden lokal von unserem Server geladen – es findet keine Verbindung zu Google Fonts statt.</p>
@@ -1148,7 +1124,7 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
 <h2>8. Aufbewahrung</h2>
 <p>Wir speichern Personendaten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
 <h2>9. Ihre Rechte</h2>
-<p>Sie haben das Recht, Auskunft über Ihre bei uns gespeicherten Personendaten zu verlangen sowie deren Berichtigung, Löschung oder Herausgabe zu beantragen. Wenden Sie sich dazu an <a href="mailto:${SITE.email}">${esc(SITE.email)}</a>. Zudem können Sie sich an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) wenden.</p>
+<p>Sie haben das Recht, Auskunft über Ihre bei uns gespeicherten Personendaten zu verlangen sowie deren Berichtigung, Löschung oder Herausgabe zu beantragen. Wenden Sie sich dazu an ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}. Zudem können Sie sich an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) wenden.</p>
 <h2>10. Änderungen</h2>
 <p>Wir können diese Datenschutzerklärung jederzeit anpassen. Es gilt die jeweils aktuelle, auf dieser Website veröffentlichte Fassung.</p>
 <p class="note">Stand: ${stand}</p>`);
@@ -1156,7 +1132,7 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
       'Impressum der Liyas Lounge in Olten – Medical Aesthetic & Beauty: Kontakt, Haftung und Urheberrecht.',
       `<h2>Kontaktadresse</h2>
 <p>Liyas Lounge<br>Medical Aesthetic &amp; Beauty<br>Inhaberin: [Name folgt]<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}<br>Schweiz</p>
-<p>${isSet(SITE.phone) ? `Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a><br>` : ''}E-Mail: <a href="mailto:${SITE.email}">${esc(SITE.email)}</a><br>[UID-Nummer, falls vorhanden]</p>
+<p>${isSet(SITE.phone) ? `Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a><br>` : ''}E-Mail: ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}<br>[UID-Nummer, falls vorhanden]</p>
 <h2>Ärztliche Verantwortung</h2>
 <p>[Angaben zur ärztlichen Verantwortung für medizinisch-ästhetische Behandlungen ergänzen]</p>
 <h2>Haftungsausschluss</h2>
