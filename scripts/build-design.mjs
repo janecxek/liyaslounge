@@ -168,6 +168,7 @@ ${menu(2)}
     <p class="v2-script" data-up>Lernen Sie kennen</p>
     <h2 class="v2-h" data-up>Ihre Expertin</h2>
     <p class="v2-p" data-up>Hinter der Liyas Lounge steht eine Gastgeberin mit Leidenschaft für Ästhetik und Beauty – persönlich, ehrlich und mit viel Feingefühl. Jede Behandlung beginnt mit Zuhören und einer kostenlosen Beratung.</p>
+    <figure class="v2-photo" data-up>${pic('beratung-inhaberin-olten', 'Persönliche Beratung in der Liyas Lounge Olten', { sizes: '(max-width: 900px) 92vw, 640px', pos: '50% 35%' })}<figcaption>Jede Behandlung beginnt mit einer persönlichen, kostenlosen Beratung.</figcaption></figure>
     <span class="v2-rule" aria-hidden="true"></span>
     <p class="v2-script" data-up>Kontakt</p>
     <h2 class="v2-h" data-up>Get in touch</h2>
