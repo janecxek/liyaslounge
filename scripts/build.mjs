@@ -555,7 +555,8 @@ function buildLang(lang) {
     tEyebrow: 'Behandlungen', tTitle: 'Unsere', tAccent: 'Behandlungen', tText: 'Dermal Filler, Faltenrelaxing, Facials, HIFU 5D, Permanent Make-up &amp; mehr – individuell geplant und ehrlich beraten, in der Liyas Lounge in Olten.', allPrices: 'Alle Preise',
     sEyebrow: 'Liyas Lounge · Olten', route: 'Route planen',
     g: ['Empfang der Liyas Lounge in Olten', 'Behandlungsraum der Liyas Lounge in Olten', 'Details: Ampullen, Handtücher und Orchideen in der Liyas Lounge'],
-    teamEyebrow: 'In besten Händen', teamTitle: 'Über 15 Jahre', teamAccent: 'Erfahrung', teamText: 'Fachwissen, Sorgfalt und ein feines Gespür für natürliche Ergebnisse – persönlich betreut von der Beratung bis zur Nachsorge.', teamLink: 'Mehr über uns',
+    teamEyebrow: 'Über uns', teamTitle: 'Persönlich.', teamAccent: 'Mit Herz & Sorgfalt.', teamText: 'Hinter der Liyas Lounge steht eine Gastgeberin mit Leidenschaft für Ästhetik und Beauty, viel Feingefühl und dem Anspruch, dass Sie sich rundum wohlfühlen – von der ersten Nachricht bis zur Nachsorge.', teamLink: 'Mehr über uns',
+    values: [['Persönliche Betreuung', 'Wir nehmen uns Zeit für Sie und all Ihre Fragen – ohne Zeitdruck.'], ['Ehrliche Einschätzung', 'Wir empfehlen nur, was zu Ihnen passt – auch wenn das weniger ist.'], ['Hygiene & Qualität', 'Saubere Abläufe und ausschliesslich zugelassene Produkte.']], ownerOf: 'Inhaberin',
     revEyebrow: 'Kundenstimmen', revTitle: 'Echte', revAccent: 'Erfahrungen', stars: '5 von 5 Sternen', prev: 'Vorherige Bewertung', next: 'Nächste Bewertung', google: 'Bewertungen auf Google',
     fTitle: 'Häufige', fAccent: 'Fragen', fText: 'Ihre Frage ist nicht dabei? Schreiben Sie uns per WhatsApp oder rufen Sie an – wir helfen gerne.', fLink: 'Kontakt aufnehmen',
     title: 'Liyas Lounge | Medizinische Ästhetik & Beauty in Olten', description: 'Medizinische Ästhetik & Beauty in Olten: Dermal Filler, Faltenrelaxing, Facials, HIFU, Permanent Make-up & IPL – ehrlich beraten. Kostenlose Erstberatung.',
@@ -572,7 +573,8 @@ function buildLang(lang) {
     tEyebrow: 'Treatments', tTitle: 'Our', tAccent: 'Treatments', tText: 'Dermal fillers, wrinkle relaxing, facials, HIFU 5D, permanent make-up &amp; more – individually planned and honestly advised, at Liyas Lounge in Olten.', allPrices: 'All prices',
     sEyebrow: 'Liyas Lounge · Olten', route: 'Get directions',
     g: ['Reception of Liyas Lounge in Olten', 'Treatment room at Liyas Lounge in Olten', 'Details: ampoules, towels and orchids at Liyas Lounge'],
-    teamEyebrow: 'In the best hands', teamTitle: 'Over 15 years of', teamAccent: 'experience', teamText: 'Expertise, care and a fine sense for natural results – personally looked after from consultation to aftercare.', teamLink: 'More about us',
+    teamEyebrow: 'About us', teamTitle: 'Personal.', teamAccent: 'With heart & care.', teamText: 'Behind Liyas Lounge is a host with a passion for aesthetics and beauty, a fine touch and one aim: that you feel completely at ease – from your first message to aftercare.', teamLink: 'More about us',
+    values: [['Personal care', 'We take time for you and all your questions – never in a rush.'], ['Honest assessment', 'We only recommend what suits you – even if that means less.'], ['Hygiene & quality', 'Clean processes and approved products only.']], ownerOf: 'Owner',
     revEyebrow: 'Client reviews', revTitle: 'Real', revAccent: 'Experiences', stars: '5 out of 5 stars', prev: 'Previous review', next: 'Next review', google: 'Reviews on Google',
     fTitle: 'Frequent', fAccent: 'Questions', fText: 'Your question isn’t listed? Send us a WhatsApp message or give us a call – we’re happy to help.', fLink: 'Get in touch',
     title: 'Liyas Lounge | Medical Aesthetics & Beauty in Olten', description: 'Medical aesthetics & beauty in Olten: dermal fillers, wrinkle relaxing, facials, HIFU, permanent make-up & IPL – honest advice. Free initial consultation.',
@@ -603,17 +605,26 @@ function buildLang(lang) {
         <span class="arrow-circle">${icon('arrow')}</span>
       </a></li>`).join('')}
     </ul>`;
-  const expertsSection = ({ alt = false } = {}) => `<section class="section${alt ? ' section--alt' : ''}" aria-labelledby="team-title">
-  <div class="container experts-grid">
-    <div class="experts-grid__head">
+  // Startseite: Inhaberin – Text links, grosses Bild rechts mit überlappendem Detailbild
+  const ownerSection = () => {
+    const p = D.TEAM[0];
+    return `<section class="section owner" aria-labelledby="team-title">
+  <div class="container owner__grid">
+    <div class="owner__text">
       <p class="eyebrow" data-reveal>${H.teamEyebrow}</p>
       ${title(H.teamTitle, H.teamAccent, { id: 'team-title' })}
-      <p data-reveal>${H.teamText}</p>
-      <p data-reveal><a class="link" href="${P('about')}">${H.teamLink} ${icon('right')}</a></p>
+      <p class="owner__lead" data-reveal>${esc(H.teamText)}</p>
+      <ul class="owner__values">${H.values.map(([t, d], i) => `<li data-reveal style="--d:${i * 90}ms"><span>0${i + 1}</span><div><b>${esc(t)}</b><p>${esc(d)}</p></div></li>`).join('')}</ul>
+      <div class="owner__ctas" data-reveal>${bookBtn()}<a class="link" href="${P('about')}">${H.teamLink} ${icon('right')}</a></div>
     </div>
-    ${expertRows()}
+    <div class="owner__media" data-reveal>
+      <figure class="owner__main">${pic(p.image, p.alt, { sizes: '(max-width: 900px) 92vw, 48vw' })}</figure>
+      <figure class="owner__detail">${pic(HOME.studio[2], H.g[2], { sizes: '(max-width: 900px) 46vw, 20vw' })}</figure>
+      <p class="owner__tag"><b>${esc(p.name)}</b><span>${esc(H.ownerOf)} · Liyas Lounge</span></p>
+    </div>
   </div>
 </section>`;
+  };
   const googleLink = () => `<a class="link" href="${SITE.googleMaps}" target="_blank" rel="noopener">${SITE.googleRating && SITE.googleReviewCount ? `${String(SITE.googleRating).replace('.', de ? ',' : '.')} / 5 · ${SITE.googleReviewCount} ${H.gReviews}` : H.google} ${icon('arrow')}</a>`;
   const reviewSlider = (first = 0) => {
     const list = D.REVIEWS.map((r, i) => [r, i]);
@@ -687,7 +698,7 @@ function buildLang(lang) {
   /* Startseite – Versprechen & Vertrauen → Angebot → einfacher Weg → Lounge & Team → Beweis → Einwände → Abschluss */
   {
     const C = de ? {
-      trustReviews: 'Google-Bewertungen', trustYears: '15+ Jahre Erfahrung', trustFree: 'Erstberatung kostenlos',
+      trustReviews: 'Google-Bewertungen', trustYears: 'Persönliche Betreuung', trustFree: 'Erstberatung kostenlos',
       kEyebrow: 'Behandlungen', kTitle: 'Was dürfen wir', kAccent: 'für Sie tun?', kText: 'Drei Bereiche, ein Anspruch: natürliche, typgerechte Ergebnisse. Welche Behandlung zu Ihnen passt, finden wir gemeinsam in der kostenlosen Beratung heraus.',
       kAsk: 'Beratung anfragen', kPrices: 'Preise', kWa: (n) => `Hallo Liyas Lounge, ich interessiere mich für ${n} und hätte gerne eine kostenlose Beratung.`,
       rEyebrow: 'Kundenstimmen', rTitle: 'Was unsere Kundinnen', rAccent: 'sagen', rOf: 'von 5', rFrom: (n) => `aus ${n} Google-Bewertungen`, rAll: 'Alle Bewertungen auf Google',
@@ -695,7 +706,7 @@ function buildLang(lang) {
       steps: [['Nachricht senden', 'Per WhatsApp, Telefon oder E-Mail – gerne mit Foto und Ihren Wünschen.'], ['Kostenlose Beratung', 'Wir besprechen Möglichkeiten, Ablauf und Kosten – ehrlich und unverbindlich.'], ['Ihre Behandlung', 'In ruhiger Atmosphäre, ohne Zeitdruck und mit klarer Nachsorge.']],
       sCta: 'Jetzt Nachricht schreiben', sNote: 'Unverbindlich · Wir melden uns schnellstmöglich',
     } : {
-      trustReviews: 'Google reviews', trustYears: '15+ years of experience', trustFree: 'Free consultation',
+      trustReviews: 'Google reviews', trustYears: 'Personal care', trustFree: 'Free consultation',
       kEyebrow: 'Treatments', kTitle: 'How can we', kAccent: 'help you?', kText: 'Three areas, one standard: natural results that suit you. Which treatment is right for you is something we work out together in your free consultation.',
       kAsk: 'Request a consultation', kPrices: 'Prices', kWa: (n) => `Hello Liyas Lounge, I am interested in ${n} and would like a free consultation.`,
       rEyebrow: 'Client reviews', rTitle: 'What our clients', rAccent: 'say', rOf: 'out of 5', rFrom: (n) => `from ${n} Google reviews`, rAll: 'All reviews on Google',
@@ -762,7 +773,7 @@ function buildLang(lang) {
 
 ${studioBand()}
 
-${expertsSection()}
+${ownerSection()}
 
 <section class="section section--alt" aria-labelledby="rev-title">
   <div class="container">
@@ -1035,8 +1046,8 @@ ${faqSection(PRICE_FAQ)}
   /* Über uns */
   {
     const T = de
-      ? { l1: 'Ihre Lounge', l2: 'in Olten', text: 'Ehrliche Beratung, Sorgfalt und über 15 Jahre Erfahrung – in ruhiger, persönlicher Atmosphäre.', team: 'Team', alt: 'Empfang der Liyas Lounge in Olten', eyebrow: 'Über Liyas Lounge', intro: 'Wir verändern nicht, wer Sie sind – wir unterstützen, was Sie ausmacht. Jede Behandlung in der Liyas Lounge beginnt mit Zuhören, einer ehrlichen Einschätzung und einem Plan, der zu Ihrem Gesicht und Ihrem Alltag passt. <em>Natürlich</em>, persönlich und ohne Zeitdruck.', tEyebrow: 'Ihre Expertin', tTitle: 'Das', tAccent: 'Team', sTitle: 'Unsere', sAccent: 'Lounge', sText: 'Ruhig, hell und diskret – ein Ort zum Ankommen, mitten in Olten.', title: 'Über uns – Liyas Lounge Olten | Ästhetik & Beauty', description: 'Liyas Lounge in Olten: über 15 Jahre Erfahrung in Ästhetik und Beauty, ehrliche Beratung und natürliche Ergebnisse – persönlich und ohne Zeitdruck.' }
-      : { l1: 'Your lounge', l2: 'in Olten', text: 'Honest advice, care and over 15 years of experience – in a calm, personal setting.', team: 'Team', alt: 'Reception of Liyas Lounge in Olten', eyebrow: 'About Liyas Lounge', intro: 'We don’t set out to change who you are – we enhance what makes you, you. Every treatment at Liyas Lounge begins with listening, an honest assessment and a plan that suits your features and your everyday life. <em>Natural</em>, personal and never rushed.', tEyebrow: 'Your expert', tTitle: 'The', tAccent: 'Team', sTitle: 'Our', sAccent: 'Lounge', sText: 'Calm, bright and discreet – a place to arrive, in the heart of Olten.', title: 'About Us – Liyas Lounge Olten | Aesthetics & Beauty', description: 'Liyas Lounge in Olten: over 15 years of experience in aesthetics and beauty, honest advice and natural results – personal and never rushed.' };
+      ? { l1: 'Ihre Lounge', l2: 'in Olten', text: 'Ehrliche Beratung, Sorgfalt und viel Feingefühl – in ruhiger, persönlicher Atmosphäre.', team: 'Team', alt: 'Empfang der Liyas Lounge in Olten', eyebrow: 'Über Liyas Lounge', intro: 'Wir verändern nicht, wer Sie sind – wir unterstützen, was Sie ausmacht. Jede Behandlung in der Liyas Lounge beginnt mit Zuhören, einer ehrlichen Einschätzung und einem Plan, der zu Ihrem Gesicht und Ihrem Alltag passt. <em>Natürlich</em>, persönlich und ohne Zeitdruck.', tEyebrow: 'Ihre Expertin', tTitle: 'Das', tAccent: 'Team', sTitle: 'Unsere', sAccent: 'Lounge', sText: 'Ruhig, hell und diskret – ein Ort zum Ankommen, mitten in Olten.', title: 'Über uns – Liyas Lounge Olten | Ästhetik & Beauty', description: 'Liyas Lounge in Olten: Leidenschaft für Ästhetik und Beauty, ehrliche Beratung und natürliche Ergebnisse – persönlich und ohne Zeitdruck.' }
+      : { l1: 'Your lounge', l2: 'in Olten', text: 'Honest advice, care and a fine touch – in a calm, personal setting.', team: 'Team', alt: 'Reception of Liyas Lounge in Olten', eyebrow: 'About Liyas Lounge', intro: 'We don’t set out to change who you are – we enhance what makes you, you. Every treatment at Liyas Lounge begins with listening, an honest assessment and a plan that suits your features and your everyday life. <em>Natural</em>, personal and never rushed.', tEyebrow: 'Your expert', tTitle: 'The', tAccent: 'Team', sTitle: 'Our', sAccent: 'Lounge', sText: 'Calm, bright and discreet – a place to arrive, in the heart of Olten.', title: 'About Us – Liyas Lounge Olten | Aesthetics & Beauty', description: 'Liyas Lounge in Olten: a passion for aesthetics and beauty, honest advice and natural results – personal and never rushed.' };
     const body = `
 <section class="hero hero--page" aria-labelledby="u-title">
   ${heroMedia(HOME.aboutHero, T.alt)}

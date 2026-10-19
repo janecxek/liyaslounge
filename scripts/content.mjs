@@ -732,15 +732,15 @@ export const TREATMENTS = [
 export const TEAM = [
   {
     name: '[Name folgt]',
-    role: 'Inhaberin · über 15 Jahre Erfahrung in Ästhetik & Beauty',
+    role: 'Inhaberin · Ästhetik & Beauty',
     roleShort: 'Inhaberin',
     image: 'studio-liyas-lounge-eingang',
     alt: 'Eingangsbereich der Liyas Lounge in Olten',
     bio: [
-      'Mit über 15 Jahren Erfahrung in Ästhetik und Beauty begleitet sie Kundinnen und Kunden in Olten – persönlich, ehrlich und ohne Zeitdruck.',
+      'Mit Leidenschaft für Ästhetik und Beauty begleitet sie Kundinnen und Kunden in Olten – persönlich, ehrlich und ohne Zeitdruck.',
       '[Ausbildung, Qualifikationen und Werdegang ergänzen]',
     ],
-    facts: ['Über 15 Jahre Erfahrung', '[Zertifikat / Ausbildung ergänzen]', '[Weiterbildung ergänzen]'],
+    facts: ['Persönliche Betreuung von A bis Z', '[Zertifikat / Ausbildung ergänzen]', '[Weiterbildung ergänzen]'],
   },
 ];
 
@@ -762,7 +762,7 @@ export const HOME_FAQ = [
   ['Bin ich nach der Behandlung gesellschaftsfähig?', 'Bei vielen Behandlungen sofort oder nach wenigen Stunden. Leichte Rötungen oder Schwellungen sind je nach Methode möglich. Details finden Sie auf der jeweiligen Behandlungsseite.'],
   ['Wo befindet sich die Liyas Lounge?', 'Unsere Lounge befindet sich in 4600 Olten [genaue Adresse folgt]. Gerne senden wir Ihnen die Wegbeschreibung per WhatsApp.'],
   ['Wie kann ich einen Termin buchen?', 'Am einfachsten per WhatsApp (nur Nachrichten) oder telefonisch. Wir melden uns schnellstmöglich und finden gemeinsam einen passenden Termin.'],
-  ['Wer führt die Behandlungen durch?', 'Die Behandlungen werden von qualifizierten Fachpersonen mit über 15 Jahren Erfahrung durchgeführt. [Angaben zur ärztlichen Verantwortung ergänzen]'],
+  ['Wer führt die Behandlungen durch?', 'Die Behandlungen werden von qualifizierten Fachpersonen durchgeführt. [Angaben zur ärztlichen Verantwortung ergänzen]'],
   ['Was kostet eine Behandlung?', 'Auf unserer Preisseite finden Sie alle Preise – z. B. IPL-Haarentfernung ab CHF 49, Facials ab CHF 150 oder Dermal Filler ab CHF 130. Die finalen Kosten besprechen wir in der Beratung.'],
   ['Wie kann ich bezahlen?', 'Die Zahlung erfolgt direkt nach der Behandlung – bar, mit TWINT oder per Karte.'],
 ];
