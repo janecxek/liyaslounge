@@ -41,6 +41,11 @@ const T = {
     visScript: 'Ihr', visH: 'Besuch',
     policies: [['Erstberatung', 'Kostenlos und unverbindlich – wir nehmen uns Zeit für Ihre Fragen.'], ['Termine', 'Am einfachsten per WhatsApp (nur Nachrichten). Wir melden uns schnellstmöglich.'], ['Absagen', 'Bitte spätestens 24 Stunden vor dem Termin absagen oder verschieben.'], ['Zahlung', `Direkt nach der Behandlung – ${SITE.payment.de}.`], ['Gesundheit', 'Bitte informieren Sie uns vorab über Allergien, Medikamente oder eine Schwangerschaft.'], ['Pünktlichkeit', 'Bei Verspätung kann sich die Behandlungszeit verkürzen.']],
     prepH: 'Vor Ihrem Termin', prep: ['Gerne ungeschminkt erscheinen', 'Fragen & Wünsche notieren', 'Medikamente & Allergien angeben', 'Etwas Zeit einplanen'],
+    nudge: {
+      ex: ['Lernen Sie mich persönlich kennen – das erste Gespräch ist kostenlos und unverbindlich.', 'Kennenlernen vereinbaren', 'Hallo Liyas Lounge, ich würde Sie gerne bei einer kostenlosen Beratung kennenlernen.'],
+      tr: ['Nicht sicher, was zu Ihnen passt? Schicken Sie uns ein Foto – wir sagen Ihnen ehrlich, was sinnvoll ist. Auch wenn es «nichts» ist.', 'Ehrliche Einschätzung holen', 'Hallo Liyas Lounge, ich bin unsicher, welche Behandlung zu mir passt. Können Sie mich ehrlich beraten?'],
+      faq: ['Ihre Frage war nicht dabei? Fragen Sie einfach – wir antworten persönlich.', 'Frage per WhatsApp stellen', 'Hallo Liyas Lounge, ich habe eine Frage:'],
+    },
     faqScript: 'Häufige', faqH: 'Fragen', faq: HOME_FAQ.slice(0, 7),
     ctScript: 'Ihr Termin.', ctH: 'Ihre Zeit.', ctP: 'Schreiben Sie uns per WhatsApp – gerne mit Foto und Ihren Wünschen. Wir beraten Sie persönlich, ehrlich und kostenlos.',
     ctBtn: 'Jetzt per WhatsApp schreiben', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
@@ -72,6 +77,11 @@ const T = {
     visScript: 'Your', visH: 'Visit',
     policies: [['Consultation', 'Free and without obligation – we take time for your questions.'], ['Appointments', 'Easiest via WhatsApp (messages only). We reply as soon as possible.'], ['Cancellations', 'Please cancel or reschedule at least 24 hours in advance.'], ['Payment', `Directly after the treatment – ${SITE.payment.en}.`], ['Health', 'Please tell us in advance about allergies, medication or a pregnancy.'], ['Punctuality', 'If you arrive late, the treatment time may be shortened.']],
     prepH: 'Before your appointment', prep: ['Come without make-up if possible', 'Note your questions & wishes', 'Tell us about medication & allergies', 'Allow a little extra time'],
+    nudge: {
+      ex: ['Get to know me in person – the first conversation is free and without obligation.', 'Arrange a first meeting', 'Hello Liyas Lounge, I would like to get to know you in a free consultation.'],
+      tr: ['Not sure what suits you? Send us a photo – we will tell you honestly what makes sense. Even if that is “nothing”.', 'Get an honest opinion', 'Hello Liyas Lounge, I am not sure which treatment suits me. Could you give me honest advice?'],
+      faq: ['Your question was not answered? Just ask – we reply personally.', 'Ask on WhatsApp', 'Hello Liyas Lounge, I have a question:'],
+    },
     faqScript: 'Frequently', faqH: 'Asked', faq: EN_HOME_FAQ.slice(0, 7),
     ctScript: 'Your appointment.', ctH: 'Your time.', ctP: 'Send us a WhatsApp message – photos and wishes welcome. We advise you personally, honestly and free of charge.',
     ctBtn: 'Message us on WhatsApp', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
@@ -107,6 +117,8 @@ const head = (script, h, cls = '') => `<header class="sh ${cls}" data-up><p clas
 function page(L) {
   const t = T[L], other = L === 'de' ? 'en' : 'de';
   const wa = (text) => esc(`${SITE.whatsapp}?text=${encodeURIComponent(text)}`);
+  // kurzer Hinweis + Button, passend zur Stelle auf der Seite
+  const nudge = ([txt, btn, msg], cls = '') => `<div class="nudge ${cls}" data-up><p>${esc(txt)}</p><a class="btn btn--line" href="${wa(msg)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(btn)}</span></a></div>`;
   const rating = String(SITE.googleRating).replace('.', L === 'de' ? ',' : '.');
   const navHtml = t.nav.map(([id, l]) => `<a href="#${id}">${l}</a>`).join('');
   const langSw = `<nav class="lang" aria-label="${t.langAria}"><a href="/" hreflang="de-CH" lang="de-CH"${L === 'de' ? ' aria-current="true"' : ''}>DE</a><a href="/en" hreflang="en" lang="en"${L === 'en' ? ' aria-current="true"' : ''}>EN</a></nav>`;
@@ -150,6 +162,7 @@ function page(L) {
     <p class="lead" data-up>${esc(t.exP)}</p>
     <figure class="photo" data-up>${pic('beratung-inhaberin-olten', t.ownerAlt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '50% 35%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
     <ul class="values">${t.values.map(([a, b], i) => `<li data-up style="--d:${i * .1}s"><span>0${i + 1}</span><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
+    ${nudge(t.nudge.ex)}
   </div>
 </section>
 
@@ -166,6 +179,7 @@ function page(L) {
         <span class="tr__txt"><b>${esc(c.name)}</b><em>${esc(c.claim || '')}</em><small>${esc(c.short)}</small><span class="tr__from">${t.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${t.ask} ${ico('arrow')}</span></span>
       </a></li>`).join('')}</ul>
     </div>
+    ${nudge(t.nudge.tr, 'nudge--wide')}
   </div>
 </section>
 
@@ -191,6 +205,7 @@ function page(L) {
 <section class="faq" id="faq">
   ${head(t.faqScript, t.faqH)}
   <div class="acc" data-up>${t.faq.map(([q, a]) => `<details><summary>${esc(q)}${ico('plus')}</summary><div><p>${esc(a)}</p></div></details>`).join('')}</div>
+  ${nudge(t.nudge.faq)}
 </section>
 
 <section class="ct" id="kontakt">
