@@ -10,7 +10,7 @@
   var lenis = null;
   if (!reduce && typeof window.Lenis === 'function') {
     try {
-      lenis = new window.Lenis({ duration: 1.2, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
+      lenis = new window.Lenis({ duration: .85, wheelMultiplier: 1.15, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
       var raf = function (time) { lenis.raf(time); requestAnimationFrame(raf); };
       requestAnimationFrame(raf);
     } catch (e) { lenis = null; }
@@ -42,26 +42,14 @@
     spy(y);
   }
 
-  /* ---------- Behandlungen: Karte weitet sich auf volle Breite, Kategorien erscheinen, dann schrumpft sie ---------- */
-  var tr = $('[data-pin]'), box = $('[data-box]');
-  var clamp = function (v) { return Math.max(0, Math.min(1, v)); };
-  var lerp = function (a, b, t) { return a + (b - a) * t; };
-  function pin(y) {
-    if (!tr || !box || reduce || window.innerWidth <= 900) return;
-    var r = tr.getBoundingClientRect(), vh = window.innerHeight, vw = root.clientWidth;
-    var p = clamp(-r.top / (tr.offsetHeight - vh));
-    // 0 – .22 aufziehen · .22 – .78 offen · .78 – 1 schliessen
-    var e = p < .22 ? easeInOut(p / .22) : p > .78 ? 1 - easeInOut((p - .78) / .22) : 1;
-    var c = clamp((e - .55) / .4);
-    var w0 = Math.min(560, vw * .44), h0 = vh * .66;
-    box.style.setProperty('--w', lerp(w0, vw, e).toFixed(1) + 'px');
-    box.style.setProperty('--h', lerp(h0, vh, e).toFixed(1) + 'px');
-    box.style.setProperty('--r', lerp(w0 / 2, 0, e).toFixed(1) + 'px');
-    box.style.setProperty('--rb', lerp(24, 0, e).toFixed(1) + 'px');
-    tr.style.setProperty('--e', e.toFixed(3));
-    tr.style.setProperty('--c', c.toFixed(3));
-    tr.style.setProperty('--o', (p > .9 ? 1 - (p - .9) / .1 * .6 : 1).toFixed(3));
-    tr.classList.toggle('is-open', c > .6);
+  /* ---------- Behandlungen: öffnet sich weich beim Hineinscrollen, schliesst beim Zurückscrollen nach oben ---------- */
+  var tr = $('[data-pin]');
+  function pin() {
+    if (!tr) return;
+    if (reduce || window.innerWidth <= 900) { tr.classList.add('is-open'); return; }
+    var top = tr.getBoundingClientRect().top, vh = window.innerHeight;
+    if (top < vh * .55) tr.classList.add('is-open');
+    else if (top > vh * .8) tr.classList.remove('is-open');
   }
 
   /* ---------- aktiver Menüpunkt ---------- */
@@ -100,8 +88,8 @@
       setMenu(false);
       // Behandlungen: direkt zum geöffneten Zustand springen
       var target = el;
-      if (el === tr && window.innerWidth > 900 && !reduce) {
-        var y = tr.getBoundingClientRect().top + window.pageYOffset + (tr.offsetHeight - window.innerHeight) * .32;
+      if (false) {
+        var y = 0;
         setTimeout(function () { if (lenis) lenis.scrollTo(y, { duration: 1.6, easing: easeInOut }); else window.scrollTo({ top: y, behavior: 'smooth' }); }, wasOpen ? 250 : 0);
         return;
       }
