@@ -42,7 +42,8 @@ python3 scripts/add-image.py <quelle.png> <name>
 ```
 
 Erzeugt WebP in mehreren Breiten, JPG und Vorschau und trägt alles in `scripts/imgmeta.json` ein.
-Optional: `<name>-portrait` als Ausschnitt für Handys; Fokuspunkt `fx`/`fy` (in %) in `imgmeta.json`.
+Bis 4K (3840 px Breite), Qualität 90 – die Grösse des Originals ist die Obergrenze, deshalb Bilder möglichst in 4K liefern.
+Optional: `<name>-portrait` als Ausschnitt für Handys; Fokuspunkt `fx`/`fy` (in %) in `imgmeta.json` (bleibt beim erneuten Import erhalten).
 Prompts für noch fehlende Bilder: `docs/bild-prompts.md`.
 
 ## Behandlungen: vorerst nur Kategorien
