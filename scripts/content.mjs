@@ -10,7 +10,7 @@ export const SITE = {
   phone: '[Telefon folgt]',
   phoneHref: 'tel:+41795090660',
   whatsapp: 'https://wa.me/41795090660',
-  email: 'info@liyas-lounge.com', // ⚠ bitte bestätigen
+  email: '', // noch unbekannt – leer = wird nirgends angezeigt (Rechtstexte zeigen «[E-Mail folgt]»)
   street: 'Hammerallee 23',
   floor: '',
   zip: '4600',
@@ -22,9 +22,9 @@ export const SITE = {
   mapEmbed: 'https://www.google.com/maps?q=Liyas%20Lounge%2C%20Hammerallee%2023%2C%204600%20Olten&output=embed',
   geo: null, // { lat, lng } aus Google Maps eintragen
   // ▼ Von der Kundin zu ergänzen – leer/null lassen = wird nicht angezeigt
-  // ⚠ DEMO-Werte nur für die Präsentation – vor dem Livegang durch echte Google-Werte ersetzen oder auf null setzen
+  // Anzahl laut Google-Profil; ⚠ Durchschnitt (googleRating) bitte im Google-Profil prüfen
   googleRating: 4.9,
-  googleReviewCount: 87,
+  googleReviewCount: 27, // laut Google-Profil
   hours: [{ days: ['Mo', 'Tu', 'We', 'Th', 'Fr'], de: 'Mo–Fr', en: 'Mon–Fri', opens: '10:00', closes: '19:00' }],
   hoursNote: { de: 'Sa nach Vereinbarung', en: 'Sat by appointment' },
   payment: { de: 'Bar, TWINT, Karte', en: 'Cash, TWINT, card' },
