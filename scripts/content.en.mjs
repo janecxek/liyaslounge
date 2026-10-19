@@ -482,7 +482,7 @@ export const EN_TEAM = [
   {
     role: 'Owner · aesthetics & beauty',
     roleShort: 'Owner',
-    alt: 'Entrance area of Liyas Lounge in Olten',
+    alt: 'Portrait of the owner of Liyas Lounge in Olten',
     bio: [
       'With a passion for aesthetics and beauty, she looks after clients in Olten – personally, honestly and never in a rush.',
       '[Add training, qualifications and career]',

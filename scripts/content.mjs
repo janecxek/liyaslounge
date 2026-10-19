@@ -734,8 +734,8 @@ export const TEAM = [
     name: '[Name folgt]',
     role: 'Inhaberin · Ästhetik & Beauty',
     roleShort: 'Inhaberin',
-    image: 'studio-liyas-lounge-eingang',
-    alt: 'Eingangsbereich der Liyas Lounge in Olten',
+    image: 'inhaberin-liyas-lounge-olten',
+    alt: 'Porträt der Inhaberin der Liyas Lounge in Olten',
     bio: [
       'Mit Leidenschaft für Ästhetik und Beauty begleitet sie Kundinnen und Kunden in Olten – persönlich, ehrlich und ohne Zeitdruck.',
       '[Ausbildung, Qualifikationen und Werdegang ergänzen]',
