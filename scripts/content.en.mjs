@@ -480,14 +480,14 @@ export const EN_TREATMENTS = {
 
 export const EN_TEAM = [
   {
-    role: 'Owner · over 15 years of experience in aesthetics & beauty',
+    role: 'Owner · aesthetics & beauty',
     roleShort: 'Owner',
     alt: 'Entrance area of Liyas Lounge in Olten',
     bio: [
-      'With over 15 years of experience in aesthetics and beauty, she looks after clients in Olten – personally, honestly and never in a rush.',
+      'With a passion for aesthetics and beauty, she looks after clients in Olten – personally, honestly and never in a rush.',
       '[Add training, qualifications and career]',
     ],
-    facts: ['Over 15 years of experience', '[Add certificate / training]', '[Add further training]'],
+    facts: ['Personal care from start to finish', '[Add certificate / training]', '[Add further training]'],
   },
 ];
 
@@ -509,7 +509,7 @@ export const EN_HOME_FAQ = [
   ['Can I go out straight after the treatment?', 'With many treatments, straight away or after a few hours. Mild redness or swelling is possible depending on the method. You will find details on each treatment page.'],
   ['Where is Liyas Lounge?', 'Our lounge is in 4600 Olten [exact address to follow]. We are happy to send you directions via WhatsApp.'],
   ['How do I book an appointment?', 'The easiest way is via WhatsApp (messages only) or by phone. We will get back to you as soon as possible and find a time that suits you.'],
-  ['Who carries out the treatments?', 'Treatments are carried out by qualified professionals with over 15 years of experience. [Add details of medical responsibility]'],
+  ['Who carries out the treatments?', 'Treatments are carried out by qualified professionals. [Add details of medical responsibility]'],
   ['How much does a treatment cost?', 'You will find all prices on our price page – e.g. IPL hair removal from CHF 49, facials from CHF 150 or dermal fillers from CHF 130. We confirm the final cost in your consultation.'],
   ['How can I pay?', 'Payment is made directly after the treatment – in cash, with TWINT or by card.'],
 ];
