@@ -153,6 +153,8 @@ function page(L) {
   </div>
 </section>
 
+<div class="link" aria-hidden="true"><i></i></div>
+
 <section class="tr" id="behandlungen" data-pin>
   <div class="tr__sticky">
     <div class="tr__box" data-box>
