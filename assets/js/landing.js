@@ -105,8 +105,63 @@
     ups.forEach(function (el) { io.observe(el); });
   } else ups.forEach(function (el) { el.classList.add('is-in'); });
 
-  /* ---------- FAQ: nur eine offen ---------- */
-  $$('.acc details').forEach(function (d, _, all) {
-    d.addEventListener('toggle', function () { if (d.open) all.forEach(function (o) { if (o !== d) o.open = false; }); });
+  /* ---------- FAQ: weich auf- und zuklappen, immer nur eine offen ---------- */
+  var accs = $$('.acc details');
+  function animate(d, open) {
+    var body = d.querySelector('div');
+    if (reduce || !body.animate) { d.open = open; return; }
+    if (d._anim) d._anim.cancel();
+    var start = body.offsetHeight;
+    if (open) d.open = true;
+    var end = open ? body.scrollHeight : 0;
+    if (!open) body.style.height = start + 'px';
+    d._anim = body.animate([{ height: start + 'px', opacity: open ? 0 : 1 }, { height: end + 'px', opacity: open ? 1 : 0 }], { duration: 520, easing: 'cubic-bezier(.16,1,.3,1)' });
+    d.classList.toggle('is-open', open);
+    d._anim.onfinish = function () { d._anim = null; body.style.height = ''; if (!open) d.open = false; };
+  }
+  accs.forEach(function (d) {
+    d.querySelector('div').style.height = d.open ? '' : '0px';
+    d.querySelector('summary').addEventListener('click', function (e) {
+      e.preventDefault();
+      var willOpen = !d.classList.contains('is-open');
+      if (willOpen) accs.forEach(function (o) { if (o !== d && o.classList.contains('is-open')) animate(o, false); });
+      animate(d, willOpen);
+    });
+  });
+
+  /* ---------- Bewertungs-Slider (nicht endlos) ---------- */
+  $$('[data-slider]').forEach(function (sl) {
+    var view = $('.rs__view', sl), track = $('[data-track]', sl), cards = $$('.rs__card', sl);
+    var prev = $('[data-prev]', sl), next = $('[data-next]', sl), cur = $('[data-cur]', sl), bar = $('[data-bar]', sl);
+    var i = 0, n = cards.length;
+    function step() { return cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0); }
+    function go(k) {
+      i = Math.max(0, Math.min(n - 1, k));
+      track.style.setProperty('--x', (-i * step()) + 'px');
+      cards.forEach(function (c, j) { c.classList.toggle('is-on', j === i); c.classList.toggle('is-next', j === i + 1); c.classList.toggle('is-prev', j === i - 1); c.setAttribute('aria-hidden', String(j !== i)); });
+      prev.disabled = i === 0; next.disabled = i === n - 1;
+      cur.textContent = String(i + 1).padStart(2, '0');
+      bar.style.setProperty('--p', ((i + 1) / n * 100) + '%');
+    }
+    prev.addEventListener('click', function () { go(i - 1); });
+    next.addEventListener('click', function () { go(i + 1); });
+    cards.forEach(function (c, j) { c.addEventListener('click', function () { if (j !== i && !moved) go(j); }); });
+    // Wischen / Ziehen
+    var sx = 0, sy = 0, dx = 0, down = false, moved = false, base = 0;
+    view.addEventListener('pointerdown', function (e) { down = true; moved = false; sx = e.clientX; sy = e.clientY; dx = 0; base = -i * step(); });
+    window.addEventListener('pointermove', function (e) {
+      if (!down) return;
+      dx = e.clientX - sx;
+      if (!moved && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - sy)) { moved = true; view.classList.add('is-drag'); }
+      if (moved) track.style.setProperty('--x', (base + dx) + 'px');
+    });
+    window.addEventListener('pointerup', function () {
+      if (!down) return; down = false; view.classList.remove('is-drag');
+      if (moved) go(i + (dx < -50 ? 1 : dx > 50 ? -1 : 0));
+      setTimeout(function () { moved = false; }, 0);
+    });
+    sl.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(i + 1); if (e.key === 'ArrowLeft') go(i - 1); });
+    window.addEventListener('resize', function () { go(i); });
+    go(0);
   });
 })();
