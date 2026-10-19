@@ -225,7 +225,7 @@ function header(active, key) {
 <a class="skip" href="#main">${S.skip}</a>
 <header class="hdr" id="top">
   <div class="container hdr__in">
-    <a class="logo" href="${P('home')}" aria-label="${S.homeAria}" data-top><span class="logo__mark" aria-hidden="true">LL</span>${logoWord()}</a>
+    <a class="logo" href="${P('home')}" aria-label="${S.homeAria}" data-top>${logoWord()}</a>
     <nav class="nav" aria-label="${S.mainNav}">
       <ul class="nav__list">
         ${DETAIL_PAGES ? `<li class="nav__item has-mega"><a href="${P('treatments')}" class="nav__link"${a('treatments')} aria-haspopup="true" aria-expanded="false">${S.nav.treatments} ${icon('chevron')}</a>
