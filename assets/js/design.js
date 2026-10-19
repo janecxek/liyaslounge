@@ -51,7 +51,7 @@
   }
   function closeMenus() {
     $$('.burger[aria-expanded="true"]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); doc.getElementById(b.getAttribute('aria-controls')).hidden = true; });
-    if (pick.hidden) body.classList.remove('locked');
+    if (!pick || pick.hidden) body.classList.remove('locked');
   }
 
   // Version 2: Navigation wird nach dem Hero fest
@@ -67,6 +67,12 @@
   });
 
   // Start: ?v=1 / ?v=2 öffnet direkt die Version, sonst die Auswahl
+  if (!pick) {
+    // Startseite: nur Version 2
+    $$('[data-up]').forEach(function (el) { if (io) io.observe(el); else el.classList.add('is-in'); });
+    onScroll();
+    return;
+  }
   var q = (location.search.match(/[?&]v=([12])/) || [])[1];
   if (q) { pick.hidden = true; show(q, true); } else { body.classList.add('locked'); }
 })();

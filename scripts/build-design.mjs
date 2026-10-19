@@ -168,6 +168,7 @@ ${menu(2)}
     <p class="v2-script" data-up>Lernen Sie kennen</p>
     <h2 class="v2-h" data-up>Ihre Expertin</h2>
     <p class="v2-p" data-up>Hinter der Liyas Lounge steht eine Gastgeberin mit Leidenschaft für Ästhetik und Beauty – persönlich, ehrlich und mit viel Feingefühl. Jede Behandlung beginnt mit Zuhören und einer kostenlosen Beratung.</p>
+    <figure class="v2-photo" data-up>${pic('beratung-inhaberin-olten', 'Persönliche Beratung in der Liyas Lounge Olten', { sizes: '(max-width: 900px) 92vw, 640px', pos: '50% 35%' })}<figcaption>Jede Behandlung beginnt mit einer persönlichen, kostenlosen Beratung.</figcaption></figure>
     <span class="v2-rule" aria-hidden="true"></span>
     <p class="v2-script" data-up>Kontakt</p>
     <h2 class="v2-h" data-up>Get in touch</h2>
@@ -283,7 +284,15 @@ writeFileSync(join(ROOT, 'design.html'), html);
 // Die bisherige Landing bleibt unter /en (Englisch) bzw. kann über START_PAGE = false wiederhergestellt werden.
 export const START_PAGE = true;
 if (START_PAGE) {
-  const home = html
+  // Bisherige Landing (Perfect-Shape-Stil, von build.mjs erzeugt) als /klassisch sichern – zum Zeigen für die Kundin
+  const classic = readFileSync(join(ROOT, 'index.html'), 'utf8');
+  if (!classic.includes('id="pick"')) writeFileSync(join(ROOT, 'klassisch.html'), classic.replace(/<meta name="robots"[^>]*>/, '<meta name="robots" content="noindex, nofollow">').replace(/<link rel="canonical"[^>]*>\n?/, '').replace(/<link rel="alternate" hreflang[^>]*>\n?/g, ''));
+  // Startseite: nur Version 2 (ohne Auswahl und Umschalter)
+  const onlyV2 = `<!doctype html>` + html.slice('<!doctype html>'.length)
+    .replace(/<div class="pick"[\s\S]*?<div class="switch"[^>]*>[\s\S]*?<\/div>/, '')
+    .replace(/<div class="v v1"[\s\S]*?<\/footer>\n<\/div>/, '')
+    .replace('<div class="v v2" data-v="2" hidden>', '<div class="v v2" data-v="2">');
+  const home = onlyV2
     .replace('<meta name="robots" content="noindex, nofollow">', `<meta name="robots" content="index, follow">\n<meta name="description" content="Liyas Lounge Olten – Medical Aesthetic &amp; Beauty an der Hammerallee 23. Persönlich betreut, ehrlich beraten. Kostenlose Beratung per WhatsApp.">\n<link rel="canonical" href="${SITE.url}/">`)
     .replace('<title>Design-Vorschau – Liyas Lounge Olten</title>', '<title>Liyas Lounge Olten – Medical Aesthetic &amp; Beauty</title>');
   writeFileSync(join(ROOT, 'index.html'), home);
