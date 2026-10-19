@@ -38,13 +38,16 @@ body.locked { overflow: hidden; }
 
 /* ---------- Logo: LIYAS (Gold-Glitter) über «Lounge» (Schrift), darunter Claim ---------- */
 .logo { position: relative; display: inline-grid; justify-items: center; line-height: 1; }
-.logo__main { display: block; padding: .08em .1em .04em .18em; font-family: var(--bodoni); font-weight: 500; font-size: 3rem; line-height: 1.1; letter-spacing: .08em; color: transparent; background: url('/assets/img/gold-glitter.webp') center / 240px auto, var(--grad); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 1px 0 rgba(70, 45, 10, .6)) drop-shadow(0 8px 20px rgba(0, 0, 0, .55)); }
-.logo__script { display: block; margin-top: -.12em; padding: .05em .3em .22em; font-family: var(--script); font-size: 2.3rem; line-height: 1.1; color: transparent; background: linear-gradient(105deg, #e9c87e 0%, #fff4d2 35%, #e3bf74 60%, #fbe7b4 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .7)); animation: shine 8s linear infinite; }
+.logo__main { display: block; padding: .08em .1em .04em .18em; font-family: var(--bodoni); font-weight: 500; font-size: 3rem; line-height: 1.1; letter-spacing: .08em; color: transparent; background: linear-gradient(110deg, transparent 38%, rgba(255, 246, 220, .85) 46%, #fff 50%, rgba(255, 246, 220, .85) 54%, transparent 62%) 85% 0 / 300% 100% no-repeat, url('/assets/img/gold-glitter.webp') 0 0 / 240px auto, var(--grad); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 1px 0 rgba(70, 45, 10, .6)) drop-shadow(0 8px 20px rgba(0, 0, 0, .55)); animation: sweep 5.5s cubic-bezier(.45, 0, .25, 1) infinite; }
+.logo__script { display: block; margin-top: -.12em; padding: .05em .3em .22em; font-family: var(--script); font-size: 2.3rem; line-height: 1.1; color: transparent; background: linear-gradient(105deg, #e3bf74 0%, #fff8e2 18%, #d9b264 34%, #fbe7b4 50%, #e3bf74 66%, #fff8e2 84%, #e3bf74 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .7)); animation: shine 4.5s linear infinite; }
 .logo__tag { margin-top: .4em; padding-left: .45em; font-family: var(--sans); font-weight: 500; font-size: .52rem; letter-spacing: .45em; text-transform: uppercase; color: var(--gold-l); white-space: nowrap; }
 .spark { position: absolute; width: 14px; height: 14px; background: radial-gradient(circle, #fff 0 14%, rgba(255, 244, 210, .85) 15% 24%, transparent 25%); clip-path: polygon(50% 0, 57% 43%, 100% 50%, 57% 57%, 50% 100%, 43% 57%, 0 50%, 43% 43%); animation: twinkle 3.4s ease-in-out infinite; pointer-events: none; }
 .spark.s1 { top: 2%; left: 14%; } .spark.s2 { top: 4%; left: 62%; width: 10px; height: 10px; animation-delay: 1.2s; } .spark.s3 { top: 30%; right: 6%; width: 12px; height: 12px; animation-delay: 2.2s; }
 @keyframes twinkle { 0%, 100% { transform: scale(.2) rotate(0); opacity: 0; } 45%, 55% { transform: scale(1) rotate(45deg); opacity: 1; } }
 @keyframes shine { to { background-position: -200% 0; } }
+/* Logo: Lichtreflex gleitet über LIYAS, Glitzer bewegt sich leicht */
+@keyframes sweep { 0% { background-position: 85% 0, 0 0, 0 0; } 45%, 100% { background-position: 15% 0, 48px -24px, 0 0; } }
+@media (prefers-reduced-motion: reduce) { .logo__main, .logo__script { animation: none; } }
 .logo--hero .logo__main { font-size: clamp(3.4rem, 11vw, 8.6rem); }
 .logo--hero .logo__script { font-size: clamp(2.4rem, 7vw, 5.4rem); }
 .logo--hero .logo__tag { font-size: clamp(.58rem, 1.2vw, .86rem); }
@@ -190,9 +193,9 @@ html.js [data-in] { opacity: 0; transform: translateY(22px); animation: fadeUp 1
 
 /* Bewertungs-Slider: eine Bewertung im Fokus, die nächste halb sichtbar, der Rest weichgezeichnet */
 .rs { --cw: min(480px, 44vw); --gap: 24px; max-width: var(--maxw); margin: 0 auto 40px; text-align: left; }
-.rs__view { overflow: hidden; padding: 10px 0; cursor: grab; touch-action: pan-y; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 82%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 82%, transparent 100%); }
+.rs__view { overflow: hidden; padding: 10px 0; cursor: grab; touch-action: pan-y; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 84%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 84%, transparent 100%); }
 .rs__view.is-drag { cursor: grabbing; }
-.rs__track { display: flex; gap: var(--gap); padding-left: calc((100% - var(--cw)) * .22); transform: translate3d(var(--x, 0px), 0, 0); transition: transform .9s var(--ease); }
+.rs__track { display: flex; gap: var(--gap); padding-left: calc((100% - var(--cw)) / 2); transform: translate3d(var(--x, 0px), 0, 0); transition: transform .9s var(--ease); }
 .rs__view.is-drag .rs__track { transition: none; }
 .rs__card { flex: none; width: var(--cw); opacity: .22; filter: blur(5px); transform: scale(.94); transition: opacity .9s var(--ease), filter .9s var(--ease), transform .9s var(--ease); user-select: none; }
 .rs__card.is-next, .rs__card.is-prev { opacity: .5; filter: blur(1.5px); transform: scale(.97); }
@@ -203,7 +206,7 @@ html.js [data-in] { opacity: 0; transform: translateY(22px); animation: fadeUp 1
 .rs__card figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
 .rs__card figcaption b { font-size: .7rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-l); }
 .rs__card figcaption span { font-family: var(--corm); font-style: italic; font-size: .98rem; color: var(--txt2); }
-.rs__nav { display: flex; align-items: center; gap: 18px; margin-top: 26px; padding-left: calc((100% - var(--cw)) * .22); max-width: calc(var(--cw) + (100% - var(--cw)) * .22); }
+.rs__nav { display: flex; align-items: center; gap: 18px; max-width: min(480px, 100%); margin: 26px auto 0; }
 .rs__btn { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--hair); color: var(--gold-l); transition: background .4s, color .4s, opacity .4s, border-color .4s; }
 .rs__btn:hover:not(:disabled) { background: var(--gold); color: var(--k0); border-color: var(--gold); }
 .rs__btn:disabled { opacity: .25; cursor: default; }
@@ -214,8 +217,8 @@ html.js [data-in] { opacity: 0; transform: translateY(22px); animation: fadeUp 1
 @media (max-width: 640px) {
   .rs { --cw: 74vw; --gap: 12px; }
   .rs__view { -webkit-mask-image: none; mask-image: none; margin: 0 calc(var(--gutter) * -1); }
-  .rs__track { padding-left: var(--gutter); }
-  .rs__nav { padding-left: 0; max-width: none; gap: 12px; }
+  .rs__track { padding-left: calc((100vw - var(--cw)) / 2); }
+  .rs__nav { gap: 12px; }
   .rs__card figure { padding: 22px 20px; gap: 12px; border-radius: 18px; }
   .rs__card blockquote { font-size: 1.02rem; }
 }
