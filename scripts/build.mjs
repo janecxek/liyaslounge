@@ -225,7 +225,7 @@ function header(active, key) {
 <a class="skip" href="#main">${S.skip}</a>
 <header class="hdr" id="top">
   <div class="container hdr__in">
-    <a class="logo" href="${P('home')}" aria-label="${S.homeAria}" data-top><span class="logo__mark" aria-hidden="true">LL</span>${logoWord()}</a>
+    <a class="logo" href="${P('home')}" aria-label="${S.homeAria}" data-top>${logoWord()}</a>
     <nav class="nav" aria-label="${S.mainNav}">
       <ul class="nav__list">
         ${DETAIL_PAGES ? `<li class="nav__item has-mega"><a href="${P('treatments')}" class="nav__link"${a('treatments')} aria-haspopup="true" aria-expanded="false">${S.nav.treatments} ${icon('chevron')}</a>
@@ -556,7 +556,7 @@ function buildLang(lang) {
     sEyebrow: 'Liyas Lounge · Olten', route: 'Route planen',
     g: ['Empfang der Liyas Lounge in Olten', 'Behandlungsraum der Liyas Lounge in Olten', 'Details: Ampullen, Handtücher und Orchideen in der Liyas Lounge'],
     teamEyebrow: 'Über uns', teamTitle: 'Persönlich.', teamAccent: 'Mit Herz & Sorgfalt.', teamText: 'Hinter der Liyas Lounge steht eine Gastgeberin mit Leidenschaft für Ästhetik und Beauty, viel Feingefühl und dem Anspruch, dass Sie sich rundum wohlfühlen – von der ersten Nachricht bis zur Nachsorge.', teamLink: 'Mehr über uns',
-    values: [['Persönliche Betreuung', 'Wir nehmen uns Zeit für Sie und all Ihre Fragen – ohne Zeitdruck.'], ['Ehrliche Einschätzung', 'Wir empfehlen nur, was zu Ihnen passt – auch wenn das weniger ist.'], ['Hygiene & Qualität', 'Saubere Abläufe und ausschliesslich zugelassene Produkte.']], ownerOf: 'Inhaberin',
+    values: [['Persönliche Betreuung', 'Wir nehmen uns Zeit für Sie und all Ihre Fragen – ohne Zeitdruck.'], ['Ehrliche Einschätzung', 'Wir empfehlen nur, was zu Ihnen passt – auch wenn das weniger ist.'], ['Hygiene & Qualität', 'Saubere Abläufe und ausschliesslich zugelassene Produkte.']],
     revEyebrow: 'Kundenstimmen', revTitle: 'Echte', revAccent: 'Erfahrungen', stars: '5 von 5 Sternen', prev: 'Vorherige Bewertung', next: 'Nächste Bewertung', google: 'Bewertungen auf Google',
     fTitle: 'Häufige', fAccent: 'Fragen', fText: 'Ihre Frage ist nicht dabei? Schreiben Sie uns per WhatsApp oder rufen Sie an – wir helfen gerne.', fLink: 'Kontakt aufnehmen',
     title: 'Liyas Lounge | Medizinische Ästhetik & Beauty in Olten', description: 'Medizinische Ästhetik & Beauty in Olten: Dermal Filler, Faltenrelaxing, Facials, HIFU, Permanent Make-up & IPL – ehrlich beraten. Kostenlose Erstberatung.',
@@ -574,7 +574,7 @@ function buildLang(lang) {
     sEyebrow: 'Liyas Lounge · Olten', route: 'Get directions',
     g: ['Reception of Liyas Lounge in Olten', 'Treatment room at Liyas Lounge in Olten', 'Details: ampoules, towels and orchids at Liyas Lounge'],
     teamEyebrow: 'About us', teamTitle: 'Personal.', teamAccent: 'With heart & care.', teamText: 'Behind Liyas Lounge is a host with a passion for aesthetics and beauty, a fine touch and one aim: that you feel completely at ease – from your first message to aftercare.', teamLink: 'More about us',
-    values: [['Personal care', 'We take time for you and all your questions – never in a rush.'], ['Honest assessment', 'We only recommend what suits you – even if that means less.'], ['Hygiene & quality', 'Clean processes and approved products only.']], ownerOf: 'Owner',
+    values: [['Personal care', 'We take time for you and all your questions – never in a rush.'], ['Honest assessment', 'We only recommend what suits you – even if that means less.'], ['Hygiene & quality', 'Clean processes and approved products only.']],
     revEyebrow: 'Client reviews', revTitle: 'Real', revAccent: 'Experiences', stars: '5 out of 5 stars', prev: 'Previous review', next: 'Next review', google: 'Reviews on Google',
     fTitle: 'Frequent', fAccent: 'Questions', fText: 'Your question isn’t listed? Send us a WhatsApp message or give us a call – we’re happy to help.', fLink: 'Get in touch',
     title: 'Liyas Lounge | Medical Aesthetics & Beauty in Olten', description: 'Medical aesthetics & beauty in Olten: dermal fillers, wrinkle relaxing, facials, HIFU, permanent make-up & IPL – honest advice. Free initial consultation.',
@@ -619,7 +619,6 @@ function buildLang(lang) {
     </div>
     <div class="owner__media" data-reveal>
       <figure class="owner__main">${pic(p.image, p.alt, { sizes: '(max-width: 900px) 92vw, 48vw' })}</figure>
-      <p class="owner__tag"><b>${esc(p.name)}</b><span>${esc(H.ownerOf)} · Liyas Lounge</span></p>
     </div>
   </div>
 </section>`;
@@ -720,7 +719,7 @@ function buildLang(lang) {
     // langer Text ab Tablet, kurzer auf dem Handy – damit die Vertrauenszeile immer einzeilig bleibt
     const dual = (long, short) => (long === short ? long : `<span class="t-lg">${long}</span><span class="t-sm">${short}</span>`);
     const body = `
-<section class="hero hero--owner" aria-labelledby="hero-title">
+<section class="hero hero--home" aria-labelledby="hero-title">
   ${heroMedia(HOME.heroImage, H.heroAlt, HOME.heroPos, HOME.heroPosMobile)}
   <div class="container hero__content">
     <div class="hero__grid">
@@ -729,11 +728,11 @@ function buildLang(lang) {
       <div class="hero__side">
         <p class="hero__lead fade-up d1">${H.heroLead}</p>
         <div class="hero__ctas fade-up d2">${bookBtn(S.book, 'btn btn--light btn--lg')}<a class="btn btn--line-light btn--lg" href="${waTo(S.waConsult)}" target="_blank" rel="noopener"><span>${H.second}</span></a></div>
-        <ul class="hero__proof fade-up d3">
-          ${rating ? `<li><a href="${SITE.googleMaps}" target="_blank" rel="noopener"><span class="hero__stars" aria-hidden="true">${icon('star').repeat(5)}</span><b>${ratingTxt}</b> · ${SITE.googleReviewCount} ${dual(C.trustReviews, C.trustShort[0])}</a></li>` : ''}
-          <li>${icon('check')}${dual(C.trustYears, C.trustShort[1])}</li><li>${icon('check')}${dual(C.trustFree, C.trustShort[2])}</li>
-        </ul>
       </div>
+      <ul class="hero__proof fade-up d3">
+        ${rating ? `<li><a href="${SITE.googleMaps}" target="_blank" rel="noopener"><span class="hero__stars" aria-hidden="true">${icon('star').repeat(5)}</span><b>${ratingTxt}</b> · ${SITE.googleReviewCount} ${dual(C.trustReviews, C.trustShort[0])}</a></li>` : ''}
+        <li>${icon('check')}${dual(C.trustYears, C.trustShort[1])}</li><li>${icon('check')}${dual(C.trustFree, C.trustShort[2])}</li>
+      </ul>
     </div>
   </div>
 </section>
