@@ -83,6 +83,7 @@
     if (!burger) return;
     burger.setAttribute('aria-expanded', String(open));
     menu.hidden = !open;
+    if (open) { nav.classList.remove('is-hidden'); menu.scrollTop = 0; }
     body.classList.toggle('locked', open);
     if (lenis) { if (open) lenis.stop(); else lenis.start(); }
   }

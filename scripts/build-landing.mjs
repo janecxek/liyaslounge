@@ -30,6 +30,7 @@ const T = {
     slogan: ['Ihre Schönheit.', 'Meine Leidenschaft.'],
     heroBtn: 'Kostenlose Beratung', heroBtn2: 'Behandlungen entdecken',
     trust: (r, n) => [`${r} · ${n} Google-Bewertungen`, 'Persönliche Betreuung', 'Kostenlose Erstberatung'],
+    trustS: (r, n) => [`${r} · ${n} Google`, 'Persönlich betreut', 'Gratis-Beratung'],
     scroll: 'Entdecken',
     exScript: 'Lernen Sie kennen', exH: 'Ihre Expertin',
     exP: 'Hinter der Liyas Lounge steht eine Gastgeberin mit Leidenschaft für Ästhetik und Beauty – persönlich, ehrlich und mit viel Feingefühl. Ihr Ziel: dass Sie frischer aussehen, nicht verändert.',
@@ -60,6 +61,7 @@ const T = {
     slogan: ['Your beauty.', 'My passion.'],
     heroBtn: 'Free consultation', heroBtn2: 'Explore treatments',
     trust: (r, n) => [`${r} · ${n} Google reviews`, 'Personal care', 'Free consultation'],
+    trustS: (r, n) => [`${r} · ${n} Google`, 'Personal care', 'Free consultation'],
     scroll: 'Discover',
     exScript: 'Meet', exH: 'Your expert',
     exP: 'Behind Liyas Lounge is a host with a passion for aesthetics and beauty – personal, honest and with a fine touch. Her aim: that you look refreshed, not changed.',
@@ -125,9 +127,9 @@ function page(L) {
   <div class="nav__end">${langSw}<a class="btn btn--line btn--sm nav__cta" href="${wa(t.wa)}" target="_blank" rel="noopener">${t.cta}</a>
   <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="${t.menu}"><span></span><span></span></button></div>
 </header>
-<div class="menu" id="menu" hidden data-lenis-prevent>
-  <nav>${t.nav.map(([id, l], i) => `<a href="#${id}"><small>0${i + 1}</small>${l}</a>`).join('')}</nav>
-  <div class="menu__foot">${langSw}<a class="btn btn--gold" href="${wa(t.wa)}" target="_blank" rel="noopener">${ico('wa')}<span>WhatsApp</span></a><p>${esc(SITE.street)}, ${SITE.zip} ${SITE.city}<br>${esc(t.hoursTxt)}</p></div>
+<div class="menu" id="menu" hidden>
+  <nav class="menu__nav">${t.nav.map(([id, l], i) => `<a href="#${id}"><small>0${i + 1}</small>${l}</a>`).join('')}</nav>
+  <div class="menu__foot"><a class="btn btn--gold" href="${wa(t.wa)}" target="_blank" rel="noopener">${ico('wa')}<span>${t.cta}</span></a><p>${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${esc(t.hoursTxt)}</p>${langSw}</div>
 </div>
 
 <main id="main">
@@ -137,7 +139,7 @@ function page(L) {
     <h1 class="hero__logo" data-in>${logo('logo--hero')}<span class="sr">Liyas Lounge – ${esc(t.tagline)}</span></h1>
     <p class="hero__slogan" data-in style="--d:.35s">${esc(t.slogan[0])} <em>${esc(t.slogan[1])}</em></p>
     <div class="hero__ctas" data-in style="--d:.5s"><a class="btn btn--gold" href="${wa(t.wa)}" target="_blank" rel="noopener">${ico('wa')}<span>${t.heroBtn}</span></a><a class="btn btn--line" href="#behandlungen"><span>${t.heroBtn2}</span></a></div>
-    <ul class="hero__trust" data-in style="--d:.65s">${t.trust(rating, SITE.googleReviewCount).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}${esc(x)}</li>`).join('')}</ul>
+    <ul class="hero__trust" data-in style="--d:.65s">${t.trust(rating, SITE.googleReviewCount).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}<span class="t-lg">${esc(x)}</span><span class="t-sm">${esc(t.trustS(rating, SITE.googleReviewCount)[i])}</span></li>`).join('')}</ul>
   </div>
   <a class="hero__scroll" href="#expertin" aria-label="${t.scroll}"><span>${t.scroll}</span><i></i></a>
 </section>
@@ -165,13 +167,6 @@ function page(L) {
   </div>
 </section>
 
-<section class="rev" id="bewertungen">
-  ${head(t.revScript, t.revH)}
-  <a class="rev__score" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><b>${rating}</b>${stars(t.stars)}<span>${SITE.googleReviewCount} Google</span></a>
-  <ul class="rev__list">${reviewsList.map((r, i) => `<li data-up style="--d:${(i % 3) * .08}s"><figure>${stars(t.stars)}<b>„${esc(t.revTitles[i])}“</b><blockquote>${esc(r.text)}</blockquote><figcaption>– ${esc(r.name)}${r.tag ? ` · ${esc(r.tag)}` : ''}</figcaption></figure></li>`).join('')}</ul>
-  <a class="btn btn--line" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><span>${t.revG}</span>${ico('arrow')}</a>
-</section>
-
 <section class="visit">
   ${pic('lounge-liyas-olten', '', { cls: 'visit__bg' })}
   <div class="visit__in">
@@ -179,6 +174,13 @@ function page(L) {
     <ul class="pol">${t.policies.map(([a, b], i) => `<li data-up style="--d:${(i % 3) * .07}s"><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
     <div class="prep" data-up><h3>${esc(t.prepH)}</h3><ul>${t.prep.map((x) => `<li>${ico('check')}${esc(x)}</li>`).join('')}</ul></div>
   </div>
+</section>
+
+<section class="rev" id="bewertungen">
+  ${head(t.revScript, t.revH)}
+  <a class="rev__score" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><b>${rating}</b>${stars(t.stars)}<span>${SITE.googleReviewCount} Google</span></a>
+  <ul class="rev__list">${reviewsList.map((r, i) => `<li data-up style="--d:${(i % 3) * .08}s"><figure>${stars(t.stars)}<b>„${esc(t.revTitles[i])}“</b><blockquote>${esc(r.text)}</blockquote><figcaption>– ${esc(r.name)}${r.tag ? ` · ${esc(r.tag)}` : ''}</figcaption></figure></li>`).join('')}</ul>
+  <a class="btn btn--line" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><span>${t.revG}</span>${ico('arrow')}</a>
 </section>
 
 <section class="faq" id="faq">
