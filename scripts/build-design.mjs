@@ -283,7 +283,15 @@ writeFileSync(join(ROOT, 'design.html'), html);
 // Die bisherige Landing bleibt unter /en (Englisch) bzw. kann über START_PAGE = false wiederhergestellt werden.
 export const START_PAGE = true;
 if (START_PAGE) {
-  const home = html
+  // Bisherige Landing (Perfect-Shape-Stil, von build.mjs erzeugt) als /klassisch sichern – zum Zeigen für die Kundin
+  const classic = readFileSync(join(ROOT, 'index.html'), 'utf8');
+  if (!classic.includes('id="pick"')) writeFileSync(join(ROOT, 'klassisch.html'), classic.replace(/<meta name="robots"[^>]*>/, '<meta name="robots" content="noindex, nofollow">').replace(/<link rel="canonical"[^>]*>\n?/, '').replace(/<link rel="alternate" hreflang[^>]*>\n?/g, ''));
+  // Startseite: nur Version 2 (ohne Auswahl und Umschalter)
+  const onlyV2 = `<!doctype html>` + html.slice('<!doctype html>'.length)
+    .replace(/<div class="pick"[\s\S]*?<div class="switch"[^>]*>[\s\S]*?<\/div>/, '')
+    .replace(/<div class="v v1"[\s\S]*?<\/footer>\n<\/div>/, '')
+    .replace('<div class="v v2" data-v="2" hidden>', '<div class="v v2" data-v="2">');
+  const home = onlyV2
     .replace('<meta name="robots" content="noindex, nofollow">', `<meta name="robots" content="index, follow">\n<meta name="description" content="Liyas Lounge Olten – Medical Aesthetic &amp; Beauty an der Hammerallee 23. Persönlich betreut, ehrlich beraten. Kostenlose Beratung per WhatsApp.">\n<link rel="canonical" href="${SITE.url}/">`)
     .replace('<title>Design-Vorschau – Liyas Lounge Olten</title>', '<title>Liyas Lounge Olten – Medical Aesthetic &amp; Beauty</title>');
   writeFileSync(join(ROOT, 'index.html'), home);
