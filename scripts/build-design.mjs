@@ -279,4 +279,13 @@ ${v2u}
 </html>
 `;
 writeFileSync(join(ROOT, 'design.html'), html);
-console.log('✓ design.html (' + Math.round(html.length / 1024) + ' KB)');
+// Die Auswahl ist auch die Startseite (/), solange die Kundin zwischen den Versionen wählt.
+// Die bisherige Landing bleibt unter /en (Englisch) bzw. kann über START_PAGE = false wiederhergestellt werden.
+export const START_PAGE = true;
+if (START_PAGE) {
+  const home = html
+    .replace('<meta name="robots" content="noindex, nofollow">', `<meta name="robots" content="index, follow">\n<meta name="description" content="Liyas Lounge Olten – Medical Aesthetic &amp; Beauty an der Hammerallee 23. Persönlich betreut, ehrlich beraten. Kostenlose Beratung per WhatsApp.">\n<link rel="canonical" href="${SITE.url}/">`)
+    .replace('<title>Design-Vorschau – Liyas Lounge Olten</title>', '<title>Liyas Lounge Olten – Medical Aesthetic &amp; Beauty</title>');
+  writeFileSync(join(ROOT, 'index.html'), home);
+}
+console.log('✓ design.html' + (START_PAGE ? ' + index.html (Startseite = Versionsauswahl)' : '') + ' (' + Math.round(html.length / 1024) + ' KB)');
