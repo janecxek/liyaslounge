@@ -605,7 +605,7 @@ function buildLang(lang) {
         <span class="arrow-circle">${icon('arrow')}</span>
       </a></li>`).join('')}
     </ul>`;
-  // Startseite: Inhaberin – Text links, grosses Bild rechts mit überlappendem Detailbild
+  // Startseite: Inhaberin – Text links, grosses Porträt rechts
   const ownerSection = () => {
     const p = D.TEAM[0];
     return `<section class="section owner" aria-labelledby="team-title">
@@ -619,7 +619,6 @@ function buildLang(lang) {
     </div>
     <div class="owner__media" data-reveal>
       <figure class="owner__main">${pic(p.image, p.alt, { sizes: '(max-width: 900px) 92vw, 48vw' })}</figure>
-      <figure class="owner__detail">${pic(HOME.studio[2], H.g[2], { sizes: '(max-width: 900px) 46vw, 20vw' })}</figure>
       <p class="owner__tag"><b>${esc(p.name)}</b><span>${esc(H.ownerOf)} · Liyas Lounge</span></p>
     </div>
   </div>
