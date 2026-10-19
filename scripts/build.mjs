@@ -1205,3 +1205,6 @@ writeFileSync(join(ROOT, 'sitemap.xml'), sitemap);
 writeFileSync(join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /scripts/\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
 
 console.log(`✓ ${PAGES.length} Seiten generiert (${PAGES.filter((p) => p.lang === 'de').length} DE + ${PAGES.filter((p) => p.lang === 'en').length} EN)`);
+
+// Design-Vorschau (Version 1 / 2) zuletzt bauen – sie ersetzt aktuell die Startseite
+await import('./build-design.mjs');
