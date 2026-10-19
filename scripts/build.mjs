@@ -1208,3 +1208,5 @@ console.log(`✓ ${PAGES.length} Seiten generiert (${PAGES.filter((p) => p.lang 
 
 // Design-Vorschau (Version 1 / 2) zuletzt bauen – sie ersetzt aktuell die Startseite
 await import('./build-design.mjs');
+// Startseite Schwarz & Gold (DE / EN) – überschreibt index.html und en/index.html
+await import('./build-landing.mjs');

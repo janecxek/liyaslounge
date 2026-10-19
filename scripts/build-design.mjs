@@ -282,7 +282,7 @@ ${v2u}
 writeFileSync(join(ROOT, 'design.html'), html);
 // Die Auswahl ist auch die Startseite (/), solange die Kundin zwischen den Versionen wählt.
 // Die bisherige Landing bleibt unter /en (Englisch) bzw. kann über START_PAGE = false wiederhergestellt werden.
-export const START_PAGE = true;
+export const START_PAGE = false; // Startseite kommt jetzt aus build-landing.mjs
 if (START_PAGE) {
   // Bisherige Landing (Perfect-Shape-Stil, von build.mjs erzeugt) als /klassisch sichern – zum Zeigen für die Kundin
   const classic = readFileSync(join(ROOT, 'index.html'), 'utf8');
