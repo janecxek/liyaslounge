@@ -83,3 +83,11 @@ Werte in eckigen Klammern gelten als „nicht gesetzt“ (z. B. wird die Telefon
   („Faltenrelaxing“), die Preise sollten trotzdem rechtlich geprüft werden.
 - Keine Markennamen von Fillern / Arzneimitteln, keine Wirkversprechen, keine Vorher/Nachher-Bilder.
 - Zahnbleaching mit höheren Peroxid-Konzentrationen ist Zahnärzt:innen vorbehalten.
+
+## Design-Versionen (zum Zeigen für die Kundin)
+
+- `/versionen` – Auswahlseite mit beiden Designs (noindex). `/design` leitet dorthin weiter.
+- Version A `/` – aktuelle Startseite (Schwarz & Gold)
+- Version B `/klassisch` – frühere Landing im Perfect-Shape-Stil (noindex, nur DE)
+- Umschalter A/B am rechten Rand: auf `/klassisch` immer, auf `/` nur in der Vorschau (`?v` oder nach Besuch von `/versionen`/`/klassisch`, gilt für die Browser-Sitzung).
+- Erzeugt von `scripts/build-versions.mjs` (läuft am Ende von `build-landing.mjs`). Vorschaubilder: `assets/img/versionen/`.
