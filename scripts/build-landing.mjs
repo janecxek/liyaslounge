@@ -285,3 +285,4 @@ writeFileSync(join(ROOT, 'index.html'), page('de'));
 if (!existsSync(join(ROOT, 'en'))) mkdirSync(join(ROOT, 'en'));
 writeFileSync(join(ROOT, 'en/index.html'), page('en'));
 console.log('✓ Startseite (Schwarz & Gold): index.html + en/index.html');
+await import('./build-versions.mjs');

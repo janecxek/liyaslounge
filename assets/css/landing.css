@@ -417,3 +417,6 @@ html.js [data-up].is-in { opacity: 1; transform: none; }
 .nudge p { font-family: var(--corm); font-style: italic; font-size: clamp(1.15rem, 1.6vw, 1.35rem); line-height: 1.5; color: var(--txt2); }
 .nudge--wide { max-width: 720px; }
 @media (max-width: 640px) { .nudge .btn { width: 100%; white-space: normal; } }
+
+/* Scroll-Hinweis nur, wenn genug Platz unter dem Hero-Inhalt ist (Tablets/niedrige Fenster: aus) */
+@media (max-width: 1080px), (max-height: 760px) { .hero__scroll { display: none; } }
