@@ -1,8 +1,7 @@
 # Liyas Lounge – Website (DE / EN)
 
 Statische, zweisprachige Website für Liyas Lounge, Olten – Medizinische Ästhetik & Beauty.
-Aufbau, Design und Animationen basieren auf dem Perfect-Shape-System (Generator + editoriales Layout),
-alle Texte, Preise, Bilder und Farben (Schwarz/Gold) sind neu für Liyas Lounge.
+Design: Schwarz & Gold („Lounge Noir“) – Startseite sowie AGB, Datenschutz, Impressum und 404 im gleichen Look.
 
 ## Inhalte bearbeiten
 
@@ -12,9 +11,10 @@ Nie die generierten `.html`-Dateien direkt bearbeiten – sie werden überschrie
 | --- | --- |
 | Kontaktdaten, Öffnungszeiten, Adresse, Kategorien, Behandlungen & Preise (DE), Team, Bewertungen, FAQ, AGB | `scripts/content.mjs` |
 | Englische Texte & Preise (gleiche Struktur, nach DE-Slug) | `scripts/content.en.mjs` |
-| Seitenaufbau, UI-Texte, SEO, JSON-LD | `scripts/build.mjs` |
-| Design | `assets/css/style.css` (Farben als Variablen in `:root`) |
-| Interaktionen | `assets/js/main.js` |
+| Startseite (DE/EN): Aufbau, Texte, SEO, JSON-LD; Layout der Unterseiten | `scripts/build-landing.mjs` |
+| Inhalte der rechtlichen Seiten, Sitemap, robots.txt | `scripts/build.mjs` |
+| Design | `assets/css/landing.css` (Farben als Variablen in `:root`) |
+| Interaktionen | `assets/js/landing.js` |
 
 Danach neu bauen:
 
@@ -22,7 +22,7 @@ Danach neu bauen:
 node scripts/build.mjs
 ```
 
-Der Build erzeugt alle Seiten, `sitemap.xml` (mit hreflang-Alternates), `robots.txt` und `assets/css/style.min.css`.
+Der Build erzeugt alle Seiten, `sitemap.xml` (mit hreflang-Alternates), `robots.txt` und `assets/css/landing.min.css`.
 
 ## Sprachen & URLs
 
@@ -83,12 +83,3 @@ Werte in eckigen Klammern gelten als „nicht gesetzt“ (z. B. wird die Telefon
   („Faltenrelaxing“), die Preise sollten trotzdem rechtlich geprüft werden.
 - Keine Markennamen von Fillern / Arzneimitteln, keine Wirkversprechen, keine Vorher/Nachher-Bilder.
 - Zahnbleaching mit höheren Peroxid-Konzentrationen ist Zahnärzt:innen vorbehalten.
-
-## Design-Versionen (zum Zeigen für die Kundin)
-
-- `/versionen` – Auswahlseite mit beiden Designs (noindex). `/design` leitet dorthin weiter.
-- Version A `/` – aktuelle Startseite (Schwarz & Gold)
-- Version B `/klassisch` – frühere Landing im Perfect-Shape-Stil (noindex, nur DE)
-- Umschalter A/B am rechten Rand auf allen Versionen. Beim ersten Besuch von `/` (pro Browser-Sitzung) erscheint eine Design-Auswahl.
-- Für den Live-Betrieb in `scripts/build-versions.mjs` `PREVIEW = false` setzen: dann keine Auswahl beim Start und der Umschalter auf `/` nur mit `?v`.
-- Erzeugt von `scripts/build-versions.mjs` (läuft am Ende von `build-landing.mjs`). Vorschaubilder: `assets/img/versionen/`.

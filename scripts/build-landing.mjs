@@ -1,6 +1,5 @@
 // Startseite Liyas Lounge – Schwarz & Gold (basiert auf «Version 2 · Lounge Noir»), zweisprachig.
 // Schreibt index.html (DE, /) und en/index.html (EN, /en). Läuft am Ende von scripts/build.mjs.
-// Die frühere Landing im Perfect-Shape-Stil wird vorher als klassisch.html gesichert (noindex).
 import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -114,13 +113,15 @@ const stars = (label) => `<span class="stars" role="img" aria-label="${label}">$
 const logo = (cls = '') => `<span class="logo ${cls}" role="img" aria-label="Liyas Lounge"><span class="logo__main" aria-hidden="true">LIYAS</span><span class="logo__script" aria-hidden="true">Lounge</span><span class="logo__tag" aria-hidden="true">Medical Aesthetic &amp; Beauty</span><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i></span>`;
 const head = (script, h, cls = '') => `<header class="sh ${cls}" data-up><p class="sh__script">${esc(script)}</p><h2 class="sh__h">${esc(h)}</h2></header>`;
 
-function page(L) {
+// sub: Unterseite (AGB, Datenschutz, Impressum, 404) im gleichen Look – { file, title, desc, robots, main }
+function page(L, sub = null) {
   const t = T[L], other = L === 'de' ? 'en' : 'de';
+  const base = sub ? t.path : ''; // auf Unterseiten führen die Menülinks zurück zu den Abschnitten der Startseite
   const wa = (text) => esc(`${SITE.whatsapp}?text=${encodeURIComponent(text)}`);
   // kurzer Hinweis + Button, passend zur Stelle auf der Seite
   const nudge = ([txt, btn, msg], cls = '') => `<div class="nudge ${cls}" data-up><p>${esc(txt)}</p><a class="btn btn--line" href="${wa(msg)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(btn)}</span></a></div>`;
   const rating = String(SITE.googleRating).replace('.', L === 'de' ? ',' : '.');
-  const navHtml = t.nav.map(([id, l]) => `<a href="#${id}">${l}</a>`).join('');
+  const navHtml = t.nav.map(([id, l]) => `<a href="${base}#${id}">${l}</a>`).join('');
   const langSw = `<nav class="lang" aria-label="${t.langAria}"><a href="/" hreflang="de-CH" lang="de-CH"${L === 'de' ? ' aria-current="true"' : ''}>DE</a><a href="/en" hreflang="en" lang="en"${L === 'en' ? ' aria-current="true"' : ''}>EN</a></nav>`;
   const reviewsList = t.reviews.slice(0, 6);
   const schema = {
@@ -140,11 +141,11 @@ function page(L) {
   <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="${t.menu}"><span></span><span></span></button></div>
 </header>
 <div class="menu" id="menu" hidden>
-  <nav class="menu__nav">${t.nav.map(([id, l], i) => `<a href="#${id}"><small>0${i + 1}</small>${l}</a>`).join('')}</nav>
+  <nav class="menu__nav">${t.nav.map(([id, l], i) => `<a href="${base}#${id}"><small>0${i + 1}</small>${l}</a>`).join('')}</nav>
   <div class="menu__foot"><a class="btn btn--gold" href="${wa(t.wa)}" target="_blank" rel="noopener">${ico('wa')}<span>${t.cta}</span></a><p>${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${esc(t.hoursTxt)}</p>${langSw}</div>
 </div>
 
-<main id="main">
+<main id="main">${sub ? sub.main : `
 <section class="hero" aria-label="Liyas Lounge">
   <div class="hero__media" data-hero-img>${pic(HOME.heroImage, t.heroAlt, { eager: true, pos: '62% 24%' })}</div>
   <div class="hero__in">
@@ -221,7 +222,7 @@ function page(L) {
     </ul>
   </div>
   <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('inhaberin-liyas-lounge-olten', '', { sizes: '300px', pos: '50% 18%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
-</section>
+</section>`}
 </main>
 
 <footer class="foot">
@@ -229,27 +230,28 @@ function page(L) {
   <nav class="foot__nav">${navHtml}</nav>
   <p class="foot__legal">${t.legal.map(([h, l]) => `<a href="${h}"${L === 'en' ? ' hreflang="de-CH"' : ''}>${l}</a>`).join(' · ')}</p>
   <p class="foot__copy">© ${new Date().getFullYear()} Liyas Lounge · ${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${t.rights}</p>
-</footer>
-<a class="fab" href="${wa(t.wa)}" target="_blank" rel="noopener" data-fab><span class="fab__ico">${ico('wa')}</span><span class="fab__txt"><b>${t.heroBtn}</b><small>${t.fabSub}</small></span>${ico('arrow')}</a>`;
+</footer>${sub ? '' : `
+<a class="fab" href="${wa(t.wa)}" target="_blank" rel="noopener" data-fab><span class="fab__ico">${ico('wa')}</span><span class="fab__txt"><b>${t.heroBtn}</b><small>${t.fabSub}</small></span>${ico('arrow')}</a>`}`;
 
+  const title = sub ? sub.title : t.title, desc = sub ? sub.desc : t.desc, url = SITE.url + (sub ? sub.url : t.path);
   return `<!doctype html>
 <html lang="${t.lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>${esc(t.title)}</title>
-<meta name="description" content="${esc(t.desc)}">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="${SITE.url}${t.path}">
-<link rel="alternate" hreflang="de-CH" href="${SITE.url}/">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}">
+<meta name="robots" content="${sub ? sub.robots : 'index, follow, max-image-preview:large'}">
+${sub && !sub.url ? '' : `<link rel="canonical" href="${url}">
+`}${sub ? '' : `<link rel="alternate" hreflang="de-CH" href="${SITE.url}/">
 <link rel="alternate" hreflang="en" href="${SITE.url}/en">
-<link rel="alternate" hreflang="x-default" href="${SITE.url}/">
+<link rel="alternate" hreflang="x-default" href="${SITE.url}/">`}
 <meta name="theme-color" content="#0b0a09">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="${t.ogLocale}">
-<meta property="og:title" content="${esc(t.title)}">
-<meta property="og:description" content="${esc(t.desc)}">
-<meta property="og:url" content="${SITE.url}${t.path}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${url}">
 <meta property="og:image" content="${SITE.url}/assets/img/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -262,10 +264,10 @@ function page(L) {
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/landing.min.css?v=${VERSION}">
 <script>document.documentElement.classList.add('js')</script>
-<script type="application/ld+json">${JSON.stringify(schema)}</script>
-<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
+${sub ? '' : `<script type="application/ld+json">${JSON.stringify(schema)}</script>
+<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
 </head>
-<body>
+<body${sub ? ' class="sub"' : ''}>
 ${body}
 <script src="/assets/js/lenis.min.js?v=${VERSION}" defer></script>
 <script src="/assets/js/landing.js?v=${VERSION}" defer></script>
@@ -274,15 +276,32 @@ ${body}
 `;
 }
 
-// frühere Landing (Perfect Shape) sichern, solange sie noch nicht überschrieben wurde
-const prev = readFileSync(join(ROOT, 'index.html'), 'utf8');
-if (prev.includes('class="hero hero--home"')) {
-  writeFileSync(join(ROOT, 'klassisch.html'), prev.replace(/<meta name="robots"[^>]*>/, '<meta name="robots" content="noindex, nofollow">').replace(/<link rel="canonical"[^>]*>\n?/, '').replace(/<link rel="alternate" hreflang[^>]*>\n?/g, ''));
-}
 const css = readFileSync(join(ROOT, 'assets/css/landing.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').replace(/\s*([{};,>])\s*/g, '$1').replace(/;}/g, '}').trim();
 writeFileSync(join(ROOT, 'assets/css/landing.min.css'), css);
 writeFileSync(join(ROOT, 'index.html'), page('de'));
 if (!existsSync(join(ROOT, 'en'))) mkdirSync(join(ROOT, 'en'));
 writeFileSync(join(ROOT, 'en/index.html'), page('en'));
 console.log('✓ Startseite (Schwarz & Gold): index.html + en/index.html');
-await import('./build-versions.mjs');
+
+// Rechtliche Seiten: Inhalt kommt aus build.mjs, Layout wie die Startseite
+for (const file of ['agb', 'datenschutz', 'impressum']) {
+  const src = readFileSync(join(ROOT, file + '.html'), 'utf8');
+  const get = (re) => (src.match(re) || [])[1] || '';
+  const h1 = get(/<h1[^>]*>([\s\S]*?)<\/h1>/).replace(/<[^>]+>/g, '');
+  const prose = get(/<div class="container prose">([\s\S]*?)<\/div><\/section>/);
+  if (!prose) throw new Error('Inhalt fehlt: ' + file);
+  const main = `
+<section class="legal">
+  <header class="sh"><p class="sh__script">Liyas Lounge</p><h1 class="sh__h">${h1}</h1></header>
+  <div class="prose">${prose}</div>
+</section>`;
+  writeFileSync(join(ROOT, file + '.html'), page('de', { url: '/' + file, title: get(/<title>([\s\S]*?)<\/title>/), desc: get(/<meta name="description" content="([^"]*)"/), robots: get(/<meta name="robots" content="([^"]*)"/), main }));
+}
+writeFileSync(join(ROOT, '404.html'), page('de', { url: '', title: 'Seite nicht gefunden | Liyas Lounge Olten', desc: 'Die gesuchte Seite existiert nicht oder wurde verschoben.', robots: 'noindex, follow', main: `
+<section class="legal nf">
+  <p class="nf__code" aria-hidden="true">404</p>
+  <header class="sh"><p class="sh__script">Oh nein</p><h1 class="sh__h">Seite nicht gefunden</h1></header>
+  <p class="lead">Die gesuchte Seite existiert nicht oder wurde verschoben. · <span lang="en">The page you are looking for doesn’t exist.</span></p>
+  <div class="nf__ctas"><a class="btn btn--gold" href="/"><span>Zur Startseite</span></a><a class="btn btn--line" href="/en" lang="en"><span>English</span></a></div>
+</section>` }));
+console.log('✓ AGB, Datenschutz, Impressum, 404 im Schwarz-Gold-Look');

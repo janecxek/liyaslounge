@@ -1165,13 +1165,7 @@ buildLang('de');
 buildLang('en');
 
 /* ---------- CSS minifizieren ---------- */
-const css = readFileSync(join(ROOT, 'assets/css/style.css'), 'utf8')
-  .replace(/\/\*[\s\S]*?\*\//g, '')
-  .replace(/\s+/g, ' ')
-  .replace(/\s*([{};,>])\s*/g, '$1')
-  .replace(/;}/g, '}')
-  .trim();
-writeFileSync(join(ROOT, 'assets/css/style.min.css'), css);
+// Gestaltung aller Seiten kommt aus build-landing.mjs (landing.css) – hier nur Inhalte, Sitemap und robots.txt
 
 /* ---------- Schreiben ---------- */
 for (const p of PAGES) {
@@ -1206,7 +1200,5 @@ writeFileSync(join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /scr
 
 console.log(`✓ ${PAGES.length} Seiten generiert (${PAGES.filter((p) => p.lang === 'de').length} DE + ${PAGES.filter((p) => p.lang === 'en').length} EN)`);
 
-// Design-Vorschau (Version 1 / 2) zuletzt bauen – sie ersetzt aktuell die Startseite
-await import('./build-design.mjs');
 // Startseite Schwarz & Gold (DE / EN) – überschreibt index.html und en/index.html
 await import('./build-landing.mjs');
