@@ -184,7 +184,7 @@ function page(L) {
 </section>
 
 <section class="visit">
-  ${pic('lounge-liyas-olten', '', { cls: 'visit__bg' })}
+  <picture class="visit__bg" aria-hidden="true"><source media="(max-width: 640px)" srcset="/assets/img/lounge-liyas-olten-bg-m.webp"><img src="/assets/img/lounge-liyas-olten-bg.webp" alt="" width="960" height="640" loading="lazy" decoding="async"></picture>
   <div class="visit__in">
     ${head(t.visScript, t.visH)}
     <ul class="pol">${t.policies.map(([a, b], i) => `<li data-up style="--d:${(i % 3) * .07}s"><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>

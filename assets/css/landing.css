@@ -227,7 +227,8 @@ html.js [data-in] { opacity: 0; transform: translateY(22px); animation: fadeUp 1
 /* ---------- Ihr Besuch ---------- */
 .visit { position: relative; padding: clamp(90px, 11vw, 150px) var(--gutter); overflow: hidden; }
 .visit__bg, .visit__bg img { position: absolute; inset: 0; width: 100%; height: 100%; }
-.visit__bg img { object-fit: cover; filter: blur(16px) saturate(.4) brightness(.32); transform: scale(1.1); }
+/* Hintergrund ist vorab weichgezeichnet und abgedunkelt (blur 16px, saturate .4, brightness .32) – kein teurer Live-Filter */
+.visit__bg img { object-fit: cover; transform: scale(1.1); }
 .visit__in { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; }
 .pol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .pol li { padding: 28px 24px; text-align: center; border-right: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
@@ -420,3 +421,6 @@ html.js [data-up].is-in { opacity: 1; transform: none; }
 
 /* Scroll-Hinweis nur, wenn genug Platz unter dem Hero-Inhalt ist (Tablets/niedrige Fenster: aus) */
 @media (max-width: 1080px), (max-height: 760px) { .hero__scroll { display: none; } }
+
+/* Animationen ausserhalb des Bildschirms anhalten (spart Rechenzeit, sichtbar ändert sich nichts) */
+.is-idle *, .is-idle *::before, .is-idle *::after { animation-play-state: paused !important; }

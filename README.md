@@ -89,5 +89,6 @@ Werte in eckigen Klammern gelten als „nicht gesetzt“ (z. B. wird die Telefon
 - `/versionen` – Auswahlseite mit beiden Designs (noindex). `/design` leitet dorthin weiter.
 - Version A `/` – aktuelle Startseite (Schwarz & Gold)
 - Version B `/klassisch` – frühere Landing im Perfect-Shape-Stil (noindex, nur DE)
-- Umschalter A/B am rechten Rand: auf `/klassisch` immer, auf `/` nur in der Vorschau (`?v` oder nach Besuch von `/versionen`/`/klassisch`, gilt für die Browser-Sitzung).
+- Umschalter A/B am rechten Rand auf allen Versionen. Beim ersten Besuch von `/` (pro Browser-Sitzung) erscheint eine Design-Auswahl.
+- Für den Live-Betrieb in `scripts/build-versions.mjs` `PREVIEW = false` setzen: dann keine Auswahl beim Start und der Umschalter auf `/` nur mit `?v`.
 - Erzeugt von `scripts/build-versions.mjs` (läuft am Ende von `build-landing.mjs`). Vorschaubilder: `assets/img/versionen/`.

@@ -25,9 +25,12 @@
 
   /* ---------- Navigation: fest nach dem Hero, weich aus- und einblenden ---------- */
   var nav = $('[data-nav]'), fab = $('[data-fab]'), hero = $('.hero'), heroImg = $('[data-hero-img]');
-  var lastY = 0, acc = 0;
+  var lastY = 0, acc = 0, vh = window.innerHeight, vw = window.innerWidth;
   function onScroll(y) {
-    var vh = window.innerHeight;
+    // erst alle Masse lesen, dann schreiben – vermeidet erzwungenes Layout pro Frame
+    var trTop = tr && !(reduce || vw <= 900) ? tr.getBoundingClientRect().top : null;
+    var mid = vh * .4, cur = -1;
+    for (var k = 0; k < secs.length; k++) if (secs[k] && secs[k].getBoundingClientRect().top < mid) cur = k;
     nav.classList.toggle('is-solid', y > 40);
     var d = y - lastY;
     // kleine Bewegungen sammeln, damit die Leiste nicht flackert
@@ -37,32 +40,27 @@
     else if (acc < -10) nav.classList.remove('is-hidden');
     lastY = y;
     if (fab) fab.classList.toggle('is-on', y > vh * .8);
-    if (heroImg && y < vh && !reduce) heroImg.style.transform = 'translate3d(0,' + (y * .18).toFixed(1) + 'px,0)';
-    pin(y);
-    spy(y);
+    if (heroImg && !reduce && (y < vh || heroY < vh)) { heroY = Math.min(y, vh); heroImg.style.transform = 'translate3d(0,' + (heroY * .18).toFixed(1) + 'px,0)'; }
+    pin(trTop);
+    links.forEach(function (a, i) { a.classList.toggle('is-active', i === cur); });
   }
+  var heroY = 0;
 
   /* ---------- Behandlungen: öffnet sich weich beim Hineinscrollen, schliesst beim Zurückscrollen nach oben ---------- */
   var tr = $('[data-pin]');
-  function pin() {
+  function pin(top) {
     if (!tr) return;
-    if (reduce || window.innerWidth <= 900) { tr.classList.add('is-open'); return; }
-    var top = tr.getBoundingClientRect().top, vh = window.innerHeight;
+    if (top === null) { tr.classList.add('is-open'); return; }
     if (top < vh * .55) tr.classList.add('is-open');
     else if (top > vh * .8) tr.classList.remove('is-open');
   }
 
   /* ---------- aktiver Menüpunkt ---------- */
   var links = $$('.nav__links a'), secs = links.map(function (a) { return doc.getElementById(a.getAttribute('href').slice(1)); });
-  function spy() {
-    var mid = window.innerHeight * .4, cur = -1;
-    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < mid) cur = i; });
-    links.forEach(function (a, i) { a.classList.toggle('is-active', i === cur); });
-  }
 
   if (lenis) lenis.on('scroll', function (l) { onScroll(l.scroll); });
   else window.addEventListener('scroll', function () { onScroll(window.pageYOffset); }, { passive: true });
-  window.addEventListener('resize', function () { onScroll(window.pageYOffset); });
+  window.addEventListener('resize', function () { vh = window.innerHeight; vw = window.innerWidth; onScroll(window.pageYOffset); });
   onScroll(window.pageYOffset);
 
   /* ---------- Klicks: Anker, Logo, Menü ---------- */
@@ -104,6 +102,12 @@
     var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
     ups.forEach(function (el) { io.observe(el); });
   } else ups.forEach(function (el) { el.classList.add('is-in'); });
+
+  /* ---------- Animationen nur laufen lassen, wenn sichtbar ---------- */
+  if ('IntersectionObserver' in window) {
+    var idle = new IntersectionObserver(function (es) { es.forEach(function (en) { en.target.classList.toggle('is-idle', !en.isIntersecting); }); });
+    $$('.hero, .foot').forEach(function (el) { idle.observe(el); });
+  }
 
   /* ---------- FAQ: weich auf- und zuklappen, immer nur eine offen ---------- */
   var accs = $$('.acc details');
