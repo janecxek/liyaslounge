@@ -24,11 +24,12 @@
   }
 
   /* ---------- Navigation: fest nach dem Hero, weich aus- und einblenden ---------- */
-  var nav = $('[data-nav]'), fab = $('[data-fab]'), hero = $('.hero'), heroImg = $('[data-hero-img]');
+  var nav = $('[data-nav]'), fab = $('[data-fab]'), hero = $('.hero'), heroImg = $('[data-hero-img]'), ct = $('#kontakt');
   var lastY = 0, acc = 0, vh = window.innerHeight, vw = window.innerWidth;
   function onScroll(y) {
     // erst alle Masse lesen, dann schreiben – vermeidet erzwungenes Layout pro Frame
     var trTop = tr && !(reduce || vw <= 900) ? tr.getBoundingClientRect().top : null;
+    var ctTop = ct ? ct.getBoundingClientRect().top : Infinity;
     var mid = vh * .4, cur = -1;
     for (var k = 0; k < secs.length; k++) if (secs[k] && secs[k].getBoundingClientRect().top < mid) cur = k;
     nav.classList.toggle('is-solid', y > 40);
@@ -39,7 +40,8 @@
     else if (acc > 18) nav.classList.add('is-hidden');
     else if (acc < -10) nav.classList.remove('is-hidden');
     lastY = y;
-    if (fab) fab.classList.toggle('is-on', y > vh * .8);
+    // nach dem Hero einblenden, beim Kontakt-Bereich (eigener grosser Button) wieder ausblenden
+    if (fab) fab.classList.toggle('is-on', y > vh * .8 && ctTop > vh * .85);
     if (heroImg && !reduce && (y < vh || heroY < vh)) { heroY = Math.min(y, vh); heroImg.style.transform = 'translate3d(0,' + (heroY * .18).toFixed(1) + 'px,0)'; }
     pin(trTop);
     links.forEach(function (a, i) { a.classList.toggle('is-active', i === cur); });

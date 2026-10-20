@@ -28,7 +28,7 @@ const T = {
     waCat: (n) => `Hallo Liyas Lounge, ich interessiere mich für ${n} und hätte gerne eine kostenlose Beratung.`,
     tagline: 'Medical Aesthetic & Beauty · Olten',
     slogan: ['Ihre Schönheit.', 'Meine Leidenschaft.'],
-    heroBtn: 'Kostenlose Beratung', heroBtn2: 'Behandlungen entdecken',
+    heroBtn: 'Kostenlose Beratung', heroBtn2: 'Behandlungen entdecken', fabSub: 'Per WhatsApp · unverbindlich',
     trust: (r, n) => [`${r} · ${n} Google-Bewertungen`, 'Persönliche Betreuung', 'Kostenlose Erstberatung'],
     trustS: (r, n) => [`${r} · ${n} Google`, 'Persönlich betreut', 'Gratis-Beratung'],
     scroll: 'Entdecken',
@@ -64,7 +64,7 @@ const T = {
     waCat: (n) => `Hello Liyas Lounge, I am interested in ${n} and would like a free consultation.`,
     tagline: 'Medical Aesthetics & Beauty · Olten',
     slogan: ['Your beauty.', 'My passion.'],
-    heroBtn: 'Free consultation', heroBtn2: 'Explore treatments',
+    heroBtn: 'Free consultation', heroBtn2: 'Explore treatments', fabSub: 'Via WhatsApp · no obligation',
     trust: (r, n) => [`${r} · ${n} Google reviews`, 'Personal care', 'Free consultation'],
     trustS: (r, n) => [`${r} · ${n} Google`, 'Personal care', 'Free consultation'],
     scroll: 'Discover',
@@ -230,7 +230,7 @@ function page(L) {
   <p class="foot__legal">${t.legal.map(([h, l]) => `<a href="${h}"${L === 'en' ? ' hreflang="de-CH"' : ''}>${l}</a>`).join(' · ')}</p>
   <p class="foot__copy">© ${new Date().getFullYear()} Liyas Lounge · ${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${t.rights}</p>
 </footer>
-<a class="fab" href="${wa(t.wa)}" target="_blank" rel="noopener" aria-label="WhatsApp" data-fab>${ico('wa')}</a>`;
+<a class="fab" href="${wa(t.wa)}" target="_blank" rel="noopener" data-fab><span class="fab__ico">${ico('wa')}</span><span class="fab__txt"><b>${t.heroBtn}</b><small>${t.fabSub}</small></span>${ico('arrow')}</a>`;
 
   return `<!doctype html>
 <html lang="${t.lang}">
