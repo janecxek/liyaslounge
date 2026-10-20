@@ -5,7 +5,17 @@
   "redirects": [
     {
       "source": "/design",
-      "destination": "/versionen",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/versionen",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/klassisch",
+      "destination": "/",
       "permanent": false
     },
     {
