@@ -456,3 +456,42 @@ html.js [data-up].is-in { opacity: 1; transform: none; }
 .nf__code { font-family: var(--bodoni); font-size: clamp(5rem, 18vw, 10rem); line-height: 1; letter-spacing: .06em; color: transparent; background: var(--grad); -webkit-background-clip: text; background-clip: text; }
 .nf .lead { max-width: 560px; }
 .nf__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px; }
+
+/* Kontakt: Online-Buchung + WhatsApp nebeneinander */
+.ct__btns { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 900px) { .ct__btns { justify-content: center; } }
+@media (max-width: 640px) { .ct__btns { width: 100%; flex-direction: column; } .ct__btns .btn { width: 100%; } }
+.ct__floor { display: block; margin-top: 4px; font-style: normal; font-size: .78rem; color: var(--txt2); }
+
+/* ---------- Sprachwahl (Desktop): Button mit Auswahlliste ---------- */
+.lsel { position: relative; display: none; }
+.lsel__btn { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px 0 14px; border: 1px solid var(--hair); border-radius: 999px; color: var(--txt); font: 500 .66rem/1 var(--sans); letter-spacing: .2em; transition: border-color .3s, color .3s; }
+.lsel__btn .i { width: 13px; height: 13px; color: var(--gold); transition: transform .45s var(--ease); }
+.lsel__btn:hover, .lsel.is-open .lsel__btn { border-color: var(--gold); color: var(--gold-l); }
+.lsel.is-open .lsel__btn .i { transform: rotate(180deg); }
+.lsel__list { position: absolute; top: calc(100% + 10px); right: 0; min-width: 180px; padding: 8px; border: 1px solid var(--hair); border-radius: 16px; background: rgba(10, 10, 10, .96); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .9); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .35s var(--ease), transform .45s var(--ease), visibility 0s .35s; }
+.lsel.is-open .lsel__list { opacity: 1; visibility: visible; transform: none; transition: opacity .35s var(--ease), transform .45s var(--ease); }
+.lsel__list a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; font-size: .8rem; color: var(--txt2); transition: background .3s, color .3s; }
+.lsel__list a b { width: 22px; font-size: .62rem; font-weight: 500; letter-spacing: .16em; color: var(--gold); }
+.lsel__list a:hover { background: rgba(207, 174, 107, .1); color: var(--txt); }
+.lsel__list a[aria-current="true"] { color: var(--gold-l); }
+.lsel__list a[aria-current="true"]::after { content: ''; width: 5px; height: 5px; margin-left: auto; border-radius: 50%; background: var(--gold); }
+@media (min-width: 1081px) { .lsel { display: block; } .nav__end > .lang { display: none; } }
+
+/* ---------- Sprachwechsel: unscharfer Bildschirm, Logo und Ladebalken ---------- */
+.lx { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; background: rgba(7, 7, 7, .62); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .5s var(--ease), visibility 0s .5s; }
+.lx.is-on, html.lx-in .lx { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .3s var(--ease); }
+html.lx-in .lx { transition: none; }
+.lx__in { display: grid; justify-items: center; gap: 28px; transform: translateY(8px); transition: transform .6s var(--ease); }
+.lx.is-on .lx__in, html.lx-in .lx__in { transform: none; }
+.logo--lx .logo__main { font-size: clamp(2.8rem, 8vw, 4.4rem); }
+.logo--lx .logo__script { font-size: clamp(2rem, 5.6vw, 3rem); }
+.logo--lx .logo__tag { font-size: .56rem; }
+.lx__bar { position: relative; width: 170px; height: 1px; overflow: hidden; background: var(--hair2); }
+.lx__bar i { position: absolute; inset: 0; background: linear-gradient(90deg, #b48a45, #ecd6a6, #c49a52); transform: scaleX(0); transform-origin: left; }
+.lx.is-on .lx__bar i { animation: lxBar .6s cubic-bezier(.3, 0, .2, 1) forwards; }
+html.lx-in .lx__bar i { transform: scaleX(.85); }
+html.lx-in.lx-done .lx__bar i { transform: scaleX(1); transition: transform .25s ease-out; }
+@keyframes lxBar { to { transform: scaleX(.85); } }
+/* Hero-Einblendung wartet, bis der Übergang vorbei ist */
+html.lx-in .hero, html.lx-in .hero * { animation-play-state: paused !important; }
