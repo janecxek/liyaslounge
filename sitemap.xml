@@ -92,34 +92,94 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/termin"/>
   </url>
   <url>
-    <loc>https://www.liyas-lounge.com/behandlungen</loc>
+    <loc>https://www.liyas-lounge.com/behandlungen/anti-age</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/anti-age"/>
   </url>
   <url>
-    <loc>https://www.liyas-lounge.com/en/treatments</loc>
+    <loc>https://www.liyas-lounge.com/en/treatments/anti-age</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/anti-age"/>
   </url>
   <url>
-    <loc>https://www.liyas-lounge.com/fr/traitements</loc>
+    <loc>https://www.liyas-lounge.com/fr/traitements/anti-age</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/anti-age"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/anti-age"/>
+  </url>
+  <url>
+    <loc>https://www.liyas-lounge.com/behandlungen/apparative-kosmetik</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/apparative-kosmetik"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/device-based-treatments"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/cosmetique-appareillee"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/apparative-kosmetik"/>
+  </url>
+  <url>
+    <loc>https://www.liyas-lounge.com/en/treatments/device-based-treatments</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/apparative-kosmetik"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/device-based-treatments"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/cosmetique-appareillee"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/apparative-kosmetik"/>
+  </url>
+  <url>
+    <loc>https://www.liyas-lounge.com/fr/traitements/cosmetique-appareillee</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/apparative-kosmetik"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/device-based-treatments"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/cosmetique-appareillee"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/apparative-kosmetik"/>
+  </url>
+  <url>
+    <loc>https://www.liyas-lounge.com/behandlungen/skin-care</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/skin-care"/>
+  </url>
+  <url>
+    <loc>https://www.liyas-lounge.com/en/treatments/skin-care</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/skin-care"/>
+  </url>
+  <url>
+    <loc>https://www.liyas-lounge.com/fr/traitements/skin-care</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://www.liyas-lounge.com/behandlungen/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.liyas-lounge.com/en/treatments/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.liyas-lounge.com/fr/traitements/skin-care"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liyas-lounge.com/behandlungen/skin-care"/>
   </url>
   <url>
     <loc>https://www.liyas-lounge.com/behandlungen/dermal-filler-olten</loc>
