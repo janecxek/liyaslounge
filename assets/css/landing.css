@@ -68,11 +68,11 @@ body.locked { overflow: hidden; }
 .btn:active { transform: scale(.98); }
 .btn--gold { background: linear-gradient(110deg, #b48a45, #ecd6a6 45%, #c49a52); background-size: 200% 100%; color: var(--k0); box-shadow: 0 12px 34px -14px rgba(207, 174, 107, .7); }
 .btn--gold:hover { background-position: 100% 0; box-shadow: 0 16px 40px -12px rgba(207, 174, 107, .85); }
-/* Umrandete Buttons füllen sich beim Hover weich von links mit Gold */
+/* Umrandete Buttons füllen sich beim Hover weich von unten nach oben mit Gold */
 .btn--line { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--gold); color: var(--gold-l); transition: color .25s var(--ease), border-color .4s, box-shadow .6s var(--ease), transform .4s var(--ease); }
-.btn--line::before { content: ''; position: absolute; inset: -1px; z-index: -1; border-radius: inherit; background: linear-gradient(110deg, #b48a45, #ecd6a6 50%, #c49a52); transform: scaleX(0); transform-origin: right center; transition: transform .7s cubic-bezier(.65, 0, .35, 1); }
-.btn--line:hover, .btn--line:focus-visible { color: var(--k0); box-shadow: 0 14px 34px -16px rgba(207, 174, 107, .7); transition: color .35s .3s var(--ease), border-color .4s, box-shadow .6s var(--ease), transform .4s var(--ease); }
-.btn--line:hover::before, .btn--line:focus-visible::before { transform: scaleX(1); transform-origin: left center; }
+.btn--line::before { content: ''; position: absolute; inset: -1px; z-index: -1; border-radius: inherit; background: linear-gradient(110deg, #b48a45, #ecd6a6 50%, #c49a52); transform: translateY(101%); transition: transform .45s cubic-bezier(.65, 0, .35, 1); }
+.btn--line:hover, .btn--line:focus-visible { color: var(--k0); box-shadow: 0 14px 34px -16px rgba(207, 174, 107, .7); transition: color .25s .17s var(--ease), border-color .4s, box-shadow .6s var(--ease), transform .4s var(--ease); }
+.btn--line:hover::before, .btn--line:focus-visible::before { transform: none; }
 .btn--sm { min-height: 40px; padding: 0 20px; font-size: .64rem; }
 .btn--lg { min-height: 58px; padding: 0 36px; }
 
@@ -501,3 +501,19 @@ html.lx-in.lx-done .lx__bar i { transform: scaleX(1); transition: transform .25s
 @keyframes lxBar { to { transform: scaleX(.85); } }
 /* Hero-Einblendung wartet, bis der Übergang vorbei ist */
 html.lx-in .hero, html.lx-in .hero * { animation-play-state: paused !important; }
+
+/* ---------- Buchungsseite mit SimplyBook-Kalender ---------- */
+.bk { max-width: 980px; }
+.bk .lead { margin-bottom: 26px; }
+.bk__notes { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin: 0 auto 36px; font-size: .82rem; color: var(--txt2); }
+.bk__notes li { display: flex; align-items: center; gap: 8px; }
+.bk__notes .i { width: 15px; height: 15px; flex: none; color: var(--gold); }
+.bk__cal { position: relative; min-height: 520px; padding: 10px; border: 1px solid var(--hair); border-radius: 24px; background: linear-gradient(150deg, rgba(207, 174, 107, .1), rgba(207, 174, 107, .02) 50%, rgba(207, 174, 107, .06)), var(--k1); overflow: hidden; }
+.bk__cal iframe { display: block; width: 100% !important; min-height: 600px; border: 0; border-radius: 16px; }
+.bk__state { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--corm); font-style: italic; font-size: 1.2rem; color: var(--txt2); pointer-events: none; }
+.bk__state[hidden], .bk__fail[hidden] { display: none; }
+.bk__fail { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 18px; padding: 20px; text-align: center; color: var(--txt2); }
+.bk__q { margin-top: 26px; text-align: center; font-size: .88rem; color: var(--txt2); }
+.bk__q a { display: inline-flex; align-items: center; gap: 4px; color: var(--gold-l); border-bottom: 1px solid var(--hair); }
+.bk__q .i { width: 13px; height: 13px; }
+@media (max-width: 640px) { .bk__cal { padding: 4px; border-radius: 18px; } .bk__notes { flex-direction: column; align-items: flex-start; max-width: 320px; } }
