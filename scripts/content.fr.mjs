@@ -2,7 +2,7 @@
 // Les pages juridiques (CGV, protection des données, mentions légales) restent en allemand.
 
 export const FR_CATEGORIES = {
-  antiage: { name: 'Anti-âge & Face Balancing', short: 'Fillers, traitement des rides, Hylase & injections lipolytiques', claim: 'Paraître plus fraîche – sans changer.', text: 'Des proportions harmonieuses et une expression fraîche – dosées avec soin, avec un savoir médical.' },
+  antiage: { name: 'Anti-âge & Face Balancing', short: 'Fillers, traitement des rides, correction de filler & injections lipolytiques', claim: 'Paraître plus fraîche – sans changer.', text: 'Des proportions harmonieuses et une expression fraîche – dosées avec soin, avec un savoir médical.' },
   apparativ: { name: 'Cosmétique appareillée', short: 'HIFU, radiofréquence, Morpheus8 & détatouage laser (tatouages et maquillage permanent)', claim: 'Raffermir sans bistouri.', text: 'Des appareils modernes pour raffermir, rajeunir et affiner la peau – sans chirurgie.' },
   skin: { name: 'Skin Care', short: 'Mésothérapie peau, cheveux & corps · blanchiment dentaire', claim: 'Soignée jusque dans les détails.', text: 'Des actifs qui renforcent la peau et les cheveux de l’intérieur – et un sourire éclatant.' },
 };
@@ -27,6 +27,6 @@ export const FR_HOME_FAQ = [
   ['Dans quelles langues conseillez-vous ?', 'En allemand, anglais, français, italien, russe et ukrainien – notre clientèle est très internationale.'],
   ['Comment prendre rendez-vous ?', 'Directement en ligne via notre système de réservation – 24 h/24. Ou par WhatsApp (messages uniquement) : nous vous répondons au plus vite et trouvons ensemble un rendez-vous qui vous convient.'],
   ['Où se trouve Liyas Lounge ?', 'Liyas Lounge, Hammerallee 23, 4600 Olten – au 1er sous-sol (sonnette « Liyas Lounge & Lala Lashes »). Nous vous envoyons volontiers l’itinéraire par WhatsApp.'],
-  ['Combien coûte un traitement ?', 'Par exemple : blanchiment dentaire dès CHF 80, dermal filler dès CHF 130 ou HIFU dès CHF 150. Le coût final est défini lors de la consultation.'],
+  ['Combien coûte un traitement ?', 'Par exemple : blanchiment dentaire dès CHF 80, dermal filler dès CHF 170 ou HIFU dès CHF 200. Le coût final est défini lors de la consultation.'],
   ['Comment puis-je payer ?', 'Le paiement se fait directement après le traitement – en espèces, par TWINT ou par carte.'],
 ];

@@ -276,7 +276,7 @@ function page(L, sub = null) {
     '@context': 'https://schema.org', '@type': ['BeautySalon', 'MedicalBusiness'], '@id': SITE.url + '/#business', name: SITE.name, description: t.desc, url: SITE.url + t.path,
     image: [SITE.url + '/assets/img/og-image.jpg'], address: { '@type': 'PostalAddress', streetAddress: SITE.street, postalCode: SITE.zip, addressLocality: SITE.city, addressRegion: 'SO', addressCountry: 'CH' },
     openingHoursSpecification: SITE.hours.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days.map((d) => 'https://schema.org/' + { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday' }[d]), opens: h.opens, closes: h.closes })),
-    sameAs: [SITE.instagram], priceRange: 'CHF 50 – CHF 1450', inLanguage: t.lang,
+    sameAs: [SITE.instagram], priceRange: 'CHF 50 – CHF 1200', inLanguage: t.lang,
   };
   const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: t.lang, mainEntity: t.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 

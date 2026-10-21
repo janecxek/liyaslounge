@@ -189,7 +189,7 @@ const businessSchema = () => ({
   image: [SITE.url + '/assets/img/og-image.jpg', imgUrl(HOME.heroImage), ...HOME.studio.map(imgUrl)],
   ...(isSet(SITE.phone) ? { telephone: SITE.phoneHref.replace('tel:', '') } : {}),
   ...(SITE.email ? { email: SITE.email } : {}),
-  priceRange: 'CHF 25 – CHF 1450',
+  priceRange: 'CHF 50 – CHF 1200',
   openingHoursSpecification: SITE.hours.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days.map((d) => `https://schema.org/${{ Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' }[d]}`), opens: h.opens, closes: h.closes })),
   currenciesAccepted: 'CHF',
   paymentAccepted: LANG === 'de' ? 'Bargeld, TWINT, Karte' : 'Cash, TWINT, card',
