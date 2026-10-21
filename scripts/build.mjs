@@ -301,7 +301,7 @@ const channels = (topic, cls = '') => `<ul class="channels${cls}">
 </ul>`;
 
 // Footer: beliebteste Behandlungen (deutsche Slugs)
-const FOOTER_TOP = ['dermal-filler-olten', 'faltenrelaxing-olten', 'facial-treatments-olten', 'hifu-olten', 'ipl-haarentfernung-olten'];
+const FOOTER_TOP = ['dermal-filler-olten', 'faltenbehandlung-olten', 'hifu-olten', 'morpheus8-olten', 'mesotherapie-olten'];
 
 function footer({ cta = true, topic = '' } = {}) {
   const popular = FOOTER_TOP.map((slug) => D.TREATMENTS.find((t) => t.deSlug === slug)).filter(Boolean);

@@ -84,3 +84,12 @@ Werte in eckigen Klammern gelten als „nicht gesetzt“ (z. B. wird die Telefon
   („Faltenrelaxing“), die Preise sollten trotzdem rechtlich geprüft werden.
 - Keine Markennamen von Fillern / Arzneimitteln, keine Wirkversprechen, keine Vorher/Nachher-Bilder.
 - Zahnbleaching mit höheren Peroxid-Konzentrationen ist Zahnärzt:innen vorbehalten.
+
+## Behandlungsseiten
+
+- Übersicht: `/behandlungen` (EN `/en/treatments`, FR `/fr/traitements`) mit Mini-Check und allen Behandlungen nach Schwerpunkt.
+- Eine Seite pro Behandlung, z. B. `/behandlungen/hifu-olten`. Reihenfolge: `TR_ORDER` in `scripts/build-landing.mjs`.
+- Texte: DE in `scripts/content.mjs` (`TREATMENTS`), EN in `scripts/content.en.mjs` (`EN_TREATMENTS`), FR in `scripts/content.fr.tr.mjs` (`FR_TREATMENTS`) – jeweils nach dem deutschen Slug. Preise (Zahlen) nur in `content.mjs`.
+- Mini-Check «Was passt zu Ihnen?» (Startseite + Übersicht): Zuordnung Anliegen → Behandlungen in `QZ`, Texte in `TP` (`build-landing.mjs`).
+- Keine Wirkstoff- oder Markennamen verschreibungspflichtiger Arzneimittel nennen (Werbeverbot), z. B. «Faltenbehandlung», «Filler-Korrektur».
+- Vorher/Nachher-Bilder: kommen pro Behandlung dazu, sobald echte Bilder mit Einverständnis vorliegen.

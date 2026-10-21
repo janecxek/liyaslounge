@@ -19,6 +19,7 @@ export const FR_REVIEW_TEXTS = [
 
 export const FR_HOME_FAQ = [
   ['Le résultat sera-t-il naturel ?', 'C’est notre exigence. Nous dosons selon votre type et vous disons honnêtement si un traitement ne vous convient pas. Le but : paraître plus fraîche – pas « refaite ».'],
+  ['Et si le résultat ne me plaît pas ?', 'Nous dosons volontairement avec retenue – il est toujours possible d’ajouter un peu. Les fillers à l’acide hyaluronique peuvent en outre être dissous si nécessaire. Vous restez ainsi du bon côté.'],
   ['Combien coûte la consultation ?', 'Avant ou pendant un traitement, la consultation est gratuite. En rendez-vous séparé sans traitement, elle coûte CHF 50. Nous prenons le temps de répondre à vos questions et d’expliquer clairement toutes les possibilités.'],
   ['Qui réalise les traitements ?', 'La propriétaire elle-même : naturopathe (Heilpraktikerin), infirmière et esthéticienne médicale, avec de nombreuses formations continues en médecine esthétique – indépendante depuis 2009, avec une longue expérience aux côtés de chirurgiens plasticiens.'],
   ['Le traitement est-il douloureux ?', 'La plupart des traitements sont bien tolérés. Si nécessaire, nous utilisons une crème anesthésiante ou du froid. Nous vous expliquons à l’avance ce que vous allez ressentir.'],
