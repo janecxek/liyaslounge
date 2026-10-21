@@ -11,7 +11,8 @@ Nie die generierten `.html`-Dateien direkt bearbeiten – sie werden überschrie
 | --- | --- |
 | Kontaktdaten, Öffnungszeiten, Adresse, Kategorien, Behandlungen & Preise (DE), Team, Bewertungen, FAQ, AGB | `scripts/content.mjs` |
 | Englische Texte & Preise (gleiche Struktur, nach DE-Slug) | `scripts/content.en.mjs` |
-| Startseite (DE/EN): Aufbau, Texte, SEO, JSON-LD; Layout der Unterseiten | `scripts/build-landing.mjs` |
+| Französische Texte der Startseite (Kategorien, Bewertungen, FAQ) | `scripts/content.fr.mjs` |
+| Startseite (DE/EN/FR): Aufbau, Texte, SEO, JSON-LD; Layout der Unterseiten | `scripts/build-landing.mjs` |
 | Inhalte der rechtlichen Seiten, Sitemap, robots.txt | `scripts/build.mjs` |
 | Design | `assets/css/landing.css` (Farben als Variablen in `:root`) |
 | Interaktionen | `assets/js/landing.js` |
@@ -26,8 +27,8 @@ Der Build erzeugt alle Seiten, `sitemap.xml` (mit hreflang-Alternates), `robots.
 
 ## Sprachen & URLs
 
-- DE ist Standard (`lang="de-CH"`) unter `/`, EN (`lang="en"`) unter `/en/…`.
-- Jede Seite hat `canonical` + `hreflang` de-CH / en / x-default (→ DE).
+- DE ist Standard (`lang="de-CH"`) unter `/`, EN (`lang="en"`) unter `/en`, FR (`lang="fr"`) unter `/fr`.
+- Die Startseiten haben `canonical` + `hreflang` de-CH / en / fr / x-default (→ DE). Rechtliche Seiten nur DE.
 - Sprachumschalter DE | EN im Header und im mobilen Menü, aktive Sprache mit feiner goldener Linie;
   er verlinkt immer die entsprechende Seite der anderen Sprache.
 - Behandlungsseiten (nur mit `DETAIL_PAGES = true`) haben SEO-Slugs, z. B. `/dermal-filler-olten` ↔ `/en/dermal-fillers-olten`.

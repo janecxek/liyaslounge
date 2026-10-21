@@ -23,17 +23,6 @@
   "ratio": 1.0,
   "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABQBQCdASoYABgAPt1kqE+opSOiKAqpEBuJagCdMuiBh0WeGLDkbGiMDG3UDiwNcXP/dsAA/vLKqiqSRtqpCzrbDFaCKfuy30BV4sRNvZvYwbIGCSU5y5EAJBmXbDn3iz25XeB0zWSiG+gYNDvopLPcKe078fl9HFogOLs+87GBuvsl4wcgWeTLbwXpfe87ic52ijjO6fUJo5bCDt4HMl97hP5Do0czVUHDRjNMB2FOPBY3h6u/Ifgj9KUigtWDoR1sOzD7doQAFf8oGopa7aiQAAA="
  },
- "studio-liyas-lounge-eingang": {
-  "w": 1024,
-  "h": 1536,
-  "widths": [
-   480,
-   800,
-   1024
-  ],
-  "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRiABAABXRUJQVlA4IBQBAABwBgCdASoYACQAPt1iqE6opaOiKrgMARAbiWMAnTL2wKv6NmcYc9W8d3I+oomRW4+M9h/cTUlT3fz3mgAA9yqijHrQSA+MMvcWe6IKqJ1CARpZJtdcTPg2W99YCaRL86gmkCew9wZfsxVr5iXP2/CpTwVGuGfWHI2ekDQ81Jyc1EUtxkr6DIzUwunmSS68p1Qi1fX6z/LLz+PodbDygHSb6eYXTv/lce84wTaG5I7jk6E+ZfgpiLOQRAbra1mvVamBrWVs1bEasKODcu6Cua0RWYTNcgzs7KUc00Bz4SgOPG+2IS65S7GZ7pp2UnyW0NNqwEUZhhyAZ4psjkCuYE6Ml6Rvxrg/AWpq24WHuq0FkCHAAAA="
- },
  "fadenlifting-olten": {
   "w": 1536,
   "h": 1024,
@@ -92,18 +81,6 @@
   ],
   "ratio": 0.6666666666666666,
   "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwAwCdASoYABAAPt1cpkyopSOiMAgBEBuJYgCdMoACNt5bgmJEVwpoAMtBbp1aLLvyRnqHD1xsQN8H2zkqHPwxB4FMctkKo/OS61tsW4CClokUKl6JuVzGtCAE4k6oB5mVoE1Cc5s6cK964GYmOFQi+UwSsR1RlSFvdev+Fe2VmUu2D3owwfJP993igh2uwlM66TooqwAAAA=="
- },
- "beratung-liyas-lounge-olten": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAQBACdASoYABAAPt1apkyopSOiMAgBEBuJQBOmUABNaREYAgjflcu0CADc0VPKHfHh7cgIaeEbYOHNNTzj8POUVm1mZ9kyy41G/RI6i1vY9nxHQ0IlKYQxWJb0PN60jWyyb4z2QlDfM01e3klIqQlHaIJSCa1nhAyO/ou74T0q4UbTzeAAAA=="
  },
  "lounge-liyas-olten": {
   "w": 1536,

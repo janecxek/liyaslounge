@@ -5,10 +5,11 @@ const NOTE = 'Whether a treatment is right for you is something we discuss in yo
 const RESULT_NOTE = '*Results and longevity vary from person to person and cannot be guaranteed.';
 
 export const EN_CATEGORIES = {
-  medical: { name: 'Medical Aesthetic', short: 'Fillers, wrinkle relaxing, threads & mesotherapy', claim: 'Look refreshed – not changed.', text: 'Subtle treatments for face and contour, tailored to you – carefully dosed and honestly advised.' },
-  haut: { name: 'Skin & Face', short: 'Facials, HIFU 5D, Morpheus8 & Plasma Pen', claim: 'Skin that feels cared for.', text: 'From deep cleansing to skin tightening – matched to your skin type and your goals.' },
-  beauty: { name: 'Beauty', short: 'Permanent make-up, lashes, IPL & whitening', claim: 'Ready every morning.', text: 'Brows, lashes, smooth skin and a bright smile – with a fine sense for proportion.' },
+  antiage: { name: 'Anti-Age & Face Balancing', short: 'Fillers, wrinkle treatment, Hylase & fat-dissolving injections', claim: 'Look refreshed – not changed.', text: 'Balanced proportions and a fresh expression – carefully dosed, with medical expertise.' },
+  apparativ: { name: 'Device-based Treatments', short: 'HIFU, radiofrequency, Morpheus8 & laser tattoo removal', claim: 'Lifting without a scalpel.', text: 'Modern devices for tightening, rejuvenation and clearer skin – no surgery needed.' },
+  skin: { name: 'Skin Care', short: 'Mesotherapy for skin, hair & body · teeth whitening', claim: 'Cared for down to the detail.', text: 'Active ingredients that strengthen skin and hair from within – and a radiant smile.' },
 };
+
 
 const CHF2 = (a, b, x = '0.5 ml', y = '1 ml') => `CHF ${a} (${x}) · CHF ${b} (${y})`;
 const PACK = (a, b) => `CHF ${a} · package of 3 CHF ${b}`;
@@ -492,24 +493,27 @@ export const EN_TEAM = [
 ];
 
 // ⚠ DEMO reviews – for presenting the design only; replace with genuine reviews before going live
-export const EN_REVIEW_TAGS = ['Dermal Fillers', 'Consultation', 'Facial Treatment', 'Eyelash Extensions', 'HIFU 5D Lift', 'Permanent Make-up'];
+export const EN_REVIEW_TAGS = ['Dermal Fillers', 'Consultation', 'Morpheus8', 'Mesotherapy', 'HIFU 5D Lift', 'Wrinkle treatment'];
 export const EN_REVIEW_TEXTS = [
   'I was really worried about looking ‘done’. The advice was honest and calm – I simply look fresher, and nobody asks what I have had done.',
   'They genuinely take their time. I wasn’t talked into anything – in fact, they advised me against one treatment. That is exactly why I keep coming back.',
-  'The atmosphere is beautiful and very discreet. The facial was pure relaxation, and my skin feels more cared for than it has in a long time.',
-  'My lashes look natural and last really well. Booking via WhatsApp took two minutes – it couldn’t be easier.',
+  'The atmosphere is beautiful and very discreet. After Morpheus8 my skin is visibly firmer and finer – all without surgery.',
+  'Since mesotherapy my skin looks so much fresher and plumper. Booking via WhatsApp took two minutes – it couldn’t be easier.',
   'Very professional and spotless. Everything was explained step by step, and the costs were clear beforehand. I felt in good hands the whole time.',
-  'No more time spent drawing on my brows in the morning. The result suits my face perfectly – just as subtle as I wanted.',
+  'My forehead lines have softened, but my expressions are still mine. The result suits my face perfectly – just as subtle as I wanted.',
 ];
+
 
 export const EN_HOME_FAQ = [
   ['Will the result look natural?', 'That is our aim. We dose to suit you and tell you honestly when a treatment is not right for you. The goal is for you to look refreshed – not “done”.'],
-  ['Is the consultation really free?', 'Yes. The initial consultation is free and without obligation. We take time for your questions and explain every option clearly.'],
+  ['How much does the consultation cost?', 'Before or during a treatment the consultation is free. As a separate appointment without treatment it costs CHF 50. We take time for your questions and explain every option clearly.'],
+  ['Who carries out the treatments?', 'The owner herself: a naturopath (Heilpraktikerin), nurse and medical cosmetologist with extensive further training in aesthetic medicine – self-employed since 2009, with many years of experience working alongside plastic surgeons.'],
   ['Is the treatment painful?', 'Most treatments are very tolerable. Where it helps, we use numbing cream or cooling. We explain beforehand exactly what you will feel.'],
-  ['Can I go out straight after the treatment?', 'With many treatments, straight away or after a few hours. Mild redness or swelling is possible depending on the method. You will find details on each treatment page.'],
-  ['Where is Liyas Lounge?', 'Our lounge is in 4600 Olten [exact address to follow]. We are happy to send you directions via WhatsApp.'],
-  ['How do I book an appointment?', 'The easiest way is via WhatsApp (messages only) or by phone. We will get back to you as soon as possible and find a time that suits you.'],
-  ['Who carries out the treatments?', 'Treatments are carried out by qualified professionals. [Add details of medical responsibility]'],
-  ['How much does a treatment cost?', 'You will find all prices on our price page – e.g. IPL hair removal from CHF 49, facials from CHF 150 or dermal fillers from CHF 130. We confirm the final cost in your consultation.'],
+  ['Can I go out straight after the treatment?', 'With many treatments, straight away or after a few hours. Mild redness or swelling is possible depending on the method – we discuss this with you beforehand.'],
+  ['Which languages do you speak?', 'German, English, French, Italian, Russian and Ukrainian – our clientele is very international.'],
+  ['How do I book an appointment?', 'The easiest way is via WhatsApp (messages only). We will get back to you as soon as possible and find a time that suits you.'],
+  ['Where is Liyas Lounge?', 'At Hammerallee 23, 4600 Olten. We are happy to send you directions via WhatsApp.'],
+  ['How much does a treatment cost?', 'For example, teeth whitening from CHF 80, dermal fillers from CHF 130 or HIFU from CHF 150. We confirm the final cost in your consultation.'],
   ['How can I pay?', 'Payment is made directly after the treatment – in cash, with TWINT or by card.'],
 ];
+
