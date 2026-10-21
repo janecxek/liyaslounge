@@ -6,7 +6,7 @@ const RESULT_NOTE = '*Results and longevity vary from person to person and canno
 
 export const EN_CATEGORIES = {
   antiage: { name: 'Anti-Age & Face Balancing', short: 'Fillers, wrinkle treatment, Hylase & fat-dissolving injections', claim: 'Look refreshed – not changed.', text: 'Balanced proportions and a fresh expression – carefully dosed, with medical expertise.' },
-  apparativ: { name: 'Device-based Treatments', short: 'HIFU, radiofrequency, Morpheus8 & laser tattoo removal', claim: 'Lifting without a scalpel.', text: 'Modern devices for tightening, rejuvenation and clearer skin – no surgery needed.' },
+  apparativ: { name: 'Device-based Treatments', short: 'HIFU, radiofrequency, Morpheus8 & laser removal of tattoos and PMU', claim: 'Lifting without a scalpel.', text: 'Modern devices for tightening, rejuvenation and clearer skin – no surgery needed.' },
   skin: { name: 'Skin Care', short: 'Mesotherapy for skin, hair & body · teeth whitening', claim: 'Cared for down to the detail.', text: 'Active ingredients that strengthen skin and hair from within – and a radiant smile.' },
 };
 
@@ -512,7 +512,7 @@ export const EN_HOME_FAQ = [
   ['Can I go out straight after the treatment?', 'With many treatments, straight away or after a few hours. Mild redness or swelling is possible depending on the method – we discuss this with you beforehand.'],
   ['Which languages do you speak?', 'German, English, French, Italian, Russian and Ukrainian – our clientele is very international.'],
   ['How do I book an appointment?', 'Directly online through our booking system – around the clock. Or via WhatsApp (messages only): we will get back to you as soon as possible and find a time that suits you.'],
-  ['Where is Liyas Lounge?', 'At Hammerallee 23, 4600 Olten. We are happy to send you directions via WhatsApp.'],
+  ['Where is Liyas Lounge?', 'Liyas Lounge, Hammerallee 23, 4600 Olten – on the first lower floor (bell “Liyas Lounge & Lala Lashes”). We are happy to send you directions via WhatsApp.'],
   ['How much does a treatment cost?', 'For example, teeth whitening from CHF 80, dermal fillers from CHF 130 or HIFU from CHF 150. We confirm the final cost in your consultation.'],
   ['How can I pay?', 'Payment is made directly after the treatment – in cash, with TWINT or by card.'],
 ];

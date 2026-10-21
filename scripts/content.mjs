@@ -13,7 +13,7 @@ export const SITE = {
   booking: 'https://liyas.simplybook.it/v2/', // Online-Terminbuchung (SimplyBook)
   email: '', // noch unbekannt – leer = wird nirgends angezeigt (Rechtstexte zeigen «[E-Mail folgt]»)
   street: 'Hammerallee 23',
-  floor: '',
+  floor: '1. UG', // laut Klingelschild: 1. Untergeschoss, Klingel «Liyas Lounge & Lala Lashes»
   zip: '4600',
   city: 'Olten',
   instagram: 'https://www.instagram.com/liyas_lounge/',
@@ -33,7 +33,7 @@ export const SITE = {
 
 export const CATEGORIES = [
   { id: 'antiage', name: 'Anti-Age & Face Balancing', short: 'Filler, Faltenbehandlung, Hylase & Fettwegspritze', claim: 'Frischer aussehen – nicht verändert.', text: 'Harmonische Proportionen und ein frischer Ausdruck – sorgfältig dosiert, mit medizinischem Fachwissen.', image: 'faltenrelaxing-olten' },
-  { id: 'apparativ', name: 'Apparative Kosmetik', short: 'HIFU, Radiofrequenz, Morpheus8 & Laser-Tattooentfernung', claim: 'Straffen ohne Skalpell.', text: 'Moderne Geräte für Straffung, Verjüngung und ein klareres Hautbild – ganz ohne Operation.', image: 'facial-treatment-olten' },
+  { id: 'apparativ', name: 'Apparative Kosmetik', short: 'HIFU, Radiofrequenz, Morpheus8 & Laser-Entfernung von Tattoos und PMU', claim: 'Straffen ohne Skalpell.', text: 'Moderne Geräte für Straffung, Verjüngung und ein klareres Hautbild – ganz ohne Operation.', image: 'facial-treatment-olten' },
   { id: 'skin', name: 'Skin Care', short: 'Mesotherapie für Haut, Haare & Körper · Zahnbleaching', claim: 'Gepflegt bis ins Detail.', text: 'Wirkstoffe, die Haut und Haare von innen stärken – und ein strahlendes Lächeln.', image: 'hyaluron-produkt-olten' },
 ];
 
@@ -426,7 +426,7 @@ export const TEAM = [
     image: 'inhaberin-liyas-lounge-olten',
     alt: 'Porträt der Inhaberin der Liyas Lounge in Olten',
     bio: [
-      'Heilpraktikerin, Krankenpflegerin und medizinische Kosmetikerin mit zahlreichen Weiterbildungen in ästhetischer Medizin – selbständig seit 2009.',
+      'Heilpraktikerin, Krankenpflegerin und medizinische Kosmetikerin mit zahlreichen Weiterbildungen in ästhetischer Medizin, Visagistik, Psychologie und medizinischer Assistenz – selbständig seit 2009.',
       'Langjährige Erfahrung in der Zusammenarbeit mit plastischen Chirurgen, in apparativer Kosmetik und in der Kundenberatung.',
     ],
     facts: ['Selbständig seit 2009', 'Erfahrung mit plastischen Chirurgen', 'Beratung in 6 Sprachen'],
@@ -452,7 +452,7 @@ export const HOME_FAQ = [
   ['Bin ich nach der Behandlung gesellschaftsfähig?', 'Bei vielen Behandlungen sofort oder nach wenigen Stunden. Leichte Rötungen oder Schwellungen sind je nach Methode möglich – wir besprechen das vorab mit Ihnen.'],
   ['In welchen Sprachen beraten Sie?', 'Auf Deutsch, Englisch, Französisch, Italienisch, Russisch und Ukrainisch – unsere Kundschaft ist sehr international.'],
   ['Wie kann ich einen Termin buchen?', 'Direkt online über unser Buchungssystem – rund um die Uhr. Oder per WhatsApp (nur Nachrichten): Wir melden uns schnellstmöglich und finden gemeinsam einen passenden Termin.'],
-  ['Wo befindet sich die Liyas Lounge?', 'An der Hammerallee 23 in 4600 Olten. Gerne senden wir Ihnen die Wegbeschreibung per WhatsApp.'],
+  ['Wo befindet sich die Liyas Lounge?', 'Liyas Lounge, Hammerallee 23, 4600 Olten – im 1. Untergeschoss (Klingel «Liyas Lounge & Lala Lashes»). Gerne senden wir Ihnen die Wegbeschreibung per WhatsApp.'],
   ['Was kostet eine Behandlung?', 'Zum Beispiel Zahnbleaching ab CHF 80, Dermal Filler ab CHF 130 oder HIFU ab CHF 150. Die finalen Kosten besprechen wir in der Beratung.'],
   ['Wie kann ich bezahlen?', 'Die Zahlung erfolgt direkt nach der Behandlung – bar, mit TWINT oder per Karte.'],
 ];

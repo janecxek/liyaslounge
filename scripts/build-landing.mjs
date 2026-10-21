@@ -9,6 +9,7 @@ import { FR_CATEGORIES, FR_REVIEW_TAGS, FR_REVIEW_TEXTS, FR_HOME_FAQ } from './c
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LANGS = ['de', 'en', 'fr'];
+const LANG_NAMES = { de: 'Deutsch', en: 'English', fr: 'Français' };
 const IMG = JSON.parse(readFileSync(join(ROOT, 'scripts/imgmeta.json'), 'utf8'));
 const VERSION = Date.now().toString(36);
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -34,9 +35,9 @@ const T = {
     trustS: (r, n) => [`${r} · ${n} Google`, 'Seit 2009', '6 Sprachen'],
     scroll: 'Entdecken',
     exScript: 'Lernen Sie kennen', exH: 'Ihre Expertin',
-    exP: 'Heilpraktikerin, Krankenpflegerin und medizinische Kosmetikerin – selbständig seit 2009 und mit langjähriger Erfahrung an der Seite plastischer Chirurgen. Sie sieht Schönheit mit den Augen einer Künstlerin. Ihr Ziel: dass Sie frischer aussehen, nicht verändert.',
+    exP: 'Heilpraktikerin, Krankenpflegerin und medizinische Kosmetikerin – selbständig seit 2009, mit langjähriger Erfahrung an der Seite plastischer Chirurgen, in apparativer Kosmetik und in der Kundenberatung. Sie sieht Schönheit mit den Augen einer Künstlerin. Ihr Ziel: dass Sie frischer aussehen, nicht verändert.',
     exCap: 'Jede Behandlung beginnt mit einer persönlichen Beratung – vor der Behandlung kostenlos.',
-    values: [['Medizinisches Fachwissen', 'Zahlreiche Weiterbildungen in ästhetischer Medizin und medizinischer Assistenz.'], ['Ehrliche Beratung', 'Wir empfehlen nur, was wirklich zu Ihnen passt – in 6 Sprachen.'], ['Hygiene & Qualität', 'Saubere Abläufe und ausschliesslich zugelassene Produkte.']],
+    values: [['Medizinisches Fachwissen', 'Zahlreiche Weiterbildungen in ästhetischer Medizin, Visagistik, Psychologie und medizinischer Assistenz.'], ['Ehrliche Beratung', 'Wir empfehlen nur, was wirklich zu Ihnen passt – in 6 Sprachen.'], ['Hygiene & Qualität', 'Saubere Abläufe und ausschliesslich zugelassene Produkte.']],
     trScript: 'Unsere', trH: 'Behandlungen', trLead: 'Drei Schwerpunkte, ein Anspruch: natürliche, typgerechte Ergebnisse.', from: 'ab', ask: 'Beratung anfragen',
     revScript: 'Kundinnen', revH: 'Bewertungen', revTitles: ['Ehrlich beraten', 'Ganz natürlich', 'Sehr diskret', 'Einfach top', 'Professionell', 'Perfekt dezent'], revG: 'Alle Bewertungen auf Google', stars: '5 von 5 Sternen',
     visScript: 'Ihr', visH: 'Besuch',
@@ -49,10 +50,10 @@ const T = {
     },
     faqScript: 'Häufige', faqH: 'Fragen', faq: HOME_FAQ.slice(0, 7),
     ctScript: 'Ihr Termin.', ctH: 'Ihre Zeit.', ctP: 'Buchen Sie Ihren Termin direkt online oder schreiben Sie uns per WhatsApp – gerne mit Foto und Ihren Wünschen. Wir beraten Sie persönlich und ehrlich, in 6 Sprachen.',
-    ctBtn: 'Per WhatsApp schreiben', bookLbl: 'Online-Buchung', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
+    ctBtn: 'Per WhatsApp schreiben', bookLbl: 'Online-Buchung', floor: '1. Untergeschoss · Klingel «Liyas Lounge & Lala Lashes»', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
     hoursTxt: `${SITE.hours.map((h) => `${h.de} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.de}`,
     legal: [['/agb', 'AGB'], ['/datenschutz', 'Datenschutz'], ['/impressum', 'Impressum']], rights: 'Alle Rechte vorbehalten.',
-    cats: CATEGORIES, reviews: REVIEWS.map((r) => ({ ...r })), langAria: 'Sprache wählen',
+    cats: CATEGORIES, reviews: REVIEWS.map((r) => ({ ...r })), langAria: 'Sprache wählen', prev: 'Vorherige Bewertung', next: 'Nächste Bewertung',
     ownerAlt: 'Die Inhaberin der Liyas Lounge im Beratungsgespräch', heroAlt: 'Die Inhaberin der Liyas Lounge in ihrem Studio in Olten',
   },
   en: {
@@ -70,9 +71,9 @@ const T = {
     trustS: (r, n) => [`${r} · ${n} Google`, 'Since 2009', '6 languages'],
     scroll: 'Discover',
     exScript: 'Meet', exH: 'Your expert',
-    exP: 'Naturopath (Heilpraktikerin), nurse and medical cosmetologist – self-employed since 2009, with many years of experience alongside plastic surgeons. She sees beauty through an artist’s eyes. Her aim: that you look refreshed, not changed.',
+    exP: 'Naturopath (Heilpraktikerin), nurse and medical cosmetologist – self-employed since 2009, with many years of experience alongside plastic surgeons, in device-based treatments and in client consultation. She sees beauty through an artist’s eyes. Her aim: that you look refreshed, not changed.',
     exCap: 'Every treatment begins with a personal consultation – free of charge before your treatment.',
-    values: [['Medical expertise', 'Extensive further training in aesthetic medicine and medical assistance.'], ['Honest advice', 'We only recommend what truly suits you – in 6 languages.'], ['Hygiene & quality', 'Clean processes and approved products only.']],
+    values: [['Medical expertise', 'Extensive further training in aesthetic medicine, make-up artistry, psychology and medical assistance.'], ['Honest advice', 'We only recommend what truly suits you – in 6 languages.'], ['Hygiene & quality', 'Clean processes and approved products only.']],
     trScript: 'Our', trH: 'Treatments', trLead: 'Three specialities, one standard: natural results that suit you.', from: 'from', ask: 'Request a consultation',
     revScript: 'Clients', revH: 'Reviews', revTitles: ['Honest advice', 'So natural', 'Very discreet', 'Simply great', 'Professional', 'Perfectly subtle'], revG: 'All reviews on Google', stars: '5 out of 5 stars',
     visScript: 'Your', visH: 'Visit',
@@ -85,10 +86,10 @@ const T = {
     },
     faqScript: 'Frequently', faqH: 'Asked', faq: EN_HOME_FAQ.slice(0, 7),
     ctScript: 'Your appointment.', ctH: 'Your time.', ctP: 'Book your appointment online or send us a WhatsApp message – photos and wishes welcome. We advise you personally and honestly, in 6 languages.',
-    ctBtn: 'Message us on WhatsApp', bookLbl: 'Online booking', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
+    ctBtn: 'Message us on WhatsApp', bookLbl: 'Online booking', floor: 'First lower floor · bell “Liyas Lounge & Lala Lashes”', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
     hoursTxt: `${SITE.hours.map((h) => `${h.en} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.en}`,
     legal: [['/agb', 'Terms (DE)'], ['/datenschutz', 'Privacy (DE)'], ['/impressum', 'Legal notice (DE)']], rights: 'All rights reserved.',
-    cats: CATEGORIES.map((c) => ({ ...c, ...EN_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: EN_REVIEW_TAGS[i], text: EN_REVIEW_TEXTS[i] || r.text })), langAria: 'Choose language',
+    cats: CATEGORIES.map((c) => ({ ...c, ...EN_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: EN_REVIEW_TAGS[i], text: EN_REVIEW_TEXTS[i] || r.text })), langAria: 'Choose language', prev: 'Previous review', next: 'Next review',
     ownerAlt: 'The owner of Liyas Lounge during a consultation', heroAlt: 'The owner of Liyas Lounge in her studio in Olten',
   },
   fr: {
@@ -106,9 +107,9 @@ const T = {
     trustS: (r, n) => [`${r} · ${n} Google`, 'Depuis 2009', '6 langues'],
     scroll: 'Découvrir',
     exScript: 'Faites connaissance', exH: 'Votre experte',
-    exP: 'Naturopathe (Heilpraktikerin), infirmière et esthéticienne médicale – indépendante depuis 2009, avec une longue expérience aux côtés de chirurgiens plasticiens. Elle voit la beauté avec des yeux d’artiste. Son objectif : que vous paraissiez plus fraîche, pas changée.',
+    exP: 'Naturopathe (Heilpraktikerin), infirmière et esthéticienne médicale – indépendante depuis 2009, avec une longue expérience aux côtés de chirurgiens plasticiens, en cosmétique appareillée et en conseil clientèle. Elle voit la beauté avec des yeux d’artiste. Son objectif : que vous paraissiez plus fraîche, pas changée.',
     exCap: 'Chaque traitement commence par une consultation personnelle – gratuite avant le traitement.',
-    values: [['Savoir médical', 'De nombreuses formations continues en médecine esthétique et en assistance médicale.'], ['Conseils honnêtes', 'Nous ne recommandons que ce qui vous convient vraiment – en 6 langues.'], ['Hygiène & qualité', 'Des processus soignés et uniquement des produits autorisés.']],
+    values: [['Savoir médical', 'De nombreuses formations continues en médecine esthétique, maquillage professionnel, psychologie et assistance médicale.'], ['Conseils honnêtes', 'Nous ne recommandons que ce qui vous convient vraiment – en 6 langues.'], ['Hygiène & qualité', 'Des processus soignés et uniquement des produits autorisés.']],
     trScript: 'Nos', trH: 'Traitements', trLead: 'Trois spécialités, une exigence : des résultats naturels, adaptés à vous.', from: 'dès', ask: 'Demander une consultation',
     revScript: 'Clientes', revH: 'Avis', revG: 'Tous les avis sur Google', stars: '5 étoiles sur 5',
     visScript: 'Votre', visH: 'Visite',
@@ -121,10 +122,10 @@ const T = {
     },
     faqScript: 'Questions', faqH: 'Fréquentes', faq: FR_HOME_FAQ.slice(0, 7),
     ctScript: 'Votre rendez-vous.', ctH: 'Votre temps.', ctP: 'Réservez votre rendez-vous en ligne ou écrivez-nous sur WhatsApp – avec une photo et vos souhaits si vous le voulez. Nous vous conseillons personnellement et honnêtement, en 6 langues.',
-    ctBtn: 'Écrire sur WhatsApp', bookLbl: 'Réservation en ligne', waNote: 'messages uniquement', addr: 'Adresse', hours: 'Horaires', route: 'Itinéraire', follow: 'Suivez-nous',
+    ctBtn: 'Écrire sur WhatsApp', bookLbl: 'Réservation en ligne', floor: '1er sous-sol · sonnette « Liyas Lounge & Lala Lashes »', waNote: 'messages uniquement', addr: 'Adresse', hours: 'Horaires', route: 'Itinéraire', follow: 'Suivez-nous',
     hoursTxt: 'Lu–Ve 10:00–19:00 · Sa sur rendez-vous',
     legal: [['/agb', 'CGV (DE)'], ['/datenschutz', 'Confidentialité (DE)'], ['/impressum', 'Mentions légales (DE)']], rights: 'Tous droits réservés.',
-    cats: CATEGORIES.map((c) => ({ ...c, ...FR_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: FR_REVIEW_TAGS[i], text: FR_REVIEW_TEXTS[i] || r.text })), langAria: 'Choisir la langue',
+    cats: CATEGORIES.map((c) => ({ ...c, ...FR_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: FR_REVIEW_TAGS[i], text: FR_REVIEW_TEXTS[i] || r.text })), langAria: 'Choisir la langue', prev: 'Avis précédent', next: 'Avis suivant',
     ownerAlt: 'La propriétaire de Liyas Lounge lors d’une consultation', heroAlt: 'La propriétaire de Liyas Lounge dans son studio à Olten',
   },
 };
@@ -154,14 +155,15 @@ const head = (script, h, cls = '') => `<header class="sh ${cls}" data-up><p clas
 
 // sub: Unterseite (AGB, Datenschutz, Impressum, 404) im gleichen Look – { file, title, desc, robots, main }
 function page(L, sub = null) {
-  const t = T[L], other = L === 'de' ? 'en' : 'de';
+  const t = T[L];
   const base = sub ? t.path : ''; // auf Unterseiten führen die Menülinks zurück zu den Abschnitten der Startseite
   const wa = (text) => esc(`${SITE.whatsapp}?text=${encodeURIComponent(text)}`);
   const book = esc(SITE.booking);
   // kurzer Hinweis + Button, passend zur Stelle auf der Seite
   const nudge = ([txt, btn, msg], cls = '') => `<div class="nudge ${cls}" data-up><p>${esc(txt)}</p><a class="btn btn--line" href="${wa(msg)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(btn)}</span></a></div>`;
-  const rating = String(SITE.googleRating).replace('.', L === 'de' ? ',' : '.');
+  const rating = String(SITE.googleRating).replace('.', L === 'en' ? '.' : ',');
   const navHtml = t.nav.map(([id, l]) => `<a href="${base}#${id}">${l}</a>`).join('');
+  const langSel = `<div class="lsel" data-lsel><button type="button" class="lsel__btn" aria-haspopup="true" aria-expanded="false" aria-label="${t.langAria}">${L.toUpperCase()}<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="lsel__list">${LANGS.map((k) => `<a href="${T[k].path}" hreflang="${T[k].lang}" lang="${T[k].lang}"${L === k ? ' aria-current="true"' : ''}><b>${k.toUpperCase()}</b>${LANG_NAMES[k]}</a>`).join('')}</div></div>`;
   const langSw = `<nav class="lang" aria-label="${t.langAria}">${LANGS.map((k) => `<a href="${T[k].path}" hreflang="${T[k].lang}" lang="${T[k].lang}"${L === k ? ' aria-current="true"' : ''}>${k.toUpperCase()}</a>`).join('')}</nav>`;
   const reviewsList = t.reviews.slice(0, 6);
   const schema = {
@@ -173,11 +175,12 @@ function page(L, sub = null) {
   const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: t.lang, mainEntity: t.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 
   const body = `
+<div class="lx" aria-hidden="true"><div class="lx__in">${logo('logo--lx')}<span class="lx__bar"><i></i></span></div></div>
 <a class="skip" href="#main">${t.skip}</a>
 <header class="nav" data-nav>
   <a class="nav__logo" href="${t.path}" data-top aria-label="Liyas Lounge">${logo('logo--nav')}</a>
   <nav class="nav__links" aria-label="Navigation">${navHtml}</nav>
-  <div class="nav__end">${langSw}<a class="btn btn--line btn--sm nav__cta" href="${book}" target="_blank" rel="noopener">${t.cta}</a>
+  <div class="nav__end">${langSel}${langSw}<a class="btn btn--line btn--sm nav__cta" href="${book}" target="_blank" rel="noopener">${t.cta}</a>
   <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="${t.menu}"><span></span><span></span></button></div>
 </header>
 <div class="menu" id="menu" hidden>
@@ -238,7 +241,7 @@ function page(L, sub = null) {
   <a class="rev__score" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><b>${rating}</b>${stars(t.stars)}<span>${SITE.googleReviewCount} Google</span></a>
   <div class="rs" data-slider data-up>
     <div class="rs__view"><ul class="rs__track" data-track>${reviewsList.map((r, i) => `<li class="rs__card" aria-roledescription="slide" aria-label="${i + 1} / ${reviewsList.length}"><figure>${stars(t.stars)}<blockquote>„${esc(r.text)}“</blockquote><figcaption><b>${esc(r.name)}</b>${r.tag ? `<span>${esc(r.tag)}</span>` : ''}</figcaption></figure></li>`).join('')}</ul></div>
-    <div class="rs__nav"><button type="button" class="rs__btn" data-prev aria-label="${L === 'de' ? 'Vorherige Bewertung' : 'Previous review'}">${ico('left')}</button><span class="rs__count"><b data-cur>01</b> / ${String(reviewsList.length).padStart(2, '0')}</span><span class="rs__bar"><i data-bar></i></span><button type="button" class="rs__btn" data-next aria-label="${L === 'de' ? 'Nächste Bewertung' : 'Next review'}">${ico('right')}</button></div>
+    <div class="rs__nav"><button type="button" class="rs__btn" data-prev aria-label="${t.prev}">${ico('left')}</button><span class="rs__count"><b data-cur>01</b> / ${String(reviewsList.length).padStart(2, '0')}</span><span class="rs__bar"><i data-bar></i></span><button type="button" class="rs__btn" data-next aria-label="${t.next}">${ico('right')}</button></div>
   </div>
   <a class="btn btn--line" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><span>${t.revG}</span>${ico('arrow')}</a>
 </section>
@@ -256,7 +259,7 @@ function page(L, sub = null) {
     <div class="ct__btns" data-up><a class="btn btn--gold btn--lg" href="${book}" target="_blank" rel="noopener">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line btn--lg" href="${wa(t.wa)}" target="_blank" rel="noopener">${ico('wa')}<span>${t.ctBtn}</span></a></div>
     <ul class="ct__list" data-up>
       <li>${ico('wa')}<span><small>WhatsApp (${t.waNote})</small><a href="${wa(t.wa)}" target="_blank" rel="noopener">${WA_NUM}</a></span></li>
-      <li>${ico('pin')}<span><small>${t.addr}</small><a href="${SITE.route}" target="_blank" rel="noopener">${esc(SITE.street)}, ${SITE.zip} ${SITE.city}</a></span></li>
+      <li>${ico('pin')}<span><small>${t.addr}</small><a href="${SITE.route}" target="_blank" rel="noopener">${esc(SITE.street)}, ${SITE.zip} ${SITE.city}</a>${SITE.floor ? `<em class="ct__floor">${t.floor}</em>` : ''}</span></li>
       <li>${ico('clock')}<span><small>${t.hours}</small>${esc(t.hoursTxt)}</span></li>
       <li>${ico('ig')}<span><small>Instagram</small><a href="${SITE.instagram}" target="_blank" rel="noopener">${IG}</a></span></li>
     </ul>
@@ -268,7 +271,7 @@ function page(L, sub = null) {
 <footer class="foot">
   ${logo('logo--foot')}
   <nav class="foot__nav">${navHtml}</nav>
-  <p class="foot__legal">${t.legal.map(([h, l]) => `<a href="${h}"${L === 'en' ? ' hreflang="de-CH"' : ''}>${l}</a>`).join(' · ')}</p>
+  <p class="foot__legal">${t.legal.map(([h, l]) => `<a href="${h}"${L !== 'de' ? ' hreflang="de-CH"' : ''}>${l}</a>`).join(' · ')}</p>
   <p class="foot__copy">© ${new Date().getFullYear()} Liyas Lounge · ${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${t.rights}</p>
 </footer>${sub ? '' : `
 <a class="fab" href="${wa(t.wa)}" target="_blank" rel="noopener" data-fab><span class="fab__ico">${ico('wa')}</span><span class="fab__txt"><b>${t.heroBtn}</b><small>${t.fabSub}</small></span>${ico('arrow')}</a>`}`;
@@ -302,7 +305,7 @@ ${sub && !sub.url ? '' : `<link rel="canonical" href="${url}">
 <link rel="preload" href="/assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/landing.min.css?v=${VERSION}">
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('ll-lx')){document.documentElement.classList.add('lx-in');sessionStorage.removeItem('ll-lx')}}catch(e){}</script>
 ${sub ? '' : `<script type="application/ld+json">${JSON.stringify(schema)}</script>
 <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
 </head>

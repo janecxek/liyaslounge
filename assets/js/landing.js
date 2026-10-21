@@ -96,7 +96,45 @@
       setTimeout(function () { goTo(target); }, wasOpen ? 250 : 0);
     }
   });
-  doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); setSel(false); } });
+
+  /* ---------- Sprachwahl (Desktop) ---------- */
+  var sel = $('[data-lsel]'), selBtn = sel && $('.lsel__btn', sel);
+  function setSel(open) { if (!sel) return; sel.classList.toggle('is-open', open); selBtn.setAttribute('aria-expanded', String(open)); }
+  if (sel) {
+    selBtn.addEventListener('click', function () { setSel(!sel.classList.contains('is-open')); });
+    doc.addEventListener('click', function (e) { if (!e.target.closest('[data-lsel]')) setSel(false); });
+  }
+
+  /* ---------- Sprachwechsel: Bildschirm verschwimmt, Logo + Ladebalken, dann neue Seite ---------- */
+  var lx = $('.lx');
+  $$('.lang a[hreflang], .lsel__list a[hreflang]').forEach(function (a) {
+    var pre = function () {
+      if (a._pre) return; a._pre = true;
+      var l = doc.createElement('link'); l.rel = 'prefetch'; l.href = a.href; doc.head.appendChild(l);
+    };
+    a.addEventListener('pointerenter', pre); a.addEventListener('focus', pre); a.addEventListener('touchstart', pre, { passive: true });
+    a.addEventListener('click', function (e) {
+      if (a.getAttribute('aria-current') === 'true') { e.preventDefault(); setSel(false); return; }
+      if (reduce || !lx || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault(); setSel(false);
+      try { sessionStorage.setItem('ll-lx', '1'); } catch (err) {}
+      lx.classList.add('is-on');
+      setTimeout(function () { location.href = a.href; }, 600);
+    });
+  });
+  // neue Seite: Übergang sanft ausblenden, sobald alles geladen ist
+  if (root.classList.contains('lx-in')) {
+    var done = function () {
+      if (done.ran) return; done.ran = true;
+      root.classList.add('lx-done');
+      setTimeout(function () { root.classList.remove('lx-in', 'lx-done'); }, 260);
+    };
+    if (doc.readyState === 'complete') setTimeout(done, 120); else window.addEventListener('load', function () { setTimeout(done, 120); });
+    setTimeout(done, 2500); // falls ein Bild sehr lange lädt
+  }
+  // Zurück-Taste (Seite aus dem Cache): Übergang nicht stehen lassen
+  window.addEventListener('pageshow', function (e) { if (e.persisted && lx) { lx.classList.remove('is-on'); root.classList.remove('lx-in', 'lx-done'); } });
 
   /* ---------- Einblenden ---------- */
   var ups = $$('[data-up]');
