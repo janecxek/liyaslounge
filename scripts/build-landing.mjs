@@ -10,6 +10,7 @@ import { FR_CATEGORIES, FR_REVIEW_TAGS, FR_REVIEW_TEXTS, FR_HOME_FAQ } from './c
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LANGS = ['de', 'en', 'fr'];
 const LANG_NAMES = { de: 'Deutsch', en: 'English', fr: 'Français' };
+const BOOK_PATH = { de: '/termin', en: '/en/booking', fr: '/fr/rendez-vous' };
 const IMG = JSON.parse(readFileSync(join(ROOT, 'scripts/imgmeta.json'), 'utf8'));
 const VERSION = Date.now().toString(36);
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -50,7 +51,7 @@ const T = {
     },
     faqScript: 'Häufige', faqH: 'Fragen', faq: HOME_FAQ.slice(0, 7),
     ctScript: 'Ihr Termin.', ctH: 'Ihre Zeit.', ctP: 'Buchen Sie Ihren Termin direkt online oder schreiben Sie uns per WhatsApp – gerne mit Foto und Ihren Wünschen. Wir beraten Sie persönlich und ehrlich, in 6 Sprachen.',
-    ctBtn: 'Per WhatsApp schreiben', bookLbl: 'Online-Buchung', floor: '1. Untergeschoss · Klingel «Liyas Lounge & Lala Lashes»', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
+    ctBtn: 'Per WhatsApp schreiben', bookLbl: 'Online-Buchung', bk: { title: 'Termin buchen | Liyas Lounge Olten', desc: 'Termin bei Liyas Lounge in Olten online buchen – Behandlung und Zeit wählen, sofort bestätigt.', script: 'Ihr Termin', h: 'Online buchen', lead: 'Wählen Sie Behandlung, Tag und Uhrzeit – Sie erhalten sofort eine Bestätigung.', notes: ['Beratung vor oder während der Behandlung kostenlos – als separater Termin CHF 50', 'Absagen bitte bis 24 Stunden vorher', 'Hammerallee 23, 4600 Olten · 1. Untergeschoss'], loading: 'Kalender wird geladen …', fail: 'Der Kalender konnte nicht geladen werden.', open: 'Termin auf SimplyBook öffnen', q: 'Fragen vorab? Schreiben Sie uns gerne per WhatsApp.' }, floor: '1. Untergeschoss · Klingel «Liyas Lounge & Lala Lashes»', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
     hoursTxt: `${SITE.hours.map((h) => `${h.de} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.de}`,
     legal: [['/agb', 'AGB'], ['/datenschutz', 'Datenschutz'], ['/impressum', 'Impressum']], rights: 'Alle Rechte vorbehalten.',
     cats: CATEGORIES, reviews: REVIEWS.map((r) => ({ ...r })), langAria: 'Sprache wählen', prev: 'Vorherige Bewertung', next: 'Nächste Bewertung',
@@ -86,7 +87,7 @@ const T = {
     },
     faqScript: 'Frequently', faqH: 'Asked', faq: EN_HOME_FAQ.slice(0, 7),
     ctScript: 'Your appointment.', ctH: 'Your time.', ctP: 'Book your appointment online or send us a WhatsApp message – photos and wishes welcome. We advise you personally and honestly, in 6 languages.',
-    ctBtn: 'Message us on WhatsApp', bookLbl: 'Online booking', floor: 'First lower floor · bell “Liyas Lounge & Lala Lashes”', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
+    ctBtn: 'Message us on WhatsApp', bookLbl: 'Online booking', bk: { title: 'Book an appointment | Liyas Lounge Olten', desc: 'Book your appointment at Liyas Lounge in Olten online – choose treatment and time, confirmed instantly.', script: 'Your appointment', h: 'Book online', lead: 'Choose your treatment, day and time – you will receive a confirmation straight away.', notes: ['Consultation free before or during your treatment – CHF 50 as a separate appointment', 'Please cancel at least 24 hours in advance', 'Hammerallee 23, 4600 Olten · first lower floor'], loading: 'Loading calendar …', fail: 'The calendar could not be loaded.', open: 'Open booking on SimplyBook', q: 'Questions beforehand? Message us on WhatsApp.' }, floor: 'First lower floor · bell “Liyas Lounge & Lala Lashes”', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
     hoursTxt: `${SITE.hours.map((h) => `${h.en} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.en}`,
     legal: [['/agb', 'Terms (DE)'], ['/datenschutz', 'Privacy (DE)'], ['/impressum', 'Legal notice (DE)']], rights: 'All rights reserved.',
     cats: CATEGORIES.map((c) => ({ ...c, ...EN_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: EN_REVIEW_TAGS[i], text: EN_REVIEW_TEXTS[i] || r.text })), langAria: 'Choose language', prev: 'Previous review', next: 'Next review',
@@ -122,7 +123,7 @@ const T = {
     },
     faqScript: 'Questions', faqH: 'Fréquentes', faq: FR_HOME_FAQ.slice(0, 7),
     ctScript: 'Votre rendez-vous.', ctH: 'Votre temps.', ctP: 'Réservez votre rendez-vous en ligne ou écrivez-nous sur WhatsApp – avec une photo et vos souhaits si vous le voulez. Nous vous conseillons personnellement et honnêtement, en 6 langues.',
-    ctBtn: 'Écrire sur WhatsApp', bookLbl: 'Réservation en ligne', floor: '1er sous-sol · sonnette « Liyas Lounge & Lala Lashes »', waNote: 'messages uniquement', addr: 'Adresse', hours: 'Horaires', route: 'Itinéraire', follow: 'Suivez-nous',
+    ctBtn: 'Écrire sur WhatsApp', bookLbl: 'Réservation en ligne', bk: { title: 'Prendre rendez-vous | Liyas Lounge Olten', desc: 'Réservez votre rendez-vous chez Liyas Lounge à Olten en ligne – choisissez le traitement et l’heure, confirmation immédiate.', script: 'Votre rendez-vous', h: 'Réserver en ligne', lead: 'Choisissez le traitement, le jour et l’heure – vous recevez immédiatement une confirmation.', notes: ['Consultation gratuite avant ou pendant le traitement – CHF 50 en rendez-vous séparé', 'Merci d’annuler au moins 24 heures à l’avance', 'Hammerallee 23, 4600 Olten · 1er sous-sol'], loading: 'Chargement du calendrier …', fail: 'Le calendrier n’a pas pu être chargé.', open: 'Ouvrir la réservation sur SimplyBook', q: 'Des questions avant ? Écrivez-nous sur WhatsApp.' }, floor: '1er sous-sol · sonnette « Liyas Lounge & Lala Lashes »', waNote: 'messages uniquement', addr: 'Adresse', hours: 'Horaires', route: 'Itinéraire', follow: 'Suivez-nous',
     hoursTxt: 'Lu–Ve 10:00–19:00 · Sa sur rendez-vous',
     legal: [['/agb', 'CGV (DE)'], ['/datenschutz', 'Confidentialité (DE)'], ['/impressum', 'Mentions légales (DE)']], rights: 'Tous droits réservés.',
     cats: CATEGORIES.map((c) => ({ ...c, ...FR_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: FR_REVIEW_TAGS[i], text: FR_REVIEW_TEXTS[i] || r.text })), langAria: 'Choisir la langue', prev: 'Avis précédent', next: 'Avis suivant',
@@ -156,15 +157,16 @@ const head = (script, h, cls = '') => `<header class="sh ${cls}" data-up><p clas
 // sub: Unterseite (AGB, Datenschutz, Impressum, 404) im gleichen Look – { file, title, desc, robots, main }
 function page(L, sub = null) {
   const t = T[L];
+  const lhref = (k) => (sub && sub.alt ? sub.alt[k] : T[k].path);
   const base = sub ? t.path : ''; // auf Unterseiten führen die Menülinks zurück zu den Abschnitten der Startseite
   const wa = (text) => esc(`${SITE.whatsapp}?text=${encodeURIComponent(text)}`);
-  const book = esc(SITE.booking);
+  const book = BOOK_PATH[L];
   // kurzer Hinweis + Button, passend zur Stelle auf der Seite
   const nudge = ([txt, btn, msg], cls = '') => `<div class="nudge ${cls}" data-up><p>${esc(txt)}</p><a class="btn btn--line" href="${wa(msg)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(btn)}</span></a></div>`;
   const rating = String(SITE.googleRating).replace('.', L === 'en' ? '.' : ',');
   const navHtml = t.nav.map(([id, l]) => `<a href="${base}#${id}">${l}</a>`).join('');
-  const langSel = `<div class="lsel" data-lsel><button type="button" class="lsel__btn" aria-haspopup="true" aria-expanded="false" aria-label="${t.langAria}">${L.toUpperCase()}<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="lsel__list">${LANGS.map((k) => `<a href="${T[k].path}" hreflang="${T[k].lang}" lang="${T[k].lang}"${L === k ? ' aria-current="true"' : ''}><b>${k.toUpperCase()}</b>${LANG_NAMES[k]}</a>`).join('')}</div></div>`;
-  const langSw = `<nav class="lang" aria-label="${t.langAria}">${LANGS.map((k) => `<a href="${T[k].path}" hreflang="${T[k].lang}" lang="${T[k].lang}"${L === k ? ' aria-current="true"' : ''}>${k.toUpperCase()}</a>`).join('')}</nav>`;
+  const langSel = `<div class="lsel" data-lsel><button type="button" class="lsel__btn" aria-haspopup="true" aria-expanded="false" aria-label="${t.langAria}">${L.toUpperCase()}<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="lsel__list">${LANGS.map((k) => `<a href="${lhref(k)}" hreflang="${T[k].lang}" lang="${T[k].lang}"${L === k ? ' aria-current="true"' : ''}><b>${k.toUpperCase()}</b>${LANG_NAMES[k]}</a>`).join('')}</div></div>`;
+  const langSw = `<nav class="lang" aria-label="${t.langAria}">${LANGS.map((k) => `<a href="${lhref(k)}" hreflang="${T[k].lang}" lang="${T[k].lang}"${L === k ? ' aria-current="true"' : ''}>${k.toUpperCase()}</a>`).join('')}</nav>`;
   const reviewsList = t.reviews.slice(0, 6);
   const schema = {
     '@context': 'https://schema.org', '@type': ['BeautySalon', 'MedicalBusiness'], '@id': SITE.url + '/#business', name: SITE.name, description: t.desc, url: SITE.url + t.path,
@@ -180,12 +182,12 @@ function page(L, sub = null) {
 <header class="nav" data-nav>
   <a class="nav__logo" href="${t.path}" data-top aria-label="Liyas Lounge">${logo('logo--nav')}</a>
   <nav class="nav__links" aria-label="Navigation">${navHtml}</nav>
-  <div class="nav__end">${langSel}${langSw}<a class="btn btn--line btn--sm nav__cta" href="${book}" target="_blank" rel="noopener">${t.cta}</a>
+  <div class="nav__end">${langSel}${langSw}<a class="btn btn--line btn--sm nav__cta" href="${book}">${t.cta}</a>
   <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="${t.menu}"><span></span><span></span></button></div>
 </header>
 <div class="menu" id="menu" hidden>
   <nav class="menu__nav">${t.nav.map(([id, l], i) => `<a href="${base}#${id}"><small>0${i + 1}</small>${l}</a>`).join('')}</nav>
-  <div class="menu__foot"><a class="btn btn--gold" href="${book}" target="_blank" rel="noopener">${ico('cal')}<span>${t.book}</span></a><p>${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${esc(t.hoursTxt)}</p>${langSw}</div>
+  <div class="menu__foot"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a><p>${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${esc(t.hoursTxt)}</p>${langSw}</div>
 </div>
 
 <main id="main">${sub ? sub.main : `
@@ -194,7 +196,7 @@ function page(L, sub = null) {
   <div class="hero__in">
     <h1 class="hero__logo" data-in>${logo('logo--hero')}<span class="sr">Liyas Lounge – ${esc(t.tagline)}</span></h1>
     <p class="hero__slogan" data-in style="--d:.35s">${esc(t.slogan[0])} <em>${esc(t.slogan[1])}</em></p>
-    <div class="hero__ctas" data-in style="--d:.5s"><a class="btn btn--gold" href="${book}" target="_blank" rel="noopener">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line" href="#behandlungen"><span>${t.heroBtn2}</span></a></div>
+    <div class="hero__ctas" data-in style="--d:.5s"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line" href="#behandlungen"><span>${t.heroBtn2}</span></a></div>
     <ul class="hero__trust" data-in style="--d:.65s">${t.trust(rating, SITE.googleReviewCount).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}<span class="t-lg">${esc(x)}</span><span class="t-sm">${esc(t.trustS(rating, SITE.googleReviewCount)[i])}</span></li>`).join('')}</ul>
   </div>
   <a class="hero__scroll" href="#expertin" aria-label="${t.scroll}"><span>${t.scroll}</span><i></i></a>
@@ -256,7 +258,7 @@ function page(L, sub = null) {
   <div class="ct__txt">
     <header class="sh sh--left" data-up><p class="sh__script">${esc(t.ctScript)}</p><h2 class="sh__h">${esc(t.ctH)}</h2></header>
     <p class="lead" data-up>${esc(t.ctP)}</p>
-    <div class="ct__btns" data-up><a class="btn btn--gold btn--lg" href="${book}" target="_blank" rel="noopener">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line btn--lg" href="${wa(t.wa)}" target="_blank" rel="noopener">${ico('wa')}<span>${t.ctBtn}</span></a></div>
+    <div class="ct__btns" data-up><a class="btn btn--gold btn--lg" href="${book}">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line btn--lg" href="${wa(t.wa)}" target="_blank" rel="noopener">${ico('wa')}<span>${t.ctBtn}</span></a></div>
     <ul class="ct__list" data-up>
       <li>${ico('wa')}<span><small>WhatsApp (${t.waNote})</small><a href="${wa(t.wa)}" target="_blank" rel="noopener">${WA_NUM}</a></span></li>
       <li>${ico('pin')}<span><small>${t.addr}</small><a href="${SITE.route}" target="_blank" rel="noopener">${esc(SITE.street)}, ${SITE.zip} ${SITE.city}</a>${SITE.floor ? `<em class="ct__floor">${t.floor}</em>` : ''}</span></li>
@@ -286,8 +288,8 @@ function page(L, sub = null) {
 <meta name="description" content="${esc(desc)}">
 <meta name="robots" content="${sub ? sub.robots : 'index, follow, max-image-preview:large'}">
 ${sub && !sub.url ? '' : `<link rel="canonical" href="${url}">
-`}${sub ? '' : `${LANGS.map((k) => `<link rel="alternate" hreflang="${T[k].lang}" href="${SITE.url}${T[k].path}">`).join('\n')}
-<link rel="alternate" hreflang="x-default" href="${SITE.url}/">`}
+`}${sub && !sub.alt ? '' : `${LANGS.map((k) => `<link rel="alternate" hreflang="${T[k].lang}" href="${SITE.url}${lhref(k)}">`).join('\n')}
+<link rel="alternate" hreflang="x-default" href="${SITE.url}${lhref('de')}">`}
 <meta name="theme-color" content="#0b0a09">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="${t.ogLocale}">
@@ -362,3 +364,54 @@ writeFileSync(join(ROOT, '404.html'), page('de', { url: '', title: 'Seite nicht 
   <div class="nf__ctas"><a class="btn btn--gold" href="/"><span>Zur Startseite</span></a><a class="btn btn--line" href="/en" lang="en"><span>English</span></a></div>
 </section>` }));
 console.log('✓ AGB, Datenschutz, Impressum, 404 im Schwarz-Gold-Look');
+
+// Buchungsseite mit eingebettetem SimplyBook-Kalender (Farben passend zur Seite)
+const SB_THEME = { timeline_hide_unavailable: '1', hide_past_days: '0', timeline_show_end_time: '0', timeline_modern_display: 'as_slots', sb_base_color: '#cfae6b', display_item_mode: 'block', booking_nav_bg_color: '#0b0b0b', body_bg_color: '#0d0d0d', sb_review_image: '', dark_font_color: '#f3eee4', light_font_color: '#0b0b0b', btn_color_1: '#cfae6b', sb_company_label_color: '#cfae6b', hide_img_mode: '0', sb_busy: '#3a3326', sb_available: '#cfae6b' };
+for (const L of LANGS) {
+  const t = T[L], k = t.bk, sbUrl = SITE.booking.replace(/\/v2\/?$/, '');
+  const cfg = { widget_type: 'iframe', url: sbUrl, theme: 'default', theme_settings: SB_THEME, timeline: 'modern', datepicker: 'top_calendar', is_rtl: false, app_config: { clear_session: 0, allow_switch_to_ada: 0, predefined: [] }, container_id: 'sbw' };
+  const main = `
+<section class="legal bk">
+  <header class="sh"><p class="sh__script">${esc(k.script)}</p><h1 class="sh__h">${esc(k.h)}</h1></header>
+  <p class="lead">${esc(k.lead)}</p>
+  <ul class="bk__notes">${k.notes.map((n) => `<li>${ico('check')}<span>${esc(n)}</span></li>`).join('')}</ul>
+  <div class="bk__cal" data-lenis-prevent>
+    <div id="sbw"></div>
+    <p class="bk__state" data-bk-loading>${esc(k.loading)}</p>
+    <div class="bk__fail" data-bk-fail hidden><p>${esc(k.fail)}</p><a class="btn btn--gold" href="${esc(SITE.booking)}" target="_blank" rel="noopener">${ico('cal')}<span>${esc(k.open)}</span></a></div>
+  </div>
+  <p class="bk__q">${esc(k.q)} <a href="${esc(`${SITE.whatsapp}?text=${encodeURIComponent(t.wa)}`)}" target="_blank" rel="noopener">WhatsApp ${ico('arrow')}</a></p>
+</section>
+<script src="https://widget.simplybook.it/v2/widget/widget.js" defer></script>
+<script>
+(function () {
+  var tries = 0, cal = document.getElementById('sbw');
+  function fail() { document.querySelector('[data-bk-loading]').hidden = true; document.querySelector('[data-bk-fail]').hidden = false; }
+  function start() {
+    if (typeof window.SimplybookWidget !== 'function') { if (++tries > 40) return fail(); return setTimeout(start, 250); }
+    try { new window.SimplybookWidget(${JSON.stringify(cfg)}); } catch (e) { return fail(); }
+    // Kalender da? (iframe vorhanden) – sonst Ersatz-Button zeigen
+    setTimeout(function () { if (cal.querySelector('iframe')) document.querySelector('[data-bk-loading]').hidden = true; else fail(); }, 8000);
+    var obs = new MutationObserver(function () { if (cal.querySelector('iframe')) { document.querySelector('[data-bk-loading]').hidden = true; obs.disconnect(); } });
+    obs.observe(cal, { childList: true, subtree: true });
+  }
+  start();
+})();
+</script>`;
+  const path = BOOK_PATH[L], file = path.slice(1) + '.html';
+  if (path.split('/').length > 2) mkdirSync(join(ROOT, path.split('/')[1]), { recursive: true });
+  writeFileSync(join(ROOT, file), page(L, { url: path, title: k.title, desc: k.desc, robots: 'index, follow', main, alt: BOOK_PATH }));
+}
+console.log('✓ Buchungsseiten: ' + Object.values(BOOK_PATH).join(', '));
+
+// Sitemap: Buchungsseiten (DE/EN/FR) mit hreflang ergänzen
+{
+  const sp = join(ROOT, 'sitemap.xml');
+  let sm = readFileSync(sp, 'utf8');
+  if (!sm.includes(`<loc>${SITE.url}${BOOK_PATH.de}</loc>`)) {
+    const alts = LANGS.map((k) => `    <xhtml:link rel="alternate" hreflang="${T[k].lang}" href="${SITE.url}${BOOK_PATH[k]}"/>`).join('\n') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE.url}${BOOK_PATH.de}"/>`;
+    const day = new Date().toISOString().slice(0, 10);
+    const urls = LANGS.map((k) => `  <url>\n    <loc>${SITE.url}${BOOK_PATH[k]}</loc>\n    <lastmod>${day}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n${alts}\n  </url>`).join('\n');
+    writeFileSync(sp, sm.replace('</urlset>', urls + '\n</urlset>'));
+  }
+}
