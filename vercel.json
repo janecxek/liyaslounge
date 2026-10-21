@@ -30,162 +30,152 @@
     },
     {
       "source": "/behandlungen/dermal-filler(\\.html)?",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/dermal-filler-olten",
       "permanent": false
     },
     {
       "source": "/en/treatments/dermal-filler(\\.html)?",
-      "destination": "/en#behandlungen",
-      "permanent": false
-    },
-    {
-      "source": "/behandlungen",
-      "destination": "/#behandlungen",
-      "permanent": false
-    },
-    {
-      "source": "/en/treatments",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/dermal-fillers-olten",
       "permanent": false
     },
     {
       "source": "/dermal-filler-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/dermal-filler-olten",
       "permanent": false
     },
     {
       "source": "/faltenrelaxing-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/faltenbehandlung-olten",
       "permanent": false
     },
     {
       "source": "/mesotherapie-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/mesotherapie-olten",
       "permanent": false
     },
     {
       "source": "/lipolyse-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/fettwegspritze-olten",
       "permanent": false
     },
     {
       "source": "/fadenlifting-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen",
       "permanent": false
     },
     {
       "source": "/facial-treatments-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen",
       "permanent": false
     },
     {
       "source": "/hifu-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/hifu-olten",
       "permanent": false
     },
     {
       "source": "/morpheus8-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/morpheus8-olten",
       "permanent": false
     },
     {
       "source": "/plasma-pen-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen",
       "permanent": false
     },
     {
       "source": "/permanent-make-up-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen",
       "permanent": false
     },
     {
       "source": "/wimpernverlaengerung-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen",
       "permanent": false
     },
     {
       "source": "/ipl-haarentfernung-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen",
       "permanent": false
     },
     {
       "source": "/zahnbleaching-olten",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen/zahnbleaching-olten",
       "permanent": false
     },
     {
       "source": "/en/dermal-fillers-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/dermal-fillers-olten",
       "permanent": false
     },
     {
       "source": "/en/wrinkle-relaxing-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/wrinkle-treatment-olten",
       "permanent": false
     },
     {
       "source": "/en/mesotherapy-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/mesotherapy-olten",
       "permanent": false
     },
     {
       "source": "/en/lipolysis-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/fat-dissolving-injections-olten",
       "permanent": false
     },
     {
       "source": "/en/thread-lift-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments",
       "permanent": false
     },
     {
       "source": "/en/facial-treatments-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments",
       "permanent": false
     },
     {
       "source": "/en/hifu-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/hifu-olten",
       "permanent": false
     },
     {
       "source": "/en/morpheus8-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/morpheus8-olten",
       "permanent": false
     },
     {
       "source": "/en/plasma-pen-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments",
       "permanent": false
     },
     {
       "source": "/en/permanent-make-up-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments",
       "permanent": false
     },
     {
       "source": "/en/eyelash-extensions-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments",
       "permanent": false
     },
     {
       "source": "/en/ipl-hair-removal-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments",
       "permanent": false
     },
     {
       "source": "/en/teeth-whitening-olten",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments/teeth-whitening-olten",
       "permanent": false
     },
     {
       "source": "/preise(\\.html)?",
-      "destination": "/#behandlungen",
+      "destination": "/behandlungen",
       "permanent": false
     },
     {
       "source": "/ueber-uns(\\.html)?",
-      "destination": "/#ueber-uns",
+      "destination": "/#expertin",
       "permanent": false
     },
     {
@@ -195,18 +185,28 @@
     },
     {
       "source": "/en/prices(\\.html)?",
-      "destination": "/en#behandlungen",
+      "destination": "/en/treatments",
       "permanent": false
     },
     {
       "source": "/en/about(\\.html)?",
-      "destination": "/en#ueber-uns",
+      "destination": "/en#expertin",
       "permanent": false
     },
     {
       "source": "/en/contact(\\.html)?",
       "destination": "/en#kontakt",
       "permanent": false
+    },
+    {
+      "source": "/behandlungen/faltenrelaxing-olten",
+      "destination": "/behandlungen/faltenbehandlung-olten",
+      "permanent": true
+    },
+    {
+      "source": "/behandlungen/lipolyse-olten",
+      "destination": "/behandlungen/fettwegspritze-olten",
+      "permanent": true
     }
   ],
   "headers": [
