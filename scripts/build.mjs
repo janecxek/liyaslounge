@@ -1117,13 +1117,14 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
 <p>Beim Aufruf unserer Website werden durch unseren Hosting-Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles verarbeitet. Diese Daten dienen ausschliesslich dem sicheren und stabilen Betrieb der Website. [Hosting-Anbieter ergänzen, z. B. Vercel Inc., USA – dabei kann eine Übermittlung von Daten in die USA erfolgen, abgesichert durch geeignete Garantien wie Standardvertragsklauseln.]</p>
 <p>Wir verwenden keine Analyse-, Tracking- oder Marketing-Tools. Schriftarten werden lokal von unserem Server geladen – es findet keine Verbindung zu Google Fonts statt.</p>
 <h2>3. Cookies und lokale Speicherung</h2>
-<p>Unsere Website setzt keine Cookies. Lokal in Ihrem Browser (localStorage) speichern wir einzig, dass Sie den Datenschutz-Hinweis bestätigt haben. Diese Information wird nicht an uns übermittelt und lässt sich jederzeit über die Einstellungen Ihres Browsers löschen.</p>
+<p>Unsere Website setzt keine Cookies und speichert keine Daten in Ihrem Browser.</p>
 <h2>4. Kontaktaufnahme</h2>
 <p>Wenn Sie uns per E-Mail, Telefon oder WhatsApp kontaktieren, bearbeiten wir Ihre Angaben (z. B. Name, Telefonnummer, Nachricht) ausschliesslich zur Beantwortung Ihrer Anfrage und zur Terminvereinbarung. Bei Nutzung von WhatsApp gelten zusätzlich die Datenschutzbestimmungen von WhatsApp/Meta.</p>
 <h2>5. Google Maps</h2>
-<p>Auf unserer Website können Sie eine Karte von Google Maps (Google Ireland Ltd. / Google LLC) einblenden. Die Karte wird erst nach Ihrem Klick auf «Karte laden» geladen. Dabei werden Daten (insbesondere Ihre IP-Adresse) an Google übertragen, möglicherweise auch in die USA.</p>
+<p>Wir verlinken auf unseren Eintrag bei Google Maps (Google Ireland Ltd. / Google LLC). Daten (insbesondere Ihre IP-Adresse) werden erst an Google übertragen, wenn Sie dem Link folgen, möglicherweise auch in die USA.</p>
 <h2>6. Messenger und Links</h2>
 <p>Auf unserer Website verlinken wir auf WhatsApp (teilweise mit einem vorausgefüllten Nachrichtentext, den Sie vor dem Senden ändern können). Es handelt sich um einfache Links; Daten werden erst übertragen, wenn Sie den Links folgen.</p>
+<p>Für die Online-Terminbuchung verlinken wir auf SimplyBook.me (SimplyBook.me Ltd., Zypern). Wenn Sie dort einen Termin buchen, werden Ihre Angaben (z. B. Name, Kontaktdaten, gewünschte Behandlung und Termin) von SimplyBook.me in unserem Auftrag bearbeitet. Es gilt zusätzlich die Datenschutzerklärung von SimplyBook.me.</p>
 <h2>7. Kundendaten &amp; Gesundheitsdaten</h2>
 <p>Im Rahmen von Beratungen und Behandlungen bearbeiten wir auch besonders schützenswerte Personendaten (Gesundheitsdaten), soweit dies für eine sichere Behandlung erforderlich ist. Diese Daten behandeln wir streng vertraulich und geben sie nicht ohne Ihre ausdrückliche Einwilligung an Dritte weiter, sofern keine gesetzliche Pflicht besteht.</p>
 <h2>8. Aufbewahrung</h2>

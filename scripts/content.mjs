@@ -10,6 +10,7 @@ export const SITE = {
   phone: '[Telefon folgt]',
   phoneHref: 'tel:+41795090660',
   whatsapp: 'https://wa.me/41795090660',
+  booking: 'https://liyas.simplybook.it/v2/', // Online-Terminbuchung (SimplyBook)
   email: '', // noch unbekannt – leer = wird nirgends angezeigt (Rechtstexte zeigen «[E-Mail folgt]»)
   street: 'Hammerallee 23',
   floor: '',
@@ -450,15 +451,15 @@ export const HOME_FAQ = [
   ['Ist die Behandlung schmerzhaft?', 'Die meisten Behandlungen sind gut verträglich. Wo sinnvoll, verwenden wir eine Betäubungscreme oder Kühlung. Vorab besprechen wir genau, was Sie spüren werden.'],
   ['Bin ich nach der Behandlung gesellschaftsfähig?', 'Bei vielen Behandlungen sofort oder nach wenigen Stunden. Leichte Rötungen oder Schwellungen sind je nach Methode möglich – wir besprechen das vorab mit Ihnen.'],
   ['In welchen Sprachen beraten Sie?', 'Auf Deutsch, Englisch, Französisch, Italienisch, Russisch und Ukrainisch – unsere Kundschaft ist sehr international.'],
-  ['Wie kann ich einen Termin buchen?', 'Am einfachsten per WhatsApp (nur Nachrichten). Wir melden uns schnellstmöglich und finden gemeinsam einen passenden Termin.'],
+  ['Wie kann ich einen Termin buchen?', 'Direkt online über unser Buchungssystem – rund um die Uhr. Oder per WhatsApp (nur Nachrichten): Wir melden uns schnellstmöglich und finden gemeinsam einen passenden Termin.'],
   ['Wo befindet sich die Liyas Lounge?', 'An der Hammerallee 23 in 4600 Olten. Gerne senden wir Ihnen die Wegbeschreibung per WhatsApp.'],
   ['Was kostet eine Behandlung?', 'Zum Beispiel Zahnbleaching ab CHF 80, Dermal Filler ab CHF 130 oder HIFU ab CHF 150. Die finalen Kosten besprechen wir in der Beratung.'],
   ['Wie kann ich bezahlen?', 'Die Zahlung erfolgt direkt nach der Behandlung – bar, mit TWINT oder per Karte.'],
 ];
 
 export const AGB = [
-  ['1. Geltungsbereich', 'Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Dienstleistungen, Behandlungen und Angebote der Liyas Lounge in Olten, unabhängig davon, ob sie per Nachricht oder persönlich gebucht werden. Abweichende Vereinbarungen gelten nur, wenn sie schriftlich bestätigt wurden.'],
-  ['2. Terminvereinbarung und Absagen', 'Termine können per WhatsApp oder vor Ort vereinbart werden. Eine Absage oder Verschiebung muss spätestens 24 Stunden vor dem Termin erfolgen. Bei kurzfristiger Absage oder Nichterscheinen kann eine Gebühr von [Betrag folgt] berechnet werden. Bei verspätetem Erscheinen kann sich die Behandlungszeit verkürzen.'],
+  ['1. Geltungsbereich', 'Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Dienstleistungen, Behandlungen und Angebote der Liyas Lounge in Olten, unabhängig davon, ob sie online, per Nachricht oder persönlich gebucht werden. Abweichende Vereinbarungen gelten nur, wenn sie schriftlich bestätigt wurden.'],
+  ['2. Terminvereinbarung und Absagen', 'Termine können online (SimplyBook), per WhatsApp oder vor Ort vereinbart werden. Eine Absage oder Verschiebung muss spätestens 24 Stunden vor dem Termin erfolgen. Bei kurzfristiger Absage oder Nichterscheinen kann eine Gebühr von [Betrag folgt] berechnet werden. Bei verspätetem Erscheinen kann sich die Behandlungszeit verkürzen.'],
   ['3. Gesundheitliche Voraussetzungen', 'Die Kundin bzw. der Kunde ist verpflichtet, vor der Behandlung über alle relevanten gesundheitlichen Probleme, Allergien, Hauterkrankungen, eine Schwangerschaft oder laufende medizinische Behandlungen zu informieren. Für Folgen unvollständiger oder falscher Angaben wird keine Haftung übernommen.'],
   ['4. Preise und Zahlung', 'Alle Preise verstehen sich in Schweizer Franken (CHF). Die Beratung ist vor oder während einer Behandlung kostenlos; als separater Termin ohne Behandlung kostet sie CHF 50. Preisänderungen bleiben vorbehalten; massgeblich sind die am Behandlungstag gültigen Preise. Die Zahlung erfolgt unmittelbar nach der Behandlung bar, mit TWINT oder per Karte.'],
   ['5. Ergebnisse und Haftung', 'Ergebnisse ästhetischer Behandlungen sind individuell und können nicht garantiert werden. Für Schäden, die durch Nichtbeachtung der Nachsorge-Empfehlungen oder durch Eigenverschulden entstehen, wird keine Haftung übernommen.'],

@@ -24,7 +24,7 @@ export const FR_HOME_FAQ = [
   ['Le traitement est-il douloureux ?', 'La plupart des traitements sont bien tolérés. Si nécessaire, nous utilisons une crème anesthésiante ou du froid. Nous vous expliquons à l’avance ce que vous allez ressentir.'],
   ['Puis-je sortir juste après le traitement ?', 'Pour de nombreux traitements, immédiatement ou après quelques heures. De légères rougeurs ou un gonflement sont possibles selon la méthode – nous en parlons avec vous au préalable.'],
   ['Dans quelles langues conseillez-vous ?', 'En allemand, anglais, français, italien, russe et ukrainien – notre clientèle est très internationale.'],
-  ['Comment prendre rendez-vous ?', 'Le plus simple : par WhatsApp (messages uniquement). Nous vous répondons au plus vite et trouvons ensemble un rendez-vous qui vous convient.'],
+  ['Comment prendre rendez-vous ?', 'Directement en ligne via notre système de réservation – 24 h/24. Ou par WhatsApp (messages uniquement) : nous vous répondons au plus vite et trouvons ensemble un rendez-vous qui vous convient.'],
   ['Où se trouve Liyas Lounge ?', 'Hammerallee 23, 4600 Olten. Nous vous envoyons volontiers l’itinéraire par WhatsApp.'],
   ['Combien coûte un traitement ?', 'Par exemple : blanchiment dentaire dès CHF 80, dermal filler dès CHF 130 ou HIFU dès CHF 150. Le coût final est défini lors de la consultation.'],
   ['Comment puis-je payer ?', 'Le paiement se fait directement après le traitement – en espèces, par TWINT ou par carte.'],
