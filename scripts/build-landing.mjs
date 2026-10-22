@@ -313,7 +313,7 @@ function page(L, sub = null) {
   <a class="hero__scroll" href="#expertin" aria-label="${t.scroll}"><span>${t.scroll}</span><i></i></a>
 </section>
 
-<section class="oval" id="expertin">
+<section class="oval tex" id="expertin">
   <div class="oval__in">
     ${head(t.exScript, t.exH)}
     <p class="lead" data-up>${esc(t.exP)}</p>
@@ -351,7 +351,7 @@ function page(L, sub = null) {
   </div>
 </section>
 
-<section class="rev" id="bewertungen">
+<section class="rev tex" id="bewertungen">
   ${head(t.revScript, t.revH)}
   <a class="rev__score" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><b>${rating}</b>${stars(t.stars)}<span>${SITE.googleReviewCount} Google</span></a>
   <div class="rs" data-slider data-up>
@@ -367,7 +367,7 @@ function page(L, sub = null) {
   ${nudge(t.nudge.faq)}
 </section>
 
-<section class="ct" id="kontakt">
+<section class="ct tex" id="kontakt">
   <div class="ct__txt">
     <header class="sh sh--left" data-up><p class="sh__script">${esc(t.ctScript)}</p><h2 class="sh__h">${esc(t.ctH)}</h2></header>
     <p class="lead" data-up>${esc(t.ctP)}</p>
@@ -539,7 +539,7 @@ const trAlt = (sl) => Object.fromEntries(LANGS.map((k) => [k, trUrl(k, sl)]));
 const crumbs = (L, items) => `<nav class="crumbs" aria-label="Breadcrumb"><ol>${items.map(([h, l], i) => `<li>${i < items.length - 1 ? `<a href="${h}">${esc(l)}</a>` : `<span aria-current="page">${esc(l)}</span>`}</li>`).join('')}</ol></nav>`;
 const crumbSchema = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map(([h, l], i) => ({ '@type': 'ListItem', position: i + 1, name: l, item: SITE.url + h })) });
 const ctaBand = (L, waText) => { const p = TP[L]; return `
-<section class="tp-cta" id="kontakt">
+<section class="tp-cta tex" id="kontakt">
   <header class="sh"><p class="sh__script">${esc(p.ctaScript)}</p><h2 class="sh__h">${esc(p.ctaH)}</h2></header>
   <p class="lead">${esc(p.ctaP)}</p>
   <div class="tp-ctas"><a class="btn btn--gold btn--lg" href="${BOOK_PATH[L]}">${ico('cal')}<span>${T[L].book}</span></a><a class="btn btn--line btn--lg" href="${wa(waText)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(p.ask)}</span></a></div>
@@ -599,7 +599,7 @@ ${ctaBand(L, t.wa)}`;
   <div data-up><header class="sh sh--left"><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.forYou)}</h2></header><p class="lead tp-intro__lead">${esc(x.intro)}</p></div>
   <div class="tp-card" data-up><h3>${esc(x.indications.title)}</h3><ul class="tp-checks">${x.indications.items.map((i) => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul></div>
 </section>
-<section class="tp-sec" id="preise">
+<section class="tp-sec tex tex--read" id="preise">
   <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.prices)}</h2></header>
   ${x.prices.length ? `<ul class="tp-prices" data-up>${x.prices.map((pr) => `<li${pr.featured ? ' class="is-top"' : ''}><span class="tp-prices__n"><b>${esc(pr.name)}</b>${pr.detail ? `<small>${esc(pr.detail)}</small>` : ''}${pr.desc ? `<em>${esc(pr.desc)}</em>` : ''}</span><span class="tp-prices__p">${esc(fmtPrice(pr))}</span></li>`).join('')}</ul>` : ''}
   ${x.priceNote ? `<p class="tp-note tp-note--box" data-up>${esc(x.priceNote)}</p>` : ''}

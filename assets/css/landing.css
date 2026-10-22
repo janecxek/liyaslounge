@@ -706,23 +706,23 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
   .hero__trust .i { width: 11px; height: 11px; }
   .hero__trust .stars--sm .i:nth-child(n + 2) { display: none; }
 }
-/* Tapete aus dem Studio (schwarzes Krokodilleder) – zwei Stufen:
-   --tex-gold: kräftiger, mit warmem Licht von oben (Bewertungen, Preise, Kontakt)
-   --tex-dark: dezent und dunkel (FAQ, Footer) */
+/* Tapete aus dem Studio (schwarzes Krokodilleder) – gezielt dort, wo Vertrauen und Wertigkeit zählen:
+   Expertin (ihr Studio hinter ihr), Bewertungen (im Licht), Preise (wertige Umgebung), Kontakt (Einladung).
+   Lesestrecken (FAQ) und Fotosektionen bleiben bewusst ruhig. */
 :root {
-  --tex: url(/assets/img/tapete-krokodil.webp);
-  --tex-gold: radial-gradient(70% 55% at 50% 0%, rgba(207, 174, 107, .14), transparent 70%), radial-gradient(120% 90% at 50% 10%, rgba(11, 10, 9, .15), rgba(11, 10, 9, .7) 75%), var(--tex);
-  --tex-dark: radial-gradient(120% 80% at 50% 0%, rgba(11, 10, 9, .35), rgba(11, 10, 9, .78) 70%), var(--tex);
+  --tex: url(/assets/img/tapete-krokodil-2.webp?v=2);
+  --tex-size: 480px;
+  --tex-glow: radial-gradient(60% 45% at 50% 0%, rgba(207, 174, 107, .16), transparent 70%);
+  --tex-veil: radial-gradient(130% 95% at 50% 35%, rgba(11, 10, 9, .2), rgba(11, 10, 9, .8) 82%);
+  --tex-read: radial-gradient(85% 75% at 50% 50%, rgba(11, 10, 9, .76), rgba(11, 10, 9, .5) 72%, rgba(11, 10, 9, .82));
 }
-.rev { background: var(--tex-gold); background-size: auto, auto, 340px; }
-.faq:not(.tp-sec) { background: var(--tex-dark); background-size: auto, 380px; }
-.foot { background: var(--tex-dark); background-size: auto, 380px; }
-/* Sektionen mit begrenzter Breite: Struktur läuft trotzdem über die ganze Bildschirmbreite */
-.ct, .tp-cta, #preise, .tp-sec.faq { position: relative; isolation: isolate; }
-.ct::before, .tp-cta::before, #preise::before, .tp-sec.faq::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); pointer-events: none; }
-.ct::before, .tp-cta::before, #preise::before { background: var(--tex-gold); background-size: auto, auto, 340px; }
-.tp-sec.faq::before { background: var(--tex-dark); background-size: auto, 380px; }
-#preise { padding-bottom: clamp(60px, 7vw, 90px); }
-.tp-sec.faq { padding-bottom: clamp(60px, 7vw, 90px); }
-.tp-cta { padding-top: clamp(80px, 9vw, 120px); margin-top: clamp(60px, 7vw, 100px); }
+.tex { position: relative; isolation: isolate; }
+.tex::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); pointer-events: none; background: var(--tex-glow), var(--tex-veil), var(--tex); background-size: auto, auto, var(--tex-size); }
+/* oben und unten weich in das Schwarz der Seite auslaufen lassen */
+.tex::after { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); pointer-events: none; background: linear-gradient(180deg, var(--k1), rgba(11, 10, 9, 0) 90px, rgba(11, 10, 9, 0) calc(100% - 90px), var(--k1)); }
+.tex--read::before { background: var(--tex-glow), var(--tex-read), var(--tex); background-size: auto, auto, var(--tex-size); }
+.oval.tex::before, .oval.tex::after { top: 80px; }
+.oval.tex { padding-bottom: clamp(60px, 8vw, 110px); }
+#preise.tex { padding-bottom: clamp(60px, 7vw, 90px); }
+.tp-cta.tex { padding-top: clamp(80px, 9vw, 120px); margin-top: clamp(60px, 7vw, 100px); }
 
