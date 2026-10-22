@@ -345,7 +345,7 @@ function page(L, sub = null) {
     ${head(t.visScript, t.visH)}
     <ul class="pol">${t.policies.map(([a, b], i) => `<li data-up style="--d:${(i % 3) * .07}s"><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
     <div class="prep" data-up><h3>${esc(t.prepH)}</h3><ul>${t.prep.map((x) => `<li>${ico('check')}${esc(x)}</li>`).join('')}</ul></div>
-    <div class="gal" data-up><h3>${esc(TP[L].galH)}</h3><ul class="gal__list">${GALLERY.map((g, i) => `<li class="gal__it gal__it--${IMG[g].w > IMG[g].h ? 'w' : 't'}">${pic(g, TP[L].galAlt[i], { sizes: '(max-width: 640px) 70vw, 30vw' })}</li>`).join('')}</ul></div>
+    <div class="gal" data-up><h3>${esc(TP[L].galH)}</h3><ul class="gal__list">${GALLERY.map((g, i) => `<li class="gal__it gal__it--${IMG[g].w > IMG[g].h ? 'w' : 't'}">${pic(g, TP[L].galAlt[i], { sizes: IMG[g].w > IMG[g].h ? '(max-width: 640px) 90vw, 560px' : '(max-width: 640px) 70vw, 280px' })}</li>`).join('')}</ul></div>
   </div>
 </section>
 
@@ -378,7 +378,7 @@ function page(L, sub = null) {
       <li>${ico('ig')}<span><small>Instagram</small><a href="${SITE.instagram}" target="_blank" rel="noopener">${IG}</a></span></li>
     </ul>
   </div>
-  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('portrait-liya-olten', '', { sizes: '300px', pos: '50% 18%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
+  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('portrait-liya-olten', '', { sizes: '420px', pos: '50% 18%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
 </section>`}
 </main>
 
@@ -547,7 +547,7 @@ const trustRow = (L) => { const r = String(SITE.googleRating).replace('.', L ===
 
 const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
 <section class="hero hero--tp">
-  <div class="hero__media" data-hero-img>${pic(img, alt, { eager: true, pos: "72% 40%" })}</div>
+  <div class="hero__media" data-hero-img>${pic(img, alt, { eager: true, pos: "72% 40%", sizes: "(max-width: 900px) 1536px, 100vw" })}</div>
   <div class="hero__in">
     ${crumbs(L, items)}
     <h1 class="tp-h1" data-in style="--d:.2s">${h1}</h1>
@@ -560,8 +560,8 @@ const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
 
 for (const L of LANGS) {
   const t = T[L], p = TP[L], catName = Object.fromEntries(t.cats.map((c) => [c.id, c]));
-  const tile = (sl) => { const x = trData(L, sl), f = trFrom(x); return `<li><a class="tp-tile" href="${trUrl(L, sl)}">${pic(x.image, x.name, { sizes: '(max-width: 640px) 92vw, (max-width: 1100px) 45vw, 30vw' })}<span class="tp-tile__txt"><b>${esc(x.name)}</b><small>${esc(x.card)}</small><span class="tp-tile__from">${f ? `${p.from} CHF ${f}` : p.onReq}</span><span class="tr__ask">${p.more} ${ico('arrow')}</span></span></a></li>`; };
-  const catTile = (c) => `<li><a class="tp-tile" href="${catUrl(L, c.id)}">${pic(c.image, c.name, { sizes: '(max-width: 640px) 92vw, 45vw' })}<span class="tp-tile__txt"><b>${esc(c.name)}</b><small>${esc(c.short)}</small><span class="tp-tile__from">${p.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${p.cardMore} ${ico('arrow')}</span></span></a></li>`;
+  const tile = (sl) => { const x = trData(L, sl), f = trFrom(x); return `<li><a class="tp-tile" href="${trUrl(L, sl)}">${pic(x.image, x.name, { sizes: '(max-width: 640px) 520px, 600px' })}<span class="tp-tile__txt"><b>${esc(x.name)}</b><small>${esc(x.card)}</small><span class="tp-tile__from">${f ? `${p.from} CHF ${f}` : p.onReq}</span><span class="tr__ask">${p.more} ${ico('arrow')}</span></span></a></li>`; };
+  const catTile = (c) => `<li><a class="tp-tile" href="${catUrl(L, c.id)}">${pic(c.image, c.name, { sizes: '(max-width: 640px) 92vw, 340px' })}<span class="tp-tile__txt"><b>${esc(c.name)}</b><small>${esc(c.short)}</small><span class="tp-tile__from">${p.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${p.cardMore} ${ico('arrow')}</span></span></a></li>`;
   const bookBtn = `<a class="btn btn--gold" href="${BOOK_PATH[L]}">${ico('cal')}<span>${t.book}</span></a>`;
 
   // eine Seite pro Kategorie
