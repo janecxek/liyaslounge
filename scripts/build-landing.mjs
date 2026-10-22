@@ -55,7 +55,6 @@ const TP = {
     ask: 'Frage per WhatsApp', micro: 'Sofort bestätigt · bis 24 h vorher verschiebbar',
     trust: (r, n) => [`${r} · ${n} Google-Bewertungen`, 'Selbständig seit 2009', 'Heilpraktikerin & Krankenpflegerin', 'Beratung in 6 Sprachen'],
     waTr: (n) => `Hallo Liya, ich interessiere mich für ${n} und habe eine Frage:`,
-    heroSub: 'Anti-Age, Face Balancing & apparative Kosmetik in Olten – natürlich und medizinisch fundiert, seit 2009.',
     quote: 'Ich sehe Schönheit mit den Augen einer Künstlerin. Mein Ziel ist, dass Sie strahlen – nicht, dass man sieht, dass Sie etwas gemacht haben.', quoteBy: 'Liya, Inhaberin',
     galH: 'Einblicke ins Studio', galAlt: ['Empfang mit «Medical Aesthetic & Beauty»', 'Wand mit goldenen Buchstaben «Liyas Lounge»', 'Lounge mit Kronleuchter', 'Behandlungsliege', 'Behandlungsraum', 'Eingang an der Hammerallee 23'],
     qz: {
@@ -74,7 +73,6 @@ const TP = {
     ask: 'Ask on WhatsApp', micro: 'Confirmed instantly · can be moved up to 24 h before',
     trust: (r, n) => [`${r} · ${n} Google reviews`, 'Self-employed since 2009', 'Naturopath & nurse', 'Advice in 6 languages'],
     waTr: (n) => `Hello Liya, I am interested in ${n} and have a question:`,
-    heroSub: 'Anti-age, face balancing & device-based treatments in Olten – natural and medically grounded, since 2009.',
     quote: 'I see beauty through an artist’s eyes. My aim is for you to shine – not for anyone to see that you have had something done.', quoteBy: 'Liya, owner',
     galH: 'Inside the studio', galAlt: ['Reception with “Medical Aesthetic & Beauty”', 'Wall with gold letters “Liyas Lounge”', 'Lounge with chandelier', 'Treatment bed', 'Treatment room', 'Entrance at Hammerallee 23'],
     qz: {
@@ -93,7 +91,6 @@ const TP = {
     ask: 'Question sur WhatsApp', micro: 'Confirmé immédiatement · déplaçable jusqu’à 24 h avant',
     trust: (r, n) => [`${r} · ${n} avis Google`, 'Indépendante depuis 2009', 'Naturopathe & infirmière', 'Conseils en 6 langues'],
     waTr: (n) => `Bonjour Liya, je suis intéressée par ${n} et j’ai une question :`,
-    heroSub: 'Anti-âge, face balancing & cosmétique appareillée à Olten – naturel et fondé sur le savoir médical, depuis 2009.',
     quote: 'Je vois la beauté avec des yeux d’artiste. Mon objectif : que vous rayonniez – pas que l’on voie que vous avez fait quelque chose.', quoteBy: 'Liya, propriétaire',
     galH: 'Aperçu du studio', galAlt: ['Accueil « Medical Aesthetic & Beauty »', 'Mur aux lettres dorées « Liyas Lounge »', 'Lounge avec lustre', 'Table de soin', 'Salle de soin', 'Entrée Hammerallee 23'],
     qz: {
@@ -305,7 +302,6 @@ function page(L, sub = null) {
   <div class="hero__in">
     <h1 class="hero__logo" data-in>${logo('logo--hero')}<span class="sr">Liyas Lounge – ${esc(t.tagline)}</span></h1>
     <p class="hero__slogan" data-in style="--d:.35s">${esc(t.slogan[0])} <em>${esc(t.slogan[1])}</em></p>
-    <p class="hero__sub" data-in style="--d:.42s">${esc(TP[L].heroSub)}</p>
     <div class="hero__ctas" data-in style="--d:.5s"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line" href="#behandlungen"><span>${t.heroBtn2}</span></a></div>
     <p class="micro" data-in style="--d:.58s">${ico('check')}${esc(TP[L].micro)}</p>
     <ul class="hero__trust" data-in style="--d:.65s">${t.trust(rating, SITE.googleReviewCount).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}<span class="t-lg">${esc(x)}</span><span class="t-sm">${esc(t.trustS(rating, SITE.googleReviewCount)[i])}</span></li>`).join('')}</ul>

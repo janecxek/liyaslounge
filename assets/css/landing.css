@@ -119,7 +119,7 @@ body.locked { overflow: hidden; }
 .hero { position: relative; height: 100vh; height: 100svh; min-height: 620px; display: grid; place-items: center; overflow: hidden; background: var(--k0); }
 .hero__media { position: absolute; inset: -4% 0 0; will-change: transform; }
 .hero__media picture, .hero__media img { width: 100%; height: 100%; }
-.hero__media img { object-fit: cover; filter: saturate(.75) contrast(1.05) brightness(.62); transform: scale(1.08); animation: heroZoom 2.8s var(--ease) forwards; }
+.hero__media img { object-fit: cover; filter: saturate(.75) contrast(1.05) brightness(.5); transform: scale(1.08); animation: heroZoom 2.8s var(--ease) forwards; }
 @keyframes heroZoom { to { transform: scale(1); } }
 .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(60% 48% at 50% 52%, rgba(7, 7, 7, .55), rgba(7, 7, 7, 0) 72%), linear-gradient(180deg, rgba(7, 7, 7, .55) 0%, rgba(7, 7, 7, 0) 22%, rgba(7, 7, 7, 0) 60%, var(--k1) 100%); }
 .hero__in { position: relative; z-index: 1; display: grid; justify-items: center; gap: 22px; padding: 90px var(--gutter) 70px; text-align: center; }
