@@ -105,7 +105,6 @@ const T = {
     revScript: 'Kundinnen', revH: 'Bewertungen', revTitles: ['Ehrlich beraten', 'Ganz natürlich', 'Sehr diskret', 'Einfach top', 'Professionell', 'Perfekt dezent'], revG: 'Alle Bewertungen auf Google', stars: '5 von 5 Sternen',
     visScript: 'Ihr', visH: 'Besuch',
     policies: [['Beratung', 'Vor oder während Ihrer Behandlung kostenlos. Als separater Termin CHF 50.'], ['Termine', 'Online buchen – rund um die Uhr. Oder per WhatsApp (nur Nachrichten).'], ['Absagen', 'Bitte spätestens 24 Stunden vor dem Termin absagen oder verschieben.'], ['Zahlung', `Direkt nach der Behandlung – ${SITE.payment.de}.`], ['Gesundheit', 'Bitte informieren Sie uns vorab über Allergien, Medikamente oder eine Schwangerschaft.'], ['Pünktlichkeit', 'Bei Verspätung kann sich die Behandlungszeit verkürzen.']],
-    prepH: 'Vor Ihrem Termin', prep: ['Gerne ungeschminkt erscheinen', 'Fragen & Wünsche notieren', 'Medikamente & Allergien angeben', 'Etwas Zeit einplanen'],
     nudge: {
       ex: ['Lernen Sie mich persönlich kennen – vor Ihrer Behandlung ist die Beratung kostenlos.', 'Beratung vereinbaren', 'Hallo Liyas Lounge, ich würde Sie gerne bei einer Beratung kennenlernen.'],
       tr: ['Nicht sicher, was zu Ihnen passt? Schicken Sie uns ein Foto – wir sagen Ihnen ehrlich, was sinnvoll ist. Auch wenn es «nichts» ist.', 'Ehrliche Einschätzung holen', 'Hallo Liyas Lounge, ich bin unsicher, welche Behandlung zu mir passt. Können Sie mich ehrlich beraten?'],
@@ -141,7 +140,6 @@ const T = {
     revScript: 'Clients', revH: 'Reviews', revTitles: ['Honest advice', 'So natural', 'Very discreet', 'Simply great', 'Professional', 'Perfectly subtle'], revG: 'All reviews on Google', stars: '5 out of 5 stars',
     visScript: 'Your', visH: 'Visit',
     policies: [['Consultation', 'Free before or during your treatment. As a separate appointment CHF 50.'], ['Appointments', 'Book online – around the clock. Or via WhatsApp (messages only).'], ['Cancellations', 'Please cancel or reschedule at least 24 hours in advance.'], ['Payment', `Directly after the treatment – ${SITE.payment.en}.`], ['Health', 'Please tell us in advance about allergies, medication or a pregnancy.'], ['Punctuality', 'If you arrive late, the treatment time may be shortened.']],
-    prepH: 'Before your appointment', prep: ['Come without make-up if possible', 'Note your questions & wishes', 'Tell us about medication & allergies', 'Allow a little extra time'],
     nudge: {
       ex: ['Get to know me in person – the consultation is free before your treatment.', 'Arrange a consultation', 'Hello Liyas Lounge, I would like to get to know you in a consultation.'],
       tr: ['Not sure what suits you? Send us a photo – we will tell you honestly what makes sense. Even if that is “nothing”.', 'Get an honest opinion', 'Hello Liyas Lounge, I am not sure which treatment suits me. Could you give me honest advice?'],
@@ -177,7 +175,6 @@ const T = {
     revScript: 'Clientes', revH: 'Avis', revG: 'Tous les avis sur Google', stars: '5 étoiles sur 5',
     visScript: 'Votre', visH: 'Visite',
     policies: [['Consultation', 'Gratuite avant ou pendant votre traitement. En rendez-vous séparé CHF 50.'], ['Rendez-vous', 'Réservez en ligne – 24 h/24. Ou par WhatsApp (messages uniquement).'], ['Annulations', 'Merci d’annuler ou de déplacer au moins 24 heures à l’avance.'], ['Paiement', 'Directement après le traitement – espèces, TWINT, carte.'], ['Santé', 'Merci de nous informer à l’avance d’allergies, de médicaments ou d’une grossesse.'], ['Ponctualité', 'En cas de retard, la durée du traitement peut être réduite.']],
-    prepH: 'Avant votre rendez-vous', prep: ['Venir si possible sans maquillage', 'Noter vos questions & souhaits', 'Indiquer médicaments & allergies', 'Prévoir un peu de temps'],
     nudge: {
       ex: ['Faites ma connaissance – avant votre traitement, la consultation est gratuite.', 'Fixer une consultation', 'Bonjour Liyas Lounge, j’aimerais faire votre connaissance lors d’une consultation.'],
       tr: ['Vous ne savez pas ce qui vous convient ? Envoyez-nous une photo – nous vous dirons honnêtement ce qui a du sens. Même si c’est « rien ».', 'Obtenir un avis honnête', 'Bonjour Liyas Lounge, je ne sais pas quel traitement me convient. Pouvez-vous me conseiller honnêtement ?'],
@@ -300,7 +297,6 @@ function page(L, sub = null) {
   <div class="visit__in">
     ${head(t.visScript, t.visH)}
     <ul class="pol">${t.policies.map(([a, b], i) => `<li data-up style="--d:${(i % 3) * .07}s"><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
-    <div class="prep" data-up><h3>${esc(t.prepH)}</h3><ul>${t.prep.map((x) => `<li>${ico('check')}${esc(x)}</li>`).join('')}</ul></div>
     <div class="gal" data-up><h3>${esc(TP[L].galH)}</h3><ul class="gal__list">${GALLERY.map((g, i) => `<li class="gal__it gal__it--${IMG[g].w > IMG[g].h ? 'w' : 't'}">${pic(g, TP[L].galAlt[i], { sizes: IMG[g].w > IMG[g].h ? '(max-width: 640px) 90vw, 560px' : '(max-width: 640px) 70vw, 280px' })}</li>`).join('')}</ul></div>
   </div>
 </section>
