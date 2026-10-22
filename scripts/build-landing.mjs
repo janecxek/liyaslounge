@@ -367,7 +367,7 @@ function page(L, sub = null) {
   ${nudge(t.nudge.faq)}
 </section>
 
-<section class="ct tex" id="kontakt">
+<section class="ct" id="kontakt">
   <div class="ct__txt">
     <header class="sh sh--left" data-up><p class="sh__script">${esc(t.ctScript)}</p><h2 class="sh__h">${esc(t.ctH)}</h2></header>
     <p class="lead" data-up>${esc(t.ctP)}</p>
