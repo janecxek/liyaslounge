@@ -687,3 +687,10 @@ html.pt-in body { animation: ptFade .5s var(--ease) both; }
   @view-transition { navigation: none; }
   html.pt-in body { animation: none; }
 }
+/* Bilder blenden weich ein, sobald sie geladen sind (statt unscharfem Platzhalter) */
+html.js img[loading="lazy"]:not(.is-ld) { opacity: 0; }
+html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
+@keyframes imgIn { from { opacity: 0; } }
+/* Logo in der Navigation ruhig: der animierte Glanz bleibt dem grossen Logo im Hero vorbehalten (spart Repaints auf jeder Seite) */
+.logo--nav .logo__main, .logo--nav .logo__script, .logo--nav .spark { animation: none; will-change: auto; }
+.logo--nav .spark { display: none; }

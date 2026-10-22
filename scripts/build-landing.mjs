@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 // Startseite Liyas Lounge – Schwarz & Gold (basiert auf «Version 2 · Lounge Noir»), zweisprachig.
 // Schreibt index.html (DE, /) und en/index.html (EN, /en). Läuft am Ende von scripts/build.mjs.
 import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
@@ -227,10 +228,11 @@ const T = {
 function pic(name, alt, { sizes = '100vw', eager = false, pos = '', cls = '' } = {}) {
   const m = IMG[name];
   if (!m) throw new Error('Bild fehlt: ' + name);
-  const set = (n) => IMG[n].widths.map((w) => `/assets/img/${n}-${w}.webp ${w}w`).join(', ');
+  const v = (n) => createHash('md5').update(IMG[n].lqip || String(IMG[n].w)).digest('hex').slice(0, 8);
+  const set = (n) => IMG[n].widths.map((w) => `/assets/img/${n}-${w}.webp?v=${v(n)} ${w}w`).join(', ');
   const portrait = IMG[name + '-portrait'] ? `<source media="(orientation: portrait) and (max-width: 900px)" type="image/webp" srcset="${set(name + '-portrait')}" sizes="100vw">` : '';
-  const style = [pos && `object-position:${pos}`, m.lqip && `background:url(${m.lqip}) center/cover`].filter(Boolean).join(';');
-  return `<picture${cls ? ` class="${cls}"` : ''}>${portrait}<source type="image/webp" srcset="${set(name)}" sizes="${sizes}"><img src="/assets/img/${name}.jpg" alt="${esc(alt)}" width="${m.w}" height="${m.h}"${style ? ` style="${style}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
+  const style = pos ? `object-position:${pos}` : '';
+  return `<picture${cls ? ` class="${cls}"` : ''}>${portrait}<source type="image/webp" srcset="${set(name)}" sizes="${sizes}"><img src="/assets/img/${name}.jpg?v=${v(name)}" alt="${esc(alt)}" width="${m.w}" height="${m.h}"${style ? ` style="${style}"` : ''} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
 }
 const I = {
   arrow: '<path d="M7 17 17 7M8 7h9v9"/>', left: '<path d="M19 12H5M11 6l-6 6 6 6"/>', right: '<path d="M5 12h14M13 6l6 6-6 6"/>', down: '<path d="M12 5v14M6 13l6 6 6-6"/>',
@@ -340,7 +342,7 @@ function page(L, sub = null) {
 </section>
 
 <section class="visit">
-  <picture class="visit__bg" aria-hidden="true"><source media="(max-width: 640px)" srcset="/assets/img/lounge-liyas-olten-bg-m.webp"><img src="/assets/img/lounge-liyas-olten-bg.webp" alt="" width="960" height="640" loading="lazy" decoding="async"></picture>
+  <picture class="visit__bg" aria-hidden="true"><source media="(max-width: 640px)" srcset="/assets/img/lounge-liyas-olten-bg-m.webp?v=2"><img src="/assets/img/lounge-liyas-olten-bg.webp?v=2" alt="" width="960" height="640" loading="lazy" decoding="async"></picture>
   <div class="visit__in">
     ${head(t.visScript, t.visH)}
     <ul class="pol">${t.policies.map(([a, b], i) => `<li data-up style="--d:${(i % 3) * .07}s"><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
@@ -420,8 +422,8 @@ ${sub && !sub.url ? '' : `<link rel="canonical" href="${url}">
 <link rel="preload" href="/assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/landing.min.css?v=${VERSION}">
-<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('ll-lx')){document.documentElement.classList.add('lx-in');sessionStorage.removeItem('ll-lx')}if(sessionStorage.getItem('ll-pt')){document.documentElement.classList.add('pt-in');sessionStorage.removeItem('ll-pt')}}catch(e){}</script>
-<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
+<script>document.documentElement.classList.add('js');document.addEventListener('load',function(e){if(e.target.tagName==='IMG')e.target.classList.add('is-ld')},true);document.addEventListener('error',function(e){if(e.target.tagName==='IMG')e.target.classList.add('is-ld')},true);try{if(sessionStorage.getItem('ll-lx')){document.documentElement.classList.add('lx-in');sessionStorage.removeItem('ll-lx')}if(sessionStorage.getItem('ll-pt')){document.documentElement.classList.add('pt-in');sessionStorage.removeItem('ll-pt')}}catch(e){}</script>
+<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 ${sub ? (sub.schemas || []).map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n') : `<script type="application/ld+json">${JSON.stringify(schema)}</script>
 <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
 </head>
@@ -547,7 +549,7 @@ const trustRow = (L) => { const r = String(SITE.googleRating).replace('.', L ===
 
 const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
 <section class="hero hero--tp">
-  <div class="hero__media" data-hero-img>${pic(img, alt, { eager: true, pos: "72% 40%", sizes: "(max-width: 900px) 1536px, 100vw" })}</div>
+  <div class="hero__media" data-hero-img>${pic(img, alt, { eager: true, pos: "72% 40%", sizes: "(max-width: 900px) 660px, 100vw" })}</div>
   <div class="hero__in">
     ${crumbs(L, items)}
     <h1 class="tp-h1" data-in style="--d:.2s">${h1}</h1>
