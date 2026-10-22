@@ -136,6 +136,22 @@
   // Zurück-Taste (Seite aus dem Cache): Übergang nicht stehen lassen
   window.addEventListener('pageshow', function (e) { if (e.persisted && lx) { lx.classList.remove('is-on'); root.classList.remove('lx-in', 'lx-done'); } });
 
+  /* ---------- Seitenwechsel: sanft überblenden (View Transitions, sonst kurzer Fade) ---------- */
+  window.addEventListener('pageswap', function (e) { if (e.viewTransition && lx && lx.classList.contains('is-on')) e.viewTransition.skipTransition(); });
+  if (!('CSSViewTransitionRule' in window) && !reduce) {
+    doc.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || a.hasAttribute('download')) return;
+      var u = new URL(a.href, location.href);
+      if (u.origin !== location.origin || (u.pathname === location.pathname && u.search === location.search)) return;
+      e.preventDefault();
+      try { sessionStorage.setItem('ll-pt', '1'); } catch (err) {}
+      root.classList.add('pt-out');
+      setTimeout(function () { location.href = a.href; }, 220);
+    });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) root.classList.remove('pt-out'); });
+  }
+
   /* ---------- Einblenden ---------- */
   var ups = $$('[data-up]');
   if ('IntersectionObserver' in window && !reduce) {
