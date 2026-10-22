@@ -661,8 +661,6 @@ html.lx-in .hero, html.lx-in .hero * { animation-play-state: paused !important; 
 .tp-intro__lead { margin: 0; text-align: left; }
 .acc details > div > ul, .acc details > div > .tp-note { margin: 0; padding: 0 40px 18px 0; text-align: left; }
 /* Tapete aus dem Studio (schwarzes Krokodilleder) als dezente Struktur */
-.rev, .faq:not(.tp-sec) { background-image: linear-gradient(rgba(11, 10, 9, .8), rgba(11, 10, 9, .8)), url(/assets/img/tapete-krokodil.webp); background-size: auto, 420px; }
-.foot { background-image: linear-gradient(rgba(7, 7, 7, .84), rgba(7, 7, 7, .84)), url(/assets/img/tapete-krokodil.webp); background-size: auto, 420px; }
 @media (max-width: 900px) {
   .tp-intro { grid-template-columns: minmax(0, 1fr); }
   .tp-intro .sh { justify-items: center; text-align: center; } .tp-intro .sh__h::after { margin-left: auto; } .tp-intro__lead { text-align: center; }
@@ -694,3 +692,37 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 /* Logo in der Navigation ruhig: der animierte Glanz bleibt dem grossen Logo im Hero vorbehalten (spart Repaints auf jeder Seite) */
 .logo--nav .logo__main, .logo--nav .logo__script, .logo--nav .spark { animation: none; will-change: auto; }
 .logo--nav .spark { display: none; }
+/* Vertrauenszeile im Hero: immer eine Zeile – lange Texte auf grossen Bildschirmen, kurze darunter */
+.hero__trust { flex-wrap: nowrap; white-space: nowrap; justify-content: center; justify-self: center; width: max-content; max-width: calc(100vw - 2 * var(--gutter)); margin-top: 4px; font-size: .7rem; letter-spacing: .05em; gap: 0 22px; color: var(--txt2); }
+.hero__trust li, .hero__trust li:nth-child(3) { display: inline-flex; align-items: center; gap: 7px; }
+.hero__trust .t-sm { display: none; } .hero__trust .t-lg { display: inline; }
+@media (max-width: 1180px) {
+  .hero__trust .t-lg { display: none; } .hero__trust .t-sm { display: inline; }
+  .hero__trust { font-size: .72rem; gap: 0 18px; }
+}
+@media (max-width: 640px) {
+  .hero__trust { font-size: clamp(.5rem, 2.55vw, .68rem); letter-spacing: .01em; gap: 0 clamp(6px, 2vw, 14px); }
+  .hero__trust li, .hero__trust li:nth-child(3) { gap: 4px; }
+  .hero__trust .i { width: 11px; height: 11px; }
+  .hero__trust .stars--sm .i:nth-child(n + 2) { display: none; }
+}
+/* Tapete aus dem Studio (schwarzes Krokodilleder) – zwei Stufen:
+   --tex-gold: kräftiger, mit warmem Licht von oben (Bewertungen, Preise, Kontakt)
+   --tex-dark: dezent und dunkel (FAQ, Footer) */
+:root {
+  --tex: url(/assets/img/tapete-krokodil.webp);
+  --tex-gold: radial-gradient(70% 55% at 50% 0%, rgba(207, 174, 107, .14), transparent 70%), radial-gradient(120% 90% at 50% 10%, rgba(11, 10, 9, .15), rgba(11, 10, 9, .7) 75%), var(--tex);
+  --tex-dark: radial-gradient(120% 80% at 50% 0%, rgba(11, 10, 9, .35), rgba(11, 10, 9, .78) 70%), var(--tex);
+}
+.rev { background: var(--tex-gold); background-size: auto, auto, 340px; }
+.faq:not(.tp-sec) { background: var(--tex-dark); background-size: auto, 380px; }
+.foot { background: var(--tex-dark); background-size: auto, 380px; }
+/* Sektionen mit begrenzter Breite: Struktur läuft trotzdem über die ganze Bildschirmbreite */
+.ct, .tp-cta, #preise, .tp-sec.faq { position: relative; isolation: isolate; }
+.ct::before, .tp-cta::before, #preise::before, .tp-sec.faq::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); pointer-events: none; }
+.ct::before, .tp-cta::before, #preise::before { background: var(--tex-gold); background-size: auto, auto, 340px; }
+.tp-sec.faq::before { background: var(--tex-dark); background-size: auto, 380px; }
+#preise { padding-bottom: clamp(60px, 7vw, 90px); }
+.tp-sec.faq { padding-bottom: clamp(60px, 7vw, 90px); }
+.tp-cta { padding-top: clamp(80px, 9vw, 120px); margin-top: clamp(60px, 7vw, 100px); }
+
