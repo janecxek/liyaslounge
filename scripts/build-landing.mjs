@@ -29,21 +29,7 @@ const CAT_SLUG = { antiage: { de: 'anti-age', en: 'anti-age', fr: 'anti-age' }, 
 const CAT_HERO = { antiage: 'tr-faltenbehandlung-olten', apparativ: 'tr-hifu-olten', skin: 'tr-mesotherapie-olten' };
 const catUrl = (L, id) => `${TR_BASE[L]}/${CAT_SLUG[id][L]}`;
 const trFrom = (t) => { const ps = t.prices.filter((p) => p.price).map((p) => p.price); return ps.length ? Math.min(...ps) : null; };
-// ohne Nadeln / ohne Ausfallzeit – für den Mini-Check
 const GALLERY = ['studio-empfang-olten', 'studio-wand-liyas-lounge', 'studio-lounge-olten', 'studio-behandlung-olten', 'studio-raum-olten', 'studio-eingang-hammerallee']; // Hoch, Quer, Hoch · Hoch, Quer, Hoch
-const TR_NO_NEEDLE = ['hifu-olten', 'radiofrequenz-olten', 'zahnbleaching-olten'];
-const TR_NO_DOWN = ['faltenbehandlung-olten', 'hifu-olten', 'radiofrequenz-olten', 'zahnbleaching-olten', 'mesotherapie-olten'];
-const QZ = [
-  ['falten', ['faltenbehandlung-olten', 'morpheus8-olten', 'radiofrequenz-olten']],
-  ['volumen', ['dermal-filler-olten']],
-  ['straffung', ['hifu-olten', 'morpheus8-olten', 'radiofrequenz-olten']],
-  ['haut', ['mesotherapie-olten', 'morpheus8-olten', 'radiofrequenz-olten']],
-  ['haare', ['mesotherapie-olten']],
-  ['fett', ['fettwegspritze-olten', 'hifu-olten']],
-  ['entfernen', ['laser-tattooentfernung-olten']],
-  ['zaehne', ['zahnbleaching-olten']],
-  ['korrektur', ['filler-aufloesen-olten']],
-];
 // Beschriftungen der Behandlungsseiten, des Mini-Checks und neuer Startseiten-Bausteine
 const TP = {
   de: {
@@ -58,12 +44,6 @@ const TP = {
     waTr: (n) => `Hallo Liya, ich interessiere mich für ${n} und habe eine Frage:`,
     quote: 'Ich sehe Schönheit mit den Augen einer Künstlerin. Mein Ziel ist, dass Sie strahlen – nicht, dass man sieht, dass Sie etwas gemacht haben.', quoteBy: 'Liya, Inhaberin',
     galH: 'Einblicke ins Studio', galAlt: ['Empfang mit «Medical Aesthetic & Beauty»', 'Wand mit goldenen Buchstaben «Liyas Lounge»', 'Lounge mit Kronleuchter', 'Behandlungsliege', 'Behandlungsraum', 'Eingang an der Hammerallee 23'],
-    qz: {
-      script: 'In 30 Sekunden', h: 'Was passt zu Ihnen?', q1: 'Was möchten Sie verändern?', q2: 'Was ist Ihnen am wichtigsten?', res: 'Unsere Empfehlung für Sie', back: 'Zurück', restart: 'Neu starten', view: 'Behandlung ansehen', wa: 'Per WhatsApp beraten lassen', alt: 'Auch möglich',
-      concerns: { falten: 'Falten & Mimikfalten', volumen: 'Volumen & Lippen', straffung: 'Straffung & Kontur', haut: 'Hautbild & Glow', haare: 'Haare & Kopfhaut', fett: 'Doppelkinn & Fettpolster', entfernen: 'Tattoo / PMU entfernen', zaehne: 'Hellere Zähne', korrektur: 'Filler korrigieren' },
-      prio: { natural: 'Möglichst natürlich', noNeedle: 'Ohne Nadeln', noDown: 'Keine Ausfallzeit' },
-      msg: (c, p, n) => `Hallo Liya, mich interessiert «${c}»${p ? ` – wichtig ist mir: ${p}` : ''}. Der Mini-Check auf der Website empfiehlt ${n}. Passt das zu mir?`,
-    },
   },
   en: {
     home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', more: 'Learn more', cardMore: 'View treatments', catH: 'Choose your treatment', catOther: 'Other areas', contraQ: 'When is the treatment not suitable?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} With prices, since 2009.`,
@@ -77,12 +57,6 @@ const TP = {
     waTr: (n) => `Hello Liya, I am interested in ${n} and have a question:`,
     quote: 'I see beauty through an artist’s eyes. My aim is for you to shine – not for anyone to see that you have had something done.', quoteBy: 'Liya, owner',
     galH: 'Inside the studio', galAlt: ['Reception with “Medical Aesthetic & Beauty”', 'Wall with gold letters “Liyas Lounge”', 'Lounge with chandelier', 'Treatment bed', 'Treatment room', 'Entrance at Hammerallee 23'],
-    qz: {
-      script: 'In 30 seconds', h: 'What suits you?', q1: 'What would you like to change?', q2: 'What matters most to you?', res: 'Our recommendation for you', back: 'Back', restart: 'Start again', view: 'View treatment', wa: 'Get advice on WhatsApp', alt: 'Also possible',
-      concerns: { falten: 'Wrinkles & expression lines', volumen: 'Volume & lips', straffung: 'Tightening & contour', haut: 'Skin quality & glow', haare: 'Hair & scalp', fett: 'Double chin & fat pads', entfernen: 'Remove tattoo / PMU', zaehne: 'Whiter teeth', korrektur: 'Correct filler' },
-      prio: { natural: 'As natural as possible', noNeedle: 'No needles', noDown: 'No downtime' },
-      msg: (c, p, n) => `Hello Liya, I’m interested in “${c}”${p ? ` – what matters most to me: ${p}` : ''}. The quick check on the website recommends ${n}. Would that suit me?`,
-    },
   },
   fr: {
     home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', more: 'En savoir plus', cardMore: 'Voir les traitements', catH: 'Choisissez votre traitement', catOther: 'Autres domaines', contraQ: 'Quand le traitement n’est-il pas indiqué ?', catTitle: (c) => `${c.name} à Olten | Liyas Lounge`, catDesc: (c) => `${c.name} à Olten : ${c.short}. ${c.text} Avec les prix, depuis 2009.`,
@@ -96,12 +70,6 @@ const TP = {
     waTr: (n) => `Bonjour Liya, je suis intéressée par ${n} et j’ai une question :`,
     quote: 'Je vois la beauté avec des yeux d’artiste. Mon objectif : que vous rayonniez – pas que l’on voie que vous avez fait quelque chose.', quoteBy: 'Liya, propriétaire',
     galH: 'Aperçu du studio', galAlt: ['Accueil « Medical Aesthetic & Beauty »', 'Mur aux lettres dorées « Liyas Lounge »', 'Lounge avec lustre', 'Table de soin', 'Salle de soin', 'Entrée Hammerallee 23'],
-    qz: {
-      script: 'En 30 secondes', h: 'Qu’est-ce qui vous convient ?', q1: 'Que souhaitez-vous changer ?', q2: 'Qu’est-ce qui compte le plus pour vous ?', res: 'Notre recommandation pour vous', back: 'Retour', restart: 'Recommencer', view: 'Voir le traitement', wa: 'Conseil sur WhatsApp', alt: 'Aussi possible',
-      concerns: { falten: 'Rides & rides d’expression', volumen: 'Volume & lèvres', straffung: 'Raffermissement & contour', haut: 'Qualité de peau & éclat', haare: 'Cheveux & cuir chevelu', fett: 'Double menton & amas graisseux', entfernen: 'Retirer tatouage / PMU', zaehne: 'Dents plus blanches', korrektur: 'Corriger un filler' },
-      prio: { natural: 'Le plus naturel possible', noNeedle: 'Sans aiguilles', noDown: 'Sans éviction sociale' },
-      msg: (c, p, n) => `Bonjour Liya, je m’intéresse à « ${c} »${p ? ` – le plus important pour moi : ${p}` : ''}. Le mini-test du site recommande ${n}. Est-ce que cela me conviendrait ?`,
-    },
   },
 };
 const IMG = JSON.parse(readFileSync(join(ROOT, 'scripts/imgmeta.json'), 'utf8'));
@@ -250,19 +218,6 @@ const logo = (cls = '') => `<span class="logo ${cls}" role="img" aria-label="Liy
 const head = (script, h, cls = '') => `<header class="sh ${cls}" data-up><p class="sh__script">${esc(script)}</p><h2 class="sh__h">${esc(h)}</h2></header>`;
 
 // Mini-Check «Was passt zu Ihnen?»: 1–2 Klicks → Empfehlung → WhatsApp mit vorbereiteter Nachricht
-function quiz(L) {
-  const q = TP[L].qz;
-  const data = {
-    wa: SITE.whatsapp, prio: q.prio, msgP: q.msg('{c}', '{p}', '{n}'), msg0: q.msg('{c}', '', '{n}'), concerns: QZ.map(([k, list]) => ({ k, label: q.concerns[k], tr: list.map((sl) => { const t = trData(L, sl); return { s: sl, n: t.name, c: t.card, u: trUrl(L, sl), nn: TR_NO_NEEDLE.includes(sl), nd: TR_NO_DOWN.includes(sl) }; }) })),
-  };
-  return `<div class="qz" data-quiz>
-  <header class="sh"><p class="sh__script">${esc(q.script)}</p><h2 class="sh__h">${esc(q.h)}</h2></header>
-  <div class="qz__step is-on" data-step="1"><p class="qz__q"><span>1/2</span>${esc(q.q1)}</p><div class="qz__opts">${QZ.map(([k]) => `<button type="button" class="qz__opt" data-k="${k}">${esc(q.concerns[k])}</button>`).join('')}</div></div>
-  <div class="qz__step" data-step="2"><p class="qz__q"><span>2/2</span>${esc(q.q2)}</p><div class="qz__opts qz__opts--3">${Object.entries(q.prio).map(([k, v]) => `<button type="button" class="qz__opt" data-p="${k}">${esc(v)}</button>`).join('')}</div><button type="button" class="qz__back" data-back>${ico('left')}<span>${esc(q.back)}</span></button></div>
-  <div class="qz__step" data-step="3" aria-live="polite"><p class="qz__q">${esc(q.res)}</p><div class="qz__res" data-res></div><p class="qz__alt" data-alt hidden><span>${esc(q.alt)}${L === 'fr' ? ' :' : ':'}</span></p><div class="qz__ctas"><a class="btn btn--gold" data-qz-wa href="${esc(SITE.whatsapp)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(q.wa)}</span></a><a class="btn btn--line" data-qz-view href="#behandlungen"><span>${esc(q.view)}</span></a></div><button type="button" class="qz__back" data-restart>${ico('left')}<span>${esc(q.restart)}</span></button></div>
-  <script type="application/json" data-quiz-data>${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
-</div>`;
-}
 
 // sub: Unterseite (AGB, Datenschutz, Impressum, 404) im gleichen Look – { file, title, desc, robots, main }
 function page(L, sub = null) {
@@ -337,7 +292,6 @@ function page(L, sub = null) {
         <span class="tr__txt"><b>${esc(c.name)}</b><em>${esc(c.claim || '')}</em><small>${esc(c.short)}</small><span class="tr__from">${t.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${TP[L].cardMore} ${ico('arrow')}</span></span>
       </a></li>`).join('')}</ul>
     </div>
-    ${quiz(L)}
   </div>
 </section>
 
