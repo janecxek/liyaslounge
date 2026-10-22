@@ -24,6 +24,9 @@ const trData = (L, slug) => {
   return { ...d, ...ov, slug: d.slug, urlSlug: ov.slug, image: d.image, category: d.category, related: d.related, prices: d.prices.map((p, i) => ({ ...p, ...(ov.prices[i] || {}), price: p.price })) };
 };
 const trUrl = (L, slug) => `${TR_BASE[L]}/${trData(L, slug).urlSlug}`;
+const CAT_SLUG = { antiage: { de: 'anti-age', en: 'anti-age', fr: 'anti-age' }, apparativ: { de: 'apparative-kosmetik', en: 'device-based-treatments', fr: 'cosmetique-appareillee' }, skin: { de: 'skin-care', en: 'skin-care', fr: 'skin-care' } };
+const CAT_HERO = { antiage: 'tr-faltenbehandlung-olten', apparativ: 'tr-hifu-olten', skin: 'tr-mesotherapie-olten' };
+const catUrl = (L, id) => `${TR_BASE[L]}/${CAT_SLUG[id][L]}`;
 const trFrom = (t) => { const ps = t.prices.filter((p) => p.price).map((p) => p.price); return ps.length ? Math.min(...ps) : null; };
 // ohne Nadeln / ohne Ausfallzeit – für den Mini-Check
 const GALLERY = ['studio-empfang-olten', 'studio-wand-liyas-lounge', 'studio-lounge-olten', 'studio-behandlung-olten', 'studio-raum-olten', 'studio-eingang-hammerallee']; // Hoch, Quer, Hoch · Hoch, Quer, Hoch
@@ -43,7 +46,7 @@ const QZ = [
 // Beschriftungen der Behandlungsseiten, des Mini-Checks und neuer Startseiten-Bausteine
 const TP = {
   de: {
-    home: 'Start', all: 'Behandlungen', from: 'ab', onReq: 'Preis auf Anfrage', more: 'Mehr erfahren', cardMore: 'Behandlungen ansehen',
+    home: 'Start', all: 'Behandlungen', from: 'ab', onReq: 'Preis auf Anfrage', more: 'Mehr erfahren', cardMore: 'Behandlungen ansehen', catH: 'Wählen Sie Ihre Behandlung', catOther: 'Weitere Bereiche', contraQ: 'Wann ist die Behandlung nicht geeignet?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} Mit Preisen, seit 2009.`,
     ovTitle: 'Behandlungen in Olten – Anti-Age, apparative Kosmetik & Skin Care | Liyas Lounge', ovDesc: 'Alle Behandlungen der Liyas Lounge in Olten: Filler, Faltenbehandlung, HIFU, Radiofrequenz, Morpheus8, Mesotherapie & mehr – mit Preisen.',
     ovScript: 'Unsere', ovH: 'Behandlungen', ovLead: 'Drei Schwerpunkte, ein Anspruch: natürliche, typgerechte Ergebnisse. Wählen Sie direkt – oder finden Sie in 30 Sekunden heraus, was zu Ihnen passt.',
     forYou: 'Ist das für Sie?', how: 'So läuft es ab', glance: 'Auf einen Blick', prices: 'Preise', priceSub: 'Transparent und ohne versteckte Kosten.', consult: 'Beratung vor oder während der Behandlung kostenlos · als separater Termin CHF 50.',
@@ -62,7 +65,7 @@ const TP = {
     },
   },
   en: {
-    home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', more: 'Learn more', cardMore: 'View treatments',
+    home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', more: 'Learn more', cardMore: 'View treatments', catH: 'Choose your treatment', catOther: 'Other areas', contraQ: 'When is the treatment not suitable?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} With prices, since 2009.`,
     ovTitle: 'Treatments in Olten – anti-age, device-based treatments & skin care | Liyas Lounge', ovDesc: 'All treatments at Liyas Lounge in Olten: fillers, wrinkle treatment, HIFU, radiofrequency, Morpheus8, mesotherapy & more – with prices.',
     ovScript: 'Our', ovH: 'Treatments', ovLead: 'Three specialities, one standard: natural results that suit you. Choose directly – or find out in 30 seconds what suits you.',
     forYou: 'Is this for you?', how: 'How it works', glance: 'At a glance', prices: 'Prices', priceSub: 'Transparent, with no hidden costs.', consult: 'Consultation free before or during your treatment · CHF 50 as a separate appointment.',
@@ -81,7 +84,7 @@ const TP = {
     },
   },
   fr: {
-    home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', more: 'En savoir plus', cardMore: 'Voir les traitements',
+    home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', more: 'En savoir plus', cardMore: 'Voir les traitements', catH: 'Choisissez votre traitement', catOther: 'Autres domaines', contraQ: 'Quand le traitement n’est-il pas indiqué ?', catTitle: (c) => `${c.name} à Olten | Liyas Lounge`, catDesc: (c) => `${c.name} à Olten : ${c.short}. ${c.text} Avec les prix, depuis 2009.`,
     ovTitle: 'Traitements à Olten – anti-âge, cosmétique appareillée & skin care | Liyas Lounge', ovDesc: 'Tous les traitements de Liyas Lounge à Olten : fillers, traitement des rides, HIFU, radiofréquence, Morpheus8, mésothérapie & plus – avec les prix.',
     ovScript: 'Nos', ovH: 'Traitements', ovLead: 'Trois spécialités, une exigence : des résultats naturels, adaptés à vous. Choisissez directement – ou découvrez en 30 secondes ce qui vous convient.',
     forYou: 'Est-ce pour vous ?', how: 'Le déroulement', glance: 'En un coup d’œil', prices: 'Prix', priceSub: 'Transparents et sans frais cachés.', consult: 'Consultation gratuite avant ou pendant le traitement · CHF 50 en rendez-vous séparé.',
@@ -253,7 +256,7 @@ function quiz(L) {
   <header class="sh"><p class="sh__script">${esc(q.script)}</p><h2 class="sh__h">${esc(q.h)}</h2></header>
   <div class="qz__step is-on" data-step="1"><p class="qz__q"><span>1/2</span>${esc(q.q1)}</p><div class="qz__opts">${QZ.map(([k]) => `<button type="button" class="qz__opt" data-k="${k}">${esc(q.concerns[k])}</button>`).join('')}</div></div>
   <div class="qz__step" data-step="2"><p class="qz__q"><span>2/2</span>${esc(q.q2)}</p><div class="qz__opts qz__opts--3">${Object.entries(q.prio).map(([k, v]) => `<button type="button" class="qz__opt" data-p="${k}">${esc(v)}</button>`).join('')}</div><button type="button" class="qz__back" data-back>${ico('left')}<span>${esc(q.back)}</span></button></div>
-  <div class="qz__step" data-step="3" aria-live="polite"><p class="qz__q">${esc(q.res)}</p><div class="qz__res" data-res></div><p class="qz__alt" data-alt hidden><span>${esc(q.alt)}${L === 'fr' ? ' :' : ':'}</span></p><div class="qz__ctas"><a class="btn btn--gold" data-qz-wa href="${esc(SITE.whatsapp)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(q.wa)}</span></a><a class="btn btn--line" data-qz-view href="${TR_BASE[L]}"><span>${esc(q.view)}</span></a></div><button type="button" class="qz__back" data-restart>${ico('left')}<span>${esc(q.restart)}</span></button></div>
+  <div class="qz__step" data-step="3" aria-live="polite"><p class="qz__q">${esc(q.res)}</p><div class="qz__res" data-res></div><p class="qz__alt" data-alt hidden><span>${esc(q.alt)}${L === 'fr' ? ' :' : ':'}</span></p><div class="qz__ctas"><a class="btn btn--gold" data-qz-wa href="${esc(SITE.whatsapp)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(q.wa)}</span></a><a class="btn btn--line" data-qz-view href="#behandlungen"><span>${esc(q.view)}</span></a></div><button type="button" class="qz__back" data-restart>${ico('left')}<span>${esc(q.restart)}</span></button></div>
   <script type="application/json" data-quiz-data>${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
 </div>`;
 }
@@ -276,7 +279,7 @@ function page(L, sub = null) {
     '@context': 'https://schema.org', '@type': ['BeautySalon', 'MedicalBusiness'], '@id': SITE.url + '/#business', name: SITE.name, description: t.desc, url: SITE.url + t.path,
     image: [SITE.url + '/assets/img/og-image.jpg'], address: { '@type': 'PostalAddress', streetAddress: SITE.street, postalCode: SITE.zip, addressLocality: SITE.city, addressRegion: 'SO', addressCountry: 'CH' },
     openingHoursSpecification: SITE.hours.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days.map((d) => 'https://schema.org/' + { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday' }[d]), opens: h.opens, closes: h.closes })),
-    sameAs: [SITE.instagram], priceRange: 'CHF 50 – CHF 1450', inLanguage: t.lang,
+    sameAs: [SITE.instagram], priceRange: 'CHF 50 – CHF 1200', inLanguage: t.lang,
   };
   const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: t.lang, mainEntity: t.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 
@@ -312,7 +315,7 @@ function page(L, sub = null) {
   <div class="oval__in">
     ${head(t.exScript, t.exH)}
     <p class="lead" data-up>${esc(t.exP)}</p>
-    <figure class="photo" data-up>${pic('beratung-inhaberin-olten', t.ownerAlt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '50% 35%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
+    <figure class="photo" data-up>${pic('beratung-liya-olten', t.ownerAlt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '50% 35%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
     <blockquote class="quote" data-up><p>„${esc(TP[L].quote)}“</p><cite>${esc(TP[L].quoteBy)}</cite></blockquote>
     <ul class="values">${t.values.map(([a, b], i) => `<li data-up style="--d:${i * .1}s"><span>0${i + 1}</span><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
     ${nudge(t.nudge.ex)}
@@ -326,7 +329,7 @@ function page(L, sub = null) {
     <div class="tr__box" data-box>
       ${pic('termin-liyas-lounge-olten', '', { cls: 'tr__bg', sizes: '100vw' })}
       <div class="tr__head">${head(t.trScript, t.trH, 'sh--center')}<p class="tr__lead">${esc(t.trLead)}</p></div>
-      <ul class="tr__cats">${t.cats.map((c, i) => `<li style="--i:${i}"><a href="${TR_BASE[L]}#${c.id}">
+      <ul class="tr__cats">${t.cats.map((c, i) => `<li style="--i:${i}"><a href="${catUrl(L, c.id)}">
         ${pic(c.image, c.name, { sizes: '(max-width: 900px) 92vw, 33vw' })}
         <span class="tr__num">0${i + 1}</span>
         <span class="tr__txt"><b>${esc(c.name)}</b><em>${esc(c.claim || '')}</em><small>${esc(c.short)}</small><span class="tr__from">${t.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${TP[L].cardMore} ${ico('arrow')}</span></span>
@@ -375,7 +378,7 @@ function page(L, sub = null) {
       <li>${ico('ig')}<span><small>Instagram</small><a href="${SITE.instagram}" target="_blank" rel="noopener">${IG}</a></span></li>
     </ul>
   </div>
-  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('inhaberin-liyas-lounge-olten', '', { sizes: '300px', pos: '50% 18%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
+  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('portrait-liya-olten', '', { sizes: '300px', pos: '50% 18%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
 </section>`}
 </main>
 
@@ -417,7 +420,8 @@ ${sub && !sub.url ? '' : `<link rel="canonical" href="${url}">
 <link rel="preload" href="/assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/landing.min.css?v=${VERSION}">
-<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('ll-lx')){document.documentElement.classList.add('lx-in');sessionStorage.removeItem('ll-lx')}}catch(e){}</script>
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('ll-lx')){document.documentElement.classList.add('lx-in');sessionStorage.removeItem('ll-lx')}if(sessionStorage.getItem('ll-pt')){document.documentElement.classList.add('pt-in');sessionStorage.removeItem('ll-pt')}}catch(e){}</script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 ${sub ? (sub.schemas || []).map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n') : `<script type="application/ld+json">${JSON.stringify(schema)}</script>
 <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
 </head>
@@ -541,86 +545,81 @@ const ctaBand = (L, waText) => { const p = TP[L]; return `
 </section>`; };
 const trustRow = (L) => { const r = String(SITE.googleRating).replace('.', L === 'en' ? '.' : ','); return `<ul class="tp-trust">${TP[L].trust(r, SITE.googleReviewCount).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}<span>${esc(x)}</span></li>`).join('')}</ul>`; };
 
+const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
+<section class="hero hero--tp">
+  <div class="hero__media" data-hero-img>${pic(img, alt, { eager: true, pos: "72% 40%" })}</div>
+  <div class="hero__in">
+    ${crumbs(L, items)}
+    <h1 class="tp-h1" data-in style="--d:.2s">${h1}</h1>
+    <p class="hero__sub" data-in style="--d:.32s">${esc(sub)}</p>
+    ${from ? `<p class="tp-from" data-in style="--d:.4s">${from}</p>` : ''}
+    <div class="hero__ctas" data-in style="--d:.48s">${ctas}</div>
+    ${trustRow(L)}
+  </div>
+</section>`;
+
 for (const L of LANGS) {
   const t = T[L], p = TP[L], catName = Object.fromEntries(t.cats.map((c) => [c.id, c]));
   const tile = (sl) => { const x = trData(L, sl), f = trFrom(x); return `<li><a class="tp-tile" href="${trUrl(L, sl)}">${pic(x.image, x.name, { sizes: '(max-width: 640px) 92vw, (max-width: 1100px) 45vw, 30vw' })}<span class="tp-tile__txt"><b>${esc(x.name)}</b><small>${esc(x.card)}</small><span class="tp-tile__from">${f ? `${p.from} CHF ${f}` : p.onReq}</span><span class="tr__ask">${p.more} ${ico('arrow')}</span></span></a></li>`; };
+  const catTile = (c) => `<li><a class="tp-tile" href="${catUrl(L, c.id)}">${pic(c.image, c.name, { sizes: '(max-width: 640px) 92vw, 45vw' })}<span class="tp-tile__txt"><b>${esc(c.name)}</b><small>${esc(c.short)}</small><span class="tp-tile__from">${p.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${p.cardMore} ${ico('arrow')}</span></span></a></li>`;
+  const bookBtn = `<a class="btn btn--gold" href="${BOOK_PATH[L]}">${ico('cal')}<span>${t.book}</span></a>`;
 
-  // Übersicht
-  const ovItems = [[t.path, p.home], [TR_BASE[L], p.all]];
-  const ovMain = `
-${crumbs(L, ovItems)}
-<section class="tp-ov">
-  <header class="sh"><p class="sh__script">${esc(p.ovScript)}</p><h1 class="sh__h">${esc(p.ovH)}</h1></header>
-  <p class="lead">${esc(p.ovLead)}</p>
-  ${quiz(L)}
-  ${t.cats.map((c) => `<div class="tp-area" id="${c.id}">
-    <header class="tp-area__head"><h2>${esc(c.name)}</h2><p><em>${esc(c.claim)}</em> ${esc(c.text)}</p></header>
-    <ul class="tp-tiles">${TR_ORDER.filter((sl) => trData(L, sl).category === c.id).map(tile).join('')}</ul>
-  </div>`).join('')}
+  // eine Seite pro Kategorie
+  for (const c of t.cats) {
+    const items = [[t.path, p.home], [catUrl(L, c.id), c.name]];
+    const main = `${tpHero(L, { img: CAT_HERO[c.id], alt: c.name, items, h1: `${esc(c.name)} <em>${esc(c.claim)}</em>`, sub: c.text, ctas: `${bookBtn}<a class="btn btn--line" href="#liste"><span>${esc(p.cardMore)}</span>${ico('arrow')}</a>` })}
+<section class="tp-sec tp-sec--wide" id="liste">
+  <header class="sh" data-up><p class="sh__script">${esc(p.all)}</p><h2 class="sh__h">${esc(p.catH)}</h2></header>
+  <ul class="tp-tiles">${TR_ORDER.filter((sl) => trData(L, sl).category === c.id).map(tile).join('')}</ul>
+</section>
+<section class="tp-sec tp-sec--wide">
+  <header class="sh" data-up><p class="sh__script">${esc(p.all)}</p><h2 class="sh__h">${esc(p.catOther)}</h2></header>
+  <ul class="tp-tiles tp-tiles--rel">${t.cats.filter((o) => o.id !== c.id).map(catTile).join('')}</ul>
 </section>
 ${ctaBand(L, t.wa)}`;
-  mkdirSync(join(ROOT, TR_BASE[L].slice(1)), { recursive: true });
-  writeFileSync(join(ROOT, TR_BASE[L].slice(1) + '.html'), page(L, { url: TR_BASE[L], title: p.ovTitle, desc: p.ovDesc, robots: 'index, follow, max-image-preview:large', main: ovMain, alt: TR_BASE, fab: true, cls: 'tp', schemas: [crumbSchema(ovItems)] }));
+    const file = catUrl(L, c.id).slice(1) + '.html';
+    mkdirSync(join(ROOT, dirname(file)), { recursive: true });
+    writeFileSync(join(ROOT, file), page(L, { url: catUrl(L, c.id), title: p.catTitle(c), desc: p.catDesc(c), robots: 'index, follow, max-image-preview:large', main, alt: Object.fromEntries(LANGS.map((k) => [k, catUrl(k, c.id)])), fab: true, cls: 'tp', schemas: [crumbSchema(items)] }));
+  }
 
   // eine Seite pro Behandlung
   for (const sl of TR_ORDER) {
     const x = trData(L, sl), f = trFrom(x), cat = catName[x.category];
-    const items = [[t.path, p.home], [TR_BASE[L], p.all], [trUrl(L, sl), x.name]];
-    const main = `
-${crumbs(L, items)}
-<section class="tp-hero">
-  <div class="tp-hero__txt">
-    <p class="tp-eyebrow"><a href="${TR_BASE[L]}#${x.category}">${esc(cat.name)}</a></p>
-    <h1 class="tp-h1">${esc(x.h1)} <em>${esc(x.h1Accent)}</em></h1>
-    <p class="tp-lead">${esc(x.lead)}</p>
-    <ul class="tp-chips">${x.chips.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>
-    <p class="tp-from">${f ? `${p.from} <b>CHF ${f}</b>` : `<b>${esc(p.onReq)}</b>`}</p>
-    <div class="tp-ctas"><a class="btn btn--gold" href="${BOOK_PATH[L]}">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line" href="${wa(p.waTr(x.name))}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(p.ask)}</span></a></div>
-    <p class="micro micro--left">${ico('check')}${esc(p.micro)}</p>
-  </div>
-  <figure class="tp-hero__img">${pic(x.image, x.imageAlt || x.name, { eager: true, sizes: '(max-width: 900px) 92vw, 46vw' })}</figure>
+    const items = [[t.path, p.home], [catUrl(L, x.category), cat.name], [trUrl(L, sl), x.name]];
+    const faq = [
+      [x.what.title, `<p>${esc(x.what.text)}</p>`],
+      ...x.faq.map(([q, a]) => [q, `<p>${esc(a)}</p>`]),
+      [x.results.title, `<ul class="tp-checks">${x.results.items.map((i) => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul><p class="tp-note">${esc(x.results.note)}</p>`],
+      [p.contraQ, `<ul class="tp-checks tp-checks--dot">${x.contra.items.map((i) => `<li><span>${esc(i)}</span></li>`).join('')}</ul>${x.contra.note ? `<p>${esc(x.contra.note)}</p>` : ''}`],
+    ];
+    const main = `${tpHero(L, { img: x.image, alt: x.imageAlt || x.name, items, h1: `${esc(x.h1)} <em>${esc(x.h1Accent)}</em>`, sub: x.lead, from: f ? `${p.from} <b>CHF ${f}</b>` : `<b>${esc(p.onReq)}</b>`, ctas: `${bookBtn}<a class="btn btn--line" href="${wa(p.waTr(x.name))}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(p.ask)}</span></a>` })}
+<ul class="tp-facts">${x.results.stats.map(([a, b]) => `<li><b>${esc(a)}</b><span>${esc(b)}</span></li>`).join('')}</ul>
+<section class="tp-sec tp-intro">
+  <div data-up><header class="sh sh--left"><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.forYou)}</h2></header><p class="lead tp-intro__lead">${esc(x.intro)}</p></div>
+  <div class="tp-card" data-up><h3>${esc(x.indications.title)}</h3><ul class="tp-checks">${x.indications.items.map((i) => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul></div>
 </section>
-${trustRow(L)}
-<section class="tp-sec">
-  <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.forYou)}</h2></header>
-  <p class="lead" data-up>${esc(x.intro)}</p>
-  <div class="tp-grid">
-    <div class="tp-card" data-up><h3>${esc(x.indications.title)}</h3><ul class="tp-checks">${x.indications.items.map((i) => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul></div>
-    <div class="tp-card" data-up><h3>${esc(x.what.title)}</h3><p>${esc(x.what.text)}</p><ul class="tp-checks">${x.what.bullets.map((i) => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul></div>
-  </div>
+<section class="tp-sec" id="preise">
+  <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.prices)}</h2></header>
+  ${x.prices.length ? `<ul class="tp-prices" data-up>${x.prices.map((pr) => `<li${pr.featured ? ' class="is-top"' : ''}><span class="tp-prices__n"><b>${esc(pr.name)}</b>${pr.detail ? `<small>${esc(pr.detail)}</small>` : ''}${pr.desc ? `<em>${esc(pr.desc)}</em>` : ''}</span><span class="tp-prices__p">${esc(fmtPrice(pr))}</span></li>`).join('')}</ul>` : ''}
+  ${x.priceNote ? `<p class="tp-note tp-note--box" data-up>${esc(x.priceNote)}</p>` : ''}
+  <p class="tp-note">${esc(p.consult)}</p>
 </section>
 <section class="tp-sec">
   <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.how)}</h2></header>
   <ol class="tp-steps">${x.steps.map(([a, b], i) => `<li data-up style="--d:${i * .08}s"><span>0${i + 1}</span><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ol>
 </section>
-<section class="tp-sec">
-  <header class="sh" data-up><p class="sh__script">${esc(x.results.title)}</p><h2 class="sh__h">${esc(p.glance)}</h2></header>
-  <ul class="tp-stats" data-up>${x.results.stats.map(([a, b]) => `<li><b>${esc(a)}</b><span>${esc(b)}</span></li>`).join('')}</ul>
-  <ul class="tp-checks tp-checks--center" data-up>${x.results.items.map((i) => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul>
-  <p class="tp-note">${esc(x.results.note)}</p>
-</section>
-<section class="tp-sec" id="preise">
-  <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.prices)}</h2></header>
-  ${x.prices.length ? `<p class="lead" data-up>${esc(p.priceSub)}</p>
-  <ul class="tp-prices" data-up>${x.prices.map((pr) => `<li${pr.featured ? ' class="is-top"' : ''}><span class="tp-prices__n"><b>${esc(pr.name)}</b>${pr.detail ? `<small>${esc(pr.detail)}</small>` : ''}${pr.desc ? `<em>${esc(pr.desc)}</em>` : ''}</span><span class="tp-prices__p">${esc(fmtPrice(pr))}</span></li>`).join('')}</ul>` : ''}
-  ${x.priceNote ? `<p class="tp-note tp-note--box" data-up>${esc(x.priceNote)}</p>` : ''}
-  <p class="tp-note">${esc(p.consult)}</p>
-</section>
-<section class="tp-sec">
-  <div class="tp-card tp-card--soft" data-up><h3>${esc(p.notFor)}: ${esc(x.contra.title)}</h3><ul class="tp-checks tp-checks--dot">${x.contra.items.map((i) => `<li><span>${esc(i)}</span></li>`).join('')}</ul>${x.contra.note ? `<p class="tp-note">${esc(x.contra.note)}</p>` : ''}</div>
-</section>
 <section class="tp-sec faq">
   <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.faq)}</h2></header>
-  <div class="acc" data-up>${x.faq.map(([q, a]) => `<details><summary>${esc(q)}${ico('plus')}</summary><div><p>${esc(a)}</p></div></details>`).join('')}</div>
+  <div class="acc" data-up>${faq.map(([q, a]) => `<details><summary>${esc(q)}${ico('plus')}</summary><div>${a}</div></details>`).join('')}</div>
 </section>
-<section class="tp-sec">
-  <header class="sh" data-up><p class="sh__script">${esc(p.all)}</p><h2 class="sh__h">${esc(p.related)}</h2></header>
+<section class="tp-sec tp-sec--wide">
+  <header class="sh" data-up><p class="sh__script">${esc(cat.name)}</p><h2 class="sh__h">${esc(p.related)}</h2></header>
   <ul class="tp-tiles tp-tiles--rel">${x.related.map(tile).join('')}</ul>
 </section>
 ${ctaBand(L, p.waTr(x.name))}`;
     const schemas = [
       { '@context': 'https://schema.org', '@type': 'Service', name: x.name, serviceType: x.name, description: x.description, url: SITE.url + trUrl(L, sl), areaServed: 'Olten', provider: { '@id': SITE.url + '/#business', '@type': ['BeautySalon', 'MedicalBusiness'], name: SITE.name, address: { '@type': 'PostalAddress', streetAddress: SITE.street, postalCode: SITE.zip, addressLocality: SITE.city, addressCountry: 'CH' } }, ...(f ? { offers: { '@type': 'Offer', priceCurrency: 'CHF', price: f } } : {}) },
-      { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: t.lang, mainEntity: x.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+      { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: t.lang, mainEntity: [[x.what.title, x.what.text], ...x.faq].map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
       crumbSchema(items),
     ];
     const file = trUrl(L, sl).slice(1) + '.html';
@@ -628,7 +627,7 @@ ${ctaBand(L, p.waTr(x.name))}`;
     writeFileSync(join(ROOT, file), page(L, { url: trUrl(L, sl), title: x.title, desc: x.description, robots: 'index, follow, max-image-preview:large', main, alt: trAlt(sl), fab: true, cls: 'tp', schemas }));
   }
 }
-console.log(`✓ Behandlungen: Übersicht + ${TR_ORDER.length} Seiten je Sprache (${LANGS.join('/')})`);
+console.log(`✓ Behandlungen: ${T.de.cats.length} Kategorien + ${TR_ORDER.length} Seiten je Sprache (${LANGS.join('/')})`);
 
 // Sitemap: Übersicht und Behandlungsseiten (DE/EN/FR) mit hreflang
 {
@@ -636,8 +635,8 @@ console.log(`✓ Behandlungen: Übersicht + ${TR_ORDER.length} Seiten je Sprache
   let sm = readFileSync(sp, 'utf8');
   const day = new Date().toISOString().slice(0, 10);
   const block = (alt, prio) => LANGS.map((k) => `  <url>\n    <loc>${SITE.url}${alt[k]}</loc>\n    <lastmod>${day}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${prio}</priority>\n${LANGS.map((j) => `    <xhtml:link rel="alternate" hreflang="${T[j].lang}" href="${SITE.url}${alt[j]}"/>`).join('\n')}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE.url}${alt.de}"/>\n  </url>`).join('\n');
-  if (!sm.includes(`<loc>${SITE.url}${TR_BASE.de}</loc>`)) {
-    const urls = [block(TR_BASE, '0.9'), ...TR_ORDER.map((sl) => block(trAlt(sl), '0.8'))].join('\n');
+  if (!sm.includes(`<loc>${SITE.url}${trUrl('de', TR_ORDER[0])}</loc>`)) {
+    const urls = [...T.de.cats.map((c) => block(Object.fromEntries(LANGS.map((k) => [k, catUrl(k, c.id)])), '0.9')), ...TR_ORDER.map((sl) => block(trAlt(sl), '0.8'))].join('\n');
     writeFileSync(sp, sm.replace('</urlset>', urls + '\n</urlset>'));
   }
 }

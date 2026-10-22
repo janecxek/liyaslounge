@@ -29,6 +29,21 @@
       "permanent": true
     },
     {
+      "source": "/behandlungen(\\.html)?",
+      "destination": "/#behandlungen",
+      "permanent": false
+    },
+    {
+      "source": "/en/treatments(\\.html)?",
+      "destination": "/en#behandlungen",
+      "permanent": false
+    },
+    {
+      "source": "/fr/traitements(\\.html)?",
+      "destination": "/fr#behandlungen",
+      "permanent": false
+    },
+    {
       "source": "/behandlungen/dermal-filler(\\.html)?",
       "destination": "/behandlungen/dermal-filler-olten",
       "permanent": false
@@ -60,12 +75,12 @@
     },
     {
       "source": "/fadenlifting-olten",
-      "destination": "/behandlungen",
+      "destination": "/#behandlungen",
       "permanent": false
     },
     {
       "source": "/facial-treatments-olten",
-      "destination": "/behandlungen",
+      "destination": "/#behandlungen",
       "permanent": false
     },
     {
@@ -80,22 +95,22 @@
     },
     {
       "source": "/plasma-pen-olten",
-      "destination": "/behandlungen",
+      "destination": "/#behandlungen",
       "permanent": false
     },
     {
       "source": "/permanent-make-up-olten",
-      "destination": "/behandlungen",
+      "destination": "/#behandlungen",
       "permanent": false
     },
     {
       "source": "/wimpernverlaengerung-olten",
-      "destination": "/behandlungen",
+      "destination": "/#behandlungen",
       "permanent": false
     },
     {
       "source": "/ipl-haarentfernung-olten",
-      "destination": "/behandlungen",
+      "destination": "/#behandlungen",
       "permanent": false
     },
     {
@@ -125,12 +140,12 @@
     },
     {
       "source": "/en/thread-lift-olten",
-      "destination": "/en/treatments",
+      "destination": "/en#behandlungen",
       "permanent": false
     },
     {
       "source": "/en/facial-treatments-olten",
-      "destination": "/en/treatments",
+      "destination": "/en#behandlungen",
       "permanent": false
     },
     {
@@ -145,22 +160,22 @@
     },
     {
       "source": "/en/plasma-pen-olten",
-      "destination": "/en/treatments",
+      "destination": "/en#behandlungen",
       "permanent": false
     },
     {
       "source": "/en/permanent-make-up-olten",
-      "destination": "/en/treatments",
+      "destination": "/en#behandlungen",
       "permanent": false
     },
     {
       "source": "/en/eyelash-extensions-olten",
-      "destination": "/en/treatments",
+      "destination": "/en#behandlungen",
       "permanent": false
     },
     {
       "source": "/en/ipl-hair-removal-olten",
-      "destination": "/en/treatments",
+      "destination": "/en#behandlungen",
       "permanent": false
     },
     {
@@ -170,7 +185,7 @@
     },
     {
       "source": "/preise(\\.html)?",
-      "destination": "/behandlungen",
+      "destination": "/#behandlungen",
       "permanent": false
     },
     {
@@ -185,7 +200,7 @@
     },
     {
       "source": "/en/prices(\\.html)?",
-      "destination": "/en/treatments",
+      "destination": "/en#behandlungen",
       "permanent": false
     },
     {

@@ -1,87 +1,4 @@
 {
- "studio-liyas-lounge-details": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoYABAAPt1apkyopSOiMAgBEBuJQBOmUI7gBNw7PqrHFp1b60JHywyAAP6xBPh9iEubAVPc5d6faSINElByT95zt/x48MYHEt55fkljNY+m3LjRmatueQMHvaZSj5y+bFR2Il6qL8Fw+CktThmsSq/u1RSRdSrKGz//HVpZwre94cOpy1yb3PrZPO3zpNMB3BtkkGLwSUIlpdffPBAAAA=="
- },
- "facial-treatment-olten": {
-  "w": 1254,
-  "h": 1254,
-  "widths": [
-   480,
-   800,
-   1200,
-   1254
-  ],
-  "ratio": 1.0,
-  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABQBQCdASoYABgAPt1kqE+opSOiKAqpEBuJagCdMuiBh0WeGLDkbGiMDG3UDiwNcXP/dsAA/vLKqiqSRtqpCzrbDFaCKfuy30BV4sRNvZvYwbIGCSU5y5EAJBmXbDn3iz25XeB0zWSiG+gYNDvopLPcKe078fl9HFogOLs+87GBuvsl4wcgWeTLbwXpfe87ic52ijjO6fUJo5bCDt4HMl97hP5Do0czVUHDRjNMB2FOPBY3h6u/Ifgj9KUigtWDoR1sOzD7doQAFf8oGopa7aiQAAA="
- },
- "fadenlifting-olten": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABQBACdASoYABAAPt1cpkyopSOiMAgBEBuJQBOmUABsfFK98oSchiJh4d+wAP70JvoaG6n6dOEecl1LesRCkzw4hnZFhiMPO3HPUS+LTq7czOjCdfwY9Wu5IZJ+Pdmc4LUiKiJ0MHYWz0ngXWx4T43QHBx2/cKrm4BKFlaaxJcjD0jMsbthW+BLXdlQvX8Ltz47piYn2O4kq8YTFuaLJAAA"
- },
- "hyaluron-produkt-olten": {
-  "w": 1024,
-  "h": 1536,
-  "widths": [
-   480,
-   800,
-   1024
-  ],
-  "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4IBYBAAAwBwCdASoYACQAPt1gqE6opSOiKqoBEBuJZgCdOUFUvjCApOP21bmr5Yskw+08gwpbpByxqkGel12IM6ZBaVH0SKAA/uodH+5EhCdoSnQntv3Yty7P/HvZBqq6tc87hArEoWJ3WgyS5aiTxEBN5xZfcGGj0b7HvRl/6LIV3VwyAP7Xu3L99gZanSDLxoZ4bs0RJdhXM1yj23GVfVYSd8yU/tvohFX4SSPzMbsSr4TomYwh0j+hrleyBou+2r9a2FPFnQbYnGKzvILYO2fxHL2kip1Gtb0+O32MKRCC4Ff1NQSeanmCI8ba7tEh6NT24IUZw9Q8MShMkwX0EHADMM5zEmCsJbundH767DqANEITK2+t1KwAAA=="
- },
- "hifu-behandlung-olten": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJZgCdMoADaQR9p1C9CozXLz/DgAD+4kQ20Ztc1jCHJm9bLCOAtQAp+dxtav5QPrKHv3Y7eFZy4P9U+hUDirt1j/bpvch/gcgPA2vfDXDSDd42PAk1J74Y0iY2XzBPW6fHiJD+R7n8/3tbbensSvWsBbAn2taLcq2HGUnm/6MbegGaTt2wgabSwa4AAA=="
- },
- "dermal-filler-olten": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoYABAAPt1apkyopSOiMAgBEBuJZACdMoMYABs5Limxrsb0CAAA/oooeJX5qa0DwL8r+4m68Nt6AVQ/ZHHynba8b/QjHyNdy9psbTuaklg8lTwqHL7I1FtYHArarXX59Fip/lZwb3iANqo9PhFHMdEHi3B17R6mvpAluOV4PXfngTEBuAAAAA=="
- },
- "nachsorge-pflege-olten": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwAwCdASoYABAAPt1cpkyopSOiMAgBEBuJYgCdMoACNt5bgmJEVwpoAMtBbp1aLLvyRnqHD1xsQN8H2zkqHPwxB4FMctkKo/OS61tsW4CClokUKl6JuVzGtCAE4k6oB5mVoE1Cc5s6cK964GYmOFQi+UwSsR1RlSFvdev+Fe2VmUu2D3owwfJP993igh2uwlM66TooqwAAAA=="
- },
  "lounge-liyas-olten": {
   "w": 1536,
   "h": 1024,
@@ -105,121 +22,6 @@
   ],
   "ratio": 0.6666666666666666,
   "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoYABAALqVut1ujKKioiICkSzAE6coADb/G10rGORe8fzKgAP7mb1fEdbnfUx1OuhFBobumVTmz5E/+MVcPj90x5FAg9UPvhhv7RmQluIWMB3BodgC0+aoRtWrt8fJMF/iRWBTdC5wlxNslCOdruN7FB87vu0Ord44kS6kAAAA="
- },
- "preise-liyas-lounge-olten": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADQBACdASoYABAAPt1apkyopSOiMAgBEBuJZACdMoCGBdAAjvGfk/LeDBFsoUltAAD2gs+zZ7QR+uijdCB0qGIP8C6nLT0lr14uWfADxFWpES3Ciqkqy4GFsj6GhrQ45a8kc/hAw1mk+3I0G3b8tztePxF+URJE/XHv8Dtx6svUWwWdjUxgb+0Czch4/c6UI2GLoLJ2G0VOaGrowFGD4QW0kfxqS/IA"
- },
- "studio-liyas-lounge-behandlungsraum": {
-  "w": 1024,
-  "h": 1536,
-  "widths": [
-   480,
-   800,
-   1024
-  ],
-  "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAABQBgCdASoYACQAPt1kqU+opaOiKqgBEBuJQBTo98g1SaaOXQw7PYYYKXDSCamh1bqKohkXcNUUOJIZAAD+hwakpucaFbIPozjASCJWehF7nvAUuO0T4YoRJSHocB4M/I8VO2Ut+ybC8bhy5lDPo+D1gi+94W5Try/RykEcbuvE+IUHnXnKm7PltxcG24zavbW9cdizyeA10uHNUeUz6tHyuJKcgC5eMkU4AQcnQKyGwnlae/WQ2oyFnNyHUHPHRiDfu/UQHwRm6vpB46r+IBhfGCkmfPeIyZ2jy8+WPLT+VA/hbApNQAAA"
- },
- "medical-aesthetic-olten": {
-  "w": 1254,
-  "h": 1254,
-  "widths": [
-   480,
-   800,
-   1200,
-   1254
-  ],
-  "ratio": 1.0,
-  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAADwBQCdASoYABgAPt1orFEopaQiqAgBEBuJaACdMoSCwEArLEK66x8RX1p/ram5ItnTGitK7AHIAAD2vR6noDPa89iKt7e9baN14ZTmo99oTfgSD/SVlCVcfjnn2XBvm35mYWiUKML9yd/vC6AGiUleenN712bLjDVwXaAzQVh4wO70D54KYONOlR19xIbbs/jZKEKa6TraXuDDQeEOnXB9WYd+FU9EEGy5OtQeE8rOXX7I5FgTuWi5mv90CEc3+tW7wdbDy60/gDArRVCslnEdOie2gAAA"
- },
- "faltenrelaxing-olten": {
-  "w": 1024,
-  "h": 1536,
-  "widths": [
-   480,
-   800,
-   1024
-  ],
-  "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4IBIBAAAQBwCdASoYACQAPt1kqU+opaOiKrgKARAbiWIAv2s5jnqLFeYI4OPhhjTtR9J0OfRBYcGoeJHXwlvwbfMUD5KpAAD+aXAHvYC35UtUKVa3wSEYQL9Q+a75q7+ugWuMfGayrWGJ09pLBPz4CNJ6zzNA83CbYjPk/RavIXjfV8TmsuULf6bx5oExwZ0z8+troVZ+VNGmLgBTxpIzdo3GyLM9WbLCaNMf2zY0zx6o9+0wsYmOEPr6INwjeQ9e7isQetsqDEyYLCVr6dTeQZkXeyQBL7F/56UhkEbAJnNhPyL0EOTiHPaaqvjWEoT8fjhrDnWUo16YJQ0LpJaNTGMfbC7EPThyxXx6siGXNb+LDIT1XDAA"
- },
- "beauty-wimpern-olten": {
-  "w": 1254,
-  "h": 1254,
-  "widths": [
-   480,
-   800,
-   1200,
-   1254
-  ],
-  "ratio": 1.0,
-  "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACQBQCdASoYABgAPt1ao02opKMiMBgMARAbiUAVg2v4BXEeGu6Gyu8u29vkj4JRx/CMoU66AAD+i5ZqLH8U8SImwrX79sGspQqMfZ92eQsMxEmcpjDPwbJFMb8CStWHQXVle6cODcvA1LHC+Aj715tEOKLljSzvAl/6XWNRti5CliXvsP0iRI0PHSc/8Glp1/UnpVxzkurFYikuBd2EC/1RFOdtkpeuV1UkHus+t0hBu6L8nY/Ke+fhAAA="
- },
- "studio-liyas-lounge-empfang": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJZACdMoADaUn87DZ6l8CEMiw9bAD+yFcaBXij64SHGZm54fz5bAIE8s6E9uW2Svm2HbETe7rtygDye6ZvSi64DwCtphLq+iiUsiaaywu06uZK4sAPsl+0+j8hs/Bb4q1AmBMR2p4A9pxoLFsWGegC2qcOVaaT7rYgAA=="
- },
- "inhaberin-liyas-lounge-olten": {
-  "w": 1122,
-  "h": 1402,
-  "widths": [
-   480,
-   800,
-   1122
-  ],
-  "ratio": 1.249554367201426,
-  "lqip": "data:image/webp;base64,UklGRgwBAABXRUJQVlA4IAABAACwBQCdASoYAB4APt1orFEopaQiqAgBEBuJQBOmUGYWgr3DaOsydZR+UvteO7xUREJiLo9j6AAA/reDNufDvpaQIAqc87nS/2iVYT4YR2Azd6wwOhHnG+tQB6dh5LufAIo1b9o6z513RuIGm7C4em2v1xLZjQ6nMxEG7BxSktCtM83g7nuy643wyiBlKmJvP1gYoKYjhU07pP8rQnHTgCCle2S7IjcaZm7zbDN+viILwZjzIS/6p6vCh9Kp1j1acIoLouWCWbj9ku65he7JcPi8pVlrtzEDJJpEGIirqOdLuON9M1mjJq0M9iQlcEgHoS1KavMwYKMv3+rOiLJu+AAA"
- },
- "liyas-lounge-olten-hero-inhaberin": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAACQBACdASoYABAAPt1cp0yopSOiMAgBEBuJYgCdBXgN4ATwJDIoGM333JaqRiAA/uIFT0Qnx4KtbQpRtKJkmgqxPyUPG017TxCfmINjo0czSTBEYX79s52LvNG6qssdOf8lNCuHXDkUSDX8Ma/PRcNJtSgyLPvL3Fp77ydNVpPF0fCi/O+K+OmHkXdgCESVcuYTNanhRIAg+nqeyAA="
- },
- "liyas-lounge-olten-hero-inhaberin-portrait": {
-  "w": 576,
-  "h": 1024,
-  "widths": [
-   480,
-   576
-  ],
-  "ratio": 1.7777777777777777,
-  "lqip": "data:image/webp;base64,UklGRgoBAABXRUJQVlA4IP4AAABQBwCdASoYACsAPt1kqlCopSOiqrgIARAbiUAX7igq2ECACd3ecu3mHleznCcBYgMAe801QqTwh+e7Tk3B699OgXJAAP4CdgxZuIuS7xuOq2UxPnv9uPXYpcrWwuNsm4GtEOBf5K1px2mov2kTr/MJHx3t7XH21f8DgfvIm+S7++4PyE54f0eoIPJkzWC97DAhl81SIZdT1i850Hgu8bNRpfxsO+cTbolI1JdE6fJFoRailU0Uzwn+r3ZsT5haHqkblmrCtRNsXVrDcVyzU09zkFqj00KT6Qi4lCd25zIJxIj1YmTl/43QX6xVs3qmFdjgHriPoCll/bDyuAAAAA=="
- },
- "beratung-inhaberin-olten": {
-  "w": 1536,
-  "h": 1024,
-  "widths": [
-   480,
-   800,
-   1200,
-   1536
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoYABAAPt1apkyopSOiMAgBEBuJYwCdABcS3LUEdOF2HQ0c7AD+7ANJsbAQZs4PXNzrU5rVn+c4kaiY98pmMLApGI+c9u+NqgJ8FM0bfSdyGE+lYP+LcZ4sAVxlZMn2hMGoiukdJ3uP/J7vJDuQzmvXTe+jGusC8/1rl0MmWOFWXn4/pygA/Z9fg40kAA=="
  },
  "studio-empfang-olten": {
   "w": 900,
@@ -288,5 +90,204 @@
   ],
   "ratio": 1.7777777777777777,
   "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBgCdASoYACsAPs1SokynpKMiOrZoAPAZiWcAzuwQUMMBb742UsTG9pfIlQbhWxkk56VKwu3b1gAA/mCVpGgMnd+0gSkqUwdmA/9ohGW1zUUzRsXcAm5exvtJFsI6C0X2waYB8OMrzGSIR8T3Vcyhw9X16R7TeZwYW3fWcakCXWdIc5Psj7JtBDQLuMWFuouna8WlQesjZsQ3dUk+3iDkrqjNHq1Henr77n0zvko5At4ImHAAAA=="
+ },
+ "hero-liya-studio-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYABAAPt1cpkyopSOiMAgBEBuJZACdMoR3ACH38xsfPHmDcYSNUUAA/uWX0pn63W3zyGtPrbqTYZEAcO8NwOQjAZ9wt3h7nxsshSKTIQ7k26VmadkLyrxVb2ioQ5BmjFeinaxvEmtq9jdmiCgBxYJYrIBzlBrU/13nk7geMEVNe/BdAubkK7A/q7fDESz5wAZsgAAA"
+ },
+ "hero-liya-studio-olten-portrait": {
+  "w": 1024,
+  "h": 1536,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "ratio": 1.5,
+  "lqip": "data:image/webp;base64,UklGRgABAABXRUJQVlA4IPQAAACQBgCdASoYACQAPtFan0yoJaKiNVgMAQAaCUAVhm5IPsuwz7OXuLxg2vwIZEYF7u8nbIB8W56q7Mkns1DwAP7cTOCVZSkgUIRzD9SX4B7jjmXzpsaD+qwfFT4dOvbTxatrDQibH2Z7ZgZQYLyBnzqVdiygnecQNmOBTHKtugAerCxMGEwdq+4kTHsfGg8haJaNx9H1A2uM0eXKShRnyyiAfWkaaJymsnyFmiTyOYlVgLaqzcTgIC9jHNHC4p0nXRz2eg9Vf23E93PKLjDa1cQ48UkOcwR2kUm+uT2DDB/NDy4FODhOzFAQy6Qr5l8YgJKKAAAA"
+ },
+ "beratung-liya-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJaACdMoAB2GkErJc+apA5wdb4gAD+NHKvqSJQcNDSK15/kMobeJgj0pVa0qy6lLHG7CFd/U4eWz2EK7D5vB2nGYrlMVkt2Bd6a6e6ku2Z7P3t1QU9lecWTTRik3Z8GWmX6svswKOScYYnH3/sCZZLrNtqxFrknxUUihfwUJgAAA=="
+ },
+ "portrait-liya-olten": {
+  "w": 1024,
+  "h": 1536,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "ratio": 1.5,
+  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACwBgCdASoYACQAPt1epk2opSOiKqwBEBuJZgCDJVYATXynMFMSZHuXBBOmLku3VQXcAzMcECKs3eC7FsZqAAD+lLHx/agwLC64VK93xtonwo/YaUVL5c0bz/Kr7zEv1QfCFTXoG+aj4gu8/1Md8QGr9Vv+pFQ+fi/5uXzb53k4vAp8X41b5cnKsZWJ3E1hit9bTUbHQm8q/aozTxpYQXqde3GKpLI/fP3c3KfonFbXEBjDVL8n8huANHPPKyRdQPvq8WLSE6yvOD/qR4fSUvSI1oAW5T7FX92jaiPf9grs/CZ6BMlL4rSkoavdWhrlgBuUvKkJnwc8AAAA"
+ },
+ "kat-anti-age-olten": {
+  "w": 1024,
+  "h": 1536,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "ratio": 1.5,
+  "lqip": "data:image/webp;base64,UklGRhQBAABXRUJQVlA4IAgBAACwBwCdASoYACQAPt1eq1EopKOiqrgIARAbiWIAnTLFDtgDVD7cnTqozEB9oaugnAyvJFaDCy1lhjt1SM5+s8gzc6+knY4AAP5b6Uks4V+9rwNrwu8/xt/xLgUJ/KIRbrouUnUrDbjr9NTj0ye6BNi5YMdoD1ZOn2nv8hXLdBZcOH5+gKK6pNafrDvkDMP18TK/qfp/50avgfyIlhF1CEY4Gycewqht9GMfLK7TPiRxLzrYBi9gOFN4g2tft/KNw+PAzDRiLXyPxTp5CByHGfdnSLPpH7Y9BJdlELb7jws1+X0tWHO/zm2skAjfxYSE13KEHUnaTZ6iqlHeTK0qsMadPaCOz9fgAAA="
+ },
+ "kat-apparative-kosmetik-olten": {
+  "w": 1024,
+  "h": 1536,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "ratio": 1.5,
+  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAAAwBwCdASoYACQAPt1iq0+opSOiKrgKARAbiUAX5wRfCiNuWh2gQvpShqEG9RyIWm9ozoH+wRvdi9jXoX0Iqr2ZjAAA/pRGyeR1OJrfbTFM4XUQwBTLam4x47nhIlOsHY5m6Lgv6dUYyS5RIOvpKU3L2zIjQMuLe1C1SgjHcL1enE8GaPrPpEKLKEPocZsJTu/KFt0D8mOu7TDKwkEVxT6VeprGYsJOYu4VaGckQG4L8x+5JxUmuHUpWWE2Ehq2bfJq5lwT6J7mUEt+hLUDmDT58Dw6+/Zp23zHr2BtsLMCqxRzkbSCneQlcIbBnnfGis0P9DEqsehM+gAA"
+ },
+ "kat-skin-care-olten": {
+  "w": 1024,
+  "h": 1536,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "ratio": 1.5,
+  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACQBgCdASoYACQAPt1mqE4opaOiKrgMARAbiUAVHoQzb2amlta0PxkJ3f0/pDk2uZ8QjM9J548Hrd7WeTTgAP0AgDIN8PlsOT4b0QQeQVcYrWzF626VdJSRyEox37sBs1HE14kFLjuBYxR2EVG55LuOAgcxfI7SqtUhHeOJ439xWB/X8BMOVU8Lykmcn2s+JwVY3umkUFkSIh3XOaXE8hhZ4tmetSxSWTaF8zmuoPih6JR/sS68Yl4m0Gse6ukwaeEc8AFrWzDhjW0LZPrcP651eBn4H+zQ1HIGhFx43WTMwlihWfmy+I6nBEJQjXF3UelLczrMtvo00sAA"
+ },
+ "tr-dermal-filler-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAAPt0+s1SooiWjmAEQG4lAE6ZQAUfcOwWn+UEOqH5QAP7eNyZpAFHJT6vuTPx8N1ezFNMXRoMQnRJlEWr2b4AtJlCdn/yoDUgV0aL87ZESF4Ohte4DmFyfa+G220AldIwr6N64oQAA"
+ },
+ "tr-faltenbehandlung-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoYABAAPt1cp0yopSOiMAgBEBuJQBOmUABfmeQ5CXX6iAWMBQAA/cF5mX1Au6OCxSgJNDk1BG9J0t3HvwHIeuje3mOdp56/Jn8361N0JRlevzg5mNTQo40/vHIJUsKy4e+X9tnwPCx85INpIXTt+oLz7IEpDmCk/9Ucd21bzvmhMAAA"
+ },
+ "tr-mesotherapie-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAACQBACdASoYABAAPt1cpkyopSOiMAgBEBuJZgCdMoADTuEs7Y8wR/C6CdUITAAA/q1kR2BT1zMZyPNxBrdlbp7NaRqzMowkL5Su6r2A8V1Muv89CoJZ7KUjuQtLub+5yEbW+435EnPHa8/WWiXFaqpBb592w3ELcxlnfQjb2+txdbPUQdQ1w+jy6GT5IzVLkE+WgmgvA25tfEAY3Zwwb18nwAA="
+ },
+ "tr-fettwegspritze-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABwBACdASoYABAAPt1kqU2opaQiMAgBEBuJYgCdMoAJ9MziI/eDQYEqKeeWgAD+wrVaHjvcyCG4tfBIcbM+7t6HIGZpzgF1P96HolAIEtsONMXPufh30Fk9ZKyZ9TsSFAYLyeGN8uiIvXID59PphHsnskruT3arJGr/hfiD4hy36qsAAAA="
+ },
+ "tr-hifu-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBACdASoYABAAPt1apkyopSOiMAgBEBuJQBOmUABqXMvAVVw8f1Ox9WggAM4OuLrwsV/OFLVobZU3rKIlGCv2qu+mXX+/ilDnOrRr87xSWZx3uIlWBp04YIZWsSnqC1C+j4rxG5N9uhsaDbckQKM+dDqQNop7kZc5rfQKxmYfLKkit5g9XXD46ov6LVnpWGHHz2cAGZ+ZuwAA"
+ },
+ "tr-morpheus8-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJagCdMoADTF6pOSQxo30jvQfHAADOO23J6c+vrHqsRcS6BRAqy9LRcwcNyvQLyeSS+siLFPS3tqvZPKe3+pCEzygBNCq9DzSbjEKI+SIhTPfa+ff97IlQhvI6Q6sNoLO/EikwwOgqSqom/Cnq0bo1UReV9nWN/cS3cXRv4Tt4QYDQAAA="
+ },
+ "tr-zahnbleaching-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAALqVut1ujKKioiICkSxAE6ZQAMAstWoCI/vXJmtTAAP6J/gHqC73vgakspJtBhFj+eoWZzvTpUoT7xbSC+WZUjt6YEMk7f2zSeaHjQ7wuhn1CpD8xHk8pJFAVnLoty/lP3tvxBqAA"
+ },
+ "tr-filler-aufloesen-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoYABAAPt1apkyopSOiMAgBEBuJZgCdMoR4GCbI0mCH2WUG1RHi4FXezVAA9HQUH7cBxDydg5pEMma6lbanWXmEzHsZZnwiJLOERTP4lc+Jz61oV6UreM8CiE7paY5Kt8F/Eeu/lPZW307P2Ov6UKfS1auroc3CpAzXG+xXyofKxnsUwceqeRiyfj94Xm0H4INXQsCy44Ij1p6StdQ4fBbQjm1CwAAA"
+ },
+ "tr-radiofrequenz-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBACdASoYABAAPt1cp0yopSOiMAgBEBuJZACdMoACAtWxOR3nHCjzdtcrAAD70nutmgDMOZiJT6QmXosuY4QozJuuVZboRI6p8aerw0KYPzoS3kgi9Dgoak359UFFWNkId3ZzMmQTLr4/oefbe6qZxgY8gwfrqzaS3wCFrRGhjexHF3nxLZrdwv68imIapJXIU7IrJ3WI8dlbAgNvZ7qA+SavLwBeAAA="
+ },
+ "tr-laser-tattooentfernung-olten": {
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1536
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACwBACdASoYABAAPt1gp00opaOiMAgBEBuJQBOmUABzzBKIY5+F2NeE7bG1O16AAPwplsLC0Nc9hKLaCQZvEE3v3WWivSReYX1nKA8gBKP7m0GbPC2Q8dndLuc5eKGqURThsaA+t3A3MlxKwc1aW5cz6+MieaCPEXb4K1oswHu0C5yksvY7sYRayh5FwKQC2UzIGsEQAAA="
  }
 }
