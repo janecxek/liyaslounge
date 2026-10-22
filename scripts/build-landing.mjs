@@ -54,6 +54,7 @@ const TP = {
     notFor: 'Gut zu wissen', faq: 'Häufige Fragen', related: 'Passt gut dazu', ctaScript: 'Ihr Termin', ctaH: 'Bereit für Ihren Termin?', ctaP: 'Buchen Sie direkt online – oder stellen Sie uns vorab Ihre Fragen per WhatsApp.',
     ask: 'Frage per WhatsApp', micro: 'Sofort bestätigt · bis 24 h vorher verschiebbar',
     trust: (r, n) => [`${r} · ${n} Google-Bewertungen`, 'Selbständig seit 2009', 'Heilpraktikerin & Krankenpflegerin', 'Beratung in 6 Sprachen'],
+    trustS: (r, n) => [`${r} · ${n} Google`, 'Seit 2009', 'Heilpraktikerin', '6 Sprachen'],
     waTr: (n) => `Hallo Liya, ich interessiere mich für ${n} und habe eine Frage:`,
     quote: 'Ich sehe Schönheit mit den Augen einer Künstlerin. Mein Ziel ist, dass Sie strahlen – nicht, dass man sieht, dass Sie etwas gemacht haben.', quoteBy: 'Liya, Inhaberin',
     galH: 'Einblicke ins Studio', galAlt: ['Empfang mit «Medical Aesthetic & Beauty»', 'Wand mit goldenen Buchstaben «Liyas Lounge»', 'Lounge mit Kronleuchter', 'Behandlungsliege', 'Behandlungsraum', 'Eingang an der Hammerallee 23'],
@@ -72,6 +73,7 @@ const TP = {
     notFor: 'Good to know', faq: 'Frequently asked', related: 'Goes well with', ctaScript: 'Your appointment', ctaH: 'Ready for your appointment?', ctaP: 'Book online right away – or send us your questions on WhatsApp first.',
     ask: 'Ask on WhatsApp', micro: 'Confirmed instantly · can be moved up to 24 h before',
     trust: (r, n) => [`${r} · ${n} Google reviews`, 'Self-employed since 2009', 'Naturopath & nurse', 'Advice in 6 languages'],
+    trustS: (r, n) => [`${r} · ${n} Google`, 'Since 2009', 'Naturopath', '6 languages'],
     waTr: (n) => `Hello Liya, I am interested in ${n} and have a question:`,
     quote: 'I see beauty through an artist’s eyes. My aim is for you to shine – not for anyone to see that you have had something done.', quoteBy: 'Liya, owner',
     galH: 'Inside the studio', galAlt: ['Reception with “Medical Aesthetic & Beauty”', 'Wall with gold letters “Liyas Lounge”', 'Lounge with chandelier', 'Treatment bed', 'Treatment room', 'Entrance at Hammerallee 23'],
@@ -90,6 +92,7 @@ const TP = {
     notFor: 'Bon à savoir', faq: 'Questions fréquentes', related: 'Se combine bien avec', ctaScript: 'Votre rendez-vous', ctaH: 'Prête pour votre rendez-vous ?', ctaP: 'Réservez directement en ligne – ou posez-nous d’abord vos questions sur WhatsApp.',
     ask: 'Question sur WhatsApp', micro: 'Confirmé immédiatement · déplaçable jusqu’à 24 h avant',
     trust: (r, n) => [`${r} · ${n} avis Google`, 'Indépendante depuis 2009', 'Naturopathe & infirmière', 'Conseils en 6 langues'],
+    trustS: (r, n) => [`${r} · ${n} Google`, 'Depuis 2009', 'Naturopathe', '6 langues'],
     waTr: (n) => `Bonjour Liya, je suis intéressée par ${n} et j’ai une question :`,
     quote: 'Je vois la beauté avec des yeux d’artiste. Mon objectif : que vous rayonniez – pas que l’on voie que vous avez fait quelque chose.', quoteBy: 'Liya, propriétaire',
     galH: 'Aperçu du studio', galAlt: ['Accueil « Medical Aesthetic & Beauty »', 'Mur aux lettres dorées « Liyas Lounge »', 'Lounge avec lustre', 'Table de soin', 'Salle de soin', 'Entrée Hammerallee 23'],
@@ -104,6 +107,7 @@ const TP = {
 const IMG = JSON.parse(readFileSync(join(ROOT, 'scripts/imgmeta.json'), 'utf8'));
 const VERSION = Date.now().toString(36);
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function heroTrust(L, attrs = '') { const r = String(SITE.googleRating).replace('.', L === 'en' ? '.' : ','), n = SITE.googleReviewCount, sm = TP[L].trustS(r, n); return `<ul class="hero__trust"${attrs}>${TP[L].trust(r, n).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}<span class="t-lg">${esc(x)}</span><span class="t-sm">${esc(sm[i])}</span></li>`).join('')}</ul>`; }
 const minPrice = (t) => Math.min(...t.prices.filter((p) => p.price).map((p) => p.price));
 const catFrom = (id) => Math.min(...TREATMENTS.filter((t) => t.category === id).map(minPrice));
 const WA_NUM = '+41 79 509 06 60';
@@ -304,7 +308,7 @@ function page(L, sub = null) {
     <p class="hero__slogan" data-in style="--d:.35s">${esc(t.slogan[0])} <em>${esc(t.slogan[1])}</em></p>
     <div class="hero__ctas" data-in style="--d:.5s"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line" href="#behandlungen"><span>${t.heroBtn2}</span></a></div>
     <p class="micro" data-in style="--d:.58s">${ico('check')}${esc(TP[L].micro)}</p>
-    <ul class="hero__trust" data-in style="--d:.65s">${t.trust(rating, SITE.googleReviewCount).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}<span class="t-lg">${esc(x)}</span><span class="t-sm">${esc(t.trustS(rating, SITE.googleReviewCount)[i])}</span></li>`).join('')}</ul>
+    ${heroTrust(L, ' data-in style="--d:.65s"')}
   </div>
   <a class="hero__scroll" href="#expertin" aria-label="${t.scroll}"><span>${t.scroll}</span><i></i></a>
 </section>
@@ -541,7 +545,6 @@ const ctaBand = (L, waText) => { const p = TP[L]; return `
   <div class="tp-ctas"><a class="btn btn--gold btn--lg" href="${BOOK_PATH[L]}">${ico('cal')}<span>${T[L].book}</span></a><a class="btn btn--line btn--lg" href="${wa(waText)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(p.ask)}</span></a></div>
   <p class="micro">${ico('check')}${esc(p.micro)}</p>
 </section>`; };
-const trustRow = (L) => { const r = String(SITE.googleRating).replace('.', L === 'en' ? '.' : ','); return `<ul class="tp-trust">${TP[L].trust(r, SITE.googleReviewCount).map((x, i) => `<li>${i ? ico('check') : `<span class="stars stars--sm" aria-hidden="true">${ico('star').repeat(5)}</span>`}<span>${esc(x)}</span></li>`).join('')}</ul>`; };
 
 const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
 <section class="hero hero--tp">
@@ -552,7 +555,7 @@ const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
     <p class="hero__sub" data-in style="--d:.32s">${esc(sub)}</p>
     ${from ? `<p class="tp-from" data-in style="--d:.4s">${from}</p>` : ''}
     <div class="hero__ctas" data-in style="--d:.48s">${ctas}</div>
-    ${trustRow(L)}
+    ${heroTrust(L, ' data-in style="--d:.56s"')}
   </div>
 </section>`;
 
