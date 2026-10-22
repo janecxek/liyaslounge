@@ -726,3 +726,7 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 #preise.tex { padding-bottom: clamp(60px, 7vw, 90px); }
 .tp-cta.tex { padding-top: clamp(80px, 9vw, 120px); margin-top: clamp(60px, 7vw, 100px); }
 
+/* Footer: dieselbe Studio-Tapete, als ruhiger, wertiger Abschluss der Seite */
+.foot { background: var(--tex-glow), var(--tex-veil), var(--tex); background-size: auto, auto, var(--tex-size); }
+/* Kontakt geht direkt in den Footer über: unten nicht ausblenden, damit die Tapete durchläuft */
+.ct.tex::after, .tp-cta.tex::after { background: linear-gradient(180deg, var(--k1), rgba(11, 10, 9, 0) 90px); }
