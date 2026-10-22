@@ -32,9 +32,9 @@ export const SITE = {
 };
 
 export const CATEGORIES = [
-  { id: 'antiage', name: 'Anti-Age & Face Balancing', short: 'Filler, Faltenbehandlung, Filler-Korrektur & Fettwegspritze', claim: 'Frischer aussehen – nicht verändert.', text: 'Harmonische Proportionen und ein frischer Ausdruck – sorgfältig dosiert, mit medizinischem Fachwissen.', image: 'faltenrelaxing-olten' },
-  { id: 'apparativ', name: 'Apparative Kosmetik', short: 'HIFU, Radiofrequenz, Morpheus8 & Laser-Entfernung von Tattoos und PMU', claim: 'Straffen ohne Skalpell.', text: 'Moderne Geräte für Straffung, Verjüngung und ein klareres Hautbild – ganz ohne Operation.', image: 'facial-treatment-olten' },
-  { id: 'skin', name: 'Skin Care', short: 'Mesotherapie für Haut, Haare & Körper · Zahnbleaching', claim: 'Gepflegt bis ins Detail.', text: 'Wirkstoffe, die Haut und Haare von innen stärken – und ein strahlendes Lächeln.', image: 'hyaluron-produkt-olten' },
+  { id: 'antiage', name: 'Anti-Age & Face Balancing', short: 'Filler, Faltenbehandlung, Filler-Korrektur & Fettwegspritze', claim: 'Frischer aussehen – nicht verändert.', text: 'Harmonische Proportionen und ein frischer Ausdruck – sorgfältig dosiert, mit medizinischem Fachwissen.', image: 'kat-anti-age-olten' },
+  { id: 'apparativ', name: 'Apparative Kosmetik', short: 'HIFU, Radiofrequenz, Morpheus8 & Laser-Entfernung von Tattoos und PMU', claim: 'Straffen ohne Skalpell.', text: 'Moderne Geräte für Straffung, Verjüngung und ein klareres Hautbild – ganz ohne Operation.', image: 'kat-apparative-kosmetik-olten' },
+  { id: 'skin', name: 'Skin Care', short: 'Mesotherapie für Haut, Haare & Körper · Zahnbleaching', claim: 'Gepflegt bis ins Detail.', text: 'Wirkstoffe, die Haut und Haare von innen stärken – und ein strahlendes Lächeln.', image: 'kat-skin-care-olten' },
 ];
 
 const NOTE = 'Ob eine Behandlung für Sie geeignet ist, klären wir in der persönlichen Beratung.';
@@ -53,7 +53,7 @@ export const TREATMENTS = [
     h1Accent: 'mit Hyaluronsäure',
     lead: 'Gezielt platzierte Hyaluronsäure für Volumen, Kontur und Feuchtigkeit – dezent dosiert und abgestimmt auf die Proportionen Ihres Gesichts.',
     card: 'Lippen, Kinn, Wangen & Konturen – dezent und harmonisch.',
-    image: 'dermal-filler-olten',
+    image: 'tr-dermal-filler-olten',
     imageAlt: 'Natürliches Profil von Lippen und Kinnlinie – Dermal Filler in Olten',
     chips: ['30–60 Min.', 'Ø 6–12 Monate*', 'Kaum Ausfallzeit'],
     intro: 'Ob sanfter Lippenaufbau, eine harmonischere Kinnlinie oder mehr Frische im Mittelgesicht: Hyaluronsäure-Filler gehören zu den vielseitigsten Behandlungen der ästhetischen Medizin. In der Liyas Lounge in Olten planen wir jede Behandlung individuell – mit ehrlicher Beratung und dem Ziel, dass Sie frischer aussehen, nicht verändert.',
@@ -111,7 +111,7 @@ export const TREATMENTS = [
     h1Accent: 'mit natürlicher Mimik',
     lead: 'Mimische Falten sanft entspannen – für ein frisches, erholtes Aussehen, bei dem Ihre natürliche Mimik erhalten bleibt.',
     card: 'Stirn, Zornesfalte & Krähenfüsse – frisch, aber natürlich.',
-    image: 'faltenrelaxing-olten',
+    image: 'tr-faltenbehandlung-olten',
     imageAlt: 'Entspannte Frau mit natürlich glatter Haut – Faltenbehandlung in Olten',
     chips: ['15–30 Min.', 'Ø 3–4 Monate*', 'Keine Ausfallzeit'],
     intro: 'Stirnfalten, die Zornesfalte oder Krähenfüsse entstehen durch wiederkehrende Muskelbewegungen. Bei der Faltenbehandlung wird die Aktivität dieser Muskeln mit feinen Injektionen gezielt reduziert. In der Liyas Lounge in Olten dosieren wir bewusst zurückhaltend – Sie sollen erholt aussehen, nicht ausdruckslos.',
@@ -166,7 +166,7 @@ export const TREATMENTS = [
     h1Accent: 'für Haut, Haare & Körper',
     lead: 'Feinste Injektionen mit pflegenden Wirkstoffen – für mehr Feuchtigkeit, Elastizität und einen frischen, ebenmässigen Teint.',
     card: 'Feuchtigkeit, Elastizität & Glow von innen.',
-    image: 'medical-aesthetic-olten',
+    image: 'tr-mesotherapie-olten',
     imageAlt: 'Glasampullen mit Wirkstoffen für Mesotherapie in Olten',
     chips: ['30–45 Min.', 'Kur empfohlen', 'Kaum Ausfallzeit'],
     intro: 'Müde, fahle oder trockene Haut? Bei der Mesotherapie werden hochwertige Wirkstoffe wie Hyaluronsäure, Polynukleotide oder Exosome direkt in die Haut eingebracht – dort, wo sie wirken sollen. In der Liyas Lounge in Olten wählen wir das Präparat passend zu Ihrem Hautbild und Ihren Zielen.',
@@ -218,7 +218,7 @@ export const TREATMENTS = [
     h1Accent: 'Lipolyse ohne OP',
     lead: 'Hartnäckige, kleine Fettpolster gezielt behandeln – ohne Operation, für eine harmonischere Kontur.',
     card: 'Doppelkinn, Bauch & Hüften – gezielt und ohne OP.',
-    image: 'hyaluron-produkt-olten',
+    image: 'tr-fettwegspritze-olten',
     imageAlt: 'Wirkstoff-Ampulle für die Lipolyse in Olten',
     chips: ['30–45 Min.', 'Mehrere Sitzungen', '1–3 Tage Schwellung'],
     intro: 'Manche Fettpolster bleiben trotz Sport und bewusster Ernährung hartnäckig – etwa am Kinn, am Bauch oder an den Hüften. Die Injektionslipolyse ist eine Möglichkeit, solche kleinen Areale gezielt zu behandeln. In der Liyas Lounge in Olten beraten wir Sie ehrlich, ob die Methode für Sie in Frage kommt.',
@@ -268,7 +268,7 @@ export const TREATMENTS = [
     h1Accent: 'Straffung mit Ultraschall',
     lead: 'Fokussierter Ultraschall wirkt in tiefen Hautschichten und regt die Kollagenbildung an – für mehr Festigkeit, ganz ohne Nadeln.',
     card: 'Gesicht, Hals & Körper – Straffung ohne Nadeln.',
-    image: 'hifu-behandlung-olten',
+    image: 'tr-hifu-olten',
     imageAlt: 'Entspannte Kundin während einer HIFU-Behandlung in Olten',
     chips: ['30–90 Min.', 'Ohne Nadeln', 'Keine Ausfallzeit'],
     intro: 'HIFU steht für «High Intensity Focused Ultrasound». Die Energie wird punktgenau in tiefe Gewebeschichten geleitet, ohne die Hautoberfläche zu verletzen. In der Liyas Lounge in Olten behandeln wir damit Gesicht, Hals und Dekolleté ebenso wie Körperzonen.',
@@ -321,7 +321,7 @@ export const TREATMENTS = [
     h1Accent: 'RF-Microneedling',
     lead: 'Microneedling kombiniert mit Radiofrequenz – für ein verfeinertes Hautbild und mehr Festigkeit an Gesicht und Körper.',
     card: 'Hautstruktur, Poren & Straffung – Gesicht und Körper.',
-    image: 'studio-liyas-lounge-behandlungsraum',
+    image: 'tr-morpheus8-olten',
     imageAlt: 'Behandlungsraum für Morpheus8 in der Liyas Lounge Olten',
     chips: ['30–60 Min.', '3 Sitzungen empfohlen', '1–3 Tage Rötung'],
     intro: 'Morpheus8 verbindet zwei bewährte Prinzipien: feinste Nadeln erzeugen Mikrokanäle, gleichzeitig wird Radiofrequenz-Energie in die Tiefe abgegeben. Das regt die Kollagenbildung intensiv an. In der Liyas Lounge in Olten setzen wir Morpheus8 für Gesicht, Hals, Dekolleté und Körperzonen ein.',
@@ -370,7 +370,7 @@ export const TREATMENTS = [
     h1Accent: 'für ein helles Lächeln',
     lead: 'Ein strahlendes Lächeln in nur einer Sitzung – kosmetisches Bleaching, schnell und schonend.',
     card: 'Soft oder Power Bleaching – in einer Sitzung.',
-    image: 'termin-liyas-lounge-olten',
+    image: 'tr-zahnbleaching-olten',
     imageAlt: 'Weisse Calla-Lilien – Zahnbleaching in der Liyas Lounge Olten',
     chips: ['30–60 Min.', '1 Sitzung', 'Sofort sichtbar'],
     intro: 'Kaffee, Tee oder Rotwein hinterlassen mit der Zeit Spuren auf den Zähnen. Beim kosmetischen Zahnbleaching hellen wir Ihre Zähne in einer entspannten Sitzung auf – in der Liyas Lounge in Olten, ganz ohne Termin beim Zahnarzt.',
@@ -418,7 +418,7 @@ export const TREATMENTS = [
     h1Accent: 'sanft korrigieren',
     lead: 'Hyaluron-Filler lassen sich mit einem Enzym gezielt auflösen – zur Korrektur, bei Unregelmässigkeiten oder vor einem natürlichen Neustart.',
     card: 'Zu viel oder ungleichmässig? Filler gezielt korrigieren.',
-    image: 'hyaluron-produkt-olten',
+    image: 'tr-filler-aufloesen-olten',
     imageAlt: 'Glasampulle mit Wirkstoff – Filler-Korrektur in Olten',
     chips: ['15–30 Min.', 'Ergebnis in 24–48 h', 'Kaum Ausfallzeit'],
     intro: 'Sie sind mit einem früheren Filler-Ergebnis nicht zufrieden – etwa weil es zu viel, ungleichmässig oder verrutscht wirkt? Hyaluron-Filler lassen sich gezielt auflösen. In der Liyas Lounge in Olten analysieren wir die Situation sorgfältig und behandeln nur so viel wie nötig.',
@@ -462,7 +462,7 @@ export const TREATMENTS = [
     h1Accent: 'Straffung & Verjüngung',
     lead: 'Wohltuende Wärme in der Tiefe der Haut regt die Kollagenbildung an – für mehr Spannkraft und ein frisches Hautbild, ganz ohne Nadeln.',
     card: 'Sanfte Wärme für straffere Haut – ohne Nadeln.',
-    image: 'facial-treatment-olten',
+    image: 'tr-radiofrequenz-olten',
     imageAlt: 'Behandlung im Gesicht – Radiofrequenz in Olten',
     chips: ['30–60 Min.', 'Kur empfohlen', 'Keine Ausfallzeit'],
     intro: 'Mit den Jahren verliert die Haut an Spannkraft. Bei der Radiofrequenz-Behandlung wird das Gewebe mit kontrollierter Wärme sanft erwärmt – das fördert die Neubildung von Kollagen. In der Liyas Lounge in Olten behandeln wir damit Gesicht, Hals, Dekolleté und Körperzonen.',
@@ -507,7 +507,7 @@ export const TREATMENTS = [
     h1Accent: 'von Tattoos & PMU',
     lead: 'Ein Tattoo oder Permanent Make-up, das nicht mehr gefällt? Der Laser zerkleinert die Farbpigmente, die der Körper Schritt für Schritt abbaut.',
     card: 'Tattoos & Permanent Make-up schonend entfernen.',
-    image: 'studio-liyas-lounge-behandlungsraum',
+    image: 'tr-laser-tattooentfernung-olten',
     imageAlt: 'Behandlungsraum für die Laser-Tattooentfernung in Olten',
     chips: ['15–45 Min.', 'Mehrere Sitzungen', 'Leichte Rötung'],
     intro: 'Ob ein Tattoo, das nicht mehr passt, oder ein Permanent Make-up, das verblasst ist oder seine Form verloren hat: Mit dem Laser lassen sich Pigmente gezielt aufhellen oder entfernen. In der Liyas Lounge in Olten beurteilen wir vorab ehrlich, was realistisch ist und wie viele Sitzungen nötig sein werden.',
@@ -547,7 +547,7 @@ export const TEAM = [
     name: '[Name folgt]',
     role: 'Inhaberin · Heilpraktikerin & medizinische Kosmetikerin',
     roleShort: 'Inhaberin',
-    image: 'inhaberin-liyas-lounge-olten',
+    image: 'portrait-liya-olten',
     alt: 'Porträt der Inhaberin der Liyas Lounge in Olten',
     bio: [
       'Heilpraktikerin, Krankenpflegerin und medizinische Kosmetikerin mit zahlreichen Weiterbildungen in ästhetischer Medizin, Visagistik, Psychologie und medizinischer Assistenz – selbständig seit 2009.',
@@ -596,13 +596,13 @@ export const AGB = [
 
 // Bilder der Startseite – zum Austauschen einfach den Bildnamen ändern (Dateien in assets/img, siehe README)
 export const HOME = {
-  heroImage: 'liyas-lounge-olten-hero-inhaberin', // Inhaberin im Studio; + automatisch '…-portrait' für Smartphones im Hochformat
+  heroImage: 'hero-liya-studio-olten', // Inhaberin im Studio; + automatisch '…-portrait' für Smartphones im Hochformat
   heroAlt: 'Die Inhaberin der Liyas Lounge in ihrem Studio in Olten',
   heroPos: '62% 30%',
   heroPosMobile: '50% 20%',
   ctaImage: 'termin-liyas-lounge-olten',
   ctaAlt: 'Weisse Calla-Lilien vor schwarzem Hintergrund – Termin in der Liyas Lounge Olten',
-  aboutHero: 'studio-liyas-lounge-empfang',
+  aboutHero: 'studio-raum-olten',
   treatmentsHero: 'lounge-liyas-olten',
-  studio: ['studio-liyas-lounge-empfang', 'studio-liyas-lounge-behandlungsraum', 'studio-liyas-lounge-details'],
+  studio: ['studio-raum-olten', 'studio-lounge-olten', 'studio-empfang-olten'],
 };

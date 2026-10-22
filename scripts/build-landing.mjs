@@ -25,6 +25,7 @@ const trData = (L, slug) => {
 };
 const trUrl = (L, slug) => `${TR_BASE[L]}/${trData(L, slug).urlSlug}`;
 const CAT_SLUG = { antiage: { de: 'anti-age', en: 'anti-age', fr: 'anti-age' }, apparativ: { de: 'apparative-kosmetik', en: 'device-based-treatments', fr: 'cosmetique-appareillee' }, skin: { de: 'skin-care', en: 'skin-care', fr: 'skin-care' } };
+const CAT_HERO = { antiage: 'tr-faltenbehandlung-olten', apparativ: 'tr-hifu-olten', skin: 'tr-mesotherapie-olten' };
 const catUrl = (L, id) => `${TR_BASE[L]}/${CAT_SLUG[id][L]}`;
 const trFrom = (t) => { const ps = t.prices.filter((p) => p.price).map((p) => p.price); return ps.length ? Math.min(...ps) : null; };
 // ohne Nadeln / ohne Ausfallzeit – für den Mini-Check
@@ -314,7 +315,7 @@ function page(L, sub = null) {
   <div class="oval__in">
     ${head(t.exScript, t.exH)}
     <p class="lead" data-up>${esc(t.exP)}</p>
-    <figure class="photo" data-up>${pic('beratung-inhaberin-olten', t.ownerAlt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '50% 35%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
+    <figure class="photo" data-up>${pic('beratung-liya-olten', t.ownerAlt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '50% 35%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
     <blockquote class="quote" data-up><p>„${esc(TP[L].quote)}“</p><cite>${esc(TP[L].quoteBy)}</cite></blockquote>
     <ul class="values">${t.values.map(([a, b], i) => `<li data-up style="--d:${i * .1}s"><span>0${i + 1}</span><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
     ${nudge(t.nudge.ex)}
@@ -377,7 +378,7 @@ function page(L, sub = null) {
       <li>${ico('ig')}<span><small>Instagram</small><a href="${SITE.instagram}" target="_blank" rel="noopener">${IG}</a></span></li>
     </ul>
   </div>
-  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('inhaberin-liyas-lounge-olten', '', { sizes: '300px', pos: '50% 18%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
+  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('portrait-liya-olten', '', { sizes: '300px', pos: '50% 18%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
 </section>`}
 </main>
 
@@ -545,7 +546,7 @@ const trustRow = (L) => { const r = String(SITE.googleRating).replace('.', L ===
 
 const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
 <section class="hero hero--tp">
-  <div class="hero__media" data-hero-img>${pic(img, alt, { eager: true })}</div>
+  <div class="hero__media" data-hero-img>${pic(img, alt, { eager: true, pos: "72% 40%" })}</div>
   <div class="hero__in">
     ${crumbs(L, items)}
     <h1 class="tp-h1" data-in style="--d:.2s">${h1}</h1>
@@ -565,7 +566,7 @@ for (const L of LANGS) {
   // eine Seite pro Kategorie
   for (const c of t.cats) {
     const items = [[t.path, p.home], [catUrl(L, c.id), c.name]];
-    const main = `${tpHero(L, { img: c.image, alt: c.name, items, h1: `${esc(c.name)} <em>${esc(c.claim)}</em>`, sub: c.text, ctas: `${bookBtn}<a class="btn btn--line" href="#liste"><span>${esc(p.cardMore)}</span>${ico('arrow')}</a>` })}
+    const main = `${tpHero(L, { img: CAT_HERO[c.id], alt: c.name, items, h1: `${esc(c.name)} <em>${esc(c.claim)}</em>`, sub: c.text, ctas: `${bookBtn}<a class="btn btn--line" href="#liste"><span>${esc(p.cardMore)}</span>${ico('arrow')}</a>` })}
 <section class="tp-sec tp-sec--wide" id="liste">
   <header class="sh" data-up><p class="sh__script">${esc(p.all)}</p><h2 class="sh__h">${esc(p.catH)}</h2></header>
   <ul class="tp-tiles">${TR_ORDER.filter((sl) => trData(L, sl).category === c.id).map(tile).join('')}</ul>

@@ -664,3 +664,6 @@ html.lx-in .hero, html.lx-in .hero * { animation-play-state: paused !important; 
 .tp-intro .sh { margin-bottom: 22px; }
 .tp-intro__lead { margin: 0; text-align: left; }
 .acc details > div > ul, .acc details > div > .tp-note { margin: 0; padding: 0 40px 18px 0; text-align: left; }
+/* Tapete aus dem Studio (schwarzes Krokodilleder) als dezente Struktur */
+.rev, .faq:not(.tp-sec) { background-image: linear-gradient(rgba(11, 10, 9, .8), rgba(11, 10, 9, .8)), url(/assets/img/tapete-krokodil.webp); background-size: auto, 420px; }
+.foot { background-image: linear-gradient(rgba(7, 7, 7, .84), rgba(7, 7, 7, .84)), url(/assets/img/tapete-krokodil.webp); background-size: auto, 420px; }
