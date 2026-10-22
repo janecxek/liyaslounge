@@ -34,18 +34,6 @@
   "ratio": 1.7777777777777777,
   "lqip": "data:image/webp;base64,UklGRgoBAABXRUJQVlA4IP4AAABwBgCdASoYACsAPt1orVEopaQipWmZEBuJQBOmV4iUAjpnskKa/DQRoQQCv0CkTafhSONGurT4JBkA4gAA/a3TXUUJxxNWC5emvJFAB8oWwgxFDJqsFfZYPAJ5+omPCDnfpNEIIUsA0KygxWQeTdKmGu9nDKH7QXWp56O2lfhVXR8zV1FHgOX98IXK3LaVC630x/b8zt/OVZCu34a9RdJk9Hp70Z7MyNgNE03a6W4wad4sZMabNqM9Mluqs+svXM7spjP4ccJGAEU9vJX1AOq1haRrhzjwPsqD06yxhfkwa0qcVX7N2nygtsMqP95hAA+dXKkZH5DYoeWbkBIAAA=="
  },
- "studio-wand-liyas-lounge": {
-  "w": 1600,
-  "h": 900,
-  "widths": [
-   480,
-   800,
-   1200,
-   1600
-  ],
-  "ratio": 0.5625,
-  "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoYAA4APt1cp00opSOiMAgBEBuJYgCw7CF5+EetLhJO90rZKmAA/TEVJNvWtKx7cWsns2LKFzHZYheS3mDKkgiF9voXTVLM5byTiBqlZitdNWn4eecxci1iSZHfLVVFXoLSWPwkwprGQK+eS7lhT3AgAAA="
- },
  "studio-lounge-olten": {
   "w": 900,
   "h": 1600,
@@ -56,17 +44,6 @@
   ],
   "ratio": 1.7777777777777777,
   "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAABwBgCdASoYACsAPt1kqE4opaOiKrgMARAbiUAWo2HnFEOApyoyP/WLDc2mdjwHIY1FKnTwjjw+DkpiC+QA9T8xj3uWWCxGP/xlEd3+qfUuwp+cYYA8WsJVzExFj57qMFMmBrY006yKM2/3NvAWuBldPvFxPax6vNgobXQIOF82Waj9gZwQ2NQcNcOnj55nwI2pTl4J8iywxo9u/Q/nXWzYqHShYDu/pEifW9wD++y+GyS7LMJQB45Tp7ZA3BpbzHSIq4PMlQwwmT1M+jXj+8uOhgAAAA=="
- },
- "studio-behandlung-olten": {
-  "w": 900,
-  "h": 1600,
-  "widths": [
-   480,
-   800,
-   900
-  ],
-  "ratio": 1.7777777777777777,
-  "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAADQBgCdASoYACsAPt1YpU0opKMiMBVdURAbiWUAvzgp4zunvHHHBMWiZMr1ueCrLygkb1oy7ocpgCyJfO9vBwgA/RyiTxyTRH9qkd5WYhoh8POPngKWQ55TjU/e+o1+QpgWMX9K5dpD5vhSPlTrwnXZpC/6gbzchtX8YreMwxNRcvprjAfEnrT/LJeUsuGDVe4rjhcoZIHJsEjA5Af2XhRM/0hfJ5vnKuewFuOIPwuYQ8SQPwZBAeBSkfVRLWQVASRfSCX10BkCZHsAAAA="
  },
  "studio-raum-olten": {
   "w": 1600,
@@ -79,17 +56,6 @@
   ],
   "ratio": 0.5625,
   "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoYAA4APt1apkyopSOiMAgBEBuJYgCdMoABy0yWwTAEsQiZAAD+bBoN5/fyN/W0P5FBeZFJZtRwo1ldflLO+fWhlzDrOxKeraCYrIO99rnvR6/Ooq2nqMJeJVMB0pL1gr8zM003fTtT0FLSyU7Dc2thLB3CSJhiXwAAAA=="
- },
- "studio-eingang-hammerallee": {
-  "w": 900,
-  "h": 1600,
-  "widths": [
-   480,
-   800,
-   900
-  ],
-  "ratio": 1.7777777777777777,
-  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBgCdASoYACsAPs1SokynpKMiOrZoAPAZiWcAzuwQUMMBb742UsTG9pfIlQbhWxkk56VKwu3b1gAA/mCVpGgMnd+0gSkqUwdmA/9ohGW1zUUzRsXcAm5exvtJFsI6C0X2waYB8OMrzGSIR8T3Vcyhw9X16R7TeZwYW3fWcakCXWdIc5Psj7JtBDQLuMWFuouna8WlQesjZsQ3dUk+3iDkrqjNHq1Henr77n0zvko5At4ImHAAAA=="
  },
  "hero-liya-studio-olten": {
   "w": 3072,
@@ -331,5 +297,16 @@
   ],
   "ratio": 0.6666666666666666,
   "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoYABAAPt1cp0yopSOiMAgBEBuJQBOmUABflph9YFsHDsTSY1+atAAA9rwvFdTcm6n9iDAyDai+18dNEMmiLV7bpGrVbf1KdyvZ/aDNnhbI5ICLc4J/jUG6IG9GLDgY2N8wwhbbp+P5QlgX4xDL9DcX292t9akC42KvoNJx4cRI64AzI0FY9ZImyTQ/SjFfLgAAAA=="
+ },
+ "studio-raum-olten-portrait": {
+  "w": 900,
+  "h": 1600,
+  "widths": [
+   480,
+   800,
+   900
+  ],
+  "ratio": 1.7777777777777777,
+  "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAADQBgCdASoYACsAPt1apU2opKMiMBVdURAbiUAXwTGQS28PcpFcfYyNb6FZqV+Q37bXPpG+IXsBQi4iI1x3boAA9VPTWG0Le+MC38q2O1WzJoylnx0SrY4ZAjgyEp2PSHQvPYytlxgZjOtkQvpAN8C7JiqksHqML3gc/j9t36GEv+kAV/KjNc/qRuaCMt27+dFF876dIgpfl83xHI4GIJGZJuiuxVgBobtmNIpZGxed7Yknd90GypKwvMuVzFofmHm67O5L9SJ8O4XlgAA="
  }
 }
