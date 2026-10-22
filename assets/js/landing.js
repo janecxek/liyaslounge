@@ -224,36 +224,4 @@
     window.addEventListener('resize', function () { go(i); });
     go(0);
   });
-
-  /* ---------- Mini-Check: Anliegen → (Priorität) → Empfehlung → WhatsApp ---------- */
-  $$('[data-quiz]').forEach(function (qz) {
-    var data; try { data = JSON.parse($('[data-quiz-data]', qz).textContent); } catch (e) { return; }
-    var steps = $$('.qz__step', qz), concern = null, res = $('[data-res]', qz), alt = $('[data-alt]', qz);
-    var waBtn = $('[data-qz-wa]', qz), viewBtn = $('[data-qz-view]', qz);
-    function show(n) { steps.forEach(function (s) { s.classList.toggle('is-on', s.getAttribute('data-step') === String(n)); }); }
-    function esc(t) { var d = doc.createElement('div'); d.textContent = t; return d.innerHTML; }
-    function result(prio) {
-      var list = concern.tr.slice();
-      if (prio === 'noNeedle') list = list.filter(function (x) { return x.nn; }).concat(list.filter(function (x) { return !x.nn; }));
-      if (prio === 'noDown') list = list.filter(function (x) { return x.nd; }).concat(list.filter(function (x) { return !x.nd; }));
-      var best = list[0], rest = list.slice(1, 3);
-      res.innerHTML = '<b>' + esc(best.n) + '</b><p>' + esc(best.c) + '</p>';
-      alt.hidden = !rest.length;
-      $$('a', alt).forEach(function (a) { a.remove(); });
-      rest.forEach(function (x) { var a = doc.createElement('a'); a.href = x.u; a.textContent = x.n; alt.appendChild(a); });
-      var msg = (prio ? data.msgP : data.msg0).replace('{c}', concern.label).replace('{p}', prio ? data.prio[prio].charAt(0).toLowerCase() + data.prio[prio].slice(1) : '').replace('{n}', best.n);
-      waBtn.href = data.wa + '?text=' + encodeURIComponent(msg);
-      viewBtn.href = best.u;
-      show(3);
-    }
-    $$('[data-k]', qz).forEach(function (b) {
-      b.addEventListener('click', function () {
-        concern = data.concerns.filter(function (c) { return c.k === b.getAttribute('data-k'); })[0];
-        if (concern.tr.length < 2) result(null); else show(2);
-      });
-    });
-    $$('[data-p]', qz).forEach(function (b) { b.addEventListener('click', function () { result(b.getAttribute('data-p')); }); });
-    $('[data-back]', qz).addEventListener('click', function () { show(1); });
-    $('[data-restart]', qz).addEventListener('click', function () { concern = null; show(1); });
-  });
 })();

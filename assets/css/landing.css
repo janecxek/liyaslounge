@@ -546,29 +546,6 @@ html.lx-in .hero, html.lx-in .hero * { animation-play-state: paused !important; 
 .foot__tr a:hover { opacity: 1; color: var(--gold-l); }
 
 /* ---------- Mini-Check «Was passt zu Ihnen?» ---------- */
-.qz { max-width: 860px; margin: clamp(46px, 5vw, 70px) auto 0; padding: clamp(28px, 4vw, 46px) clamp(18px, 4vw, 48px); border: 1px solid var(--hair); border-radius: 28px; background: linear-gradient(150deg, rgba(207, 174, 107, .12), rgba(207, 174, 107, .02) 50%, rgba(207, 174, 107, .07)), var(--k1); text-align: center; }
-.qz .sh { margin-bottom: 22px; }
-.qz .sh__h { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
-.qz__step { display: none; }
-.qz__step.is-on { display: block; animation: qzIn .5s var(--ease) both; }
-@keyframes qzIn { from { opacity: 0; transform: translateY(10px); } }
-.qz__q { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px; font-family: var(--corm); font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--txt); }
-.qz__q span { font-family: var(--sans); font-size: .62rem; font-weight: 500; letter-spacing: .2em; color: var(--gold); }
-.qz__opts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.qz__opts--3 { max-width: 640px; margin: 0 auto; }
-.qz__opt { min-height: 54px; padding: 10px 14px; border: 1px solid var(--hair); border-radius: 14px; background: rgba(255, 255, 255, .02); color: var(--txt); font: 400 .84rem/1.3 var(--sans); transition: border-color .3s, background .3s, color .3s, transform .3s var(--ease); }
-.qz__opt:hover, .qz__opt:focus-visible { border-color: var(--gold); background: rgba(207, 174, 107, .12); color: var(--gold-l); transform: translateY(-1px); }
-.qz__back { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; color: var(--txt2); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
-.qz__back .i { width: 14px; height: 14px; }
-.qz__back:hover { color: var(--gold-l); }
-.qz__res { display: grid; justify-items: center; gap: 8px; margin-bottom: 18px; }
-.qz__res b { font-family: var(--corm); font-weight: 400; font-size: clamp(1.8rem, 3.6vw, 2.6rem); letter-spacing: .08em; text-transform: uppercase; color: var(--gold-l); }
-.qz__res p { max-width: 460px; color: var(--txt2); }
-.qz__alt { margin-bottom: 18px; font-size: .82rem; color: var(--txt2); }
-.qz__alt[hidden] { display: none; }
-.qz__alt a { margin-left: 6px; color: var(--gold-l); border-bottom: 1px solid var(--hair); }
-.qz__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-@media (max-width: 640px) { .qz__opts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .qz__opts--3 { grid-template-columns: minmax(0, 1fr); } .qz__ctas { flex-direction: column; } .qz__ctas .btn { width: 100%; } }
 
 /* ---------- Behandlungsseiten & Übersicht ---------- */
 .crumbs { max-width: var(--maxw); margin: 0 auto; padding: 100px var(--gutter) 0; font-size: .7rem; letter-spacing: .08em; color: var(--txt2); }
@@ -730,3 +707,13 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 200px), radial-gradient(75% 100% at 50% 10%, #000, rgba(0, 0, 0, .2) 85%); -webkit-mask-composite: source-in;
   mask-image: linear-gradient(180deg, transparent, #000 200px), radial-gradient(75% 100% at 50% 10%, #000, rgba(0, 0, 0, .2) 85%); mask-composite: intersect; }
 
+/* Ihr Besuch: oben ein scharfes, abgedunkeltes Foto vom Behandlungsraum, das weich ins Schwarz übergeht */
+.visit { isolation: isolate; }
+.visit__bg { position: absolute; z-index: 0; inset: 0 0 auto; width: auto; height: min(80vh, 760px); pointer-events: none; }
+.visit__bg picture, .visit__bg img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.visit__bg img { object-fit: cover; transform: none; filter: brightness(.46) saturate(.85); }
+.visit__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, var(--k1), rgba(11, 10, 9, .35) 160px, rgba(11, 10, 9, .5) 45%, rgba(11, 10, 9, .85) 78%, var(--k1)); }
+@media (max-width: 640px) {
+  .visit__bg { height: min(85vh, 680px); }
+  .pol li:nth-last-child(2) { border-bottom: 1px solid var(--hair) !important; }
+}
