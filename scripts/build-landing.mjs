@@ -342,7 +342,7 @@ function page(L, sub = null) {
 </section>
 
 <section class="visit">
-  <picture class="visit__bg" aria-hidden="true"><source media="(max-width: 640px)" srcset="/assets/img/lounge-liyas-olten-bg-m.webp?v=2"><img src="/assets/img/lounge-liyas-olten-bg.webp?v=2" alt="" width="960" height="640" loading="lazy" decoding="async"></picture>
+  <div class="visit__bg" aria-hidden="true">${pic('studio-raum-olten', '', { sizes: '100vw', pos: '50% 55%' })}</div>
   <div class="visit__in">
     ${head(t.visScript, t.visH)}
     <ul class="pol">${t.policies.map(([a, b], i) => `<li data-up style="--d:${(i % 3) * .07}s"><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
