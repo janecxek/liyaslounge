@@ -92,50 +92,62 @@
   "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBgCdASoYACsAPs1SokynpKMiOrZoAPAZiWcAzuwQUMMBb742UsTG9pfIlQbhWxkk56VKwu3b1gAA/mCVpGgMnd+0gSkqUwdmA/9ohGW1zUUzRsXcAm5exvtJFsI6C0X2waYB8OMrzGSIR8T3Vcyhw9X16R7TeZwYW3fWcakCXWdIc5Psj7JtBDQLuMWFuouna8WlQesjZsQ3dUk+3iDkrqjNHq1Henr77n0zvko5At4ImHAAAA=="
  },
  "hero-liya-studio-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYABAAPt1cpkyopSOiMAgBEBuJZACdMoR3ACH38xsfPHmDcYSNUUAA/uWX0pn63W3zyGtPrbqTYZEAcO8NwOQjAZ9wt3h7nxsshSKTIQ7k26VmadkLyrxVb2ioQ5BmjFeinaxvEmtq9jdmiCgBxYJYrIBzlBrU/13nk7geMEVNe/BdAubkK7A/q7fDESz5wAZsgAAA"
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBACdASoYABAAPt1cpkyopSOiMAgBEBuJZACdMoR3ACH38uTpcMfIpea1AAD+5ZfSmfrdbfPIa0+tupNhkQBw7w3A4/KhPuFu8Pc+NlkKRSZCHcm3SszTsheVeKre0VCNasaMV6KeBmNLPtDscN6Z1P4yNc01FFF4RxoW47MqeVvqZBXdFt42BUBVl7esJt/aqla3cQAAAA=="
  },
  "hero-liya-studio-olten-portrait": {
-  "w": 1024,
-  "h": 1536,
-  "widths": [
-   480,
-   800,
-   1024
-  ],
-  "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRgABAABXRUJQVlA4IPQAAACQBgCdASoYACQAPtFan0yoJaKiNVgMAQAaCUAVhm5IPsuwz7OXuLxg2vwIZEYF7u8nbIB8W56q7Mkns1DwAP7cTOCVZSkgUIRzD9SX4B7jjmXzpsaD+qwfFT4dOvbTxatrDQibH2Z7ZgZQYLyBnzqVdiygnecQNmOBTHKtugAerCxMGEwdq+4kTHsfGg8haJaNx9H1A2uM0eXKShRnyyiAfWkaaJymsnyFmiTyOYlVgLaqzcTgIC9jHNHC4p0nXRz2eg9Vf23E93PKLjDa1cQ48UkOcwR2kUm+uT2DDB/NDy4FODhOzFAQy6Qr5l8YgJKKAAAA"
- },
- "beratung-liya-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 2048,
+  "h": 3072,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2048
   ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJaACdMoAB2GkErJc+apA5wdb4gAD+NHKvqSJQcNDSK15/kMobeJgj0pVa0qy6lLHG7CFd/U4eWz2EK7D5vB2nGYrlMVkt2Bd6a6e6ku2Z7P3t1QU9lecWTTRik3Z8GWmX6svswKOScYYnH3/sCZZLrNtqxFrknxUUihfwUJgAAA=="
+  "ratio": 1.5,
+  "lqip": "data:image/webp;base64,UklGRgIBAABXRUJQVlA4IPYAAACQBgCdASoYACQAPtFan0yoJaKiNVgMAQAaCUAVhm5IM5HYMYHNArG7jH3gQAtV7KXpjT76CH+StAFg4bcAAP7cTHXfKxiaGlE6Bjp0WHjYz3/TKwao28mVImI72KwBUU2oHRG3QilIofyPC6yFJPFvyA5k1BzC3L9gzEAZL0rZc/was8l1qc6G5g8MFqQlD7dMhrBVUuM2Bb97aL59Rm1SAcVSTvb+5qahYk5dRuwizzwDagsdeOVf8dQRtX8b9oc3sSWWbXji1Rw59khdoMV+RE0710Y7uTWXmEYM6iwXzliV68lwd5QEoKC5BOxTCu60ovujsAA="
  },
- "portrait-liya-olten": {
-  "w": 1024,
-  "h": 1536,
+ "beratung-liya-olten": {
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
-   1024
+   1200,
+   1600,
+   2000,
+   2560,
+   3072
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJaACdMoAB2Ghn5cT2lOaFSE/mAAD9eNgMdNTqrCgVjRdbmwPfQYI9KVWtKeoi7721Umu4f+o00LEjWsZ8VN5VQFoTFZLdgXemun3crt1S5PzsURfwfGYx1r+/1061U8QRhiULdB1yIu9wYWH5a7u7W8wdmBYLqesdrsNr8AA="
+ },
+ "portrait-liya-olten": {
+  "w": 2048,
+  "h": 3072,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000,
+   2048
   ],
   "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACwBgCdASoYACQAPt1epk2opSOiKqwBEBuJZgCDJVYATXynMFMSZHuXBBOmLku3VQXcAzMcECKs3eC7FsZqAAD+lLHx/agwLC64VK93xtonwo/YaUVL5c0bz/Kr7zEv1QfCFTXoG+aj4gu8/1Md8QGr9Vv+pFQ+fi/5uXzb53k4vAp8X41b5cnKsZWJ3E1hit9bTUbHQm8q/aozTxpYQXqde3GKpLI/fP3c3KfonFbXEBjDVL8n8huANHPPKyRdQPvq8WLSE6yvOD/qR4fSUvSI1oAW5T7FX92jaiPf9grs/CZ6BMlL4rSkoavdWhrlgBuUvKkJnwc8AAAA"
+  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACQBgCdASoYACQAPt1cpk2opSOiKqwBEBuJZgCDJVYATXynMFMSZHuXBBOmLku3U4LsxAXQXAoatre9X9eAAP6UsfH9qDAsLrhUr3fG2ifCj9hpRUvlzRvP8qvvMS/VB8IVNegb5qPiC7z/Ux3xAav1W/6kVD5+L/m5fNvneTi8CnxfjVvlycqxlYncTWGK31tNRsdCbyr9qjNPGlhBep17cYqksj98/+qyTUd/8EWFYcg0xVTswOglh5Zu+AUKbS0sVpww2G4Mv+JcVPt6jbVs4vRJF1qhR9tiTxO9jH7Pfjx/7L9Kn+v90T25sjXIoCedaE2ygviwAAAA"
  },
  "kat-anti-age-olten": {
   "w": 1024,
@@ -171,123 +183,153 @@
   "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACQBgCdASoYACQAPt1mqE4opaOiKrgMARAbiUAVHoQzb2amlta0PxkJ3f0/pDk2uZ8QjM9J548Hrd7WeTTgAP0AgDIN8PlsOT4b0QQeQVcYrWzF626VdJSRyEox37sBs1HE14kFLjuBYxR2EVG55LuOAgcxfI7SqtUhHeOJ439xWB/X8BMOVU8Lykmcn2s+JwVY3umkUFkSIh3XOaXE8hhZ4tmetSxSWTaF8zmuoPih6JR/sS68Yl4m0Gse6ukwaeEc8AFrWzDhjW0LZPrcP651eBn4H+zQ1HIGhFx43WTMwlihWfmy+I6nBEJQjXF3UelLczrMtvo00sAA"
  },
  "tr-dermal-filler-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAAPt0+s1SooiWjmAEQG4lAE6ZQAUfcOwWn+UEOqH5QAP7eNyZpAFHJT6vuTPx8N1ezFNMXRoMQnRJlEWr2b4AtJlCdn/yoDUgV0aL87ZESF4Ohte4DmFyfa+G220AldIwr6N64oQAA"
+  "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoYABAAPt1qqU4opqQiMAgBEBuJQBOmUAFI2yLvusmUCOc/gAD+5vla8yOJnlOrJjmRR6wtVKLC6reDzPtWbtnOo514UzRU+QUkQfiZB1CSmaJFzqjlAPqSv5JMchp9IA1JJcwjaZqv7yHkksghcV6rJbAAAA=="
  },
  "tr-faltenbehandlung-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoYABAAPt1cp0yopSOiMAgBEBuJQBOmUABfmeQ5CXX6iAWMBQAA/cF5mX1Au6OCxSgJNDk1BG9J0t3HvwHIeuje3mOdp56/Jn8361N0JRlevzg5mNTQo40/vHIJUsKy4e+X9tnwPCx85INpIXTt+oLz7IEpDmCk/9Ucd21bzvmhMAAA"
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAQBACdASoYABAAPt1epkyopSOiMAgBEBuJQBOmUABfmeQ5CXa+vt3Y7AD9wXmZfUC7o4LFKAk0OTUEb0nS3cbSWvZlnBqoZXxznIvmhR+9gNK6r3uNOUpg1ObWTUE3ZQ9Na2BJn+X/Iha0hFdPe8AbsAhdLqUerUWKtPuLeqb0zdcbiVIAAA=="
  },
  "tr-mesotherapie-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAACQBACdASoYABAAPt1cpkyopSOiMAgBEBuJZgCdMoADTuEs7Y8wR/C6CdUITAAA/q1kR2BT1zMZyPNxBrdlbp7NaRqzMowkL5Su6r2A8V1Muv89CoJZ7KUjuQtLub+5yEbW+435EnPHa8/WWiXFaqpBb592w3ELcxlnfQjb2+txdbPUQdQ1w+jy6GT5IzVLkE+WgmgvA25tfEAY3Zwwb18nwAA="
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACQBACdASoYABAAPt1cpkyopSOiMAgBEBuJZgCdMoADTuH70PeXQR98zJbt/oAA/q1kR2BT1zMUTQ+d3MY8on33L7hFbboLbx7vuG+DvZTjN+iTbl+EaXeL1Xc39zkI2t9xvyJOeO15+stEuK1VSC3z7thuIWsuPzwR9W0+WwJrBOAx7mXekQEBC0Q0Get5n2TAmj1FqaPebbAclfLznwAA"
  },
  "tr-fettwegspritze-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABwBACdASoYABAAPt1kqU2opaQiMAgBEBuJYgCdMoAJ9MziI/eDQYEqKeeWgAD+wrVaHjvcyCG4tfBIcbM+7t6HIGZpzgF1P96HolAIEtsONMXPufh30Fk9ZKyZ9TsSFAYLyeGN8uiIvXID59PphHsnskruT3arJGr/hfiD4hy36qsAAAA="
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQBACdASoYABAAPt1qqU4opqQiMAgBEBuJYgCdMoAJ6hghqvbjKy8O+XrjZdAA/sKwEYtX2N5Pv6jiAixJHAYIuoGu4JWhm3Hsfne9O9o5noQP5dw3wSAHOx5h2QVkFlqvMSaIs06HwJaKfhV2xKvGbkrZGZyez34difj4dNyGqyAA"
  },
  "tr-hifu-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBACdASoYABAAPt1apkyopSOiMAgBEBuJQBOmUABqXMvAVVw8f1Ox9WggAM4OuLrwsV/OFLVobZU3rKIlGCv2qu+mXX+/ilDnOrRr87xSWZx3uIlWBp04YIZWsSnqC1C+j4rxG5N9uhsaDbckQKM+dDqQNop7kZc5rfQKxmYfLKkit5g9XXD46ov6LVnpWGHHz2cAGZ+ZuwAA"
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoYABAAPt1apkyopSOiMAgBEBuJQBOgBEE/uGSgJ8TxDjggXADODri68LFfzhS1aG2VN6yiJRgr9qrvpl1/v4pQ5zq0a/O8Ulmcd7enY5YeZye7KxSQWoYv55lPoD+Fv1jK4M0tmbmliCmch8SQMggnvFSLC9IwjSzbbXxWHpB4lKpWdLDgTrXtsXL5mEz85+AAAA=="
  },
  "tr-morpheus8-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJagCdMoADTF6pOSQxo30jvQfHAADOO23J6c+vrHqsRcS6BRAqy9LRcwcNyvQLyeSS+siLFPS3tqvZPKe3+pCEzygBNCq9DzSbjEKI+SIhTPfa+ff97IlQhvI6Q6sNoLO/EikwwOgqSqom/Cnq0bo1UReV9nWN/cS3cXRv4Tt4QYDQAAA="
+  "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBACdASoYABAAPt1cpkyopSOiMAgBEBuJagCdMoADTF6pOSQxo30jvQM1AADOO23J6c+vrHqsRcS6BRAqy9LRcwcNyvQLyeSS+siLFPS3tqvZPKe3+pCEzygBNCq9DzSbjEKI+SIhTPfa+ff97IlQhvI6Q6sKg3Ms6XXEpj6KTuwA/Sshn/OxfY5MX6Wf8W0GwkKowktWuk9YAAA="
  },
  "tr-zahnbleaching-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAALqVut1ujKKioiICkSxAE6ZQAMAstWoCI/vXJmtTAAP6J/gHqC73vgakspJtBhFj+eoWZzvTpUoT7xbSC+WZUjt6YEMk7f2zSeaHjQ7wuhn1CpD8xHk8pJFAVnLoty/lP3tvxBqAA"
+  "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAgCdASoYABAAAwBSJYgCdMoAGAWXRyLOS4mpraXwAP6J/gHqC73vgakstbfaw2o2fDVymcuRVKE+8W0gvlmVI7emBDRFPDajF7bPXyZPKfiutIceEoEQn4u3szTgcbFL3qpR9N4AAA=="
  },
  "tr-filler-aufloesen-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoYABAAPt1apkyopSOiMAgBEBuJZgCdMoR4GCbI0mCH2WUG1RHi4FXezVAA9HQUH7cBxDydg5pEMma6lbanWXmEzHsZZnwiJLOERTP4lc+Jz61oV6UreM8CiE7paY5Kt8F/Eeu/lPZW307P2Ov6UKfS1auroc3CpAzXG+xXyofKxnsUwceqeRiyfj94Xm0H4INXQsCy44Ij1p6StdQ4fBbQjm1CwAAA"
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAQBQCdASoYABAAPt1apkyopSOiMAgBEBuJZgCdMoR4GvQAnyH/vb9RsT5KiXKdH2UAAPR0FAQwKDMAI4BgpebNpU/7YDflZzIWCRPGxzgqf05DimCQEXzz7jMShiOR35Nj2QxsXXMJKaKfkR9mHmTScAcrxr8AcJfGH6Vp/UX0ykCaoLdL2n+dnjGgjaKCrk2ItBJ8fNL6wC/jKtEOIj3iGlqLM+AyICjCuOz2AAA="
  },
  "tr-radiofrequenz-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBACdASoYABAAPt1cp0yopSOiMAgBEBuJZACdMoACAtWxOR3nHCjzdtcrAAD70nutmgDMOZiJT6QmXosuY4QozJuuVZboRI6p8aerw0KYPzoS3kgi9Dgoak359UFFWNkId3ZzMmQTLr4/oefbe6qZxgY8gwfrqzaS3wCFrRGhjexHF3nxLZrdwv68imIapJXIU7IrJ3WI8dlbAgNvZ7qA+SavLwBeAAA="
+  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBACdASoYABAAPt1cp0yopSOiMAgBEBuJZACdMoACAtWxOR3mps7Xi4QuAAD70nutmgDMOZiJT6QmXosuY4QozJuuVZboRI6p8aerw0KYPzoS3kgi9Dgoak359UFFWNkId3ZzMmQTLr4/oegBF2tHV82GX7ylQn6ezxgEsQy1639CyXCEx5sla50jye8RY1k96Rod6bC78CO3kDpqUiXq2gQIAA=="
  },
  "tr-laser-tattooentfernung-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACwBACdASoYABAAPt1gp00opaOiMAgBEBuJQBOmUABzzBKIY5+F2NeE7bG1O16AAPwplsLC0Nc9hKLaCQZvEE3v3WWivSReYX1nKA8gBKP7m0GbPC2Q8dndLuc5eKGqURThsaA+t3A3MlxKwc1aW5cz6+MieaCPEXb4K1oswHu0C5yksvY7sYRayh5FwKQC2UzIGsEQAAA="
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoYABAAPt1cp0yopSOiMAgBEBuJQBOmUABflph9YFsHDsTSY1+atAAA9rwvFdTcm6n9iDAyDai+18dNEMmiLV7bpGrVbf1KdyvZ/aDNnhbI5ICLc4J/jUG6IG9GLDgY2N8wwhbbp+P5QlgX4xDL9DcX292t9akC42KvoNJx4cRI64AzI0FY9ZImyTQ/SjFfLgAAAA=="
  }
 }
