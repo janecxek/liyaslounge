@@ -243,75 +243,93 @@
   "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQBACdASoYABAAPt1qqU4opqQiMAgBEBuJYgCdMoAJ6hghqvbjKy8O+XrjZdAA/sKwEYtX2N5Pv6jiAixJHAYIuoGu4JWhm3Hsfne9O9o5noQP5dw3wSAHOx5h2QVkFlqvMSaIs06HwJaKfhV2xKvGbkrZGZyez34difj4dNyGqyAA"
  },
  "tr-hifu-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBACdASoYABAAPt1apkyopSOiMAgBEBuJQBOmUABqXMvAVVw8f1Ox9WggAM4OuLrwsV/OFLVobZU3rKIlGCv2qu+mXX+/ilDnOrRr87xSWZx3uIlWBp04YIZWsSnqC1C+j4rxG5N9uhsaDbckQKM+dDqQNop7kZc5rfQKxmYfLKkit5g9XXD46ov6LVnpWGHHz2cAGZ+ZuwAA"
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoYABAAPt1apkyopSOiMAgBEBuJQBOgBEE/uGSgJ8TxDjggXADODri68LFfzhS1aG2VN6yiJRgr9qrvpl1/v4pQ5zq0a/O8Ulmcd7enY5YeZye7KxSQWoYv55lPoD+Fv1jK4M0tmbmliCmch8SQMggnvFSLC9IwjSzbbXxWHpB4lKpWdLDgTrXtsXL5mEz85+AAAA=="
  },
  "tr-morpheus8-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJagCdMoADTF6pOSQxo30jvQfHAADOO23J6c+vrHqsRcS6BRAqy9LRcwcNyvQLyeSS+siLFPS3tqvZPKe3+pCEzygBNCq9DzSbjEKI+SIhTPfa+ff97IlQhvI6Q6sNoLO/EikwwOgqSqom/Cnq0bo1UReV9nWN/cS3cXRv4Tt4QYDQAAA="
+  "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBACdASoYABAAPt1cpkyopSOiMAgBEBuJagCdMoADTF6pOSQxo30jvQM1AADOO23J6c+vrHqsRcS6BRAqy9LRcwcNyvQLyeSS+siLFPS3tqvZPKe3+pCEzygBNCq9DzSbjEKI+SIhTPfa+ff97IlQhvI6Q6sKg3Ms6XXEpj6KTuwA/Sshn/OxfY5MX6Wf8W0GwkKowktWuk9YAAA="
  },
  "tr-zahnbleaching-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAALqVut1ujKKioiICkSxAE6ZQAMAstWoCI/vXJmtTAAP6J/gHqC73vgakspJtBhFj+eoWZzvTpUoT7xbSC+WZUjt6YEMk7f2zSeaHjQ7wuhn1CpD8xHk8pJFAVnLoty/lP3tvxBqAA"
+  "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAgCdASoYABAAAwBSJYgCdMoAGAWXRyLOS4mpraXwAP6J/gHqC73vgakstbfaw2o2fDVymcuRVKE+8W0gvlmVI7emBDRFPDajF7bPXyZPKfiutIceEoEQn4u3szTgcbFL3qpR9N4AAA=="
  },
  "tr-filler-aufloesen-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoYABAAPt1apkyopSOiMAgBEBuJZgCdMoR4GCbI0mCH2WUG1RHi4FXezVAA9HQUH7cBxDydg5pEMma6lbanWXmEzHsZZnwiJLOERTP4lc+Jz61oV6UreM8CiE7paY5Kt8F/Eeu/lPZW307P2Ov6UKfS1auroc3CpAzXG+xXyofKxnsUwceqeRiyfj94Xm0H4INXQsCy44Ij1p6StdQ4fBbQjm1CwAAA"
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAQBQCdASoYABAAPt1apkyopSOiMAgBEBuJZgCdMoR4GvQAnyH/vb9RsT5KiXKdH2UAAPR0FAQwKDMAI4BgpebNpU/7YDflZzIWCRPGxzgqf05DimCQEXzz7jMShiOR35Nj2QxsXXMJKaKfkR9mHmTScAcrxr8AcJfGH6Vp/UX0ykCaoLdL2n+dnjGgjaKCrk2ItBJ8fNL6wC/jKtEOIj3iGlqLM+AyICjCuOz2AAA="
  },
  "tr-radiofrequenz-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBACdASoYABAAPt1cp0yopSOiMAgBEBuJZACdMoACAtWxOR3nHCjzdtcrAAD70nutmgDMOZiJT6QmXosuY4QozJuuVZboRI6p8aerw0KYPzoS3kgi9Dgoak359UFFWNkId3ZzMmQTLr4/oefbe6qZxgY8gwfrqzaS3wCFrRGhjexHF3nxLZrdwv68imIapJXIU7IrJ3WI8dlbAgNvZ7qA+SavLwBeAAA="
+  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBACdASoYABAAPt1cp0yopSOiMAgBEBuJZACdMoACAtWxOR3mps7Xi4QuAAD70nutmgDMOZiJT6QmXosuY4QozJuuVZboRI6p8aerw0KYPzoS3kgi9Dgoak359UFFWNkId3ZzMmQTLr4/oegBF2tHV82GX7ylQn6ezxgEsQy1639CyXCEx5sla50jye8RY1k96Rod6bC78CO3kDpqUiXq2gQIAA=="
  },
  "tr-laser-tattooentfernung-olten": {
-  "w": 1536,
-  "h": 1024,
+  "w": 3072,
+  "h": 2048,
   "widths": [
    480,
    800,
    1200,
-   1536
+   1600,
+   2000,
+   2560,
+   3072
   ],
   "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACwBACdASoYABAAPt1gp00opaOiMAgBEBuJQBOmUABzzBKIY5+F2NeE7bG1O16AAPwplsLC0Nc9hKLaCQZvEE3v3WWivSReYX1nKA8gBKP7m0GbPC2Q8dndLuc5eKGqURThsaA+t3A3MlxKwc1aW5cz6+MieaCPEXb4K1oswHu0C5yksvY7sYRayh5FwKQC2UzIGsEQAAA="
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoYABAAPt1cp0yopSOiMAgBEBuJQBOmUABflph9YFsHDsTSY1+atAAA9rwvFdTcm6n9iDAyDai+18dNEMmiLV7bpGrVbf1KdyvZ/aDNnhbI5ICLc4J/jUG6IG9GLDgY2N8wwhbbp+P5QlgX4xDL9DcX292t9akC42KvoNJx4cRI64AzI0FY9ZImyTQ/SjFfLgAAAA=="
  }
 }
