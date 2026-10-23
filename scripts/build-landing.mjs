@@ -249,7 +249,7 @@ function page(L, sub = null) {
 </header>
 <div class="menu" id="menu" hidden>
   <nav class="menu__nav">${t.nav.map(([id, l], i) => `<a href="${base}#${id}"><small>0${i + 1}</small>${l}</a>`).join('')}</nav>
-  <div class="menu__foot"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a><p>${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${esc(t.hoursTxt)}</p>${langSw}</div>
+  <div class="menu__foot"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a>${langSw}</div>
 </div>
 
 <main id="main">${sub ? sub.main : `
