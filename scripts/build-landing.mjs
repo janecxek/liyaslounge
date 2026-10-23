@@ -32,7 +32,7 @@ const trFrom = (t) => { const ps = t.prices.filter((p) => p.price).map((p) => p.
 // Beschriftungen der Behandlungsseiten, des Mini-Checks und neuer Startseiten-Bausteine
 const TP = {
   de: {
-    home: 'Start', all: 'Behandlungen', from: 'ab', onReq: 'Preis auf Anfrage', reqH: 'Ihr persönlicher Preis', reqP: 'Der Preis hängt von Zone, Ausgangslage und Anzahl Sitzungen ab. Schreiben Sie uns kurz – gerne mit Foto –, und Sie erhalten eine ehrliche Einschätzung und Ihren Preis, meist noch am selben Tag.', reqWa: 'Preis per WhatsApp anfragen', reqBook: 'Beratung buchen', reqMsg: (n) => `Hallo Liya, was würde ${n} bei mir ungefähr kosten?`, more: 'Mehr erfahren', cardMore: 'Behandlungen ansehen', catH: 'Wählen Sie Ihre Behandlung', catOther: 'Weitere Bereiche', contraQ: 'Wann ist die Behandlung nicht geeignet?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} Mit Preisen, seit 2009.`,
+    home: 'Start', all: 'Behandlungen', from: 'ab', onReq: 'Preis auf Anfrage', reqH: 'Ihr persönlicher Preis', reqP: 'Der Preis hängt von Zone, Ausgangslage und Anzahl Sitzungen ab. Schreiben Sie uns kurz – gerne mit Foto –, und Sie erhalten eine ehrliche Einschätzung und Ihren Preis, meist noch am selben Tag.', reqWa: 'Preis per WhatsApp anfragen', reqBook: 'Beratung buchen', reqMsg: (n) => `Hallo Liya, was würde ${n} bei mir ungefähr kosten?`, more: 'Mehr erfahren', cardMore: 'Behandlungen ansehen', catH: 'Wählen Sie Ihre Behandlung', catOther: 'Weitere Bereiche', contraQ: 'Wann ist die Behandlung nicht geeignet?', catTitle: (c) => `${c.name} in Olten – Behandlungen | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. Alle Behandlungen mit Preisen – seit 2009.`,
     ovTitle: 'Behandlungen in Olten – Anti-Age, apparative Kosmetik & Skin Care | Liyas Lounge', ovDesc: 'Alle Behandlungen der Liyas Lounge in Olten: Filler, Faltenbehandlung, HIFU, Radiofrequenz, Morpheus8, Mesotherapie & mehr – mit Preisen.',
     ovScript: 'Unsere', ovH: 'Behandlungen', ovLead: 'Drei Schwerpunkte, ein Anspruch: natürliche, typgerechte Ergebnisse. Wählen Sie direkt – oder finden Sie in 30 Sekunden heraus, was zu Ihnen passt.',
     forYou: 'Ist das für Sie?', how: 'So läuft es ab', glance: 'Auf einen Blick', prices: 'Preise', priceSub: 'Transparent und ohne versteckte Kosten.', consult: 'Beratung vor oder während der Behandlung kostenlos · als separater Termin CHF 50.',
@@ -45,7 +45,7 @@ const TP = {
    
   },
   en: {
-    home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', reqH: 'Your personal price', reqP: 'The price depends on the area, your starting point and the number of sessions. Send us a short message – a photo helps – and you will get an honest assessment and your price, usually the same day.', reqWa: 'Ask for a price on WhatsApp', reqBook: 'Book a consultation', reqMsg: (n) => `Hello Liya, roughly how much would ${n} cost for me?`, more: 'Learn more', cardMore: 'View treatments', catH: 'Choose your treatment', catOther: 'Other areas', contraQ: 'When is the treatment not suitable?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} With prices, since 2009.`,
+    home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', reqH: 'Your personal price', reqP: 'The price depends on the area, your starting point and the number of sessions. Send us a short message – a photo helps – and you will get an honest assessment and your price, usually the same day.', reqWa: 'Ask for a price on WhatsApp', reqBook: 'Book a consultation', reqMsg: (n) => `Hello Liya, roughly how much would ${n} cost for me?`, more: 'Learn more', cardMore: 'View treatments', catH: 'Choose your treatment', catOther: 'Other areas', contraQ: 'When is the treatment not suitable?', catTitle: (c) => `${c.name} in Olten – Treatments | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. All treatments with prices – since 2009.`,
     ovTitle: 'Treatments in Olten – anti-age, device-based treatments & skin care | Liyas Lounge', ovDesc: 'All treatments at Liyas Lounge in Olten: fillers, wrinkle treatment, HIFU, radiofrequency, Morpheus8, mesotherapy & more – with prices.',
     ovScript: 'Our', ovH: 'Treatments', ovLead: 'Three specialities, one standard: natural results that suit you. Choose directly – or find out in 30 seconds what suits you.',
     forYou: 'Is this for you?', how: 'How it works', glance: 'At a glance', prices: 'Prices', priceSub: 'Transparent, with no hidden costs.', consult: 'Consultation free before or during your treatment · CHF 50 as a separate appointment.',
@@ -58,7 +58,7 @@ const TP = {
    
   },
   fr: {
-    home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', reqH: 'Votre prix personnel', reqP: 'Le prix dépend de la zone, de votre situation de départ et du nombre de séances. Écrivez-nous brièvement – une photo aide – et vous recevrez une évaluation honnête et votre prix, généralement le jour même.', reqWa: 'Demander le prix sur WhatsApp', reqBook: 'Réserver une consultation', reqMsg: (n) => `Bonjour Liya, combien coûterait environ ${n} pour moi ?`, more: 'En savoir plus', cardMore: 'Voir les traitements', catH: 'Choisissez votre traitement', catOther: 'Autres domaines', contraQ: 'Quand le traitement n’est-il pas indiqué ?', catTitle: (c) => `${c.name} à Olten | Liyas Lounge`, catDesc: (c) => `${c.name} à Olten : ${c.short}. ${c.text} Avec les prix, depuis 2009.`,
+    home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', reqH: 'Votre prix personnel', reqP: 'Le prix dépend de la zone, de votre situation de départ et du nombre de séances. Écrivez-nous brièvement – une photo aide – et vous recevrez une évaluation honnête et votre prix, généralement le jour même.', reqWa: 'Demander le prix sur WhatsApp', reqBook: 'Réserver une consultation', reqMsg: (n) => `Bonjour Liya, combien coûterait environ ${n} pour moi ?`, more: 'En savoir plus', cardMore: 'Voir les traitements', catH: 'Choisissez votre traitement', catOther: 'Autres domaines', contraQ: 'Quand le traitement n’est-il pas indiqué ?', catTitle: (c) => `${c.name} à Olten – Traitements | Liyas Lounge`, catDesc: (c) => `${c.name} à Olten : ${c.short}. Tous les traitements et prix.`,
     ovTitle: 'Traitements à Olten – anti-âge, cosmétique appareillée & skin care | Liyas Lounge', ovDesc: 'Tous les traitements de Liyas Lounge à Olten : fillers, traitement des rides, HIFU, radiofréquence, Morpheus8, mésothérapie & plus – avec les prix.',
     ovScript: 'Nos', ovH: 'Traitements', ovLead: 'Trois spécialités, une exigence : des résultats naturels, adaptés à vous. Choisissez directement – ou découvrez en 30 secondes ce qui vous convient.',
     forYou: 'Est-ce pour vous ?', how: 'Le déroulement', glance: 'En un coup d’œil', prices: 'Prix', priceSub: 'Transparents et sans frais cachés.', consult: 'Consultation gratuite avant ou pendant le traitement · CHF 50 en rendez-vous séparé.',
@@ -84,8 +84,8 @@ const IG = '@' + SITE.instagram.replace(/\/+$/, '').split('/').pop();
 const T = {
   de: {
     lang: 'de-CH', path: '/', ogLocale: 'de_CH',
-    title: 'Liyas Lounge Olten – Anti-Age, Face Balancing & apparative Kosmetik',
-    desc: 'Liyas Lounge in Olten: Anti-Age, Face Balancing, apparative Kosmetik & Skin Care – Filler, Faltenbehandlung, HIFU, Morpheus8, Mesotherapie & mehr. Seit 2009, Beratung in 6 Sprachen.',
+    title: 'Liyas Lounge Olten – Anti-Age, Filler & apparative Kosmetik',
+    desc: 'Medical Aesthetic in Olten: Filler, Faltenbehandlung, HIFU, Morpheus8 & Mesotherapie – natürlich, ehrlich beraten. Seit 2009, Beratung in 6 Sprachen.',
     nav: [['expertin', 'Über uns'], ['behandlungen', 'Behandlungen'], ['bewertungen', 'Bewertungen'], ['faq', 'FAQ'], ['kontakt', 'Kontakt']],
     cta: 'Termin buchen', book: 'Termin online buchen', bookNote: 'online, rund um die Uhr', menu: 'Menü', skip: 'Zum Inhalt',
     wa: 'Hallo Liyas Lounge, ich interessiere mich für eine Behandlung und hätte gerne eine Beratung.',
@@ -111,7 +111,7 @@ const T = {
     },
     faqScript: 'Häufige', faqH: 'Fragen', faq: HOME_FAQ.slice(0, 7),
     ctScript: 'Ihr Termin.', ctH: 'Ihre Zeit.', ctP: 'Buchen Sie Ihren Termin direkt online oder schreiben Sie uns per WhatsApp – gerne mit Foto und Ihren Wünschen. Wir beraten Sie persönlich und ehrlich, in 6 Sprachen.',
-    ctBtn: 'Per WhatsApp schreiben', bookLbl: 'Online-Buchung', bk: { title: 'Termin buchen | Liyas Lounge Olten', desc: 'Termin bei Liyas Lounge in Olten online buchen – Behandlung und Zeit wählen, sofort bestätigt.', script: 'Ihr Termin', h: 'Online buchen', lead: 'Wählen Sie Behandlung, Tag und Uhrzeit – Sie erhalten sofort eine Bestätigung.', notes: ['Beratung vor oder während der Behandlung kostenlos – als separater Termin CHF 50', 'Absagen bitte bis 24 Stunden vorher', 'Hammerallee 23, 4600 Olten · 1. Untergeschoss'], loading: 'Kalender wird geladen …', fail: 'Der Kalender konnte nicht geladen werden.', open: 'Termin auf SimplyBook öffnen', q: 'Fragen vorab? Schreiben Sie uns gerne per WhatsApp.' }, floor: '1. Untergeschoss · Klingel «Liyas Lounge & Lala Lashes»', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
+    ctBtn: 'Per WhatsApp schreiben', bookLbl: 'Online-Buchung', bk: { priv: 'Der Kalender wird von SimplyBook.me bereitgestellt; dabei können technisch notwendige Cookies gesetzt werden.', privLink: 'Datenschutz', title: 'Termin buchen | Liyas Lounge Olten', desc: 'Termin bei Liyas Lounge in Olten online buchen – Behandlung und Zeit wählen, sofort bestätigt.', script: 'Ihr Termin', h: 'Online buchen', lead: 'Wählen Sie Behandlung, Tag und Uhrzeit – Sie erhalten sofort eine Bestätigung.', notes: ['Beratung vor oder während der Behandlung kostenlos – als separater Termin CHF 50', 'Absagen bitte bis 24 Stunden vorher', 'Hammerallee 23, 4600 Olten · 1. Untergeschoss'], loading: 'Kalender wird geladen …', fail: 'Der Kalender konnte nicht geladen werden.', open: 'Termin auf SimplyBook öffnen', q: 'Fragen vorab? Schreiben Sie uns gerne per WhatsApp.' }, floor: '1. Untergeschoss · Klingel «Liyas Lounge & Lala Lashes»', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
     hoursTxt: `${SITE.hours.map((h) => `${h.de} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.de}`,
     legal: [['/agb', 'AGB'], ['/datenschutz', 'Datenschutz'], ['/impressum', 'Impressum']], rights: 'Alle Rechte vorbehalten.',
     cats: CATEGORIES, reviews: REVIEWS.map((r) => ({ ...r })), langAria: 'Sprache wählen', prev: 'Vorherige Bewertung', next: 'Nächste Bewertung',
@@ -119,8 +119,8 @@ const T = {
   },
   en: {
     lang: 'en', path: '/en', ogLocale: 'en_GB',
-    title: 'Liyas Lounge Olten – Anti-Age, Face Balancing & Device-based Treatments',
-    desc: 'Liyas Lounge in Olten: anti-age, face balancing, device-based treatments & skin care – fillers, wrinkle treatment, HIFU, Morpheus8, mesotherapy & more. Since 2009, advice in 6 languages.',
+    title: 'Liyas Lounge Olten – Anti-Age, Fillers & Skin Tightening',
+    desc: 'Medical aesthetics in Olten: fillers, wrinkle treatment, HIFU, Morpheus8 & mesotherapy – natural results, honest advice. Since 2009, in 6 languages.',
     nav: [['expertin', 'About'], ['behandlungen', 'Treatments'], ['bewertungen', 'Reviews'], ['faq', 'FAQ'], ['kontakt', 'Contact']],
     cta: 'Book now', book: 'Book online', bookNote: 'online, around the clock', menu: 'Menu', skip: 'Skip to content',
     wa: 'Hello Liyas Lounge, I am interested in a treatment and would like a consultation.',
@@ -146,7 +146,7 @@ const T = {
     },
     faqScript: 'Frequently', faqH: 'Asked', faq: EN_HOME_FAQ.slice(0, 7),
     ctScript: 'Your appointment.', ctH: 'Your time.', ctP: 'Book your appointment online or send us a WhatsApp message – photos and wishes welcome. We advise you personally and honestly, in 6 languages.',
-    ctBtn: 'Message us on WhatsApp', bookLbl: 'Online booking', bk: { title: 'Book an appointment | Liyas Lounge Olten', desc: 'Book your appointment at Liyas Lounge in Olten online – choose treatment and time, confirmed instantly.', script: 'Your appointment', h: 'Book online', lead: 'Choose your treatment, day and time – you will receive a confirmation straight away.', notes: ['Consultation free before or during your treatment – CHF 50 as a separate appointment', 'Please cancel at least 24 hours in advance', 'Hammerallee 23, 4600 Olten · first lower floor'], loading: 'Loading calendar …', fail: 'The calendar could not be loaded.', open: 'Open booking on SimplyBook', q: 'Questions beforehand? Message us on WhatsApp.' }, floor: 'First lower floor · bell “Liyas Lounge & Lala Lashes”', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
+    ctBtn: 'Message us on WhatsApp', bookLbl: 'Online booking', bk: { priv: 'The calendar is provided by SimplyBook.me, which may set technically necessary cookies.', privLink: 'Privacy policy (German)', title: 'Book an appointment | Liyas Lounge Olten', desc: 'Book your appointment at Liyas Lounge in Olten online – choose treatment and time, confirmed instantly.', script: 'Your appointment', h: 'Book online', lead: 'Choose your treatment, day and time – you will receive a confirmation straight away.', notes: ['Consultation free before or during your treatment – CHF 50 as a separate appointment', 'Please cancel at least 24 hours in advance', 'Hammerallee 23, 4600 Olten · first lower floor'], loading: 'Loading calendar …', fail: 'The calendar could not be loaded.', open: 'Open booking on SimplyBook', q: 'Questions beforehand? Message us on WhatsApp.' }, floor: 'First lower floor · bell “Liyas Lounge & Lala Lashes”', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
     hoursTxt: `${SITE.hours.map((h) => `${h.en} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.en}`,
     legal: [['/agb', 'Terms (DE)'], ['/datenschutz', 'Privacy (DE)'], ['/impressum', 'Legal notice (DE)']], rights: 'All rights reserved.',
     cats: CATEGORIES.map((c) => ({ ...c, ...EN_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: EN_REVIEW_TAGS[i], text: EN_REVIEW_TEXTS[i] || r.text })), langAria: 'Choose language', prev: 'Previous review', next: 'Next review',
@@ -154,8 +154,8 @@ const T = {
   },
   fr: {
     lang: 'fr', path: '/fr', ogLocale: 'fr_CH',
-    title: 'Liyas Lounge Olten – Anti-âge, Face Balancing & cosmétique appareillée',
-    desc: 'Liyas Lounge à Olten : anti-âge, face balancing, cosmétique appareillée & skin care – fillers, traitement des rides, HIFU, Morpheus8, mésothérapie & plus. Depuis 2009, conseils en 6 langues.',
+    title: 'Liyas Lounge Olten – Anti-âge, fillers & raffermissement',
+    desc: 'Médecine esthétique à Olten : fillers, rides, HIFU, Morpheus8 & mésothérapie – naturel, conseils honnêtes. Depuis 2009, en 6 langues.',
     nav: [['expertin', 'À propos'], ['behandlungen', 'Traitements'], ['bewertungen', 'Avis'], ['faq', 'FAQ'], ['kontakt', 'Contact']],
     cta: 'Réserver', book: 'Réserver en ligne', bookNote: 'en ligne, 24 h/24', menu: 'Menu', skip: 'Aller au contenu',
     wa: 'Bonjour Liyas Lounge, je suis intéressée par un traitement et j’aimerais une consultation.',
@@ -181,7 +181,7 @@ const T = {
     },
     faqScript: 'Questions', faqH: 'Fréquentes', faq: FR_HOME_FAQ.slice(0, 7),
     ctScript: 'Votre rendez-vous.', ctH: 'Votre temps.', ctP: 'Réservez votre rendez-vous en ligne ou écrivez-nous sur WhatsApp – avec une photo et vos souhaits si vous le voulez. Nous vous conseillons personnellement et honnêtement, en 6 langues.',
-    ctBtn: 'Écrire sur WhatsApp', bookLbl: 'Réservation en ligne', bk: { title: 'Prendre rendez-vous | Liyas Lounge Olten', desc: 'Réservez votre rendez-vous chez Liyas Lounge à Olten en ligne – choisissez le traitement et l’heure, confirmation immédiate.', script: 'Votre rendez-vous', h: 'Réserver en ligne', lead: 'Choisissez le traitement, le jour et l’heure – vous recevez immédiatement une confirmation.', notes: ['Consultation gratuite avant ou pendant le traitement – CHF 50 en rendez-vous séparé', 'Merci d’annuler au moins 24 heures à l’avance', 'Hammerallee 23, 4600 Olten · 1er sous-sol'], loading: 'Chargement du calendrier …', fail: 'Le calendrier n’a pas pu être chargé.', open: 'Ouvrir la réservation sur SimplyBook', q: 'Des questions avant ? Écrivez-nous sur WhatsApp.' }, floor: '1er sous-sol · sonnette « Liyas Lounge & Lala Lashes »', waNote: 'messages uniquement', addr: 'Adresse', hours: 'Horaires', route: 'Itinéraire', follow: 'Suivez-nous',
+    ctBtn: 'Écrire sur WhatsApp', bookLbl: 'Réservation en ligne', bk: { priv: 'Le calendrier est fourni par SimplyBook.me, qui peut déposer des cookies techniquement nécessaires.', privLink: 'Protection des données (allemand)', title: 'Prendre rendez-vous | Liyas Lounge Olten', desc: 'Réservez votre rendez-vous chez Liyas Lounge à Olten en ligne – choisissez le traitement et l’heure, confirmation immédiate.', script: 'Votre rendez-vous', h: 'Réserver en ligne', lead: 'Choisissez le traitement, le jour et l’heure – vous recevez immédiatement une confirmation.', notes: ['Consultation gratuite avant ou pendant le traitement – CHF 50 en rendez-vous séparé', 'Merci d’annuler au moins 24 heures à l’avance', 'Hammerallee 23, 4600 Olten · 1er sous-sol'], loading: 'Chargement du calendrier …', fail: 'Le calendrier n’a pas pu être chargé.', open: 'Ouvrir la réservation sur SimplyBook', q: 'Des questions avant ? Écrivez-nous sur WhatsApp.' }, floor: '1er sous-sol · sonnette « Liyas Lounge & Lala Lashes »', waNote: 'messages uniquement', addr: 'Adresse', hours: 'Horaires', route: 'Itinéraire', follow: 'Suivez-nous',
     hoursTxt: 'Lu–Ve 10:00–19:00 · Sa sur rendez-vous',
     legal: [['/agb', 'CGV (DE)'], ['/datenschutz', 'Confidentialité (DE)'], ['/impressum', 'Mentions légales (DE)']], rights: 'Tous droits réservés.',
     cats: CATEGORIES.map((c) => ({ ...c, ...FR_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: FR_REVIEW_TAGS[i], text: FR_REVIEW_TEXTS[i] || r.text })), langAria: 'Choisir la langue', prev: 'Avis précédent', next: 'Avis suivant',
@@ -233,7 +233,8 @@ function page(L, sub = null) {
     '@context': 'https://schema.org', '@type': ['BeautySalon', 'MedicalBusiness'], '@id': SITE.url + '/#business', name: SITE.name, description: t.desc, url: SITE.url + t.path,
     image: [SITE.url + '/assets/img/og-image.jpg'], address: { '@type': 'PostalAddress', streetAddress: SITE.street, postalCode: SITE.zip, addressLocality: SITE.city, addressRegion: 'SO', addressCountry: 'CH' },
     openingHoursSpecification: SITE.hours.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days.map((d) => 'https://schema.org/' + { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday' }[d]), opens: h.opens, closes: h.closes })),
-    sameAs: [SITE.instagram], priceRange: 'CHF 50 – CHF 1200', inLanguage: t.lang,
+    sameAs: [SITE.instagram, SITE.googleMaps], hasMap: SITE.googleMaps, telephone: SITE.phoneHref.replace('tel:', ''), logo: SITE.url + '/icon-512.png',
+    priceRange: 'CHF 50 – CHF 1200', currenciesAccepted: 'CHF', paymentAccepted: 'Cash, TWINT, Credit Card', areaServed: ['Olten', 'Kanton Solothurn', 'Aarau', 'Zofingen'], knowsLanguage: ['de', 'en', 'fr', 'it', 'ru', 'uk'], inLanguage: t.lang,
   };
   const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: t.lang, mainEntity: t.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 
@@ -445,6 +446,7 @@ for (const L of LANGS) {
     <div class="bk__fail" data-bk-fail hidden><p>${esc(k.fail)}</p><a class="btn btn--gold" href="${esc(SITE.booking)}" target="_blank" rel="noopener">${ico('cal')}<span>${esc(k.open)}</span></a></div>
   </div>
   <p class="bk__q">${esc(k.q)} <a href="${esc(`${SITE.whatsapp}?text=${encodeURIComponent(t.wa)}`)}" target="_blank" rel="noopener">WhatsApp ${ico('arrow')}</a></p>
+  <p class="bk__priv">${esc(k.priv)} <a href="/datenschutz">${esc(k.privLink)}</a></p>
 </section>
 <script src="https://widget.simplybook.it/v2/widget/widget.js" defer></script>
 <script>

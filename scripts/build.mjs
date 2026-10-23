@@ -1114,17 +1114,20 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
 <h2>1. Verantwortliche Stelle</h2>
 <p>Liyas Lounge<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}, Schweiz<br>E-Mail: ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}${isSet(SITE.phone) ? `<br>Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a>` : ''}</p>
 <h2>2. Besuch der Website</h2>
-<p>Beim Aufruf unserer Website werden durch unseren Hosting-Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles verarbeitet. Diese Daten dienen ausschliesslich dem sicheren und stabilen Betrieb der Website. [Hosting-Anbieter ergänzen, z. B. Vercel Inc., USA – dabei kann eine Übermittlung von Daten in die USA erfolgen, abgesichert durch geeignete Garantien wie Standardvertragsklauseln.]</p>
+<p>Beim Aufruf unserer Website werden durch unseren Hosting-Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles verarbeitet. Diese Daten dienen ausschliesslich dem sicheren und stabilen Betrieb der Website und werden nicht mit anderen Daten zusammengeführt.</p>
+<p>Unsere Website wird bei Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, USA) gehostet. Dabei können Daten auch in den USA bearbeitet werden. Die Übermittlung ist durch geeignete Garantien abgesichert (Swiss-U.S. Data Privacy Framework bzw. Standardvertragsklauseln).</p>
 <p>Wir verwenden keine Analyse-, Tracking- oder Marketing-Tools. Schriftarten werden lokal von unserem Server geladen – es findet keine Verbindung zu Google Fonts statt.</p>
 <h2>3. Cookies und lokale Speicherung</h2>
-<p>Unsere Website setzt keine Cookies und speichert keine Daten in Ihrem Browser.</p>
+<p>Unsere eigene Website setzt keine Cookies und verwendet keine Analyse- oder Werbe-Cookies. Für flüssige Seitenübergänge und den Sprachwechsel speichern wir einen kurzen technischen Vermerk im Sitzungsspeicher Ihres Browsers (sessionStorage). Er enthält keine Personendaten und wird beim Schliessen des Tabs automatisch gelöscht.</p>
+<p>Auf der Seite «Termin buchen» ist der Buchungskalender von SimplyBook.me eingebunden (siehe Ziffer 6). Beim Aufruf dieser Seite wird eine Verbindung zu SimplyBook.me hergestellt; dabei werden technisch notwendige Daten (z. B. IP-Adresse, Browsertyp) übermittelt, und SimplyBook.me kann für den Buchungsvorgang notwendige Cookies setzen. Sie können Cookies in den Einstellungen Ihres Browsers jederzeit löschen oder blockieren; die Online-Buchung funktioniert dann unter Umständen nicht, eine Terminvereinbarung per WhatsApp ist jederzeit möglich.</p>
 <h2>4. Kontaktaufnahme</h2>
 <p>Wenn Sie uns per E-Mail, Telefon oder WhatsApp kontaktieren, bearbeiten wir Ihre Angaben (z. B. Name, Telefonnummer, Nachricht) ausschliesslich zur Beantwortung Ihrer Anfrage und zur Terminvereinbarung. Bei Nutzung von WhatsApp gelten zusätzlich die Datenschutzbestimmungen von WhatsApp/Meta.</p>
 <h2>5. Google Maps</h2>
 <p>Wir verlinken auf unseren Eintrag bei Google Maps (Google Ireland Ltd. / Google LLC). Daten (insbesondere Ihre IP-Adresse) werden erst an Google übertragen, wenn Sie dem Link folgen, möglicherweise auch in die USA.</p>
-<h2>6. Messenger und Links</h2>
+<h2>6. Messenger, Links und Online-Buchung</h2>
 <p>Auf unserer Website verlinken wir auf WhatsApp (teilweise mit einem vorausgefüllten Nachrichtentext, den Sie vor dem Senden ändern können). Es handelt sich um einfache Links; Daten werden erst übertragen, wenn Sie den Links folgen.</p>
-<p>Für die Online-Terminbuchung verlinken wir auf SimplyBook.me (SimplyBook.me Ltd., Zypern). Wenn Sie dort einen Termin buchen, werden Ihre Angaben (z. B. Name, Kontaktdaten, gewünschte Behandlung und Termin) von SimplyBook.me in unserem Auftrag bearbeitet. Es gilt zusätzlich die Datenschutzerklärung von SimplyBook.me.</p>
+<p>Wir verlinken ausserdem auf unser Instagram-Profil (Meta Platforms Ireland Ltd.) und auf unseren Eintrag bei Google. Auch hier werden Daten erst übertragen, wenn Sie den Links folgen.</p>
+<p>Für die Online-Terminbuchung nutzen wir SimplyBook.me (SimplyBook.me Ltd., Zypern). Der Buchungskalender ist auf der Seite «Termin buchen» eingebunden und wird zudem verlinkt. Wenn Sie einen Termin buchen, werden Ihre Angaben (z. B. Name, Kontaktdaten, gewünschte Behandlung und Termin) von SimplyBook.me in unserem Auftrag bearbeitet. Es gilt zusätzlich die Datenschutzerklärung von SimplyBook.me (<a href="https://simplybook.me/de/policy" target="_blank" rel="noopener">simplybook.me/de/policy</a>).</p>
 <h2>7. Kundendaten &amp; Gesundheitsdaten</h2>
 <p>Im Rahmen von Beratungen und Behandlungen bearbeiten wir auch besonders schützenswerte Personendaten (Gesundheitsdaten), soweit dies für eine sichere Behandlung erforderlich ist. Diese Daten behandeln wir streng vertraulich und geben sie nicht ohne Ihre ausdrückliche Einwilligung an Dritte weiter, sofern keine gesetzliche Pflicht besteht.</p>
 <h2>8. Aufbewahrung</h2>
@@ -1145,6 +1148,8 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
 <p>Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Die Informationen auf dieser Website ersetzen keine persönliche Beratung. Ergebnisse von Behandlungen sind individuell und können nicht garantiert werden.</p>
 <h2>Haftung für Links</h2>
 <p>Verweise und Links auf Websites Dritter liegen ausserhalb unseres Verantwortungsbereichs. Für deren Inhalte sind ausschliesslich die jeweiligen Betreiber verantwortlich.</p>
+<h2>Bildnachweis</h2>
+<p>Fotos des Studios: Liyas Lounge. Einige Bilder auf dieser Website sind Symbolbilder (teilweise mit KI erstellt) und zeigen keine Behandlungsergebnisse.</p>
 <h2>Urheberrechte</h2>
 <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören der Liyas Lounge oder den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus einzuholen.</p>`);
 
