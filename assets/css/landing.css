@@ -723,3 +723,51 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 .tp-req h3 { margin: 12px 0 14px; font-family: var(--corm); font-weight: 300; font-size: clamp(1.8rem, 3.4vw, 2.6rem); letter-spacing: .06em; text-transform: uppercase; }
 .tp-req > p:not(.tp-req__k) { max-width: 520px; margin: 0 auto 26px; color: var(--txt2); font-size: .92rem; }
 .tp-req .tp-ctas { justify-content: center; margin: 0; }
+.bk__priv { max-width: 620px; margin: 14px auto 0; text-align: center; font-size: .72rem; color: var(--txt2); }
+.bk__priv a { color: var(--gold-l); border-bottom: 1px solid var(--hair); }
+/* ---------- Geräte: Smartphone quer (wenig Höhe) – Hero kompakt, alles Wichtige im ersten Bild ---------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .nav { height: 58px; }
+  .hero { min-height: 100svh; height: auto; }
+  .hero__in { gap: 10px; padding: 70px var(--gutter) 28px; }
+  .logo--hero .logo__main { font-size: clamp(2.2rem, 9vh, 3.2rem); }
+  .logo--hero .logo__script { font-size: clamp(1.6rem, 6.5vh, 2.3rem); }
+  .logo--hero .logo__tag { font-size: .5rem; }
+  .hero__slogan { font-size: 1.15rem; }
+  .hero__ctas { flex-direction: row; width: auto; margin-top: 2px; } .hero__ctas .btn { width: auto; min-height: 44px; }
+  .hero--tp .hero__in { gap: 8px; padding: 70px var(--gutter) 24px; }
+  .hero--tp .crumbs, .hero--tp .hero__sub { display: none; }
+  .hero--tp .tp-h1 { font-size: clamp(1.7rem, 8vh, 2.4rem); }
+  .hero--tp .tp-h1 em { margin-top: 4px; }
+  .hero--tp .hero__ctas { flex-direction: row; width: auto; } .hero--tp .hero__ctas .btn { width: auto; }
+  .hero__scroll { display: none; }
+}
+/* ---------- Grosse Bildschirme (2K / 4K): Schrift und Inhaltsbreite wachsen mit ---------- */
+@media (min-width: 1900px) { html { font-size: 112.5%; } body { font-size: 1.0625rem; } :root { --maxw: 1440px; } .nav { height: 88px; } }
+@media (min-width: 2400px) { html { font-size: 137.5%; } :root { --maxw: 1760px; } .nav { height: 104px; } }
+/* ---------- Mobile: grössere Navigation und Menü für den Daumen (rechte Hand) ---------- */
+@media (max-width: 1080px) {
+  .nav, .nav.is-solid { height: 72px; }
+  .nav__logo .logo--nav .logo__main { font-size: 1.3rem; }
+  .nav__logo .logo--nav .logo__script { font-size: 1.55rem; }
+  .burger { width: 52px; height: 52px; margin-right: -8px; }
+  .burger span { left: 12px; right: 12px; height: 2px; }
+  .burger span:first-child { top: 20px; } .burger span:last-child { top: 30px; }
+  .burger[aria-expanded="true"] span:first-child, .burger[aria-expanded="true"] span:last-child { top: 25px; }
+  .nav__end .lang { font-size: .7rem; letter-spacing: .12em; }
+  .nav__end .lang a { display: inline-flex; align-items: center; min-width: 40px; min-height: 44px; justify-content: center; padding: 0 6px; }
+  .nav__end .lang a::after { left: 10px; right: 10px; bottom: 8px; }
+  /* Menü: Einträge unten und rechtsbündig – dort, wo der rechte Daumen ist */
+  .menu { justify-content: flex-start; gap: 24px; padding: 96px var(--gutter) calc(28px + env(safe-area-inset-bottom)); }
+  .menu__nav { margin-top: auto; }
+  .menu__nav a { justify-content: flex-start; flex-direction: row-reverse; gap: 16px; min-height: 64px; align-items: center; padding: 6px 0; font-size: clamp(1.8rem, 9vw, 2.9rem); text-align: right; }
+  .menu__foot .lang { display: none; }
+  .menu__foot { justify-items: stretch; gap: 16px; }
+  .menu__foot .btn { width: 100%; min-height: 58px; font-size: .78rem; }
+}
+@media (max-width: 360px) {
+  .nav__logo .logo--nav .logo__main { font-size: 1.12rem; }
+  .nav__logo .logo--nav .logo__script { font-size: 1.35rem; }
+  .nav__end .lang a { min-width: 34px; padding: 0 3px; }
+}
+@media (max-height: 640px) and (max-width: 1080px) { .menu { gap: 16px; padding-top: 84px; } .menu__nav a { min-height: 54px; font-size: clamp(1.6rem, 8vw, 2.2rem); } }
