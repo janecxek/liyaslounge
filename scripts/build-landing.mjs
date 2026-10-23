@@ -32,7 +32,7 @@ const trFrom = (t) => { const ps = t.prices.filter((p) => p.price).map((p) => p.
 // Beschriftungen der Behandlungsseiten, des Mini-Checks und neuer Startseiten-Bausteine
 const TP = {
   de: {
-    home: 'Start', all: 'Behandlungen', from: 'ab', onReq: 'Preis auf Anfrage', more: 'Mehr erfahren', cardMore: 'Behandlungen ansehen', catH: 'Wählen Sie Ihre Behandlung', catOther: 'Weitere Bereiche', contraQ: 'Wann ist die Behandlung nicht geeignet?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} Mit Preisen, seit 2009.`,
+    home: 'Start', all: 'Behandlungen', from: 'ab', onReq: 'Preis auf Anfrage', reqH: 'Ihr persönlicher Preis', reqP: 'Der Preis hängt von Zone, Ausgangslage und Anzahl Sitzungen ab. Schreiben Sie uns kurz – gerne mit Foto –, und Sie erhalten eine ehrliche Einschätzung und Ihren Preis, meist noch am selben Tag.', reqWa: 'Preis per WhatsApp anfragen', reqBook: 'Beratung buchen', reqMsg: (n) => `Hallo Liya, was würde ${n} bei mir ungefähr kosten?`, more: 'Mehr erfahren', cardMore: 'Behandlungen ansehen', catH: 'Wählen Sie Ihre Behandlung', catOther: 'Weitere Bereiche', contraQ: 'Wann ist die Behandlung nicht geeignet?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} Mit Preisen, seit 2009.`,
     ovTitle: 'Behandlungen in Olten – Anti-Age, apparative Kosmetik & Skin Care | Liyas Lounge', ovDesc: 'Alle Behandlungen der Liyas Lounge in Olten: Filler, Faltenbehandlung, HIFU, Radiofrequenz, Morpheus8, Mesotherapie & mehr – mit Preisen.',
     ovScript: 'Unsere', ovH: 'Behandlungen', ovLead: 'Drei Schwerpunkte, ein Anspruch: natürliche, typgerechte Ergebnisse. Wählen Sie direkt – oder finden Sie in 30 Sekunden heraus, was zu Ihnen passt.',
     forYou: 'Ist das für Sie?', how: 'So läuft es ab', glance: 'Auf einen Blick', prices: 'Preise', priceSub: 'Transparent und ohne versteckte Kosten.', consult: 'Beratung vor oder während der Behandlung kostenlos · als separater Termin CHF 50.',
@@ -45,7 +45,7 @@ const TP = {
    
   },
   en: {
-    home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', more: 'Learn more', cardMore: 'View treatments', catH: 'Choose your treatment', catOther: 'Other areas', contraQ: 'When is the treatment not suitable?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} With prices, since 2009.`,
+    home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', reqH: 'Your personal price', reqP: 'The price depends on the area, your starting point and the number of sessions. Send us a short message – a photo helps – and you will get an honest assessment and your price, usually the same day.', reqWa: 'Ask for a price on WhatsApp', reqBook: 'Book a consultation', reqMsg: (n) => `Hello Liya, roughly how much would ${n} cost for me?`, more: 'Learn more', cardMore: 'View treatments', catH: 'Choose your treatment', catOther: 'Other areas', contraQ: 'When is the treatment not suitable?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} With prices, since 2009.`,
     ovTitle: 'Treatments in Olten – anti-age, device-based treatments & skin care | Liyas Lounge', ovDesc: 'All treatments at Liyas Lounge in Olten: fillers, wrinkle treatment, HIFU, radiofrequency, Morpheus8, mesotherapy & more – with prices.',
     ovScript: 'Our', ovH: 'Treatments', ovLead: 'Three specialities, one standard: natural results that suit you. Choose directly – or find out in 30 seconds what suits you.',
     forYou: 'Is this for you?', how: 'How it works', glance: 'At a glance', prices: 'Prices', priceSub: 'Transparent, with no hidden costs.', consult: 'Consultation free before or during your treatment · CHF 50 as a separate appointment.',
@@ -58,7 +58,7 @@ const TP = {
    
   },
   fr: {
-    home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', more: 'En savoir plus', cardMore: 'Voir les traitements', catH: 'Choisissez votre traitement', catOther: 'Autres domaines', contraQ: 'Quand le traitement n’est-il pas indiqué ?', catTitle: (c) => `${c.name} à Olten | Liyas Lounge`, catDesc: (c) => `${c.name} à Olten : ${c.short}. ${c.text} Avec les prix, depuis 2009.`,
+    home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', reqH: 'Votre prix personnel', reqP: 'Le prix dépend de la zone, de votre situation de départ et du nombre de séances. Écrivez-nous brièvement – une photo aide – et vous recevrez une évaluation honnête et votre prix, généralement le jour même.', reqWa: 'Demander le prix sur WhatsApp', reqBook: 'Réserver une consultation', reqMsg: (n) => `Bonjour Liya, combien coûterait environ ${n} pour moi ?`, more: 'En savoir plus', cardMore: 'Voir les traitements', catH: 'Choisissez votre traitement', catOther: 'Autres domaines', contraQ: 'Quand le traitement n’est-il pas indiqué ?', catTitle: (c) => `${c.name} à Olten | Liyas Lounge`, catDesc: (c) => `${c.name} à Olten : ${c.short}. ${c.text} Avec les prix, depuis 2009.`,
     ovTitle: 'Traitements à Olten – anti-âge, cosmétique appareillée & skin care | Liyas Lounge', ovDesc: 'Tous les traitements de Liyas Lounge à Olten : fillers, traitement des rides, HIFU, radiofréquence, Morpheus8, mésothérapie & plus – avec les prix.',
     ovScript: 'Nos', ovH: 'Traitements', ovLead: 'Trois spécialités, une exigence : des résultats naturels, adaptés à vous. Choisissez directement – ou découvrez en 30 secondes ce qui vous convient.',
     forYou: 'Est-ce pour vous ?', how: 'Le déroulement', glance: 'En un coup d’œil', prices: 'Prix', priceSub: 'Transparents et sans frais cachés.', consult: 'Consultation gratuite avant ou pendant le traitement · CHF 50 en rendez-vous séparé.',
@@ -549,7 +549,7 @@ ${ctaBand(L, t.wa)}`;
 <section class="tp-sec tex tex--read" id="preise">
   <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.prices)}</h2></header>
   ${x.prices.length ? `<ul class="tp-prices" data-up>${x.prices.map((pr) => `<li${pr.featured ? ' class="is-top"' : ''}><span class="tp-prices__n"><b>${esc(pr.name)}</b>${pr.detail ? `<small>${esc(pr.detail)}</small>` : ''}${pr.desc ? `<em>${esc(pr.desc)}</em>` : ''}</span><span class="tp-prices__p">${esc(fmtPrice(pr))}</span></li>`).join('')}</ul>` : ''}
-  ${x.priceNote ? `<p class="tp-note tp-note--box" data-up>${esc(x.priceNote)}</p>` : ''}
+  ${x.prices.length ? (x.priceNote ? `<p class="tp-note tp-note--box" data-up>${esc(x.priceNote)}</p>` : '') : `<div class="tp-req" data-up><p class="tp-req__k">${esc(p.onReq)}</p><h3>${esc(p.reqH)}</h3><p>${esc(p.reqP)}</p><div class="tp-ctas"><a class="btn btn--gold" href="${wa(p.reqMsg(x.name))}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(p.reqWa)}</span></a><a class="btn btn--line" href="${BOOK_PATH[L]}">${ico('cal')}<span>${esc(p.reqBook)}</span></a></div></div>`}
   <p class="tp-note">${esc(p.consult)}</p>
 </section>
 <section class="tp-sec">
