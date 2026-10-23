@@ -757,10 +757,10 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
   .nav__end .lang { font-size: .7rem; letter-spacing: .12em; }
   .nav__end .lang a { display: inline-flex; align-items: center; min-width: 40px; min-height: 44px; justify-content: center; padding: 0 6px; }
   .nav__end .lang a::after { left: 10px; right: 10px; bottom: 8px; }
-  /* Menü: Einträge unten und rechtsbündig – dort, wo der rechte Daumen ist */
+  /* Menü: Einträge im unteren Bereich – gut mit dem Daumen erreichbar */
   .menu { justify-content: flex-start; gap: 24px; padding: 96px var(--gutter) calc(28px + env(safe-area-inset-bottom)); }
   .menu__nav { margin-top: auto; }
-  .menu__nav a { justify-content: flex-start; flex-direction: row-reverse; gap: 16px; min-height: 64px; align-items: center; padding: 6px 0; font-size: clamp(1.8rem, 9vw, 2.9rem); text-align: right; }
+  .menu__nav a { justify-content: flex-start; gap: 16px; min-height: 64px; align-items: center; padding: 6px 0; font-size: clamp(1.8rem, 9vw, 2.9rem); }
   .menu__foot .lang { display: none; }
   .menu__foot { justify-items: stretch; gap: 16px; }
   .menu__foot .btn { width: 100%; min-height: 58px; font-size: .78rem; }
