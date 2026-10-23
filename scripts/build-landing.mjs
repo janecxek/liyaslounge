@@ -284,8 +284,7 @@ function page(L, sub = null) {
       <div class="tr__head">${head(t.trScript, t.trH, 'sh--center')}<p class="tr__lead">${esc(t.trLead)}</p></div>
       <ul class="tr__cats">${t.cats.map((c, i) => `<li style="--i:${i}"><a href="${catUrl(L, c.id)}">
         ${pic(c.image, c.name, { sizes: '(max-width: 900px) 92vw, 33vw' })}
-        <span class="tr__num">0${i + 1}</span>
-        <span class="tr__txt"><b>${esc(c.name)}</b><em>${esc(c.claim || '')}</em><small>${esc(c.short)}</small><span class="tr__from">${t.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${TP[L].cardMore} ${ico('arrow')}</span></span>
+        <span class="tr__txt"><b>${esc(c.name)}</b><small>${esc(c.short)}</small><span class="tr__ask">${TP[L].cardMore} ${ico('arrow')}</span></span>
       </a></li>`).join('')}</ul>
     </div>
   </div>
