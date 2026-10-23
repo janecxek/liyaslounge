@@ -29,7 +29,6 @@ const CAT_SLUG = { antiage: { de: 'anti-age', en: 'anti-age', fr: 'anti-age' }, 
 const CAT_HERO = { antiage: 'tr-faltenbehandlung-olten', apparativ: 'tr-hifu-olten', skin: 'tr-mesotherapie-olten' };
 const catUrl = (L, id) => `${TR_BASE[L]}/${CAT_SLUG[id][L]}`;
 const trFrom = (t) => { const ps = t.prices.filter((p) => p.price).map((p) => p.price); return ps.length ? Math.min(...ps) : null; };
-const GALLERY = ['studio-empfang-olten', 'studio-wand-liyas-lounge', 'studio-lounge-olten', 'studio-behandlung-olten', 'studio-raum-olten', 'studio-eingang-hammerallee']; // Hoch, Quer, Hoch · Hoch, Quer, Hoch
 // Beschriftungen der Behandlungsseiten, des Mini-Checks und neuer Startseiten-Bausteine
 const TP = {
   de: {
@@ -43,7 +42,7 @@ const TP = {
     trustS: (r, n) => [`${r} · ${n} Google`, 'Seit 2009', 'Heilpraktikerin', '6 Sprachen'],
     waTr: (n) => `Hallo Liya, ich interessiere mich für ${n} und habe eine Frage:`,
     quote: 'Ich sehe Schönheit mit den Augen einer Künstlerin. Mein Ziel ist, dass Sie strahlen – nicht, dass man sieht, dass Sie etwas gemacht haben.', quoteBy: 'Liya, Inhaberin',
-    galH: 'Einblicke ins Studio', galAlt: ['Empfang mit «Medical Aesthetic & Beauty»', 'Wand mit goldenen Buchstaben «Liyas Lounge»', 'Lounge mit Kronleuchter', 'Behandlungsliege', 'Behandlungsraum', 'Eingang an der Hammerallee 23'],
+   
   },
   en: {
     home: 'Home', all: 'Treatments', from: 'from', onReq: 'Price on request', more: 'Learn more', cardMore: 'View treatments', catH: 'Choose your treatment', catOther: 'Other areas', contraQ: 'When is the treatment not suitable?', catTitle: (c) => `${c.name} in Olten | Liyas Lounge`, catDesc: (c) => `${c.name} in Olten: ${c.short}. ${c.text} With prices, since 2009.`,
@@ -56,7 +55,7 @@ const TP = {
     trustS: (r, n) => [`${r} · ${n} Google`, 'Since 2009', 'Naturopath', '6 languages'],
     waTr: (n) => `Hello Liya, I am interested in ${n} and have a question:`,
     quote: 'I see beauty through an artist’s eyes. My aim is for you to shine – not for anyone to see that you have had something done.', quoteBy: 'Liya, owner',
-    galH: 'Inside the studio', galAlt: ['Reception with “Medical Aesthetic & Beauty”', 'Wall with gold letters “Liyas Lounge”', 'Lounge with chandelier', 'Treatment bed', 'Treatment room', 'Entrance at Hammerallee 23'],
+   
   },
   fr: {
     home: 'Accueil', all: 'Traitements', from: 'dès', onReq: 'Prix sur demande', more: 'En savoir plus', cardMore: 'Voir les traitements', catH: 'Choisissez votre traitement', catOther: 'Autres domaines', contraQ: 'Quand le traitement n’est-il pas indiqué ?', catTitle: (c) => `${c.name} à Olten | Liyas Lounge`, catDesc: (c) => `${c.name} à Olten : ${c.short}. ${c.text} Avec les prix, depuis 2009.`,
@@ -69,7 +68,7 @@ const TP = {
     trustS: (r, n) => [`${r} · ${n} Google`, 'Depuis 2009', 'Naturopathe', '6 langues'],
     waTr: (n) => `Bonjour Liya, je suis intéressée par ${n} et j’ai une question :`,
     quote: 'Je vois la beauté avec des yeux d’artiste. Mon objectif : que vous rayonniez – pas que l’on voie que vous avez fait quelque chose.', quoteBy: 'Liya, propriétaire',
-    galH: 'Aperçu du studio', galAlt: ['Accueil « Medical Aesthetic & Beauty »', 'Mur aux lettres dorées « Liyas Lounge »', 'Lounge avec lustre', 'Table de soin', 'Salle de soin', 'Entrée Hammerallee 23'],
+   
   },
 };
 const IMG = JSON.parse(readFileSync(join(ROOT, 'scripts/imgmeta.json'), 'utf8'));
@@ -285,23 +284,22 @@ function page(L, sub = null) {
       <div class="tr__head">${head(t.trScript, t.trH, 'sh--center')}<p class="tr__lead">${esc(t.trLead)}</p></div>
       <ul class="tr__cats">${t.cats.map((c, i) => `<li style="--i:${i}"><a href="${catUrl(L, c.id)}">
         ${pic(c.image, c.name, { sizes: '(max-width: 900px) 92vw, 33vw' })}
-        <span class="tr__num">0${i + 1}</span>
-        <span class="tr__txt"><b>${esc(c.name)}</b><em>${esc(c.claim || '')}</em><small>${esc(c.short)}</small><span class="tr__from">${t.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${TP[L].cardMore} ${ico('arrow')}</span></span>
+        <span class="tr__txt"><b>${esc(c.name)}</b><small>${esc(c.short)}</small><span class="tr__ask">${TP[L].cardMore} ${ico('arrow')}</span></span>
       </a></li>`).join('')}</ul>
     </div>
   </div>
 </section>
 
+<div class="vr">
+<div class="vr__bg" aria-hidden="true">${pic('studio-raum-olten', '', { sizes: '100vw', pos: '50% 50%' })}</div>
 <section class="visit">
-  <div class="visit__bg" aria-hidden="true">${pic('studio-raum-olten', '', { sizes: '100vw', pos: '50% 55%' })}</div>
   <div class="visit__in">
     ${head(t.visScript, t.visH)}
     <ul class="pol">${t.policies.map(([a, b], i) => `<li data-up style="--d:${(i % 3) * .07}s"><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
-    <div class="gal" data-up><h3>${esc(TP[L].galH)}</h3><ul class="gal__list">${GALLERY.map((g, i) => `<li class="gal__it gal__it--${IMG[g].w > IMG[g].h ? 'w' : 't'}">${pic(g, TP[L].galAlt[i], { sizes: IMG[g].w > IMG[g].h ? '(max-width: 640px) 90vw, 560px' : '(max-width: 640px) 70vw, 280px' })}</li>`).join('')}</ul></div>
   </div>
 </section>
 
-<section class="rev tex" id="bewertungen">
+<section class="rev" id="bewertungen">
   ${head(t.revScript, t.revH)}
   <a class="rev__score" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><b>${rating}</b>${stars(t.stars)}<span>${SITE.googleReviewCount} Google</span></a>
   <div class="rs" data-slider data-up>
@@ -310,6 +308,7 @@ function page(L, sub = null) {
   </div>
   <a class="btn btn--line" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><span>${t.revG}</span>${ico('arrow')}</a>
 </section>
+</div>
 
 <section class="faq" id="faq">
   ${head(t.faqScript, t.faqH)}
