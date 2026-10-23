@@ -258,7 +258,6 @@ function page(L, sub = null) {
     <h1 class="hero__logo" data-in>${logo('logo--hero')}<span class="sr">Liyas Lounge – ${esc(t.tagline)}</span></h1>
     <p class="hero__slogan" data-in style="--d:.35s">${esc(t.slogan[0])} <em>${esc(t.slogan[1])}</em></p>
     <div class="hero__ctas" data-in style="--d:.5s"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line" href="#behandlungen"><span>${t.heroBtn2}</span></a></div>
-    <p class="micro" data-in style="--d:.58s">${ico('check')}${esc(TP[L].micro)}</p>
     ${heroTrust(L, ' data-in style="--d:.65s"')}
   </div>
   <a class="hero__scroll" href="#expertin" aria-label="${t.scroll}"><span>${t.scroll}</span><i></i></a>
@@ -488,7 +487,7 @@ const trAlt = (sl) => Object.fromEntries(LANGS.map((k) => [k, trUrl(k, sl)]));
 const crumbs = (L, items) => `<nav class="crumbs" aria-label="Breadcrumb"><ol>${items.map(([h, l], i) => `<li>${i < items.length - 1 ? `<a href="${h}">${esc(l)}</a>` : `<span aria-current="page">${esc(l)}</span>`}</li>`).join('')}</ol></nav>`;
 const crumbSchema = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map(([h, l], i) => ({ '@type': 'ListItem', position: i + 1, name: l, item: SITE.url + h })) });
 const ctaBand = (L, waText) => { const p = TP[L]; return `
-<section class="tp-cta tex" id="kontakt">
+<section class="tp-cta" id="kontakt">
   <header class="sh"><p class="sh__script">${esc(p.ctaScript)}</p><h2 class="sh__h">${esc(p.ctaH)}</h2></header>
   <p class="lead">${esc(p.ctaP)}</p>
   <div class="tp-ctas"><a class="btn btn--gold btn--lg" href="${BOOK_PATH[L]}">${ico('cal')}<span>${T[L].book}</span></a><a class="btn btn--line btn--lg" href="${wa(waText)}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(p.ask)}</span></a></div>
@@ -510,8 +509,8 @@ const tpHero = (L, { img, alt, items, h1, sub, from, ctas }) => `
 
 for (const L of LANGS) {
   const t = T[L], p = TP[L], catName = Object.fromEntries(t.cats.map((c) => [c.id, c]));
-  const tile = (sl) => { const x = trData(L, sl), f = trFrom(x); return `<li><a class="tp-tile" href="${trUrl(L, sl)}">${pic(x.image, x.name, { sizes: '(max-width: 640px) 520px, 600px' })}<span class="tp-tile__txt"><b>${esc(x.name)}</b><small>${esc(x.card)}</small><span class="tp-tile__from">${f ? `${p.from} CHF ${f}` : p.onReq}</span><span class="tr__ask">${p.more} ${ico('arrow')}</span></span></a></li>`; };
-  const catTile = (c) => `<li><a class="tp-tile" href="${catUrl(L, c.id)}">${pic(c.image, c.name, { sizes: '(max-width: 640px) 92vw, 340px' })}<span class="tp-tile__txt"><b>${esc(c.name)}</b><small>${esc(c.short)}</small><span class="tp-tile__from">${p.from} CHF ${catFrom(c.id)}</span><span class="tr__ask">${p.cardMore} ${ico('arrow')}</span></span></a></li>`;
+  const tile = (sl) => { const x = trData(L, sl); return `<li><a class="tp-tile" href="${trUrl(L, sl)}">${pic(x.image, x.name, { sizes: '(max-width: 640px) 520px, 600px' })}<span class="tp-tile__txt"><b>${esc(x.name)}</b><small>${esc(x.card)}</small><span class="tr__ask">${p.more} ${ico('arrow')}</span></span></a></li>`; };
+  const catTile = (c) => `<li><a class="tp-tile" href="${catUrl(L, c.id)}">${pic(c.image, c.name, { sizes: '(max-width: 640px) 92vw, 340px' })}<span class="tp-tile__txt"><b>${esc(c.name)}</b><small>${esc(c.short)}</small><span class="tr__ask">${p.cardMore} ${ico('arrow')}</span></span></a></li>`;
   const bookBtn = `<a class="btn btn--gold" href="${BOOK_PATH[L]}">${ico('cal')}<span>${t.book}</span></a>`;
 
   // eine Seite pro Kategorie
@@ -543,7 +542,6 @@ ${ctaBand(L, t.wa)}`;
       [p.contraQ, `<ul class="tp-checks tp-checks--dot">${x.contra.items.map((i) => `<li><span>${esc(i)}</span></li>`).join('')}</ul>${x.contra.note ? `<p>${esc(x.contra.note)}</p>` : ''}`],
     ];
     const main = `${tpHero(L, { img: x.image, alt: x.imageAlt || x.name, items, h1: `${esc(x.h1)} <em>${esc(x.h1Accent)}</em>`, sub: x.lead, from: f ? `${p.from} <b>CHF ${f}</b>` : `<b>${esc(p.onReq)}</b>`, ctas: `${bookBtn}<a class="btn btn--line" href="${wa(p.waTr(x.name))}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(p.ask)}</span></a>` })}
-<ul class="tp-facts">${x.results.stats.map(([a, b]) => `<li><b>${esc(a)}</b><span>${esc(b)}</span></li>`).join('')}</ul>
 <section class="tp-sec tp-intro">
   <div data-up><header class="sh sh--left"><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.forYou)}</h2></header><p class="lead tp-intro__lead">${esc(x.intro)}</p></div>
   <div class="tp-card" data-up><h3>${esc(x.indications.title)}</h3><ul class="tp-checks">${x.indications.items.map((i) => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul></div>
