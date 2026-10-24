@@ -556,7 +556,7 @@ ${ctaBand(L, t.wa)}`;
 </section>
 <section class="tp-sec">
   <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.how)}</h2></header>
-  <ol class="tp-steps">${x.steps.map(([a, b], i) => `<li data-up style="--d:${i * .08}s"><span>0${i + 1}</span><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ol>
+  <ol class="rit" data-rit><i class="rit__line" aria-hidden="true"><i></i></i>${x.steps.map(([a, b], i) => `<li class="rit__step"><span class="rit__node" aria-hidden="true"></span><span class="rit__num" aria-hidden="true">${['I', 'II', 'III', 'IV', 'V', 'VI'][i]}</span><div class="rit__txt"><small>${String(i + 1).padStart(2, '0')}</small><b>${esc(a)}</b><p>${esc(b)}</p></div></li>`).join('')}</ol>
 </section>
 <section class="tp-sec faq">
   <header class="sh" data-up><p class="sh__script">${esc(x.name)}</p><h2 class="sh__h">${esc(p.faq)}</h2></header>

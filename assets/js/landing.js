@@ -152,6 +152,24 @@
     window.addEventListener('pageshow', function (e) { if (e.persisted) root.classList.remove('pt-out'); });
   }
 
+  /* ---------- Ablauf als Ritual: goldene Linie zeichnet sich beim Scrollen, Schritte leuchten auf ---------- */
+  $$('[data-rit]').forEach(function (rit) {
+    var steps = $$('.rit__step', rit), fill = $('.rit__line i', rit);
+    if (reduce || !('IntersectionObserver' in window)) { rit.classList.add('is-done'); steps.forEach(function (s) { s.classList.add('is-on'); }); return; }
+    function draw() {
+      var on = steps.filter(function (s) { return s.classList.contains('is-on'); });
+      if (!on.length) { fill.style.transform = 'scaleY(0)'; return; }
+      var last = on[on.length - 1], box = rit.getBoundingClientRect(), node = $('.rit__node', last).getBoundingClientRect();
+      fill.style.transform = 'scaleY(' + Math.min(1, (node.top + node.height / 2 - box.top) / box.height).toFixed(4) + ')';
+    }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-on'); io.unobserve(e.target); } });
+      draw();
+    }, { rootMargin: '0px 0px -38% 0px' });
+    steps.forEach(function (s) { io.observe(s); });
+    window.addEventListener('resize', draw, { passive: true });
+  });
+
   /* ---------- Einblenden ---------- */
   var ups = $$('[data-up]');
   if ('IntersectionObserver' in window && !reduce) {
