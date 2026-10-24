@@ -92,7 +92,7 @@ const T = {
     waCat: (n) => `Hallo Liyas Lounge, ich interessiere mich für ${n} und hätte gerne eine Beratung.`,
     tagline: 'Medical Aesthetic & Beauty · Olten',
     slogan: ['Shine bright,', 'age is just a number.'],
-    heroBtn: 'Beratung anfragen', heroBtn2: 'Behandlungen entdecken', fabSub: 'Per WhatsApp · unverbindlich',
+    heroBtn: 'Beratung anfragen', heroBtn2: 'Behandlungen entdecken', fabSub: 'Online · rund um die Uhr', fabBook: 'Termin buchen', fabWa: 'Frage per WhatsApp',
     trust: (r, n) => [`${r} · ${n} Google-Bewertungen`, 'Erfahrung seit 2009', 'Beratung in 6 Sprachen'],
     trustS: (r, n) => [`${r} · ${n} Google`, 'Seit 2009', '6 Sprachen'],
     scroll: 'Entdecken',
@@ -127,7 +127,7 @@ const T = {
     waCat: (n) => `Hello Liyas Lounge, I am interested in ${n} and would like a consultation.`,
     tagline: 'Medical Aesthetics & Beauty · Olten',
     slogan: ['Shine bright,', 'age is just a number.'],
-    heroBtn: 'Book a consultation', heroBtn2: 'Explore treatments', fabSub: 'Via WhatsApp · no obligation',
+    heroBtn: 'Book a consultation', heroBtn2: 'Explore treatments', fabSub: 'Online · around the clock', fabBook: 'Book appointment', fabWa: 'Ask on WhatsApp',
     trust: (r, n) => [`${r} · ${n} Google reviews`, 'Experience since 2009', 'Advice in 6 languages'],
     trustS: (r, n) => [`${r} · ${n} Google`, 'Since 2009', '6 languages'],
     scroll: 'Discover',
@@ -162,7 +162,7 @@ const T = {
     waCat: (n) => `Bonjour Liyas Lounge, je suis intéressée par ${n} et j’aimerais une consultation.`,
     tagline: 'Médecine esthétique & beauté · Olten',
     slogan: ['Shine bright,', 'age is just a number.'],
-    heroBtn: 'Demander une consultation', heroBtn2: 'Découvrir les traitements', fabSub: 'Par WhatsApp · sans engagement',
+    heroBtn: 'Demander une consultation', heroBtn2: 'Découvrir les traitements', fabSub: 'En ligne · 24 h/24', fabBook: 'Prendre rendez-vous', fabWa: 'Question sur WhatsApp',
     trust: (r, n) => [`${r} · ${n} avis Google`, 'Expérience depuis 2009', 'Conseils en 6 langues'],
     trustS: (r, n) => [`${r} · ${n} Google`, 'Depuis 2009', '6 langues'],
     scroll: 'Découvrir',
@@ -340,7 +340,7 @@ function page(L, sub = null) {
   <p class="foot__legal">${t.legal.map(([h, l]) => `<a href="${h}"${L !== 'de' ? ' hreflang="de-CH"' : ''}>${l}</a>`).join(' · ')}</p>
   <p class="foot__copy">© ${new Date().getFullYear()} Liyas Lounge · ${esc(SITE.street)}, ${SITE.zip} ${SITE.city} · ${t.rights}</p>
 </footer>${sub && !sub.fab ? '' : `
-<a class="fab" href="${wa(t.wa)}" target="_blank" rel="noopener" data-fab><span class="fab__ico">${ico('wa')}</span><span class="fab__txt"><b>${t.heroBtn}</b><small>${t.fabSub}</small></span>${ico('arrow')}</a>`}`;
+<div class="fab" data-fab><a class="fab__ico" href="${wa(t.wa)}" target="_blank" rel="noopener" aria-label="${esc(t.fabWa)}">${ico('wa')}</a><a class="fab__main" href="${book}"><span class="fab__txt"><b>${esc(t.fabBook)}</b><small>${esc(t.fabSub)}</small></span>${ico('arrow')}</a></div>`}`;
 
   const title = sub ? sub.title : t.title, desc = sub ? sub.desc : t.desc, url = SITE.url + (sub ? sub.url : t.path);
   return `<!doctype html>
