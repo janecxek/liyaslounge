@@ -793,3 +793,18 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
   .rit__step .rit__num, .rit__step:nth-child(even) .rit__num, .rit__step:nth-child(odd) .rit__num { left: auto; right: 0; top: -4px; transform: none; font-size: 4.6rem; }
 }
 
+/* Schwebender Button: links WhatsApp (Frage), rechts Termin buchen (Hauptaktion) */
+.fab { gap: 10px; padding: 7px 22px 7px 7px; }
+.fab__ico { position: relative; z-index: 1; transition: background .3s, color .3s, transform .4s var(--ease); }
+.fab__ico:hover, .fab__ico:focus-visible { background: #000; color: #fff; transform: scale(1.06); }
+.fab__main { position: relative; z-index: 1; display: flex; flex: 1; align-items: center; gap: 12px; min-height: 48px; padding-left: 4px; color: inherit; }
+.fab__main .i { width: 16px; height: 16px; flex: none; margin-left: auto; transition: transform .4s var(--ease); }
+.fab__main:hover .i { transform: translate(3px, -3px); }
+.fab__main .fab__txt { flex: 1; }
+/* Behandlungsseiten: mehr Luft zwischen den Abschnitten */
+.tp-sec { padding-top: clamp(100px, 12vw, 170px); }
+.tp-intro { padding-top: clamp(80px, 9vw, 130px); }
+.tp-cta { margin-top: clamp(110px, 12vw, 170px); }
+.tp-cta.tex, .tp-cta { padding-top: 0; }
+#preise.tex { padding-bottom: clamp(80px, 9vw, 120px); }
+.tp-sec .sh { margin-bottom: clamp(40px, 5vw, 64px); }
