@@ -817,3 +817,10 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 .rs__more { width: max-content; max-width: 100%; white-space: nowrap; }
 @media (max-width: 640px) { .rs__card blockquote.is-long { -webkit-line-clamp: 7; } .rs__more { min-height: 40px; letter-spacing: .12em; font-size: .6rem; } }
 .rs__card figcaption small { flex-basis: 100%; font-size: .62rem; letter-spacing: .08em; color: var(--txt2); opacity: .7; }
+/* Kacheln: so viele Spalten wie Kacheln – bei wenigen Kacheln mittig statt links */
+.tp-tiles { display: flex; flex-wrap: wrap; justify-content: center; }
+.tp-tiles > li { flex: 0 1 calc((100% - 48px) / 4); min-width: 240px; max-width: 320px; }
+@media (max-width: 640px) { .tp-tiles > li { flex-basis: 100%; max-width: none; } }
+/* Logo in der Navigation: Platz für Schwünge und Glanz, damit nichts abgeschnitten wird (Goldverlauf füllt nur die Box) */
+.logo--nav .logo__main { padding: .12em .06em .14em .1em; }
+.logo--nav .logo__script { padding: .3em .3em .22em .14em; margin: -.3em -.12em -.22em -.06em; }
