@@ -356,15 +356,15 @@ export const EN_TEAM = [
   },
 ];
 
-// ⚠ DEMO reviews – for presenting the design only; replace with genuine reviews before going live
-export const EN_REVIEW_TAGS = ['Dermal Fillers', 'Consultation', 'Morpheus8', 'Mesotherapy', 'HIFU 5D Lift', 'Wrinkle treatment'];
+// Translations of the genuine Google reviews in content.mjs (same order); marked as translated on the page
+export const EN_REVIEW_TAGS = ['Full face', undefined, undefined, undefined, 'Hyperhidrosis', undefined];
 export const EN_REVIEW_TEXTS = [
-  'I was really worried about looking ‘done’. The advice was honest and calm – I simply look fresher, and nobody asks what I have had done.',
-  'They genuinely take their time. I wasn’t talked into anything – in fact, they advised me against one treatment. That is exactly why I keep coming back.',
-  'The atmosphere is beautiful and very discreet. After Morpheus8 my skin is visibly firmer and finer – all without surgery.',
-  'Since mesotherapy my skin looks so much fresher and plumper. Booking via WhatsApp took two minutes – it couldn’t be easier.',
-  'Very professional and spotless. Everything was explained step by step, and the costs were clear beforehand. I felt in good hands the whole time.',
-  'My forehead lines have softened, but my expressions are still mine. The result suits my face perfectly – just as subtle as I wanted.',
+  '🌸 A recommendation from the heart 🌸 I had a full-face treatment with Liya and I am more than happy with the result. The change is beautiful, natural and harmonious – since then I feel much more confident and comfortable in my skin. I especially appreciate her honest and thorough advice. She takes an incredible amount of time and has an exceptional eye for detail. With small, targeted corrections she achieves results you would never have thought of yourself, without extra effort or additional material costs. The treatment itself is also extremely pleasant. She creates a relaxed atmosphere, explains everything and you feel in the best hands the whole time. Simply top, both personally and professionally – I will go back to her any time 🩷',
+  'I am absolutely thrilled with my beautician’s work! ✨ The treatment was professional, careful and done with great attention to detail. You notice straight away that experience, expertise and passion come together here. From the very beginning I felt very comfortable and in good hands. The result is simply beautiful and exactly what I had in mind. I can recommend this beautician from the bottom of my heart and would come back any time. Thank you so much for the wonderful work! ❤️',
+  'I am thrilled with the beautician Liya. She responds to her clients’ needs and meets them with competent, professional advice. I have never had such a great, kind, attentive and professional beautician. I travel 150 km there and back to have treatments with her. Thank you, dear Liya 🙏🫶🏻 you are amazing ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️',
+  'Very good advice and high-quality work. Hygiene standards are taken very seriously. The cosmetic treatments are carried out in a way that does not compromise a natural look.',
+  'I had a treatment to reduce sweating. 💉 First of all, I would like to highlight the extremely friendly and open staff of this salon. The beautiful, stylish interior and the convenient location in town make it ideal for every client. In addition, the hygiene, sense of responsibility and friendliness of the staff are excellent. Thirdly, the treatment was quick, almost painless and extremely effective within a few hours. After the first week I already feel much more relaxed, even in this heat. I also had eyelash extensions done. They turned out great too. They looked beautiful and lasted a long time. Both treatments were also very reasonably priced. I am now thinking about trying other treatments at this salon. I wish you all the best and every success with your business! 💜',
+  'I am simply thrilled 🫶 and always happy. Not only absolutely likeable – she knows what she is doing ❤️…',
 ];
 
 

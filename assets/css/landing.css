@@ -793,3 +793,27 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
   .rit__step .rit__num, .rit__step:nth-child(even) .rit__num, .rit__step:nth-child(odd) .rit__num { left: auto; right: 0; top: -4px; transform: none; font-size: 4.6rem; }
 }
 
+/* Schwebender Button: links WhatsApp (Frage), rechts Termin buchen (Hauptaktion) */
+.fab { gap: 10px; padding: 7px 22px 7px 7px; }
+.fab__ico { position: relative; z-index: 1; transition: background .3s, color .3s, transform .4s var(--ease); }
+.fab__ico:hover, .fab__ico:focus-visible { background: #000; color: #fff; transform: scale(1.06); }
+.fab__main { position: relative; z-index: 1; display: flex; flex: 1; align-items: center; gap: 12px; min-height: 48px; padding-left: 4px; color: inherit; }
+.fab__main .i { width: 16px; height: 16px; flex: none; margin-left: auto; transition: transform .4s var(--ease); }
+.fab__main:hover .i { transform: translate(3px, -3px); }
+.fab__main .fab__txt { flex: 1; }
+/* Behandlungsseiten: mehr Luft zwischen den Abschnitten */
+.tp-sec { padding-top: clamp(100px, 12vw, 170px); }
+.tp-intro { padding-top: clamp(80px, 9vw, 130px); }
+.tp-cta { margin-top: clamp(110px, 12vw, 170px); }
+.tp-cta.tex, .tp-cta { padding-top: 0; }
+#preise.tex { padding-bottom: clamp(80px, 9vw, 120px); }
+.tp-sec .sh { margin-bottom: clamp(40px, 5vw, 64px); }
+/* Lange Bewertungen: nach 6 Zeilen weich ausblenden, darunter Link zur ganzen Bewertung auf Google */
+.rs__card blockquote.is-long { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
+.rs__more { justify-self: start; display: inline-flex; align-items: center; gap: 8px; margin-top: -6px; padding: 6px 0 4px; border-bottom: 1px solid var(--hair); font-size: .64rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-l); transition: border-color .3s, color .3s; }
+.rs__more .i { width: 13px; height: 13px; transition: transform .4s var(--ease); }
+.rs__more:hover { color: #fff; border-color: var(--gold); }
+.rs__more:hover .i { transform: translate(3px, -3px); }
+.rs__more { width: max-content; max-width: 100%; white-space: nowrap; }
+@media (max-width: 640px) { .rs__card blockquote.is-long { -webkit-line-clamp: 7; } .rs__more { min-height: 40px; letter-spacing: .12em; font-size: .6rem; } }
+.rs__card figcaption small { flex-basis: 100%; font-size: .62rem; letter-spacing: .08em; color: var(--txt2); opacity: .7; }

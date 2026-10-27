@@ -7,14 +7,15 @@ export const FR_CATEGORIES = {
   skin: { name: 'Skin Care', short: 'Mésothérapie peau, cheveux & corps · blanchiment dentaire', claim: 'Soignée jusque dans les détails.', text: 'Des actifs qui renforcent la peau et les cheveux de l’intérieur – et un sourire éclatant.' },
 };
 
-export const FR_REVIEW_TAGS = ['Dermal Filler', 'Consultation', 'Morpheus8', 'Mésothérapie', 'HIFU 5D Lift', 'Traitement des rides'];
+// Traductions des avis Google authentiques de content.mjs (même ordre) ; signalées comme traduites sur la page
+export const FR_REVIEW_TAGS = ['Visage complet', undefined, undefined, undefined, 'Hyperhidrose', undefined];
 export const FR_REVIEW_TEXTS = [
-  'J’avais peur d’avoir l’air « refaite ». Les conseils étaient honnêtes et posés – j’ai simplement l’air plus fraîche, et personne ne me demande ce que j’ai fait.',
-  'On prend vraiment le temps. On ne m’a rien imposé – au contraire, on m’a déconseillé un traitement. C’est exactement pour cela que je reviens.',
-  'L’ambiance est magnifique et très discrète. Après Morpheus8, ma peau est visiblement plus ferme et plus fine – sans aucune opération.',
-  'Depuis la mésothérapie, ma peau paraît bien plus fraîche et repulpée. Le rendez-vous par WhatsApp a été fixé en deux minutes – on ne peut pas faire plus simple.',
-  'Très professionnel et impeccable. Tout a été expliqué étape par étape, et les coûts étaient clairs dès le départ. Je me suis sentie entre de bonnes mains du début à la fin.',
-  'Mes rides du front se sont adoucies, mais mes expressions sont restées les miennes. Le résultat convient parfaitement à mon visage – aussi discret que je le souhaitais.',
+  '🌸 Une recommandation du fond du cœur 🌸 J’ai fait un traitement complet du visage chez Liya et je suis plus que satisfaite du résultat. Le changement est magnifique, naturel et harmonieux – depuis, je me sens beaucoup plus sûre de moi et bien dans ma peau. J’apprécie particulièrement ses conseils honnêtes et détaillés. Elle prend énormément de temps et a un œil exceptionnel pour les détails. Grâce à de petites corrections ciblées, elle obtient des résultats auxquels on n’aurait jamais pensé soi-même, sans effort supplémentaire ni frais de matériel en plus. Le traitement lui-même est aussi extrêmement agréable. Elle crée une atmosphère détendue, explique tout et on se sent entre de très bonnes mains du début à la fin. Humainement et professionnellement, tout simplement au top – j’y retournerai à tout moment 🩷',
+  'Je suis absolument ravie du travail de mon esthéticienne ! ✨ Le traitement a été réalisé de manière professionnelle, soigneuse et avec beaucoup d’attention aux détails. On remarque tout de suite qu’expérience, savoir-faire et passion se rejoignent ici. Dès le début, je me suis sentie très à l’aise et entre de bonnes mains. Le résultat est tout simplement magnifique et correspond exactement à mes attentes. Je recommande cette esthéticienne de tout cœur et je reviendrais à tout moment. Merci beaucoup pour ce superbe travail ! ❤️',
+  'Je suis ravie de l’esthéticienne Liya : elle est à l’écoute des besoins de ses clientes et y répond avec des conseils compétents et professionnels. Je n’ai jamais eu une esthéticienne aussi géniale, gentille, attentionnée et professionnelle. Je fais 150 km aller-retour pour faire mes traitements chez elle. Merci, chère Liya 🙏🫶🏻 tu es formidable ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️',
+  'Très bons conseils et travail de grande qualité. Les normes d’hygiène sont prises très au sérieux. Les soins esthétiques sont réalisés de manière à ne pas altérer l’aspect naturel.',
+  'J’ai suivi un traitement pour réduire la transpiration. 💉 Tout d’abord, je tiens à souligner l’accueil extrêmement aimable et ouvert de ce salon. Le bel intérieur élégant et l’emplacement pratique en ville le rendent idéal pour chaque client. De plus, l’hygiène, le sens des responsabilités et l’amabilité du personnel sont excellents. Troisièmement, le traitement a été rapide, presque indolore et extrêmement efficace en quelques heures. Dès la première semaine, je me sens beaucoup plus détendue, même par cette chaleur. J’ai aussi fait des extensions de cils. Elles étaient super aussi : magnifiques et elles ont tenu longtemps. Les deux traitements étaient en plus très abordables. J’envisage maintenant d’essayer d’autres traitements dans ce salon. Je vous souhaite le meilleur et beaucoup de succès pour votre entreprise ! 💜',
+  'Je suis tout simplement ravie 🫶 et toujours satisfaite. Pas seulement très sympathique – elle sait ce qu’elle fait ❤️…',
 ];
 
 export const FR_HOME_FAQ = [
