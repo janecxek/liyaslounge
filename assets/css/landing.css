@@ -816,3 +816,4 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 .rs__more:hover .i { transform: translate(3px, -3px); }
 .rs__more { width: max-content; max-width: 100%; white-space: nowrap; }
 @media (max-width: 640px) { .rs__card blockquote.is-long { -webkit-line-clamp: 7; } .rs__more { min-height: 40px; letter-spacing: .12em; font-size: .6rem; } }
+.rs__card figcaption small { flex-basis: 100%; font-size: .62rem; letter-spacing: .08em; color: var(--txt2); opacity: .7; }
