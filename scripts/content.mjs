@@ -559,6 +559,8 @@ export const TEAM = [
 
 // ⚠ DEMO-Bewertungen – nur zur Präsentation des Designs. NICHT so veröffentlichen:
 // erfundene Bewertungen sind irreführend (UWG). Vor dem Livegang durch echte Bewertungen ersetzen (mit Einverständnis).
+// Echte Google-Bewertungen: { name, text, tag (Behandlung, optional), url (Link zur Bewertung auf Google, optional) }.
+// Lange Texte (> 260 Zeichen) werden auf der Website gekürzt und verlinken auf «Ganze Bewertung auf Google».
 export const REVIEWS = [
   { name: 'Sandra M.', place: 'Olten', text: 'Ich hatte grosse Bedenken, danach «gemacht» auszusehen. Die Beratung war ehrlich und ruhig – ich sehe einfach frischer aus, und niemand fragt, was ich gemacht habe.', tag: 'Dermal Filler', demo: true },
   { name: 'Elena K.', place: 'Aarau', text: 'Man nimmt sich wirklich Zeit. Ich wurde nicht zu etwas überredet – im Gegenteil, mir wurde von einer Behandlung abgeraten. Genau deshalb komme ich wieder.', tag: 'Beratung', demo: true },

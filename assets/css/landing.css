@@ -808,3 +808,11 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 .tp-cta.tex, .tp-cta { padding-top: 0; }
 #preise.tex { padding-bottom: clamp(80px, 9vw, 120px); }
 .tp-sec .sh { margin-bottom: clamp(40px, 5vw, 64px); }
+/* Lange Bewertungen: nach 6 Zeilen weich ausblenden, darunter Link zur ganzen Bewertung auf Google */
+.rs__card blockquote.is-long { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
+.rs__more { justify-self: start; display: inline-flex; align-items: center; gap: 8px; margin-top: -6px; padding: 6px 0 4px; border-bottom: 1px solid var(--hair); font-size: .64rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-l); transition: border-color .3s, color .3s; }
+.rs__more .i { width: 13px; height: 13px; transition: transform .4s var(--ease); }
+.rs__more:hover { color: #fff; border-color: var(--gold); }
+.rs__more:hover .i { transform: translate(3px, -3px); }
+.rs__more { width: max-content; max-width: 100%; white-space: nowrap; }
+@media (max-width: 640px) { .rs__card blockquote.is-long { -webkit-line-clamp: 7; } .rs__more { min-height: 40px; letter-spacing: .12em; font-size: .6rem; } }

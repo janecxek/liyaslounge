@@ -71,6 +71,8 @@ const TP = {
    
   },
 };
+// Bewertungen länger als das werden gekürzt angezeigt, mit Link zur ganzen Bewertung auf Google (r.url)
+const REV_LONG = 260;
 const IMG = JSON.parse(readFileSync(join(ROOT, 'scripts/imgmeta.json'), 'utf8'));
 const VERSION = Date.now().toString(36);
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -114,7 +116,7 @@ const T = {
     ctBtn: 'Per WhatsApp schreiben', bookLbl: 'Online-Buchung', bk: { priv: 'Der Kalender wird von SimplyBook.me bereitgestellt; dabei können technisch notwendige Cookies gesetzt werden.', privLink: 'Datenschutz', title: 'Termin buchen | Liyas Lounge Olten', desc: 'Termin bei Liyas Lounge in Olten online buchen – Behandlung und Zeit wählen, sofort bestätigt.', script: 'Ihr Termin', h: 'Online buchen', lead: 'Wählen Sie Behandlung, Tag und Uhrzeit – Sie erhalten sofort eine Bestätigung.', notes: ['Beratung vor oder während der Behandlung kostenlos – als separater Termin CHF 50', 'Absagen bitte bis 24 Stunden vorher', 'Hammerallee 23, 4600 Olten · 1. Untergeschoss'], loading: 'Kalender wird geladen …', fail: 'Der Kalender konnte nicht geladen werden.', open: 'Termin auf SimplyBook öffnen', q: 'Fragen vorab? Schreiben Sie uns gerne per WhatsApp.' }, floor: '1. Untergeschoss · Klingel «Liyas Lounge & Lala Lashes»', waNote: 'nur Nachrichten', addr: 'Adresse', hours: 'Öffnungszeiten', route: 'Route planen', follow: 'Folgen Sie uns',
     hoursTxt: `${SITE.hours.map((h) => `${h.de} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.de}`,
     legal: [['/agb', 'AGB'], ['/datenschutz', 'Datenschutz'], ['/impressum', 'Impressum']], rights: 'Alle Rechte vorbehalten.',
-    cats: CATEGORIES, reviews: REVIEWS.map((r) => ({ ...r })), langAria: 'Sprache wählen', prev: 'Vorherige Bewertung', next: 'Nächste Bewertung',
+    cats: CATEGORIES, reviews: REVIEWS.map((r) => ({ ...r })), revMore: 'Ganze Bewertung auf Google', langAria: 'Sprache wählen', prev: 'Vorherige Bewertung', next: 'Nächste Bewertung',
     ownerAlt: 'Die Inhaberin der Liyas Lounge im Beratungsgespräch', heroAlt: 'Die Inhaberin der Liyas Lounge in ihrem Studio in Olten',
   },
   en: {
@@ -149,7 +151,7 @@ const T = {
     ctBtn: 'Message us on WhatsApp', bookLbl: 'Online booking', bk: { priv: 'The calendar is provided by SimplyBook.me, which may set technically necessary cookies.', privLink: 'Privacy policy (German)', title: 'Book an appointment | Liyas Lounge Olten', desc: 'Book your appointment at Liyas Lounge in Olten online – choose treatment and time, confirmed instantly.', script: 'Your appointment', h: 'Book online', lead: 'Choose your treatment, day and time – you will receive a confirmation straight away.', notes: ['Consultation free before or during your treatment – CHF 50 as a separate appointment', 'Please cancel at least 24 hours in advance', 'Hammerallee 23, 4600 Olten · first lower floor'], loading: 'Loading calendar …', fail: 'The calendar could not be loaded.', open: 'Open booking on SimplyBook', q: 'Questions beforehand? Message us on WhatsApp.' }, floor: 'First lower floor · bell “Liyas Lounge & Lala Lashes”', waNote: 'messages only', addr: 'Address', hours: 'Opening hours', route: 'Get directions', follow: 'Follow us',
     hoursTxt: `${SITE.hours.map((h) => `${h.en} ${h.opens}–${h.closes}`).join(', ')} · ${SITE.hoursNote.en}`,
     legal: [['/agb', 'Terms (DE)'], ['/datenschutz', 'Privacy (DE)'], ['/impressum', 'Legal notice (DE)']], rights: 'All rights reserved.',
-    cats: CATEGORIES.map((c) => ({ ...c, ...EN_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: EN_REVIEW_TAGS[i], text: EN_REVIEW_TEXTS[i] || r.text })), langAria: 'Choose language', prev: 'Previous review', next: 'Next review',
+    cats: CATEGORIES.map((c) => ({ ...c, ...EN_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: EN_REVIEW_TAGS[i], text: EN_REVIEW_TEXTS[i] || r.text })), revMore: 'Read the full review on Google', langAria: 'Choose language', prev: 'Previous review', next: 'Next review',
     ownerAlt: 'The owner of Liyas Lounge during a consultation', heroAlt: 'The owner of Liyas Lounge in her studio in Olten',
   },
   fr: {
@@ -184,7 +186,7 @@ const T = {
     ctBtn: 'Écrire sur WhatsApp', bookLbl: 'Réservation en ligne', bk: { priv: 'Le calendrier est fourni par SimplyBook.me, qui peut déposer des cookies techniquement nécessaires.', privLink: 'Protection des données (allemand)', title: 'Prendre rendez-vous | Liyas Lounge Olten', desc: 'Réservez votre rendez-vous chez Liyas Lounge à Olten en ligne – choisissez le traitement et l’heure, confirmation immédiate.', script: 'Votre rendez-vous', h: 'Réserver en ligne', lead: 'Choisissez le traitement, le jour et l’heure – vous recevez immédiatement une confirmation.', notes: ['Consultation gratuite avant ou pendant le traitement – CHF 50 en rendez-vous séparé', 'Merci d’annuler au moins 24 heures à l’avance', 'Hammerallee 23, 4600 Olten · 1er sous-sol'], loading: 'Chargement du calendrier …', fail: 'Le calendrier n’a pas pu être chargé.', open: 'Ouvrir la réservation sur SimplyBook', q: 'Des questions avant ? Écrivez-nous sur WhatsApp.' }, floor: '1er sous-sol · sonnette « Liyas Lounge & Lala Lashes »', waNote: 'messages uniquement', addr: 'Adresse', hours: 'Horaires', route: 'Itinéraire', follow: 'Suivez-nous',
     hoursTxt: 'Lu–Ve 10:00–19:00 · Sa sur rendez-vous',
     legal: [['/agb', 'CGV (DE)'], ['/datenschutz', 'Confidentialité (DE)'], ['/impressum', 'Mentions légales (DE)']], rights: 'Tous droits réservés.',
-    cats: CATEGORIES.map((c) => ({ ...c, ...FR_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: FR_REVIEW_TAGS[i], text: FR_REVIEW_TEXTS[i] || r.text })), langAria: 'Choisir la langue', prev: 'Avis précédent', next: 'Avis suivant',
+    cats: CATEGORIES.map((c) => ({ ...c, ...FR_CATEGORIES[c.id] })), reviews: REVIEWS.map((r, i) => ({ ...r, tag: FR_REVIEW_TAGS[i], text: FR_REVIEW_TEXTS[i] || r.text })), revMore: 'Lire l’avis complet sur Google', langAria: 'Choisir la langue', prev: 'Avis précédent', next: 'Avis suivant',
     ownerAlt: 'La propriétaire de Liyas Lounge lors d’une consultation', heroAlt: 'La propriétaire de Liyas Lounge dans son studio à Olten',
   },
 };
@@ -303,7 +305,7 @@ function page(L, sub = null) {
   ${head(t.revScript, t.revH)}
   <a class="rev__score" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><b>${rating}</b>${stars(t.stars)}<span>${SITE.googleReviewCount} Google</span></a>
   <div class="rs" data-slider data-up>
-    <div class="rs__view"><ul class="rs__track" data-track>${reviewsList.map((r, i) => `<li class="rs__card" aria-roledescription="slide" aria-label="${i + 1} / ${reviewsList.length}"><figure>${stars(t.stars)}<blockquote>„${esc(r.text)}“</blockquote><figcaption><b>${esc(r.name)}</b>${r.tag ? `<span>${esc(r.tag)}</span>` : ''}</figcaption></figure></li>`).join('')}</ul></div>
+    <div class="rs__view"><ul class="rs__track" data-track>${reviewsList.map((r, i) => `<li class="rs__card" aria-roledescription="slide" aria-label="${i + 1} / ${reviewsList.length}"><figure>${stars(t.stars)}<blockquote${r.text.length > REV_LONG ? ' class="is-long"' : ''}>„${esc(r.text)}“</blockquote>${r.text.length > REV_LONG ? `<a class="rs__more" href="${esc(r.url || SITE.googleMaps)}" target="_blank" rel="noopener">${esc(t.revMore)} ${ico('arrow')}</a>` : ''}<figcaption><b>${esc(r.name)}</b>${r.tag ? `<span>${esc(r.tag)}</span>` : ''}</figcaption></figure></li>`).join('')}</ul></div>
     <div class="rs__nav"><button type="button" class="rs__btn" data-prev aria-label="${t.prev}">${ico('left')}</button><span class="rs__count"><b data-cur>01</b> / ${String(reviewsList.length).padStart(2, '0')}</span><span class="rs__bar"><i data-bar></i></span><button type="button" class="rs__btn" data-next aria-label="${t.next}">${ico('right')}</button></div>
   </div>
   <a class="btn btn--line" href="${SITE.googleMaps}" target="_blank" rel="noopener" data-up><span>${t.revG}</span>${ico('arrow')}</a>
