@@ -152,7 +152,8 @@ export const EN_TREATMENTS = {
       { name: '3 zones', detail: '3 ampoules', desc: 'For several problem areas.' },
       { name: 'Each additional ampoule', detail: 'from 3 ampoules', desc: 'For larger areas as needed.' },
       { name: 'Package of 10', detail: '10 ampoules', desc: 'For larger areas or a full course.' },
-      { name: 'Cavitation', detail: 'ultrasound, no needles', desc: 'Gentle fat reduction and body shaping, also for cellulite.' },
+      { name: 'Cavitation – small zone', detail: 'ultrasound, no needles', desc: 'Gentle fat reduction and body shaping, also for cellulite.' },
+      { name: 'Cavitation – larger zone', detail: 'ultrasound, no needles', desc: 'For abdomen, hips or thighs.' },
     ],
     faq: [
       ['Is lipolysis a way to lose weight?', 'No. Lipolysis is suited to small, stubborn fat deposits – not to weight loss.'],

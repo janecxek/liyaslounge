@@ -5,8 +5,7 @@ Użytkownik pisze po polsku – odpowiadaj po polsku. Wiadomości do Liyi: po ni
 
 ## ⚠️ Stałe przypomnienia – podkreślaj je użytkownikowi ZAWSZE na pomarańczowo (🟠) przy podsumowaniu zmian
 
-- 🟠 **Kavitation: cena to placeholder „CHF x”** (Fettwegspritze, `scripts/content.mjs`) – zapytać Liyę o cenę.
-- 🟠 Impressum/Datenschutz: brak imienia i nazwiska Liyi, e-maila, UID i informacji o odpowiedzialności lekarskiej (placeholdery „[… folgt]”).
+- 🟠 Impressum/Datenschutz: brak podmiotu odpowiedzialnego, e-maila i informacji o odpowiedzialności lekarskiej (placeholdery „[… folgt]”). Liya nie chce swojego nazwiska publicznie (pracuje na licencji partnera) – czekamy na dane firmy partnera, adres i e-mail. UID: brak. Nie zapisywać jej nazwiska w repozytorium.
 
 ## Opinie
 - Prawdziwe opinie z Google są w `REVIEWS` (`scripts/content.mjs`), wiernie przepisane, z linkiem `url` do każdej. EN/FR to tłumaczenia (oznaczone na stronie). Nowe opinie podaje użytkownik (Claude nie ma dostępu do Google).

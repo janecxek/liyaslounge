@@ -200,7 +200,8 @@ export const FR_TREATMENTS = {
       { name: '3 zones', detail: '3 ampoules', desc: 'Pour plusieurs zones à problème.' },
       { name: 'Chaque ampoule supplémentaire', detail: 'dès 3 ampoules', desc: 'Pour de plus grandes zones selon les besoins.' },
       { name: 'Forfait 10 ampoules', detail: '10 ampoules', desc: 'Pour de plus grandes zones ou une cure complète.' },
-      { name: 'Cavitation', detail: 'ultrasons, sans aiguilles', desc: 'Réduction douce des graisses et remodelage du corps, aussi contre la cellulite.' },
+      { name: 'Cavitation – petite zone', detail: 'ultrasons, sans aiguilles', desc: 'Réduction douce des graisses et remodelage du corps, aussi contre la cellulite.' },
+      { name: 'Cavitation – grande zone', detail: 'ultrasons, sans aiguilles', desc: 'Pour le ventre, les hanches ou les cuisses.' },
     ],
     faq: [
       ['La lipolyse fait-elle maigrir ?', 'Non. La lipolyse convient aux petits amas graisseux tenaces – pas à la perte de poids.'],

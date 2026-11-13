@@ -300,6 +300,13 @@ function page(L, sub = null) {
   ${nudge(t.h.faq.nudge)}
 </section>
 
+<section class="tp-sec flow" id="ablauf">
+  ${head(t.h.flow.script, t.h.flow.h)}
+  <p class="lead" data-up>${esc(t.h.flow.lead)}</p>
+  ${ritual(t.h.flow.steps)}
+  ${nudge(t.h.flow.nudge)}
+</section>
+
 <section class="partners" id="partner">
   ${head(t.h.partners.script, t.h.partners.h)}
   <p class="lead" data-up>${esc(t.h.partners.lead)}</p>
