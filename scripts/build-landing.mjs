@@ -300,11 +300,10 @@ function page(L, sub = null) {
   ${nudge(t.h.faq.nudge)}
 </section>
 
-<section class="tp-sec flow" id="ablauf">
-  ${head(t.h.flow.script, t.h.flow.h)}
-  <p class="lead" data-up>${esc(t.h.flow.lead)}</p>
-  ${ritual(t.h.flow.steps)}
-  ${nudge(t.h.flow.nudge)}
+<section class="partners" id="partner">
+  ${head(t.h.partners.script, t.h.partners.h)}
+  <p class="lead" data-up>${esc(t.h.partners.lead)}</p>
+  <ul class="partners__list">${PARTNERS.map((pt, i) => `<li data-up style="--d:${i * .08}s"><b>${esc(pt.name)}</b><p>${esc(pt.text[L])}</p>${pt.wa ? `<a class="partners__cta" href="${wa(pt.msg[L])}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(t.h.partners.viaUs)}</span></a>` : `<a class="partners__cta" href="${esc(pt.url)}" target="_blank" rel="noopener">${ico(pt.label === 'direct' ? 'ig' : 'arrow')}<span>${esc(t.h.partners[pt.label])}</span></a>`}</li>`).join('')}</ul>
 </section>
 
 <section class="ct" id="kontakt">
@@ -322,12 +321,6 @@ function page(L, sub = null) {
     <p class="ct__note" data-up>${esc(t.h.contact.noCalls)}</p>
   </div>
   <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('studio-lounge-olten', '', { sizes: '420px', pos: '50% 40%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
-</section>
-
-<section class="partners" id="partner">
-  ${head(t.h.partners.script, t.h.partners.h)}
-  <p class="lead" data-up>${esc(t.h.partners.lead)}</p>
-  <ul class="partners__list">${PARTNERS.map((pt, i) => `<li data-up style="--d:${i * .08}s"><b>${esc(pt.name)}</b><p>${esc(pt.text[L])}</p>${pt.wa ? `<a class="partners__cta" href="${wa(pt.msg[L])}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(t.h.partners.viaUs)}</span></a>` : `<a class="partners__cta" href="${esc(pt.url)}" target="_blank" rel="noopener">${ico(pt.label === 'direct' ? 'ig' : 'arrow')}<span>${esc(t.h.partners[pt.label])}</span></a>`}</li>`).join('')}</ul>
 </section>`}
 </main>
 

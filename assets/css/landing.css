@@ -866,3 +866,11 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 .is-scrolling .logo__main, .is-scrolling .logo__script, .is-scrolling .spark, .is-scrolling .btn--gold::after, .is-scrolling .fab::after { animation-play-state: paused; }
 /* Smartphone/Tablet: Navigationsleiste ohne Live-Weichzeichner (teuer auf mobilen GPUs), dafür fast deckend */
 @media (max-width: 1080px) { .nav.is-solid { background: rgba(7, 7, 7, .95); -webkit-backdrop-filter: none; backdrop-filter: none; } }
+/* Ihr Besuch: Texte unter den goldenen Titeln in Weiss (bessere Lesbarkeit auf dem Foto) */
+.pol p { color: var(--txt); }
+/* Schwebender Termin-Button: auf grossen Bildschirmen unten rechts – dort endet der Lesefluss und liegt die Maus */
+@media (min-width: 1081px) {
+  .fab { left: auto; right: clamp(28px, 3.5vw, 56px); bottom: clamp(24px, 3vh, 36px); transform: translate(0, 140%); }
+  .fab.is-on { transform: none; }
+  body.locked .fab { transform: translate(0, 140%); }
+}
