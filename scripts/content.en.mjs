@@ -5,9 +5,9 @@ const NOTE = 'Whether a treatment is right for you is something we discuss in yo
 const RESULT_NOTE = '*Results and longevity vary from person to person and cannot be guaranteed.';
 
 export const EN_CATEGORIES = {
-  antiage: { name: 'Anti-Age & Face Balancing', short: 'Fillers, wrinkle treatment, filler correction & fat-dissolving injections', claim: 'Look refreshed – not changed.', text: 'Balanced proportions and a fresh expression – carefully dosed, with medical expertise.' },
-  apparativ: { name: 'Device-based Treatments', short: 'HIFU, radiofrequency, Morpheus8 & laser removal of tattoos and PMU', claim: 'Lifting without a scalpel.', text: 'Modern devices for tightening, rejuvenation and clearer skin – no surgery needed.' },
-  skin: { name: 'Skin Care', short: 'Mesotherapy for skin, hair & body · teeth whitening', claim: 'Cared for down to the detail.', text: 'Active ingredients that strengthen skin and hair from within – and a radiant smile.' },
+  antiage: { name: 'Anti-Age & Face Balancing', short: 'Fillers, wrinkle treatment, filler correction, fat-dissolving injections & cavitation', claim: 'Look refreshed – not changed.', text: 'Holistic facial harmonisation, gentle wrinkle treatments and natural volume concepts with high-quality fillers – plus targeted reduction of local fat deposits.' },
+  apparativ: { name: 'Device-based Treatments', short: 'HIFU, radiofrequency, Morpheus8 & laser removal of tattoos and PMU', claim: 'Lifting without a scalpel.', text: 'Non-invasive and minimally invasive skin tightening at the highest level with Morpheus8, radiofrequency and HIFU – complemented by gentle laser removal of tattoos and permanent make-up.' },
+  skin: { name: 'Skin Care', short: 'Mesotherapy for skin, hair & body · teeth whitening', claim: 'Cared for down to the detail.', text: 'Deep skin rejuvenation, cell renewal and a fresh glow with modern skin boosters and individually tailored mesotherapy – also for stronger hair and a vital scalp.' },
 };
 
 
@@ -152,6 +152,7 @@ export const EN_TREATMENTS = {
       { name: '3 zones', detail: '3 ampoules', desc: 'For several problem areas.' },
       { name: 'Each additional ampoule', detail: 'from 3 ampoules', desc: 'For larger areas as needed.' },
       { name: 'Package of 10', detail: '10 ampoules', desc: 'For larger areas or a full course.' },
+      { name: 'Cavitation', detail: 'ultrasound, no needles', desc: 'Gentle fat reduction and body shaping, also for cellulite.' },
     ],
     faq: [
       ['Is lipolysis a way to lose weight?', 'No. Lipolysis is suited to small, stubborn fat deposits – not to weight loss.'],
@@ -369,16 +370,19 @@ export const EN_REVIEW_TEXTS = [
 
 
 export const EN_HOME_FAQ = [
-  ['Will the result look natural?', 'That is our aim. We dose to suit you and tell you honestly when a treatment is not right for you. The goal is for you to look refreshed – not “done”.'],
-  ['What if I don’t like the result?', 'We deliberately dose with restraint – adding a little more is always possible. Hyaluronic acid fillers can also be dissolved if needed. So you stay on the safe side.'],
+  ['Will the result look natural – or will I look changed?', 'Our highest goal is to enhance your natural beauty – never to change you. Thanks to our specialisation in holistic face balancing, we always look at your proportions as a whole. We work on the principle of “less is more”, so you look fresh and rested – and completely like yourself.'],
+  ['I don’t know yet which treatment suits me – is that a problem?', 'Not at all – that is exactly what we are here for. You do not need to bring a ready-made solution. In a thorough consultation we analyse your skin and your facial or body structure and listen carefully. Together we create a tailored plan that fits your wishes and your budget.'],
+  ['Is a treatment painful?', 'Your comfort comes first. Many of our device-based and regenerative treatments are very gentle anyway. For more intensive treatments such as fillers, mesotherapy or Morpheus8 we apply an effective, soothing numbing cream beforehand – so the treatment is as pleasant and pain-free as possible.'],
+  ['How soon can I go out after the treatment?', 'Most treatments fit easily into everyday life. Depending on the method, mild redness, slight swelling or tiny injection marks may be visible straight afterwards; they usually fade within 24 to 72 hours. In the consultation we tell you openly about any downtime so you can plan your appointment.'],
+  ['Can different treatments be combined?', 'Yes – a gentle combination of methods often gives the most harmonious and lasting results, for example deep-acting skin boosters for skin quality together with targeted face balancing. We coordinate every step perfectly in timing and expertise.'],
+  ['Which products and devices do you use?', 'We make no compromises on safety and quality. We follow the strictest medical hygiene standards, use state-of-the-art devices and rely exclusively on certified, biocompatible premium products from South Korea, known for their purity and excellent tolerability.'],
+  ['Are men welcome too?', 'Of course. More and more men appreciate discreet, natural aesthetics for a fresh, vital appearance. Because male anatomy and skin structure have their own characteristics, we adapt every treatment individually to male proportions.'],
+  ['What if I don’t like the result?', 'We deliberately dose with restraint – adding a little more is always possible. Hyaluronic acid fillers can also be dissolved if needed. And we keep supporting you personally until you are fully satisfied.'],
   ['How much does the consultation cost?', 'Before or during a treatment the consultation is free. As a separate appointment without treatment it costs CHF 50. We take time for your questions and explain every option clearly.'],
-  ['Who carries out the treatments?', 'The owner herself: a naturopath (Heilpraktikerin), nurse and medical cosmetologist with extensive further training in aesthetic medicine – self-employed since 2009, with many years of experience working alongside plastic surgeons.'],
-  ['Is the treatment painful?', 'Most treatments are very tolerable. Where it helps, we use numbing cream or cooling. We explain beforehand exactly what you will feel.'],
-  ['Can I go out straight after the treatment?', 'With many treatments, straight away or after a few hours. Mild redness or swelling is possible depending on the method – we discuss this with you beforehand.'],
-  ['Which languages do you speak?', 'German, English, French, Italian, Russian and Ukrainian – our clientele is very international.'],
-  ['How do I book an appointment?', 'Directly online through our booking system – around the clock. Or via WhatsApp (messages only): we will get back to you as soon as possible and find a time that suits you.'],
+  ['How much does a treatment cost?', 'For example, teeth whitening from CHF 80, dermal fillers from CHF 170 or HIFU from CHF 200. You will find all prices on the individual treatment pages; we confirm the final cost honestly in your consultation.'],
+  ['How do I arrange an appointment?', 'Directly online through our booking system – around the clock. Or via WhatsApp, voice message or Instagram. We do not take phone calls, because during treatments we are fully there for our clients – if needed, we are happy to call you back.'],
   ['Where is Liyas Lounge?', 'Liyas Lounge, Hammerallee 23, 4600 Olten – on the first lower floor (bell “Liyas Lounge & Lala Lashes”). We are happy to send you directions via WhatsApp.'],
-  ['How much does a treatment cost?', 'For example, teeth whitening from CHF 80, dermal fillers from CHF 170 or HIFU from CHF 200. We confirm the final cost in your consultation.'],
+  ['Which languages do you speak?', 'German, English, French, Italian, Russian and Ukrainian – our clientele is very international.'],
   ['How can I pay?', 'Payment is made directly after the treatment – in cash, with TWINT or by card.'],
 ];
 
