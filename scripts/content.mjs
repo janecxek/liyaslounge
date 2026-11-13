@@ -32,9 +32,9 @@ export const SITE = {
 };
 
 export const CATEGORIES = [
-  { id: 'antiage', name: 'Anti-Age & Face Balancing', short: 'Filler, Faltenbehandlung, Filler-Korrektur & Fettwegspritze', claim: 'Frischer aussehen – nicht verändert.', text: 'Harmonische Proportionen und ein frischer Ausdruck – sorgfältig dosiert, mit medizinischem Fachwissen.', image: 'kat-anti-age-olten' },
-  { id: 'apparativ', name: 'Apparative Kosmetik', short: 'HIFU, Radiofrequenz, Morpheus8 & Laser-Entfernung von Tattoos und PMU', claim: 'Straffen ohne Skalpell.', text: 'Moderne Geräte für Straffung, Verjüngung und ein klareres Hautbild – ganz ohne Operation.', image: 'kat-apparative-kosmetik-olten' },
-  { id: 'skin', name: 'Skin Care', short: 'Mesotherapie für Haut, Haare & Körper · Zahnbleaching', claim: 'Gepflegt bis ins Detail.', text: 'Wirkstoffe, die Haut und Haare von innen stärken – und ein strahlendes Lächeln.', image: 'kat-skin-care-olten' },
+  { id: 'antiage', name: 'Anti-Age & Face Balancing', short: 'Filler, Faltenbehandlung, Filler-Korrektur, Fettwegspritze & Kavitation', claim: 'Frischer aussehen – nicht verändert.', text: 'Ganzheitliche Gesichtsharmonisierung, sanfte Faltenbehandlungen und natürliche Volumenkonzepte mit hochwertigen Fillern – dazu die gezielte Reduktion lokaler Fettdepots.', image: 'kat-anti-age-olten' },
+  { id: 'apparativ', name: 'Apparative Kosmetik', short: 'HIFU, Radiofrequenz, Morpheus8 & Laser-Entfernung von Tattoos und PMU', claim: 'Straffen ohne Skalpell.', text: 'Nicht-invasive und minimalinvasive Hautstraffung auf höchstem Niveau mit Morpheus8, Radiofrequenz und HIFU – ergänzt durch die schonende Laser-Entfernung von Tattoos und Permanent Make-up.', image: 'kat-apparative-kosmetik-olten' },
+  { id: 'skin', name: 'Skin Care', short: 'Mesotherapie für Haut, Haare & Körper · Zahnbleaching', claim: 'Gepflegt bis ins Detail.', text: 'Tiefenwirksame Hautverjüngung, Zellerneuerung und frische Ausstrahlung durch moderne Skinbooster und individuell abgestimmte Mesotherapie – auch für kräftigeres Haar und eine vitale Kopfhaut.', image: 'kat-skin-care-olten' },
 ];
 
 const NOTE = 'Ob eine Behandlung für Sie geeignet ist, klären wir in der persönlichen Beratung.';
@@ -247,6 +247,7 @@ export const TREATMENTS = [
       { name: '3 Zonen', detail: '3 Ampullen', desc: 'Für mehrere Problemzonen.', price: 450 },
       { name: 'Jede weitere Ampulle', detail: 'ab 3 Ampullen', desc: 'Für grössere Areale nach Bedarf.', priceText: 'CHF 100' },
       { name: '10er-Paket', detail: '10 Ampullen', desc: 'Für grössere Areale oder eine ganze Kur.', price: 1000 },
+      { name: 'Kavitation', detail: 'Ultraschall, ohne Nadeln', desc: 'Sanfte Fettreduktion und Körperformung, auch gegen Cellulite.', priceText: 'CHF x' },
     ],
     faq: [
       ['Ist Lipolyse eine Methode zum Abnehmen?', 'Nein. Die Lipolyse eignet sich für kleine, hartnäckige Fettpolster – nicht zur Gewichtsreduktion.'],
@@ -547,7 +548,7 @@ export const TEAM = [
     name: '[Name folgt]',
     role: 'Inhaberin · Heilpraktikerin & medizinische Kosmetikerin',
     roleShort: 'Inhaberin',
-    image: 'portrait-liya-olten',
+    image: 'studio-lounge-olten',
     alt: 'Porträt der Inhaberin der Liyas Lounge in Olten',
     bio: [
       'Heilpraktikerin, Krankenpflegerin und medizinische Kosmetikerin mit zahlreichen Weiterbildungen in ästhetischer Medizin, Visagistik, Psychologie und medizinischer Assistenz – selbständig seit 2009.',
@@ -570,16 +571,19 @@ export const REVIEWS = [
 ];
 
 export const HOME_FAQ = [
-  ['Sieht das Ergebnis natürlich aus?', 'Das ist unser Anspruch. Wir dosieren typgerecht und sagen ehrlich, wenn eine Behandlung nicht zu Ihnen passt. Ziel ist, dass Sie frischer aussehen – nicht «gemacht».'],
-  ['Was, wenn mir das Ergebnis nicht gefällt?', 'Wir dosieren bewusst zurückhaltend – nachbessern ist immer möglich. Hyaluron-Filler lassen sich zudem bei Bedarf wieder auflösen. So bleiben Sie auf der sicheren Seite.'],
+  ['Sieht das Ergebnis natürlich aus – oder wirke ich verändert?', 'Unser oberstes Ziel ist es, Ihre natürliche Schönheit zu betonen – niemals, Sie zu verändern. Durch unsere Spezialisierung auf ganzheitliches Face Balancing betrachten wir Ihre Proportionen immer im Einklang. Wir arbeiten nach dem Prinzip «Weniger ist mehr», sodass Sie frisch und erholt aussehen – und ganz wie Sie selbst.'],
+  ['Ich weiss noch nicht, welche Behandlung zu mir passt – ist das schlimm?', 'Überhaupt nicht – genau dafür sind wir da. Sie müssen keine fertige Lösung mitbringen. In der ausführlichen Beratung analysieren wir Ihre Haut, Ihre Gesichts- oder Körperstruktur und hören Ihnen genau zu. Gemeinsam entwickeln wir ein massgeschneidertes Konzept, das zu Ihren Wünschen und Ihrem Budget passt.'],
+  ['Ist eine Behandlung schmerzhaft?', 'Ihr Wohlbefinden steht an erster Stelle. Viele unserer apparativen und regenerativen Anwendungen sind ohnehin sehr sanft. Bei intensiveren Behandlungen wie Filler, Mesotherapie oder Morpheus8 tragen wir vorab eine wirksame, beruhigende Betäubungscreme auf – damit die Behandlung so angenehm und schmerzarm wie möglich verläuft.'],
+  ['Wie lange bin ich nach der Behandlung gesellschaftsfähig?', 'Die meisten Behandlungen lassen sich wunderbar in den Alltag integrieren. Je nach Methode können direkt danach leichte Rötungen, kleine Schwellungen oder minimale Einstichpunkte sichtbar sein, die in der Regel innerhalb von 24 bis 72 Stunden abklingen. Im Vorgespräch informieren wir Sie transparent über mögliche Ausfallzeiten, damit Sie Ihren Termin optimal planen können.'],
+  ['Können verschiedene Behandlungen kombiniert werden?', 'Ja – oft erzielt gerade die sanfte Kombination verschiedener Methoden die harmonischsten und nachhaltigsten Ergebnisse, etwa tiefenwirksame Skinbooster für die Hautqualität zusammen mit einem gezielten Face Balancing. Wir stimmen alle Schritte zeitlich und fachlich perfekt aufeinander ab.'],
+  ['Welche Produkte und Geräte verwenden Sie?', 'Bei Sicherheit und Qualität gehen wir keine Kompromisse ein. Wir arbeiten nach strengsten medizinischen Hygienestandards, nutzen modernste apparative Technologien und setzen ausschliesslich auf zertifizierte, biokompatible Premium-Produkte aus Südkorea, die für ihre hohe Reinheit und sehr gute Verträglichkeit bekannt sind.'],
+  ['Sind auch Männer bei Ihnen willkommen?', 'Selbstverständlich. Immer mehr Herren schätzen diskrete, natürliche Ästhetik für ein frisches, vitales Erscheinungsbild. Da die männliche Anatomie und Hautstruktur eigene Besonderheiten aufweisen, passen wir jede Behandlung individuell an männliche Proportionen an.'],
+  ['Was, wenn mir das Ergebnis nicht gefällt?', 'Wir dosieren bewusst zurückhaltend – nachbessern ist immer möglich. Hyaluron-Filler lassen sich zudem bei Bedarf wieder auflösen. Und bis Sie rundum zufrieden sind, begleiten wir Sie persönlich weiter.'],
   ['Was kostet die Beratung?', 'Vor oder während einer Behandlung ist die Beratung kostenlos. Als separater Termin ohne Behandlung kostet sie CHF 50. Wir nehmen uns Zeit für Ihre Fragen und erklären alle Möglichkeiten verständlich.'],
-  ['Wer führt die Behandlungen durch?', 'Die Inhaberin persönlich: Heilpraktikerin, Krankenpflegerin und medizinische Kosmetikerin mit zahlreichen Weiterbildungen in ästhetischer Medizin – selbständig seit 2009 und mit langjähriger Erfahrung in der Zusammenarbeit mit plastischen Chirurgen.'],
-  ['Ist die Behandlung schmerzhaft?', 'Die meisten Behandlungen sind gut verträglich. Wo sinnvoll, verwenden wir eine Betäubungscreme oder Kühlung. Vorab besprechen wir genau, was Sie spüren werden.'],
-  ['Bin ich nach der Behandlung gesellschaftsfähig?', 'Bei vielen Behandlungen sofort oder nach wenigen Stunden. Leichte Rötungen oder Schwellungen sind je nach Methode möglich – wir besprechen das vorab mit Ihnen.'],
-  ['In welchen Sprachen beraten Sie?', 'Auf Deutsch, Englisch, Französisch, Italienisch, Russisch und Ukrainisch – unsere Kundschaft ist sehr international.'],
-  ['Wie kann ich einen Termin buchen?', 'Direkt online über unser Buchungssystem – rund um die Uhr. Oder per WhatsApp (nur Nachrichten): Wir melden uns schnellstmöglich und finden gemeinsam einen passenden Termin.'],
+  ['Was kostet eine Behandlung?', 'Zum Beispiel Zahnbleaching ab CHF 80, Dermal Filler ab CHF 170 oder HIFU ab CHF 200. Alle Preise finden Sie bei den einzelnen Behandlungen; die finalen Kosten besprechen wir ehrlich in der Beratung.'],
+  ['Wie kann ich einen Termin vereinbaren?', 'Direkt online über unser Buchungssystem – rund um die Uhr. Oder per WhatsApp, Sprachnachricht oder Instagram. Anrufe nehmen wir nicht entgegen, weil wir während der Behandlungen ganz für unsere Kundinnen und Kunden da sind – bei Bedarf rufen wir Sie gerne zurück.'],
   ['Wo befindet sich die Liyas Lounge?', 'Liyas Lounge, Hammerallee 23, 4600 Olten – im 1. Untergeschoss (Klingel «Liyas Lounge & Lala Lashes»). Gerne senden wir Ihnen die Wegbeschreibung per WhatsApp.'],
-  ['Was kostet eine Behandlung?', 'Zum Beispiel Zahnbleaching ab CHF 80, Dermal Filler ab CHF 170 oder HIFU ab CHF 200. Die finalen Kosten besprechen wir in der Beratung.'],
+  ['In welchen Sprachen beraten Sie?', 'Auf Deutsch, Englisch, Französisch, Italienisch, Russisch und Ukrainisch – unsere Kundschaft ist sehr international.'],
   ['Wie kann ich bezahlen?', 'Die Zahlung erfolgt direkt nach der Behandlung – bar, mit TWINT oder per Karte.'],
 ];
 
@@ -597,8 +601,8 @@ export const AGB = [
 
 // Bilder der Startseite – zum Austauschen einfach den Bildnamen ändern (Dateien in assets/img, siehe README)
 export const HOME = {
-  heroImage: 'hero-liya-studio-olten', // Inhaberin im Studio; + automatisch '…-portrait' für Smartphones im Hochformat
-  heroAlt: 'Die Inhaberin der Liyas Lounge in ihrem Studio in Olten',
+  heroImage: 'hero-paar-olten', // Paar vor schwarzem Hintergrund; + automatisch '…-portrait' für Smartphones im Hochformat
+  heroAlt: 'Natürliche Ausstrahlung – Medical Aesthetics für Damen und Herren in Olten',
   heroPos: '62% 30%',
   heroPosMobile: '50% 20%',
   ctaImage: 'termin-liyas-lounge-olten',

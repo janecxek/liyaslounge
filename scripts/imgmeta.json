@@ -57,64 +57,6 @@
   "ratio": 0.5625,
   "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoYAA4APt1apkyopSOiMAgBEBuJYgCdMoABy0yWwTAEsQiZAAD+bBoN5/fyN/W0P5FBeZFJZtRwo1ldflLO+fWhlzDrOxKeraCYrIO99rnvR6/Ooq2nqMJeJVMB0pL1gr8zM003fTtT0FLSyU7Dc2thLB3CSJhiXwAAAA=="
  },
- "hero-liya-studio-olten": {
-  "w": 3072,
-  "h": 2048,
-  "widths": [
-   480,
-   800,
-   1200,
-   1600,
-   2000,
-   2560,
-   3072
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBACdASoYABAAPt1cpkyopSOiMAgBEBuJZACdMoR3ACH38uTpcMfIpea1AAD+5ZfSmfrdbfPIa0+tupNhkQBw7w3A4/KhPuFu8Pc+NlkKRSZCHcm3SszTsheVeKre0VCNasaMV6KeBmNLPtDscN6Z1P4yNc01FFF4RxoW47MqeVvqZBXdFt42BUBVl7esJt/aqla3cQAAAA=="
- },
- "hero-liya-studio-olten-portrait": {
-  "w": 2048,
-  "h": 3072,
-  "widths": [
-   480,
-   800,
-   1200,
-   1600,
-   2000,
-   2048
-  ],
-  "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRgIBAABXRUJQVlA4IPYAAACQBgCdASoYACQAPtFan0yoJaKiNVgMAQAaCUAVhm5IM5HYMYHNArG7jH3gQAtV7KXpjT76CH+StAFg4bcAAP7cTHXfKxiaGlE6Bjp0WHjYz3/TKwao28mVImI72KwBUU2oHRG3QilIofyPC6yFJPFvyA5k1BzC3L9gzEAZL0rZc/was8l1qc6G5g8MFqQlD7dMhrBVUuM2Bb97aL59Rm1SAcVSTvb+5qahYk5dRuwizzwDagsdeOVf8dQRtX8b9oc3sSWWbXji1Rw59khdoMV+RE0710Y7uTWXmEYM6iwXzliV68lwd5QEoKC5BOxTCu60ovujsAA="
- },
- "beratung-liya-olten": {
-  "w": 3072,
-  "h": 2048,
-  "widths": [
-   480,
-   800,
-   1200,
-   1600,
-   2000,
-   2560,
-   3072
-  ],
-  "ratio": 0.6666666666666666,
-  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJaACdMoAB2Ghn5cT2lOaFSE/mAAD9eNgMdNTqrCgVjRdbmwPfQYI9KVWtKeoi7721Umu4f+o00LEjWsZ8VN5VQFoTFZLdgXemun3crt1S5PzsURfwfGYx1r+/1061U8QRhiULdB1yIu9wYWH5a7u7W8wdmBYLqesdrsNr8AA="
- },
- "portrait-liya-olten": {
-  "w": 2048,
-  "h": 3072,
-  "widths": [
-   480,
-   800,
-   1200,
-   1600,
-   2000,
-   2048
-  ],
-  "ratio": 1.5,
-  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACQBgCdASoYACQAPt1cpk2opSOiKqwBEBuJZgCDJVYATXynMFMSZHuXBBOmLku3U4LsxAXQXAoatre9X9eAAP6UsfH9qDAsLrhUr3fG2ifCj9hpRUvlzRvP8qvvMS/VB8IVNegb5qPiC7z/Ux3xAav1W/6kVD5+L/m5fNvneTi8CnxfjVvlycqxlYncTWGK31tNRsdCbyr9qjNPGlhBep17cYqksj98/+qyTUd/8EWFYcg0xVTswOglh5Zu+AUKbS0sVpww2G4Mv+JcVPt6jbVs4vRJF1qhR9tiTxO9jH7Pfjx/7L9Kn+v90T25sjXIoCedaE2ygviwAAAA"
- },
  "kat-anti-age-olten": {
   "w": 1024,
   "h": 1536,
@@ -308,5 +250,40 @@
   ],
   "ratio": 1.7777777777777777,
   "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAADQBgCdASoYACsAPt1apU2opKMiMBVdURAbiUAXwTGQS28PcpFcfYyNb6FZqV+Q37bXPpG+IXsBQi4iI1x3boAA9VPTWG0Le+MC38q2O1WzJoylnx0SrY4ZAjgyEp2PSHQvPYytlxgZjOtkQvpAN8C7JiqksHqML3gc/j9t36GEv+kAV/KjNc/qRuaCMt27+dFF876dIgpfl83xHI4GIJGZJuiuxVgBobtmNIpZGxed7Yknd90GypKwvMuVzFofmHm67O5L9SJ8O4XlgAA="
+ },
+ "hero-paar-olten": {
+  "w": 1376,
+  "h": 768,
+  "widths": [
+   480,
+   800,
+   1200,
+   1376
+  ],
+  "ratio": 0.5581395348837209,
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACQAwCdASoYAA0ALqVut1ujKKioiICkSyAABc68O6ikXAbytWcAAP76X6RMqUzKy9yQe4isN6kPY0BozWHJjE3xcARd4bBqcNgp4bB8MfV/7tlSk9FytTtEBRgyB0MWKTEeEXbTQo2jz6W0sZAAAA=="
+ },
+ "hero-paar-olten-portrait": {
+  "w": 896,
+  "h": 1200,
+  "widths": [
+   480,
+   800,
+   896
+  ],
+  "ratio": 1.3392857142857142,
+  "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACQBQCdASoYACAAPtFQoUyoJKMiN/qoAQAaCWQAsQ0gAvdVlvYauzADoX6gMKdIvUy26bjbgAD+9oL9CtgsGF4V3tiNkULNknjn1Pzs7g/BFUzLbph+r3SYqdmnwO9fax2lLhe6Br9qpMeDuvMNJ2Z/TWC1LRubSFhiL5PKLhKtvcj6wjpnZmJZtFyGZsuCAAA="
+ },
+ "ueber-uns-olten": {
+  "w": 1376,
+  "h": 768,
+  "widths": [
+   480,
+   800,
+   1200,
+   1376
+  ],
+  "ratio": 0.5581395348837209,
+  "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoYAA0APt1cpkyopSOiMAgBEBuJbACw7B7A7LHf3+DhmwAA/vV6t21bgjYZbZSvWQ6abWwnzqyEZvdpjNXBnAqM8P5jUf6Pk1CdIagxfjFR5+6wOCBkRWZK2AAAAA=="
  }
 }

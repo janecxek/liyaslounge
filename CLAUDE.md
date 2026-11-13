@@ -5,11 +5,17 @@ Użytkownik pisze po polsku – odpowiadaj po polsku. Wiadomości do Liyi: po ni
 
 ## ⚠️ Stałe przypomnienia – podkreślaj je użytkownikowi ZAWSZE na pomarańczowo (🟠) przy podsumowaniu zmian
 
+- 🟠 **Kavitation: cena to placeholder „CHF x”** (Fettwegspritze, `scripts/content.mjs`) – zapytać Liyę o cenę.
 - 🟠 Impressum/Datenschutz: brak imienia i nazwiska Liyi, e-maila, UID i informacji o odpowiedzialności lekarskiej (placeholdery „[… folgt]”).
 
 ## Opinie
 - Prawdziwe opinie z Google są w `REVIEWS` (`scripts/content.mjs`), wiernie przepisane, z linkiem `url` do każdej. EN/FR to tłumaczenia (oznaczone na stronie). Nowe opinie podaje użytkownik (Claude nie ma dostępu do Google).
 - Opinia Silvii R. pomija się celowo – wymienia imię „Natalya” zamiast „Liya” (do wyjaśnienia z użytkownikiem).
+
+## Ustalenia z briefu Liyi (Nov 2026)
+- Strona bezosobowa („wir”), bez imienia i zdjęć Liyi (poza zdjęciami zabiegów, gdzie ma maseczkę). Teksty strony głównej: `scripts/content.home.mjs`.
+- Liya nie odbiera telefonów – tylko WhatsApp, Sprachnachricht, Instagram, rezerwacja online.
+- Partnerzy: Çelik i Pixl Clinic przez WhatsApp Liyi; Lala Lashes i Aevum Longevity bezpośrednio (jej prośba „ohne mein Kontakt”).
 
 ## Zasady treści
 - Szwajcarski zakaz reklamy leków na receptę: nie pisać „Botox/Botulinum/BTA/Hyaluronidase/Hylase” → „Faltenbehandlung”, „Filler-Korrektur”.
