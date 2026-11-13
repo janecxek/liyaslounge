@@ -169,7 +169,7 @@ const T = {
 function pic(name, alt, { sizes = '100vw', eager = false, pos = '', cls = '' } = {}) {
   const m = IMG[name];
   if (!m) throw new Error('Bild fehlt: ' + name);
-  const v = (n) => createHash('md5').update(IMG[n].lqip || String(IMG[n].w)).digest('hex').slice(0, 8);
+  const v = (n) => createHash('md5').update((IMG[n].lqip || String(IMG[n].w)) + (IMG[n].rev || '')).digest('hex').slice(0, 8);
   const set = (n) => IMG[n].widths.map((w) => `/assets/img/${n}-${w}.webp?v=${v(n)} ${w}w`).join(', ');
   const portrait = IMG[name + '-portrait'] ? `<source media="(orientation: portrait) and (max-width: 900px)" type="image/webp" srcset="${set(name + '-portrait')}" sizes="100vw">` : '';
   const style = pos ? `object-position:${pos}` : '';
@@ -366,7 +366,7 @@ ${sub && !sub.url ? '' : `<link rel="canonical" href="${url}">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/cormorant-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/bodoni-moda-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bodoni-moda-logo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/landing.min.css?v=${VERSION}">
