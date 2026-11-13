@@ -27,18 +27,6 @@ export const HOME_TEXT = {
       nudge: ['Lernen Sie uns persönlich kennen – vor Ihrer Behandlung ist die Beratung kostenlos.', 'Beratung vereinbaren', 'Hallo Liyas Lounge, ich würde Sie gerne bei einer Beratung kennenlernen.'],
     },
     trLead: 'Ob sanftes Full-Face-Balancing, tiefenwirksame Zellregeneration oder gezielte Körperkonturierung – gemeinsam finden wir in aller Ruhe heraus, was wirklich zu Ihnen passt.',
-    flow: {
-      script: 'Ihr Weg', h: 'Schritt für Schritt',
-      lead: 'Transparenz, Sicherheit und Ihr Wohlbefinden sind die Basis unserer Arbeit. Damit Sie sich vom ersten Moment an entspannt und bestens aufgehoben fühlen, begleiten wir Sie in klaren, sorgfältig abgestimmten Schritten – ganz ohne Hektik.',
-      steps: [
-        ['Persönliche Beratung & Anamnese', 'Alles beginnt mit einem ausführlichen, ehrlichen Gespräch in ruhiger Atmosphäre. Wir hören Ihnen zu, betrachten Ihr Gesicht oder Ihren Körper ganzheitlich und besprechen Ihre Wünsche. Ein detaillierter medizinischer Fragebogen klärt Ihre Vorgeschichte und mögliche Unverträglichkeiten – für höchste Sicherheit.'],
-        ['Sanfte Vorbereitung', 'Ihr Komfort liegt uns am Herzen. Wir bereiten Ihre Haut schonend vor und tragen je nach Behandlung und Empfinden eine sanfte Betäubungscreme auf – damit alles so angenehm und schmerzarm wie möglich verläuft.'],
-        ['Die massgeschneiderte Behandlung', 'Mit medizinischer Präzision, künstlerischem Gespür und viel Ruhe führen wir die gemeinsam geplante Behandlung durch. Auf Wunsch erklären wir jeden Schritt – stets mit Blick auf natürliche Proportionen, sanfte Übergänge und erstklassige Hygiene.'],
-        ['Nachsorge & Pflegehinweise', 'Direkt danach erhalten Sie eine beruhigende Abschlusspflege und klare, leicht verständliche Empfehlungen für die nächsten Tage zu Hause. So unterstützen Sie die Regeneration optimal, und Ihr Ergebnis kann sich perfekt entfalten.'],
-        ['Nachbetreuung bis zu Ihrer Zufriedenheit', 'Unsere Begleitung endet nicht an der Tür. Wir bleiben mit Ihnen in Kontakt, fragen nach Ihrem Befinden und vereinbaren bei Bedarf einen Kontrolltermin. Erst wenn das Ergebnis harmonisch abgeheilt ist und Sie rundum glücklich in den Spiegel schauen, ist unsere Arbeit abgeschlossen.'],
-      ],
-      nudge: ['Haben Sie vorab Fragen zu einer Behandlung oder zum Ablauf? Schreiben Sie uns jederzeit – wir nehmen uns gerne Zeit für Sie.', 'Jetzt unverbindlich anfragen', 'Hallo Liyas Lounge, ich habe eine Frage zu einer Behandlung:'],
-    },
     faq: {
       script: 'Ihre Fragen', h: 'Ehrlich beantwortet',
       lead: 'Eine ästhetische Behandlung ist Vertrauenssache. Hier finden Sie Antworten auf die wichtigsten Fragen rund um Ihren Besuch bei uns.',
@@ -88,18 +76,6 @@ export const HOME_TEXT = {
       nudge: ['Get to know us in person – the consultation is free before your treatment.', 'Arrange a consultation', 'Hello Liyas Lounge, I would like to get to know you in a consultation.'],
     },
     trLead: 'Whether gentle full-face balancing, deep cell regeneration or targeted body contouring – together we take the time to find out what truly suits you.',
-    flow: {
-      script: 'Your journey', h: 'Step by step',
-      lead: 'Transparency, safety and your well-being are the basis of our work. So that you feel relaxed and in the best hands from the very first moment, we guide you through clear, carefully coordinated steps – without any rush.',
-      steps: [
-        ['Personal consultation & medical history', 'Everything starts with a thorough, honest conversation in a calm atmosphere. We listen to you, look at your face or body as a whole and discuss your wishes. A detailed medical questionnaire clarifies your history and any intolerances – for maximum safety.'],
-        ['Gentle preparation', 'Your comfort matters to us. We prepare your skin gently and, depending on the treatment and how you feel, apply a soothing numbing cream – so that everything is as pleasant and pain-free as possible.'],
-        ['Your tailored treatment', 'With medical precision, an artistic eye and plenty of calm, we carry out the treatment we planned together. On request we explain every step – always with an eye on natural proportions, soft transitions and first-class hygiene.'],
-        ['Aftercare & care advice', 'Straight afterwards you receive a soothing finishing treatment and clear, easy-to-follow advice for the next few days at home. This supports your recovery and lets your result develop perfectly.'],
-        ['Follow-up until you are fully satisfied', 'Our care does not end at the door. We stay in touch, ask how you are and arrange a check-up if needed. Only when the result has healed harmoniously and you are happy with what you see in the mirror is our work complete.'],
-      ],
-      nudge: ['Do you have questions about a treatment or the process beforehand? Message us any time – we are happy to take time for you.', 'Ask without obligation', 'Hello Liyas Lounge, I have a question about a treatment:'],
-    },
     faq: {
       script: 'Your questions', h: 'Honestly answered',
       lead: 'An aesthetic treatment is a matter of trust. Here you will find answers to the most important questions about your visit.',
@@ -149,18 +125,6 @@ export const HOME_TEXT = {
       nudge: ['Faites notre connaissance – avant votre traitement, la consultation est gratuite.', 'Fixer une consultation', 'Bonjour Liyas Lounge, j’aimerais faire votre connaissance lors d’une consultation.'],
     },
     trLead: 'Face balancing tout en douceur, régénération cellulaire en profondeur ou remodelage ciblé du corps – ensemble, nous prenons le temps de trouver ce qui vous convient vraiment.',
-    flow: {
-      script: 'Votre parcours', h: 'Étape par étape',
-      lead: 'Transparence, sécurité et bien-être sont la base de notre travail. Pour que vous vous sentiez détendue et entre de bonnes mains dès le premier instant, nous vous accompagnons à travers des étapes claires et soigneusement coordonnées – sans aucune précipitation.',
-      steps: [
-        ['Consultation personnelle & anamnèse', 'Tout commence par un échange approfondi et honnête dans une atmosphère calme. Nous vous écoutons, regardons votre visage ou votre corps dans son ensemble et discutons de vos souhaits. Un questionnaire médical détaillé clarifie vos antécédents et d’éventuelles intolérances – pour une sécurité maximale.'],
-        ['Préparation en douceur', 'Votre confort nous tient à cœur. Nous préparons votre peau délicatement et appliquons, selon le traitement et votre ressenti, une crème anesthésiante douce – pour que tout soit aussi agréable et indolore que possible.'],
-        ['Le traitement sur mesure', 'Avec précision médicale, sens artistique et beaucoup de calme, nous réalisons le traitement planifié ensemble. Sur demande, nous expliquons chaque étape – toujours attentifs aux proportions naturelles, aux transitions douces et à une hygiène irréprochable.'],
-        ['Soins après traitement & conseils', 'Juste après, vous recevez un soin apaisant et des recommandations claires pour les jours suivants à la maison. Vous favorisez ainsi la régénération et votre résultat peut se révéler pleinement.'],
-        ['Suivi jusqu’à votre entière satisfaction', 'Notre accompagnement ne s’arrête pas à la porte. Nous restons en contact, prenons de vos nouvelles et fixons si besoin un rendez-vous de contrôle. Notre travail n’est terminé que lorsque le résultat a harmonieusement cicatrisé et que vous vous regardez dans le miroir pleinement heureuse.'],
-      ],
-      nudge: ['Des questions sur un traitement ou le déroulement ? Écrivez-nous à tout moment – nous prenons volontiers le temps pour vous.', 'Demander sans engagement', 'Bonjour Liyas Lounge, j’ai une question sur un traitement :'],
-    },
     faq: {
       script: 'Vos questions', h: 'Réponses honnêtes',
       lead: 'Un traitement esthétique est une question de confiance. Vous trouverez ici les réponses aux questions les plus importantes sur votre visite.',
