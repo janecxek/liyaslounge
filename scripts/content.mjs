@@ -247,7 +247,8 @@ export const TREATMENTS = [
       { name: '3 Zonen', detail: '3 Ampullen', desc: 'Für mehrere Problemzonen.', price: 450 },
       { name: 'Jede weitere Ampulle', detail: 'ab 3 Ampullen', desc: 'Für grössere Areale nach Bedarf.', priceText: 'CHF 100' },
       { name: '10er-Paket', detail: '10 Ampullen', desc: 'Für grössere Areale oder eine ganze Kur.', price: 1000 },
-      { name: 'Kavitation', detail: 'Ultraschall, ohne Nadeln', desc: 'Sanfte Fettreduktion und Körperformung, auch gegen Cellulite.', priceText: 'CHF x' },
+      { name: 'Kavitation – kleine Zone', detail: 'Ultraschall, ohne Nadeln', desc: 'Sanfte Fettreduktion und Körperformung, auch gegen Cellulite.', price: 170 },
+      { name: 'Kavitation – grössere Zone', detail: 'Ultraschall, ohne Nadeln', desc: 'Für Bauch, Hüften oder Oberschenkel.', price: 250 },
     ],
     faq: [
       ['Ist Lipolyse eine Methode zum Abnehmen?', 'Nein. Die Lipolyse eignet sich für kleine, hartnäckige Fettpolster – nicht zur Gewichtsreduktion.'],
