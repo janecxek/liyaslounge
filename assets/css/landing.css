@@ -2,7 +2,7 @@
    Liyas Lounge – Startseite Schwarz & Gold
    Schriften: Bodoni Moda (Logo), Cormorant Garamond (Titel), Great Vibes (Akzente), Montserrat (Text)
    ========================================================================== */
-@font-face { font-family: 'Bodoni Moda'; src: url('/assets/fonts/bodoni-moda-var.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: 'Bodoni Moda'; src: url('/assets/fonts/bodoni-moda-logo.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
 @font-face { font-family: 'Cormorant Garamond'; src: url('/assets/fonts/cormorant-var.woff2') format('woff2'); font-weight: 300 600; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Cormorant Garamond'; src: url('/assets/fonts/cormorant-italic-var.woff2') format('woff2'); font-weight: 300 600; font-style: italic; font-display: swap; }
 @font-face { font-family: 'Great Vibes'; src: url('/assets/fonts/great-vibes.woff2') format('woff2'); font-display: swap; }
@@ -38,7 +38,7 @@ body.locked { overflow: hidden; }
 
 /* ---------- Logo: LIYAS (Gold-Glitter) über «Lounge» (Schrift), darunter Claim ---------- */
 .logo { position: relative; display: inline-grid; justify-items: center; line-height: 1; }
-.logo__main { display: block; padding: .08em .1em .04em .18em; font-family: var(--bodoni); font-weight: 500; font-size: 3rem; line-height: 1.1; letter-spacing: .08em; color: transparent; background: linear-gradient(110deg, transparent 38%, rgba(255, 246, 220, .85) 46%, #fff 50%, rgba(255, 246, 220, .85) 54%, transparent 62%) 100% 0 / 300% 100% no-repeat, url('/assets/img/gold-glitter.webp') center / 240px auto, var(--grad); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 1px 0 rgba(70, 45, 10, .6)) drop-shadow(0 8px 20px rgba(0, 0, 0, .55)); animation: sweep 6s cubic-bezier(.45, .05, .55, .95) infinite; will-change: background-position; }
+.logo__main { display: block; padding: .08em .1em .04em .18em; font-family: var(--bodoni); font-weight: 500; font-size: 3rem; line-height: 1.1; letter-spacing: .08em; color: transparent; background: linear-gradient(110deg, transparent 38%, rgba(255, 246, 220, .85) 46%, #fff 50%, rgba(255, 246, 220, .85) 54%, transparent 62%) 100% 0 / 300% 100% no-repeat, url('/assets/img/gold-glitter-v2.webp') center / 240px auto, var(--grad); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 1px 0 rgba(70, 45, 10, .6)) drop-shadow(0 8px 20px rgba(0, 0, 0, .55)); animation: sweep 6s cubic-bezier(.45, .05, .55, .95) infinite; will-change: background-position; }
 .logo__script { display: block; margin-top: -.12em; padding: .05em .3em .22em; font-family: var(--script); font-size: 2.3rem; line-height: 1.1; color: transparent; background: linear-gradient(105deg, #e3bf74 0%, #fff8e2 18%, #d9b264 34%, #fbe7b4 50%, #e3bf74 66%, #fff8e2 84%, #e3bf74 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .7)); animation: shine 6s linear infinite; will-change: background-position; }
 .logo__tag { margin-top: .4em; padding-left: .45em; font-family: var(--sans); font-weight: 500; font-size: .52rem; letter-spacing: .45em; text-transform: uppercase; color: var(--gold-l); white-space: nowrap; }
 .spark { position: absolute; width: 14px; height: 14px; background: radial-gradient(circle, #fff 0 14%, rgba(255, 244, 210, .85) 15% 24%, transparent 25%); clip-path: polygon(50% 0, 57% 43%, 100% 50%, 57% 57%, 50% 100%, 43% 57%, 0 50%, 43% 43%); animation: twinkle 3.4s ease-in-out infinite; pointer-events: none; }
@@ -132,7 +132,7 @@ body.locked { overflow: hidden; }
 .hero__scroll { position: absolute; z-index: 1; left: 50%; bottom: 26px; transform: translateX(-50%); display: grid; justify-items: center; gap: 10px; font-size: .6rem; letter-spacing: .3em; text-transform: uppercase; color: var(--txt2); }
 .hero__scroll i { position: relative; width: 1px; height: 44px; background: var(--hair2); overflow: hidden; }
 .hero__scroll i::after { content: ''; position: absolute; left: 0; top: -40%; width: 1px; height: 40%; background: var(--gold); animation: cue 2.2s var(--ease) infinite; }
-@keyframes cue { to { top: 110%; } }
+@keyframes cue { to { transform: translateY(375%); } }
 html.js [data-in] { opacity: 0; transform: translateY(22px); animation: fadeUp 1.3s var(--ease) var(--d, .1s) forwards; }
 @keyframes fadeUp { to { opacity: 1; transform: none; } }
 .stars { display: inline-flex; gap: 3px; color: var(--gold); }
@@ -861,3 +861,8 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
   .rit__txt { min-width: 0; }
   .rit__txt b { padding-right: 58px; overflow-wrap: anywhere; hyphens: auto; }
 }
+/* ---------- Performance: Endlos-Animationen nur, wenn sichtbar und nicht gescrollt wird ---------- */
+.btn--gold.is-idle::after,
+.is-scrolling .logo__main, .is-scrolling .logo__script, .is-scrolling .spark, .is-scrolling .btn--gold::after, .is-scrolling .fab::after { animation-play-state: paused; }
+/* Smartphone/Tablet: Navigationsleiste ohne Live-Weichzeichner (teuer auf mobilen GPUs), dafür fast deckend */
+@media (max-width: 1080px) { .nav.is-solid { background: rgba(7, 7, 7, .95); -webkit-backdrop-filter: none; backdrop-filter: none; } }

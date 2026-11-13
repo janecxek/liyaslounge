@@ -26,7 +26,15 @@
   /* ---------- Navigation: fest nach dem Hero, weich aus- und einblenden ---------- */
   var nav = $('[data-nav]'), fab = $('[data-fab]'), hero = $('.hero'), heroImg = $('[data-hero-img]'), ct = $('#kontakt');
   var lastY = 0, acc = 0, vh = window.innerHeight, vw = window.innerWidth;
+  // während des Scrollens dekorative Endlos-Animationen anhalten (Logo-Glanz, Button-Reflex) – Scrollen bleibt flüssig
+  var scrollT = 0, docEl = document.documentElement;
+  function scrolling() {
+    if (!docEl.classList.contains('is-scrolling')) docEl.classList.add('is-scrolling');
+    clearTimeout(scrollT);
+    scrollT = setTimeout(function () { docEl.classList.toggle('is-scrolling', false); }, 180);
+  }
   function onScroll(y) {
+    scrolling();
     // erst alle Masse lesen, dann schreiben – vermeidet erzwungenes Layout pro Frame
     var trTop = tr && !(reduce || vw <= 900) ? tr.getBoundingClientRect().top : null;
     var ctTop = ct ? ct.getBoundingClientRect().top : Infinity;
@@ -180,7 +188,7 @@
   /* ---------- Animationen nur laufen lassen, wenn sichtbar ---------- */
   if ('IntersectionObserver' in window) {
     var idle = new IntersectionObserver(function (es) { es.forEach(function (en) { en.target.classList.toggle('is-idle', !en.isIntersecting); }); });
-    $$('.hero, .foot').forEach(function (el) { idle.observe(el); });
+    $$('.hero, .foot, .btn--gold').forEach(function (el) { idle.observe(el); });
   }
 
   /* ---------- FAQ: weich auf- und zuklappen, immer nur eine offen ---------- */
