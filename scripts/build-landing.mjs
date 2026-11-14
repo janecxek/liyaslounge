@@ -273,6 +273,13 @@ function page(L, sub = null) {
   </div>
 </section>
 
+<section class="tp-sec flow" id="ablauf">
+  ${head(t.h.flow.script, t.h.flow.h)}
+  <p class="lead" data-up>${esc(t.h.flow.lead)}</p>
+  ${ritual(t.h.flow.steps)}
+  ${nudge(t.h.flow.nudge)}
+</section>
+
 <div class="vr">
 <div class="vr__bg" aria-hidden="true">${pic('studio-raum-olten', '', { sizes: '100vw', pos: '50% 50%' })}</div>
 <section class="visit">
@@ -298,13 +305,6 @@ function page(L, sub = null) {
   <p class="lead faq__lead" data-up>${esc(t.h.faq.lead)}</p>
   <div class="acc" data-up>${t.faq.map(([q, a]) => `<details><summary>${esc(q)}${ico('plus')}</summary><div><p>${esc(a)}</p></div></details>`).join('')}</div>
   ${nudge(t.h.faq.nudge)}
-</section>
-
-<section class="tp-sec flow" id="ablauf">
-  ${head(t.h.flow.script, t.h.flow.h)}
-  <p class="lead" data-up>${esc(t.h.flow.lead)}</p>
-  ${ritual(t.h.flow.steps)}
-  ${nudge(t.h.flow.nudge)}
 </section>
 
 <section class="partners" id="partner">
