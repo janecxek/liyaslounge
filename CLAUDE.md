@@ -5,16 +5,19 @@ Użytkownik pisze po polsku – odpowiadaj po polsku. Wiadomości do Liyi: po ni
 
 ## ⚠️ Stałe przypomnienia – podkreślaj je użytkownikowi ZAWSZE na pomarańczowo (🟠) przy podsumowaniu zmian
 
-- 🟠 Impressum/Datenschutz: brak podmiotu odpowiedzialnego, e-maila i informacji o odpowiedzialności lekarskiej (placeholdery „[… folgt]”). Liya nie chce swojego nazwiska publicznie (pracuje na licencji partnera) – czekamy na dane firmy partnera, adres i e-mail. UID: brak. Nie zapisywać jej nazwiska w repozytorium.
+- 🟠 AGB: Ausfallgebühr bei kurzfristiger Absage/Nichterscheinen bez kwoty ("kann eine Ausfallgebühr verrechnet werden") – zapytać Liyę o kwotę.
 
 ## Opinie
 - Prawdziwe opinie z Google są w `REVIEWS` (`scripts/content.mjs`), wiernie przepisane, z linkiem `url` do każdej. EN/FR to tłumaczenia (oznaczone na stronie). Nowe opinie podaje użytkownik (Claude nie ma dostępu do Google).
 - Opinia Silvii R. pomija się celowo – wymienia imię „Natalya” zamiast „Liya” (do wyjaśnienia z użytkownikiem).
 
+## Impressum
+- Inhaberin + e-mail są w `SITE.owner` / `SITE.email` (`scripts/content.mjs`), na wyraźne życzenie Liyi tylko w Impressum/Datenschutz. UID: brak.
+
 ## Ustalenia z briefu Liyi (Nov 2026)
-- Strona bezosobowa („wir”), bez imienia i zdjęć Liyi (poza zdjęciami zabiegów, gdzie ma maseczkę). Teksty strony głównej: `scripts/content.home.mjs`.
+- Strona bezosobowa („wir”), bez imienia Liyi. Zdjęcie konsultacji z nią w „Über uns” – na jej prośbę; zdjęcia zabiegów z nią (maseczka) zostają. Teksty strony głównej: `scripts/content.home.mjs`.
 - Liya nie odbiera telefonów – tylko WhatsApp, Sprachnachricht, Instagram, rezerwacja online.
-- Partnerzy: Çelik i Pixl Clinic przez WhatsApp Liyi; Lala Lashes i Aevum Longevity bezpośrednio (jej prośba „ohne mein Kontakt”).
+- Partnerzy: Çelik i Pixl Clinic – strona + Instagram + konsultacja przez WhatsApp Liyi; Lala Lashes i Aevum Longevity bezpośrednio (jej prośba „ohne mein Kontakt”).
 
 ## Zasady treści
 - Szwajcarski zakaz reklamy leków na receptę: nie pisać „Botox/Botulinum/BTA/Hyaluronidase/Hylase” → „Faltenbehandlung”, „Filler-Korrektur”.

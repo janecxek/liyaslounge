@@ -1106,13 +1106,12 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
     };
     legal('agb', 'AGB – Allgemeine Geschäftsbedingungen | Liyas Lounge Olten', 'AGB',
       'Allgemeine Geschäftsbedingungen der Liyas Lounge in Olten: Terminvereinbarung, Absagen, Preise, Zahlung, Haftung und Datenschutz.',
-      `<p class="note">Entwurf – bitte vor der Veröffentlichung prüfen und ergänzen.</p>` + AGB.map(([h, p]) => `<h2>${esc(h)}</h2><p>${esc(p)}</p>`).join('') + `<p class="note">Stand: ${stand}</p>`);
+      `` + AGB.map(([h, p]) => `<h2>${esc(h)}</h2><p>${esc(p)}</p>`).join('') + `<p class="note">Stand: ${stand}</p>`);
     legal('privacy', 'Datenschutzerklärung | Liyas Lounge Olten', 'Datenschutz',
       'Datenschutzerklärung der Liyas Lounge in Olten gemäss Schweizer Datenschutzgesetz (DSG): welche Daten wir bearbeiten, wofür und welche Rechte Sie haben.',
-      `<p class="note">Entwurf – bitte vor der Veröffentlichung prüfen und ergänzen.</p>
-<p>Der Schutz Ihrer Personendaten ist uns wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber, welche Personendaten wir im Zusammenhang mit unserer Website und unseren Dienstleistungen bearbeiten. Massgebend ist das Schweizer Bundesgesetz über den Datenschutz (DSG).</p>
+      `<p>Der Schutz Ihrer Personendaten ist uns wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber, welche Personendaten wir im Zusammenhang mit unserer Website und unseren Dienstleistungen bearbeiten. Massgebend ist das Schweizer Bundesgesetz über den Datenschutz (DSG).</p>
 <h2>1. Verantwortliche Stelle</h2>
-<p>Liyas Lounge<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}, Schweiz<br>E-Mail: ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}${isSet(SITE.phone) ? `<br>Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a>` : ''}</p>
+<p>Liyas Lounge, Inhaberin ${esc(SITE.owner)}<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}, Schweiz<br>E-Mail: ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}${isSet(SITE.phone) ? `<br>Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a>` : ''}</p>
 <h2>2. Besuch der Website</h2>
 <p>Beim Aufruf unserer Website werden durch unseren Hosting-Anbieter technisch notwendige Daten (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles verarbeitet. Diese Daten dienen ausschliesslich dem sicheren und stabilen Betrieb der Website und werden nicht mit anderen Daten zusammengeführt.</p>
 <p>Unsere Website wird bei Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, USA) gehostet. Dabei können Daten auch in den USA bearbeitet werden. Die Übermittlung ist durch geeignete Garantien abgesichert (Swiss-U.S. Data Privacy Framework bzw. Standardvertragsklauseln).</p>
@@ -1140,10 +1139,10 @@ ${faqSection(CONTACT_FAQ, { alt: true })}
     legal('imprint', 'Impressum | Liyas Lounge Olten', 'Impressum',
       'Impressum der Liyas Lounge in Olten – Medical Aesthetic & Beauty: Kontakt, Haftung und Urheberrecht.',
       `<h2>Kontaktadresse</h2>
-<p>Liyas Lounge<br>Medical Aesthetic &amp; Beauty<br>Inhaberin: [Name folgt]<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}<br>Schweiz</p>
-<p>${isSet(SITE.phone) ? `Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a><br>` : ''}E-Mail: ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}<br>[UID-Nummer, falls vorhanden]</p>
-<h2>Ärztliche Verantwortung</h2>
-<p>[Angaben zur ärztlichen Verantwortung für medizinisch-ästhetische Behandlungen ergänzen]</p>
+<p>Liyas Lounge<br>Medical Aesthetic &amp; Beauty<br>Inhaberin: ${esc(SITE.owner)}<br>${esc(SITE.street)}<br>${SITE.zip} ${esc(SITE.city)}<br>Schweiz</p>
+<p>${isSet(SITE.phone) ? `Telefon: <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a><br>` : ''}E-Mail: ${SITE.email ? `<a href="mailto:${SITE.email}">${esc(SITE.email)}</a>` : '[E-Mail folgt]'}</p>
+<h2>Medizinische Behandlungen</h2>
+<p>Alle Behandlungen erfolgen erst nach einer persönlichen, ausführlichen Beratung und einer sorgfältigen medizinischen Anamnese. Bei speziellen medizinischen Fragestellungen oder invasiven Eingriffen arbeiten wir eng mit qualifizierten Fachärzten zusammen.</p>
 <h2>Haftungsausschluss</h2>
 <p>Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Die Informationen auf dieser Website ersetzen keine persönliche Beratung. Ergebnisse von Behandlungen sind individuell und können nicht garantiert werden.</p>
 <h2>Haftung für Links</h2>

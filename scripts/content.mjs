@@ -11,7 +11,8 @@ export const SITE = {
   phoneHref: 'tel:+41795090660',
   whatsapp: 'https://wa.me/41795090660',
   booking: 'https://liyas.simplybook.it/v2/', // Online-Terminbuchung (SimplyBook)
-  email: '', // noch unbekannt – leer = wird nirgends angezeigt (Rechtstexte zeigen «[E-Mail folgt]»)
+  email: 'Nera29@gmail.com',
+  owner: 'Liya Mèndez', // Inhaberin – nur im Impressum/Datenschutz (Wunsch der Kundin)
   street: 'Hammerallee 23',
   floor: '1. UG', // laut Klingelschild: 1. Untergeschoss, Klingel «Liyas Lounge & Lala Lashes»
   zip: '4600',
@@ -113,7 +114,7 @@ export const TREATMENTS = [
     card: 'Stirn, Zornesfalte & Krähenfüsse – frisch, aber natürlich.',
     image: 'tr-faltenbehandlung-olten',
     imageAlt: 'Entspannte Frau mit natürlich glatter Haut – Faltenbehandlung in Olten',
-    chips: ['15–30 Min.', 'Ø 3–4 Monate*', 'Keine Ausfallzeit'],
+    chips: ['15–30 Min.', 'Ø 3–6 Monate*', 'Keine Ausfallzeit'],
     intro: 'Stirnfalten, die Zornesfalte oder Krähenfüsse entstehen durch wiederkehrende Muskelbewegungen. Bei der Faltenbehandlung wird die Aktivität dieser Muskeln mit feinen Injektionen gezielt reduziert. In der Liyas Lounge in Olten dosieren wir bewusst zurückhaltend – Sie sollen erholt aussehen, nicht ausdruckslos.',
     what: {
       title: 'Wie funktioniert die Faltenbehandlung?',
@@ -130,9 +131,9 @@ export const TREATMENTS = [
     ],
     results: {
       title: 'Ergebnisse & Haltbarkeit',
-      items: ['Wirkung setzt nach 3–7 Tagen ein, volle Wirkung nach etwa 2 Wochen', 'Haltbarkeit meist 3–4 Monate', 'Sofort wieder gesellschaftsfähig'],
+      items: ['Wirkung setzt nach 3–7 Tagen ein, volle Wirkung nach etwa 2 Wochen', 'Haltbarkeit meist 3–6 Monate', 'Sofort wieder gesellschaftsfähig'],
       note: RESULT_NOTE,
-      stats: [['15–30', 'Minuten'], ['3–4', 'Monate*'], ['0', 'Tage Ausfallzeit']],
+      stats: [['15–30', 'Minuten'], ['3–6', 'Monate*'], ['0', 'Tage Ausfallzeit']],
     },
     prices: [
       { name: '1 Zone', detail: 'Stirn, Zornesfalte oder Krähenfüsse', desc: 'Gezielte Behandlung einer Region.', price: 150 },
@@ -148,7 +149,7 @@ export const TREATMENTS = [
     priceNote: 'Kontrolltermin nach 2–3 Wochen im Preis inbegriffen. Kombination mit Dermal Fillern: siehe Fullface-Pakete ab CHF 500.',
     faq: [
       ['Wann sieht man die Wirkung?', 'Die Wirkung setzt meist nach 3 bis 7 Tagen ein, die volle Wirkung zeigt sich nach etwa zwei Wochen.'],
-      ['Wie lange hält die Faltenbehandlung?', 'In der Regel 3 bis 4 Monate. Mit regelmässigen Behandlungen kann die Wirkung bei manchen Menschen etwas länger anhalten.'],
+      ['Wie lange hält die Faltenbehandlung?', 'In der Regel 3 bis 6 Monate. Mit regelmässigen Behandlungen kann die Wirkung bei manchen Menschen etwas länger anhalten.'],
       ['Sehe ich danach ausdruckslos aus?', 'Nein – wir dosieren bewusst individuell und zurückhaltend, damit Ihre natürliche Mimik erhalten bleibt.'],
       ['Was kostet die Faltenbehandlung in Olten?', 'Eine Zone kostet CHF 150, drei Zonen CHF 350 und Full Face CHF 650 – der Kontrolltermin nach 2–3 Wochen ist inbegriffen. In der Beratung vor der Behandlung besprechen wir, was für Sie sinnvoll ist.'],
     ],
@@ -576,6 +577,8 @@ export const HOME_FAQ = [
   ['Ich weiss noch nicht, welche Behandlung zu mir passt – ist das schlimm?', 'Überhaupt nicht – genau dafür sind wir da. Sie müssen keine fertige Lösung mitbringen. In der ausführlichen Beratung analysieren wir Ihre Haut, Ihre Gesichts- oder Körperstruktur und hören Ihnen genau zu. Gemeinsam entwickeln wir ein massgeschneidertes Konzept, das zu Ihren Wünschen und Ihrem Budget passt.'],
   ['Ist eine Behandlung schmerzhaft?', 'Ihr Wohlbefinden steht an erster Stelle. Viele unserer apparativen und regenerativen Anwendungen sind ohnehin sehr sanft. Bei intensiveren Behandlungen wie Filler, Mesotherapie oder Morpheus8 tragen wir vorab eine wirksame, beruhigende Betäubungscreme auf – damit die Behandlung so angenehm und schmerzarm wie möglich verläuft.'],
   ['Wie lange bin ich nach der Behandlung gesellschaftsfähig?', 'Die meisten Behandlungen lassen sich wunderbar in den Alltag integrieren. Je nach Methode können direkt danach leichte Rötungen, kleine Schwellungen oder minimale Einstichpunkte sichtbar sein, die in der Regel innerhalb von 24 bis 72 Stunden abklingen. Im Vorgespräch informieren wir Sie transparent über mögliche Ausfallzeiten, damit Sie Ihren Termin optimal planen können.'],
+  ['Können verschiedene Behandlungen kombiniert werden?', 'Ja – oft erzielt gerade die sanfte Kombination verschiedener Methoden die harmonischsten und nachhaltigsten Ergebnisse, etwa tiefenwirksame Skinbooster für die Hautqualität zusammen mit einem gezielten Face Balancing. Wir stimmen alle Schritte zeitlich und fachlich perfekt aufeinander ab.'],
+  ['Welche Produkte und Geräte verwenden Sie?', 'Bei Sicherheit und Qualität gehen wir keine Kompromisse ein. Wir arbeiten nach strengsten medizinischen Hygienestandards, nutzen modernste apparative Technologien und setzen ausschliesslich auf zertifizierte, biokompatible Premium-Produkte aus Südkorea, die für ihre hohe Reinheit und sehr gute Verträglichkeit bekannt sind.'],
   ['Sind auch Männer bei Ihnen willkommen?', 'Selbstverständlich. Immer mehr Herren schätzen diskrete, natürliche Ästhetik für ein frisches, vitales Erscheinungsbild. Da die männliche Anatomie und Hautstruktur eigene Besonderheiten aufweisen, passen wir jede Behandlung individuell an männliche Proportionen an.'],
   ['Was kostet die Beratung?', 'Vor oder während einer Behandlung ist die Beratung kostenlos. Als separater Termin ohne Behandlung kostet sie CHF 50. Wir nehmen uns Zeit für Ihre Fragen und erklären alle Möglichkeiten verständlich.'],
   ['Wie kann ich einen Termin vereinbaren?', 'Direkt online über unser Buchungssystem – rund um die Uhr. Oder per WhatsApp, Sprachnachricht oder Instagram. Anrufe nehmen wir nicht entgegen, weil wir während der Behandlungen ganz für unsere Kundinnen und Kunden da sind – bei Bedarf rufen wir Sie gerne zurück.'],
@@ -583,7 +586,7 @@ export const HOME_FAQ = [
 
 export const AGB = [
   ['1. Geltungsbereich', 'Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Dienstleistungen, Behandlungen und Angebote der Liyas Lounge in Olten, unabhängig davon, ob sie online, per Nachricht oder persönlich gebucht werden. Abweichende Vereinbarungen gelten nur, wenn sie schriftlich bestätigt wurden.'],
-  ['2. Terminvereinbarung und Absagen', 'Termine können online (SimplyBook), per WhatsApp oder vor Ort vereinbart werden. Eine Absage oder Verschiebung muss spätestens 24 Stunden vor dem Termin erfolgen. Bei kurzfristiger Absage oder Nichterscheinen kann eine Gebühr von [Betrag folgt] berechnet werden. Bei verspätetem Erscheinen kann sich die Behandlungszeit verkürzen.'],
+  ['2. Terminvereinbarung und Absagen', 'Termine können online (SimplyBook), per WhatsApp oder vor Ort vereinbart werden. Eine Absage oder Verschiebung muss spätestens 24 Stunden vor dem Termin erfolgen. Bei kurzfristiger Absage oder Nichterscheinen kann eine Ausfallgebühr verrechnet werden. Bei verspätetem Erscheinen kann sich die Behandlungszeit verkürzen.'],
   ['3. Gesundheitliche Voraussetzungen', 'Die Kundin bzw. der Kunde ist verpflichtet, vor der Behandlung über alle relevanten gesundheitlichen Probleme, Allergien, Hauterkrankungen, eine Schwangerschaft oder laufende medizinische Behandlungen zu informieren. Für Folgen unvollständiger oder falscher Angaben wird keine Haftung übernommen.'],
   ['4. Preise und Zahlung', 'Alle Preise verstehen sich in Schweizer Franken (CHF). Die Beratung ist vor oder während einer Behandlung kostenlos; als separater Termin ohne Behandlung kostet sie CHF 50. Preisänderungen bleiben vorbehalten; massgeblich sind die am Behandlungstag gültigen Preise. Die Zahlung erfolgt unmittelbar nach der Behandlung bar, mit TWINT oder per Karte.'],
   ['5. Ergebnisse und Haftung', 'Ergebnisse ästhetischer Behandlungen sind individuell und können nicht garantiert werden. Für Schäden, die durch Nichtbeachtung der Nachsorge-Empfehlungen oder durch Eigenverschulden entstehen, wird keine Haftung übernommen.'],

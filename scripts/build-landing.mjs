@@ -187,7 +187,7 @@ const I = {
 const ico = (n) => `<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
 const stars = (label) => `<span class="stars" role="img" aria-label="${label}">${ico('star').repeat(5)}</span>`;
 const logo = (cls = '') => `<span class="logo ${cls}" role="img" aria-label="Liyas Lounge"><span class="logo__main" aria-hidden="true">LIYAS</span><span class="logo__script" aria-hidden="true">Lounge</span><span class="logo__tag" aria-hidden="true">Medical Aesthetic &amp; Beauty</span><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i></span>`;
-const ritual = (steps) => `<ol class="rit" data-rit><i class="rit__line" aria-hidden="true"><i></i></i>${steps.map(([a, b], i) => `<li class="rit__step"><span class="rit__node" aria-hidden="true"></span><span class="rit__num" aria-hidden="true">${['I', 'II', 'III', 'IV', 'V', 'VI'][i]}</span><div class="rit__txt"><small>${String(i + 1).padStart(2, '0')}</small><b>${esc(a)}</b><p>${esc(b)}</p></div></li>`).join('')}</ol>`;
+const ritual = (steps) => `<ol class="rit" data-rit><i class="rit__line" aria-hidden="true"><i></i></i>${steps.map(([a, b], i) => `<li class="rit__step"><span class="rit__node" aria-hidden="true"></span><div class="rit__txt"><small>${String(i + 1).padStart(2, '0')}</small><b>${esc(a)}</b><p>${esc(b)}</p></div></li>`).join('')}</ol>`;
 const head = (script, h, cls = '') => `<header class="sh ${cls}" data-up><p class="sh__script">${esc(script)}</p><h2 class="sh__h">${esc(h)}</h2></header>`;
 
 // Mini-Check «Was passt zu Ihnen?»: 1–2 Klicks → Empfehlung → WhatsApp mit vorbereiteter Nachricht
@@ -242,18 +242,22 @@ function page(L, sub = null) {
 </section>
 
 <section class="intro" id="willkommen">
-  ${head(t.h.intro.script, t.h.intro.h)}
-  ${t.h.intro.p.map((x) => `<p class="lead" data-up>${esc(x)}</p>`).join('')}
-  <p class="intro__claim" data-up>${esc(t.h.intro.claim)}</p>
-  <p class="intro__welcome" data-up>${esc(t.h.intro.welcome)}</p>
+  <div class="intro__txt">
+    ${head(t.h.intro.script, t.h.intro.h, 'sh--left')}
+    ${t.h.intro.p.map((x) => `<p class="lead" data-up>${esc(x)}</p>`).join('')}
+    <p class="intro__claim" data-up>${esc(t.h.intro.claim)}</p>
+  </div>
+  <figure class="intro__img" data-up>${pic('praesentation-olten', t.h.intro.alt, { sizes: '(max-width: 900px) 92vw, 520px' })}</figure>
 </section>
 
 <section class="oval tex" id="expertin">
   <div class="oval__in">
     ${head(t.h.about.script, t.h.about.h)}
     ${t.h.about.p.map((x) => `<p class="lead" data-up>${esc(x)}</p>`).join('')}
-    <figure class="photo" data-up>${pic('ueber-uns-olten', t.h.about.alt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '60% 40%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
-    <ul class="values">${t.h.about.values.map(([a, b], i) => `<li data-up style="--d:${i * .1}s"><span>0${i + 1}</span><b>${esc(a)}</b><p>${esc(b)}</p></li>`).join('')}</ul>
+    <figure class="photo" data-up>${pic('beratung-liya-olten', t.h.about.alt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '50% 35%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
+    <p class="intro__welcome about__welcome" data-up>${esc(t.h.about.welcome)}</p>
+    <h3 class="about__sub" data-up>${esc(t.h.about.subH)}</h3>
+    <p class="lead" data-up>${esc(t.h.about.subP)}</p>
     ${nudge(t.h.about.nudge)}
   </div>
 </section>
@@ -310,7 +314,7 @@ function page(L, sub = null) {
 <section class="partners" id="partner">
   ${head(t.h.partners.script, t.h.partners.h)}
   <p class="lead" data-up>${esc(t.h.partners.lead)}</p>
-  <ul class="partners__list">${PARTNERS.map((pt, i) => `<li data-up style="--d:${i * .08}s"><b>${esc(pt.name)}</b><p>${esc(pt.text[L])}</p>${pt.wa ? `<a class="partners__cta" href="${wa(pt.msg[L])}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(t.h.partners.viaUs)}</span></a>` : `<a class="partners__cta" href="${esc(pt.url)}" target="_blank" rel="noopener">${ico(pt.label === 'direct' ? 'ig' : 'arrow')}<span>${esc(t.h.partners[pt.label])}</span></a>`}</li>`).join('')}</ul>
+  <ul class="partners__list">${PARTNERS.map((pt, i) => `<li data-up style="--d:${i * .08}s"><b>${esc(pt.name)}</b><p>${esc(pt.text[L])}</p>${pt.wa ? `<span class="partners__links">${pt.site ? `<a href="${esc(pt.site)}" target="_blank" rel="noopener">${ico('arrow')}<span>${esc(t.h.partners.site)}</span></a>` : ''}${pt.ig ? `<a href="${esc(pt.ig)}" target="_blank" rel="noopener">${ico('ig')}<span>Instagram</span></a>` : ''}</span><a class="partners__cta" href="${wa(pt.msg[L])}" target="_blank" rel="noopener">${ico('wa')}<span>${esc(t.h.partners.viaUs)}</span></a>` : `<a class="partners__cta" href="${esc(pt.url)}" target="_blank" rel="noopener">${ico(pt.label === 'direct' ? 'ig' : 'arrow')}<span>${esc(t.h.partners[pt.label])}</span></a>`}</li>`).join('')}</ul>
 </section>
 
 <section class="ct" id="kontakt">
@@ -327,7 +331,7 @@ function page(L, sub = null) {
     </ul>
     <p class="ct__note" data-up>${esc(t.h.contact.noCalls)}</p>
   </div>
-  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('studio-lounge-olten', '', { sizes: '420px', pos: '50% 40%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
+  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('hero-paar-olten-portrait', '', { sizes: '420px', pos: '35% 30%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
 </section>`}
 </main>
 

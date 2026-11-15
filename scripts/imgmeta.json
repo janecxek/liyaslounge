@@ -312,5 +312,31 @@
   "ratio": 0.5581395348837209,
   "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoYAA0APt1cpkyopSOiMAgBEBuJbACw7B7A7LHf3+DhmwAA/vV6t21bgjYZbZSvWQ6abWwnzqyEZvdpjNXBnAqM8P5jUf6Pk1CdIagxfjFR5+6wOCBkRWZK2AAAAA==",
   "rev": 2
+ },
+ "beratung-liya-olten": {
+  "w": 3072,
+  "h": 2048,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000,
+   2560,
+   3072
+  ],
+  "ratio": 0.6666666666666666,
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJaACdMoAB2Ghn5cT2lOaFSE/mAAD9eNgMdNTqrCgVjRdbmwPfQYI9KVWtKeoi7721Umu4f+o00LEjWsZ8VN5VQFoTFZLdgXemun3crt1S5PzsURfwfGYx1r+/1061U8QRhiULdB1yIu9wYWH5a7u7W8wdmBYLqesdrsNr8AA="
+ },
+ "praesentation-olten": {
+  "w": 896,
+  "h": 1200,
+  "widths": [
+   480,
+   800,
+   896
+  ],
+  "ratio": 1.3392857142857142,
+  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACQBQCdASoYACAAPt1eqU6opKOiMBgIARAbiWYAs6DAA4ATd2XEKTDond8acYWtoZwkUIMUAAD+9XJMKikDno/WzkrbT67+LUvXS7qwInCGmVFlkTwf9W7ToxsP8lqPaQkQQLc78YOArOQMuqp/FPwxTJbJbtyU/1yZHUCy5CUdXKYJgEubpXEY9Pw/omNLTwpUiT2sChNHvKZFT/ulvs5kYAAAAA=="
  }
 }
