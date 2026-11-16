@@ -1,7 +1,7 @@
 # Liyas Lounge – notatki projektu
 
 Strona: DE `/`, EN `/en`, FR `/fr` · build: `node scripts/build.mjs` (generuje wszystkie strony) · branch: `claude/vibrant-clarke-bzxc09` · każda zmiana = osobny PR do `main`.
-Użytkownik pisze po polsku – odpowiadaj po polsku. Wiadomości do Liyi: po niemiecku, na „du”, krótko, na luzie, z tłumaczeniem na polski, w Szwajcarii „ss” zamiast „ß”.
+Użytkownik pisze po polsku – odpowiadaj po polsku. Wiadomości do Liyi: po niemiecku, na „du”, krótko, na luzie, z tłumaczeniem na polski, w Szwajcarii „ss” zamiast „ß”, bez wykrzykników i bez emotek (użytkownik to mężczyzna – ma brzmieć profesjonalnie).
 
 ## ⚠️ Stałe przypomnienia – podkreślaj je użytkownikowi ZAWSZE na pomarańczowo (🟠) przy podsumowaniu zmian
 

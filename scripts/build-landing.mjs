@@ -247,7 +247,7 @@ function page(L, sub = null) {
     ${t.h.intro.p.map((x) => `<p class="lead" data-up>${esc(x)}</p>`).join('')}
     <p class="intro__claim" data-up>${esc(t.h.intro.claim)}</p>
   </div>
-  <figure class="intro__img" data-up>${pic('praesentation-olten', t.h.intro.alt, { sizes: '(max-width: 900px) 92vw, 520px' })}</figure>
+  <figure class="intro__img" data-up>${pic('paar-olten', t.h.intro.alt, { sizes: '(max-width: 900px) 92vw, 560px', pos: '41% 40%' })}</figure>
 </section>
 
 <section class="oval tex" id="expertin">
@@ -331,7 +331,7 @@ function page(L, sub = null) {
     </ul>
     <p class="ct__note" data-up>${esc(t.h.contact.noCalls)}</p>
   </div>
-  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('hero-paar-olten-portrait', '', { sizes: '420px', pos: '35% 30%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
+  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('empfang-olten', '', { sizes: '420px', pos: '50% 55%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
 </section>`}
 </main>
 

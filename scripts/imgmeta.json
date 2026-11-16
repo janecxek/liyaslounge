@@ -328,17 +328,30 @@
   "ratio": 0.6666666666666666,
   "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoYABAAPt1apkyopSOiMAgBEBuJaACdMoAB2Ghn5cT2lOaFSE/mAAD9eNgMdNTqrCgVjRdbmwPfQYI9KVWtKeoi7721Umu4f+o00LEjWsZ8VN5VQFoTFZLdgXemun3crt1S5PzsURfwfGYx1r+/1061U8QRhiULdB1yIu9wYWH5a7u7W8wdmBYLqesdrsNr8AA="
  },
- "praesentation-olten": {
-  "w": 1792,
-  "h": 2400,
+ "empfang-olten": {
+  "w": 946,
+  "h": 1600,
+  "widths": [
+   480,
+   800,
+   946
+  ],
+  "ratio": 1.6913319238900635,
+  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAADQBgCdASoYACkAPt1iqU+opSOiJWzJEBuJQBYdgQtrEpebo4yOo8uGaEGUlzpCBjY/HvKcKwX2x9aBp1pqEgAA/cCEvfg5odxlOXCtdMmtE7tfk3sgNRwjdeph0Pg3ja0QDBji76yQtni7zwnu5q2OwMwf+ncwryndJmqTGJOMTup10jDtiwDyXoKOecJqvD8KBr56T74m6ux6Gu0nqdmkj+zzJ3GGTEHiw8wKijHjQJFSJ+kdAqT7BpNF8ems3NFZXhWr9te3XdGzaZt/pjsgjwdsu9k2eCcb/M63iPijU8jQ1mUHaYO3P0LzDXdwQT9m8P6SDFFEAAAA"
+ },
+ "paar-olten": {
+  "w": 2752,
+  "h": 1536,
   "widths": [
    480,
    800,
    1200,
    1600,
-   1792
+   2000,
+   2560,
+   2752
   ],
-  "ratio": 1.3392857142857142,
-  "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBQCdASoYACAAPt1eqU4opSOiMBgIARAbiWYAtsssANoNqfVYVW2mU80ZSKdMuzXb1cMAAP71ckwqKQOej9bOSttPrv4tS9dLurAicIaZUWWRPB/1b1VcRUQRInzXd6gaCmdnAFWo0KJGsJvoazISWvNyWfFHB8UJ/ywdWIFSye8qywbq0HdoZlwq4zFXI4aQEnd7K+7tIYseNPRfm+nwIAAAAA=="
+  "ratio": 0.5581395348837209,
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoYAA0APt1cpkyopSOiMAgBEBuJaACsAB6Qs2C2f6YJ+IAA/vV6t21bgjYZbXcTXW3+7B2XE+TpiG3pvifmjy0YXFena52ODaJtpVFlYmxkNAE6vccROz1aNYqqkpwAAAA="
  }
 }
