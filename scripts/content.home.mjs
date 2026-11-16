@@ -11,7 +11,7 @@ export const HOME_TEXT = {
         'Es geht nicht darum, Sie zu verändern – sondern darum, Ihre wahre, natürliche Schönheit sichtbar zu machen. In einem ruhigen, exklusiven Rahmen nehmen wir uns viel Zeit für Sie und Ihre Wünsche. Durch unseren ganzheitlichen Blick auf Proportionen, Balance und individuelle Anti-Aging-Konzepte schaffen wir harmonische Ergebnisse, die Ihre Persönlichkeit unterstreichen.',
       ],
       claim: 'Damit Sie sich in jedem Lebensabschnitt selbstbewusst, frisch und ganz bei sich fühlen.',
-      alt: 'Natürliche Ausstrahlung im Profil – Medical Aesthetics für Damen und Herren in Olten',
+      alt: 'Natürliche Ausstrahlung – Medical Aesthetics für Damen und Herren in Olten',
     },
     about: {
       script: 'Über uns', h: 'Erfahrung & Feingefühl',
@@ -72,7 +72,7 @@ export const HOME_TEXT = {
         'It is not about changing you – it is about revealing your true, natural beauty. In a calm, exclusive setting we take plenty of time for you and your wishes. With our holistic view of proportions, balance and individual anti-ageing concepts, we create harmonious results that underline your personality.',
       ],
       claim: 'So that you feel confident, fresh and completely yourself at every stage of life.',
-      alt: 'Natural radiance in profile – medical aesthetics for women and men in Olten',
+      alt: 'Natural radiance – medical aesthetics for women and men in Olten',
     },
     about: {
       script: 'About us', h: 'Experience & finesse',
@@ -133,7 +133,7 @@ export const HOME_TEXT = {
         'Il ne s’agit pas de vous changer – mais de révéler votre beauté vraie et naturelle. Dans un cadre calme et exclusif, nous prenons beaucoup de temps pour vous et vos souhaits. Grâce à notre regard global sur les proportions, l’équilibre et des concepts anti-âge individuels, nous créons des résultats harmonieux qui soulignent votre personnalité.',
       ],
       claim: 'Pour que vous vous sentiez sûre de vous, fraîche et pleinement vous-même à chaque étape de la vie.',
-      alt: 'Rayonnement naturel de profil – médecine esthétique pour femmes et hommes à Olten',
+      alt: 'Rayonnement naturel – médecine esthétique pour femmes et hommes à Olten',
     },
     about: {
       script: 'À propos', h: 'Expérience & finesse',
