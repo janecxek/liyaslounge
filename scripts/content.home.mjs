@@ -8,28 +8,28 @@ export const HOME_TEXT = {
       p: [
         'Wahre Schönheit kennt weder Alter noch Geschlecht – sie entsteht, wenn Sie sich in Ihrer Haut rundum wohlfühlen und Ihre innere Ausstrahlung mühelos nach aussen strahlt. Jeder Mensch ist einzigartig, und genau so begegnen wir Ihnen.',
         'Wir betrachten Ihr Gesicht und Ihren Körper nie isoliert, sondern immer in ihrer gesamten Harmonie. Mit viel Feingefühl, ausführlicher persönlicher Beratung und unserer Spezialisierung auf ganzheitliches Face Balancing und moderne Körperästhetik betonen wir, was Sie besonders macht: Ihre natürliche Eleganz und zeitlose Frische.',
+        'Es geht nicht darum, Sie zu verändern – sondern darum, Ihre wahre, natürliche Schönheit sichtbar zu machen. In einem ruhigen, exklusiven Rahmen nehmen wir uns viel Zeit für Sie und Ihre Wünsche. Durch unseren ganzheitlichen Blick auf Proportionen, Balance und individuelle Anti-Aging-Konzepte schaffen wir harmonische Ergebnisse, die Ihre Persönlichkeit unterstreichen.',
       ],
-      claim: 'Es geht nicht darum, Sie zu verändern – sondern Ihre natürliche Schönheit sichtbar zu machen.',
-      welcome: 'Damen und Herren sind bei uns gleichermassen herzlich willkommen.',
+      claim: 'Damit Sie sich in jedem Lebensabschnitt selbstbewusst, frisch und ganz bei sich fühlen.',
+      alt: 'Natürliche Ausstrahlung im Profil – Medical Aesthetics für Damen und Herren in Olten',
     },
     about: {
       script: 'Über uns', h: 'Erfahrung & Feingefühl',
       p: [
-        'Hinter unserem Institut stehen über 15 Jahre Leidenschaft und Erfahrung in anspruchsvoller Ästhetik. Was unsere Arbeit auszeichnet, ist die Verbindung aus fundiertem medizinischem Wissen, einem feinen künstlerischen Gespür für Proportionen und echter Freude am Umgang mit Menschen.',
-        'Unser fachliches Fundament sind Ausbildungen in der Pflege, der Naturheilkunde sowie der medizinischen und apparativen Kosmetik – ergänzt durch kontinuierliche internationale Weiterbildungen in ästhetischer Medizin und eine langjährige, vertrauensvolle Zusammenarbeit mit renommierten Fachärzten und Kliniken.',
+        'Hinter unserem Institut stehen über 15 Jahre Leidenschaft und Erfahrung in der anspruchsvollen Ästhetik. Was unsere Arbeit auszeichnet, ist die Verbindung aus fundiertem medizinischem Wissen, einem feinen künstlerischen Gespür für Proportionen und echter Freude am Umgang mit Menschen.',
+        'Unser fachliches Fundament basiert auf Ausbildungen in der Pflege, der Naturheilkunde sowie der medizinischen und apparativen Kosmetik. Durch kontinuierliche internationale Weiterbildungen in der ästhetischen Medizin sowie eine langjährige, vertrauensvolle Zusammenarbeit mit renommierten Fachärzten und Kliniken arbeiten wir stets nach höchsten wissenschaftlichen Erkenntnissen.',
+        'Dank unserer Vertiefung in psychologischer und medizinischer Beratung nehmen wir uns viel Zeit, Ihnen wirklich zuzuhören – damit wir nicht nur Ihre Haut, sondern auch Ihre persönlichen Wünsche mit grösster Achtsamkeit verstehen.',
       ],
-      alt: 'Natürliche, harmonische Ausstrahlung – Medical Aesthetics für Damen und Herren in Olten',
-      values: [
-        ['Zeit für Sie', 'Wir hören zu, bevor wir behandeln: ausführliche, ehrliche Beratung mit psychologischem und medizinischem Feingefühl – in 6 Sprachen.'],
-        ['Höchste Sicherheit', 'Strengste medizinische Hygienestandards und eine sorgfältige Anamnese vor jeder Behandlung.'],
-        ['Premium-Qualität', 'Ausschliesslich zertifizierte, gut verträgliche Produkte aus Südkorea, einem der führenden Innovationsmärkte der Ästhetik.'],
-      ],
+      alt: 'Persönliche Beratung an der Theke der Liyas Lounge in Olten',
+      welcome: 'Damen und Herren sind bei uns gleichermassen herzlich willkommen.',
+      subH: 'Höchste Sicherheit und kompromisslose Qualität',
+      subP: 'Ihr Wohlbefinden und Ihr Vertrauen sind unser wichtigstes Gut. Wir arbeiten nach strengsten medizinischen Hygienestandards und setzen ausschliesslich auf zertifizierte Premium-Produkte aus Südkorea – einem der weltweit führenden Innovationsmärkte für hochwirksame, sanfte und besonders gut verträgliche Ästhetik.',
       nudge: ['Lernen Sie uns persönlich kennen – vor Ihrer Behandlung ist die Beratung kostenlos.', 'Beratung vereinbaren', 'Hallo Liyas Lounge, ich würde Sie gerne bei einer Beratung kennenlernen.'],
     },
     trLead: 'Ob sanftes Full-Face-Balancing, tiefenwirksame Zellregeneration oder gezielte Körperkonturierung – gemeinsam finden wir in aller Ruhe heraus, was wirklich zu Ihnen passt.',
     flow: {
       script: 'Ihr Weg', h: 'Schritt für Schritt',
-      lead: 'Transparenz, Sicherheit und Ihr Wohlbefinden sind die Basis unserer Arbeit. Damit Sie sich vom ersten Moment an entspannt und bestens aufgehoben fühlen, begleiten wir Sie in klaren, sorgfältig abgestimmten Schritten – ganz ohne Hektik.',
+      lead: 'Transparenz, Sicherheit und Ihr persönliches Wohlbefinden sind die Basis unserer Arbeit. Damit Sie sich vom ersten Moment an entspannt und bestens aufgehoben fühlen, begleiten wir Sie in klaren, sorgfältig aufeinander abgestimmten Schritten – ganz ohne Hektik.',
       steps: [
         ['Persönliche Beratung & Anamnese', 'Alles beginnt mit einem ausführlichen, ehrlichen Gespräch in ruhiger Atmosphäre. Wir hören Ihnen zu, betrachten Ihr Gesicht oder Ihren Körper ganzheitlich und besprechen Ihre Wünsche. Ein detaillierter medizinischer Fragebogen klärt Ihre Vorgeschichte und mögliche Unverträglichkeiten – für höchste Sicherheit.'],
         ['Sanfte Vorbereitung', 'Ihr Komfort liegt uns am Herzen. Wir bereiten Ihre Haut schonend vor und tragen je nach Behandlung und Empfinden eine sanfte Betäubungscreme auf – damit alles so angenehm und schmerzarm wie möglich verläuft.'],
@@ -69,28 +69,28 @@ export const HOME_TEXT = {
       p: [
         'True beauty knows neither age nor gender – it appears when you feel completely at ease in your skin and your inner radiance shines through effortlessly. Every person is unique, and that is exactly how we treat you.',
         'We never look at your face and body in isolation, but always in their overall harmony. With great sensitivity, thorough personal advice and our specialisation in holistic face balancing and modern body aesthetics, we enhance what makes you special: your natural elegance and timeless freshness.',
+        'It is not about changing you – it is about revealing your true, natural beauty. In a calm, exclusive setting we take plenty of time for you and your wishes. With our holistic view of proportions, balance and individual anti-ageing concepts, we create harmonious results that underline your personality.',
       ],
-      claim: 'It is not about changing you – it is about revealing your natural beauty.',
-      welcome: 'Women and men are equally welcome.',
+      claim: 'So that you feel confident, fresh and completely yourself at every stage of life.',
+      alt: 'Natural radiance in profile – medical aesthetics for women and men in Olten',
     },
     about: {
       script: 'About us', h: 'Experience & finesse',
       p: [
         'Our institute is built on more than 15 years of passion and experience in refined aesthetics. What sets our work apart is the combination of sound medical knowledge, a fine artistic sense for proportions and genuine joy in working with people.',
-        'Our professional foundation is training in nursing, naturopathy and medical and device-based cosmetics – complemented by continuous international training in aesthetic medicine and many years of trusted cooperation with renowned specialists and clinics.',
+        'Our professional foundation is training in nursing, naturopathy and medical and device-based cosmetics. Through continuous international training in aesthetic medicine and many years of trusted cooperation with renowned specialists and clinics, we always work according to the latest scientific findings.',
+        'Thanks to our in-depth training in psychological and medical consultation, we take plenty of time to really listen to you – so that we understand not only your skin, but also your personal wishes with the greatest care.',
       ],
-      alt: 'Natural, harmonious radiance – medical aesthetics for women and men in Olten',
-      values: [
-        ['Time for you', 'We listen before we treat: thorough, honest advice with psychological and medical sensitivity – in 6 languages.'],
-        ['Maximum safety', 'The strictest medical hygiene standards and a careful medical history before every treatment.'],
-        ['Premium quality', 'Only certified, well-tolerated products from South Korea, one of the leading innovation markets in aesthetics.'],
-      ],
+      alt: 'Personal consultation at the reception of Liyas Lounge in Olten',
+      welcome: 'Women and men are equally welcome.',
+      subH: 'Maximum safety and uncompromising quality',
+      subP: 'Your well-being and your trust are what matter most to us. We follow the strictest medical hygiene standards and rely exclusively on certified premium products from South Korea – one of the world’s leading innovation markets for highly effective, gentle and particularly well-tolerated aesthetics.',
       nudge: ['Get to know us in person – the consultation is free before your treatment.', 'Arrange a consultation', 'Hello Liyas Lounge, I would like to get to know you in a consultation.'],
     },
     trLead: 'Whether gentle full-face balancing, deep cell regeneration or targeted body contouring – together we take the time to find out what truly suits you.',
     flow: {
       script: 'Your journey', h: 'Step by step',
-      lead: 'Transparency, safety and your well-being are the basis of our work. So that you feel relaxed and in the best hands from the very first moment, we guide you through clear, carefully coordinated steps – without any rush.',
+      lead: 'Transparency, safety and your personal well-being are the basis of our work. So that you feel relaxed and in the best hands from the very first moment, we guide you through clear, carefully coordinated steps – without any rush.',
       steps: [
         ['Personal consultation & medical history', 'Everything starts with a thorough, honest conversation in a calm atmosphere. We listen to you, look at your face or body as a whole and discuss your wishes. A detailed medical questionnaire clarifies your history and any intolerances – for maximum safety.'],
         ['Gentle preparation', 'Your comfort matters to us. We prepare your skin gently and, depending on the treatment and how you feel, apply a soothing numbing cream – so that everything is as pleasant and pain-free as possible.'],
@@ -130,28 +130,28 @@ export const HOME_TEXT = {
       p: [
         'La vraie beauté n’a ni âge ni genre – elle naît lorsque vous vous sentez pleinement bien dans votre peau et que votre rayonnement intérieur se révèle sans effort. Chaque personne est unique, et c’est ainsi que nous vous accueillons.',
         'Nous ne regardons jamais votre visage et votre corps de façon isolée, mais toujours dans leur harmonie globale. Avec beaucoup de délicatesse, des conseils personnels approfondis et notre spécialisation en face balancing holistique et en esthétique corporelle moderne, nous soulignons ce qui vous rend unique : votre élégance naturelle et votre fraîcheur intemporelle.',
+        'Il ne s’agit pas de vous changer – mais de révéler votre beauté vraie et naturelle. Dans un cadre calme et exclusif, nous prenons beaucoup de temps pour vous et vos souhaits. Grâce à notre regard global sur les proportions, l’équilibre et des concepts anti-âge individuels, nous créons des résultats harmonieux qui soulignent votre personnalité.',
       ],
-      claim: 'Il ne s’agit pas de vous changer – mais de révéler votre beauté naturelle.',
-      welcome: 'Femmes et hommes sont accueillis avec la même attention.',
+      claim: 'Pour que vous vous sentiez sûre de vous, fraîche et pleinement vous-même à chaque étape de la vie.',
+      alt: 'Rayonnement naturel de profil – médecine esthétique pour femmes et hommes à Olten',
     },
     about: {
       script: 'À propos', h: 'Expérience & finesse',
       p: [
         'Notre institut repose sur plus de 15 ans de passion et d’expérience dans l’esthétique exigeante. Ce qui distingue notre travail, c’est l’alliance d’un savoir médical solide, d’un sens artistique fin des proportions et d’une vraie joie du contact humain.',
-        'Notre socle professionnel : des formations en soins infirmiers, en naturopathie ainsi qu’en cosmétique médicale et appareillée – complétées par des formations internationales continues en médecine esthétique et une collaboration de longue date avec des médecins spécialistes et des cliniques reconnus.',
+        'Notre socle professionnel repose sur des formations en soins infirmiers, en naturopathie ainsi qu’en cosmétique médicale et appareillée. Grâce à des formations internationales continues en médecine esthétique et à une collaboration de longue date avec des médecins spécialistes et des cliniques reconnus, nous travaillons toujours selon les connaissances scientifiques les plus récentes.',
+        'Grâce à notre formation approfondie en conseil psychologique et médical, nous prenons beaucoup de temps pour vraiment vous écouter – afin de comprendre non seulement votre peau, mais aussi vos souhaits personnels avec la plus grande attention.',
       ],
-      alt: 'Rayonnement naturel et harmonieux – médecine esthétique pour femmes et hommes à Olten',
-      values: [
-        ['Du temps pour vous', 'Nous écoutons avant de traiter : des conseils approfondis et honnêtes, avec sensibilité psychologique et médicale – en 6 langues.'],
-        ['Sécurité maximale', 'Les normes d’hygiène médicale les plus strictes et une anamnèse soigneuse avant chaque traitement.'],
-        ['Qualité premium', 'Uniquement des produits certifiés et bien tolérés de Corée du Sud, l’un des marchés les plus innovants de l’esthétique.'],
-      ],
+      alt: 'Consultation personnelle à l’accueil de Liyas Lounge à Olten',
+      welcome: 'Femmes et hommes sont accueillis avec la même attention.',
+      subH: 'Sécurité maximale et qualité sans compromis',
+      subP: 'Votre bien-être et votre confiance sont notre bien le plus précieux. Nous respectons les normes d’hygiène médicale les plus strictes et misons exclusivement sur des produits premium certifiés de Corée du Sud – l’un des marchés les plus innovants au monde pour une esthétique très efficace, douce et particulièrement bien tolérée.',
       nudge: ['Faites notre connaissance – avant votre traitement, la consultation est gratuite.', 'Fixer une consultation', 'Bonjour Liyas Lounge, j’aimerais faire votre connaissance lors d’une consultation.'],
     },
     trLead: 'Face balancing tout en douceur, régénération cellulaire en profondeur ou remodelage ciblé du corps – ensemble, nous prenons le temps de trouver ce qui vous convient vraiment.',
     flow: {
       script: 'Votre parcours', h: 'Étape par étape',
-      lead: 'Transparence, sécurité et bien-être sont la base de notre travail. Pour que vous vous sentiez détendue et entre de bonnes mains dès le premier instant, nous vous accompagnons à travers des étapes claires et soigneusement coordonnées – sans aucune précipitation.',
+      lead: 'Transparence, sécurité et bien-être personnel sont la base de notre travail. Pour que vous vous sentiez détendue et entre de bonnes mains dès le premier instant, nous vous accompagnons à travers des étapes claires et soigneusement coordonnées – sans aucune précipitation.',
       steps: [
         ['Consultation personnelle & anamnèse', 'Tout commence par un échange approfondi et honnête dans une atmosphère calme. Nous vous écoutons, regardons votre visage ou votre corps dans son ensemble et discutons de vos souhaits. Un questionnaire médical détaillé clarifie vos antécédents et d’éventuelles intolérances – pour une sécurité maximale.'],
         ['Préparation en douceur', 'Votre confort nous tient à cœur. Nous préparons votre peau délicatement et appliquons, selon le traitement et votre ressenti, une crème anesthésiante douce – pour que tout soit aussi agréable et indolore que possible.'],
@@ -189,12 +189,12 @@ export const HOME_TEXT = {
 // Partner: «wa» = Anfrage läuft über unsere WhatsApp (Wunsch der Kundin), sonst direkter Link ohne unseren Kontakt.
 export const PARTNERS = [
   {
-    name: 'Prof. Dr. Mustafa Çelik', wa: true,
+    name: 'Prof. Dr. Mustafa Çelik', wa: true, site: 'https://drmustafacelik.com/', ig: 'https://www.instagram.com/profdrmustafacelik/',
     text: { de: 'Facharzt für Gesichtschirurgie – Facelift, Temporal Lift und Nasenkorrektur.', en: 'Specialist in facial surgery – facelift, temporal lift and nose correction.', fr: 'Spécialiste en chirurgie du visage – lifting, temporal lift et rhinoplastie.' },
     msg: { de: 'Hallo Liyas Lounge, ich interessiere mich für eine Beratung bei Prof. Dr. Mustafa Çelik.', en: 'Hello Liyas Lounge, I am interested in a consultation with Prof. Dr. Mustafa Çelik.', fr: 'Bonjour Liyas Lounge, je suis intéressée par une consultation avec le Prof. Dr Mustafa Çelik.' },
   },
   {
-    name: 'Pixl Clinic', wa: true,
+    name: 'Pixl Clinic', wa: true, site: 'https://pixlclinic.com/', ig: 'https://www.instagram.com/pixlclinic/',
     text: { de: 'Gesichts- und Körperästhetik, Body High Definition, Smile Design und Haarästhetik.', en: 'Face and body aesthetics, body high definition, smile design and hair aesthetics.', fr: 'Esthétique du visage et du corps, body high definition, smile design et esthétique capillaire.' },
     msg: { de: 'Hallo Liyas Lounge, ich interessiere mich für eine Beratung bei der Pixl Clinic.', en: 'Hello Liyas Lounge, I am interested in a consultation at Pixl Clinic.', fr: 'Bonjour Liyas Lounge, je suis intéressée par une consultation à la Pixl Clinic.' },
   },

@@ -72,7 +72,7 @@ export const FR_TREATMENTS = {
     lead: 'Adoucir les rides d’expression pour un air frais et reposé – tout en gardant votre expression naturelle.',
     card: 'Front, rides du lion & pattes d’oie – frais, mais naturel.',
     imageAlt: 'Femme détendue à la peau naturellement lisse – traitement des rides à Olten',
-    chips: ['15–30 min', 'Ø 3–4 mois*', 'Pas d’éviction sociale'],
+    chips: ['15–30 min', 'Ø 3–6 mois*', 'Pas d’éviction sociale'],
     intro: 'Les rides du front, du lion ou les pattes d’oie sont dues aux mouvements répétés des muscles. Le traitement des rides réduit l’activité de ces muscles de manière ciblée grâce à de fines injections. Chez Liyas Lounge à Olten, nous dosons volontairement avec retenue – vous devez paraître reposée, jamais figée.',
     what: {
       title: 'Comment fonctionne le traitement des rides ?',
@@ -89,9 +89,9 @@ export const FR_TREATMENTS = {
     ],
     results: {
       title: 'Résultats & durée',
-      items: ['Effet après 3–7 jours, effet complet après environ 2 semaines', 'Dure généralement 3–4 mois', 'Retour immédiat à vos activités'],
+      items: ['Effet après 3–7 jours, effet complet après environ 2 semaines', 'Dure généralement 3–6 mois', 'Retour immédiat à vos activités'],
       note: RESULT_NOTE,
-      stats: [['15–30', 'minutes'], ['3–4', 'mois*'], ['0', 'jour d’éviction']],
+      stats: [['15–30', 'minutes'], ['3–6', 'mois*'], ['0', 'jour d’éviction']],
     },
     prices: [
       { name: '1 zone', detail: 'front, rides du lion ou pattes d’oie', desc: 'Traitement ciblé d’une zone.' },
@@ -107,7 +107,7 @@ export const FR_TREATMENTS = {
     priceNote: 'Contrôle après 2–3 semaines inclus dans le prix. En combinaison avec des dermal fillers : voir les forfaits visage dès CHF 500.',
     faq: [
       ['Quand voit-on l’effet ?', 'L’effet apparaît généralement après 3 à 7 jours, l’effet complet après environ deux semaines.'],
-      ['Combien de temps dure le traitement ?', 'En général 3 à 4 mois. Avec des traitements réguliers, l’effet peut durer un peu plus longtemps chez certaines personnes.'],
+      ['Combien de temps dure le traitement ?', 'En général 3 à 6 mois. Avec des traitements réguliers, l’effet peut durer un peu plus longtemps chez certaines personnes.'],
       ['Aurai-je l’air figée ?', 'Non – nous dosons volontairement de manière individuelle et avec retenue, pour préserver votre expression naturelle.'],
       ['Combien coûte le traitement des rides à Olten ?', 'Une zone coûte CHF 150, trois zones CHF 350 et le visage complet CHF 650 – le contrôle après 2–3 semaines est inclus. Nous discutons de ce qui a du sens pour vous lors de la consultation avant le traitement.'],
     ],
