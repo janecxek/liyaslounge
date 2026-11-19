@@ -434,10 +434,10 @@ writeFileSync(join(ROOT, '404.html'), page('de', { url: '', title: 'Seite nicht 
 console.log('✓ AGB, Datenschutz, Impressum, 404 im Schwarz-Gold-Look');
 
 // Buchungsseite mit eingebettetem SimplyBook-Kalender (Farben passend zur Seite)
-const SB_THEME = { timeline_hide_unavailable: '1', hide_past_days: '0', timeline_show_end_time: '0', timeline_modern_display: 'as_slots', sb_base_color: '#cfae6b', display_item_mode: 'block', booking_nav_bg_color: '#0b0b0b', body_bg_color: '#0d0d0d', sb_review_image: '', dark_font_color: '#f3eee4', light_font_color: '#0b0b0b', btn_color_1: '#cfae6b', sb_company_label_color: '#cfae6b', hide_img_mode: '0', sb_busy: '#3a3326', sb_available: '#cfae6b' };
+const SB_THEME = { timeline_hide_unavailable: '1', hide_past_days: '0', timeline_show_end_time: '0', timeline_modern_display: 'as_slots', sb_base_color: '#cfae6b', display_item_mode: 'block', booking_nav_bg_color: '#0b0a08', body_bg_color: '#0b0a08', sb_review_image: '', dark_font_color: '#0b0a08', light_font_color: '#eee6d9', btn_color_1: '#cfae6b', sb_company_label_color: '#cfae6b', hide_img_mode: '0', sb_busy: '#3a3326', sb_available: '#cfae6b' };
 for (const L of LANGS) {
   const t = T[L], k = t.bk, sbUrl = SITE.booking.replace(/\/v2\/?$/, '');
-  const cfg = { widget_type: 'iframe', url: sbUrl, theme: 'default', theme_settings: SB_THEME, timeline: 'modern', datepicker: 'top_calendar', is_rtl: false, app_config: { clear_session: 0, allow_switch_to_ada: 0, predefined: [] }, container_id: 'sbw' };
+  const cfg = { widget_type: 'iframe', url: sbUrl, theme: 'concise', theme_settings: SB_THEME, timeline: 'modern', datepicker: 'top_calendar', is_rtl: false, app_config: { clear_session: 0, allow_switch_to_ada: 0, predefined: [] }, container_id: 'sbw' };
   const main = `
 <section class="legal bk">
   <header class="sh"><p class="sh__script">${esc(k.script)}</p><h1 class="sh__h">${esc(k.h)}</h1></header>

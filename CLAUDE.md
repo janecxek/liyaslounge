@@ -19,6 +19,11 @@ Użytkownik pisze po polsku – odpowiadaj po polsku. Wiadomości do Liyi: po ni
 - Liya nie odbiera telefonów – tylko WhatsApp, Sprachnachricht, Instagram, rezerwacja online.
 - Partnerzy: Çelik i Pixl Clinic – strona + Instagram + konsultacja przez WhatsApp Liyi; Lala Lashes i Aevum Longevity bezpośrednio (jej prośba „ohne mein Kontakt”).
 
+## SimplyBook (tylko wygląd)
+- Wygląd SimplyBooka zmieniamy wyłącznie przez CSS: panel › Individuelle Funktionen › Benutzerdefiniertes CSS. `simplybook/booking-pages.css` → zakładka „Booking pages CSS” (liyas.simplybook.it/v2), `simplybook/widget.css` → zakładka „Widget CSS” (kalendarz na /termin). Kod wklejony na górze pola, nad pustym szablonem.
+- Widget na stronie: motyw `concise` + kolory w `SB_THEME` (`scripts/build-landing.mjs`).
+- Nie zmieniamy usług, cen, kategorii, tekstów ani ustawień pracy Liyi – tylko design.
+
 ## Zasady treści
 - Szwajcarski zakaz reklamy leków na receptę: nie pisać „Botox/Botulinum/BTA/Hyaluronidase/Hylase” → „Faltenbehandlung”, „Filler-Korrektur”.
 - Brak zdjęć przed/po; część zdjęć to symbolowe/AI (zaznaczone w Impressum).

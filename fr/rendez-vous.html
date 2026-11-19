@@ -27,7 +27,7 @@
 <link rel="preload" href="/assets/fonts/bodoni-moda-logo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/landing.min.css?v=mwjops0r">
+<link rel="stylesheet" href="/assets/css/landing.min.css?v=mwmt9t8f">
 <script>document.documentElement.classList.add('js');document.addEventListener('load',function(e){if(e.target.tagName==='IMG')e.target.classList.add('is-ld')},true);document.addEventListener('error',function(e){if(e.target.tagName==='IMG')e.target.classList.add('is-ld')},true);try{if(sessionStorage.getItem('ll-lx')){document.documentElement.classList.add('lx-in');sessionStorage.removeItem('ll-lx')}if(sessionStorage.getItem('ll-pt')){document.documentElement.classList.add('pt-in');sessionStorage.removeItem('ll-pt')}}catch(e){}</script>
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 
@@ -67,7 +67,7 @@
   function fail() { document.querySelector('[data-bk-loading]').hidden = true; document.querySelector('[data-bk-fail]').hidden = false; }
   function start() {
     if (typeof window.SimplybookWidget !== 'function') { if (++tries > 40) return fail(); return setTimeout(start, 250); }
-    try { new window.SimplybookWidget({"widget_type":"iframe","url":"https://liyas.simplybook.it","theme":"default","theme_settings":{"timeline_hide_unavailable":"1","hide_past_days":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#cfae6b","display_item_mode":"block","booking_nav_bg_color":"#0b0b0b","body_bg_color":"#0d0d0d","sb_review_image":"","dark_font_color":"#f3eee4","light_font_color":"#0b0b0b","btn_color_1":"#cfae6b","sb_company_label_color":"#cfae6b","hide_img_mode":"0","sb_busy":"#3a3326","sb_available":"#cfae6b"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"clear_session":0,"allow_switch_to_ada":0,"predefined":[]},"container_id":"sbw"}); } catch (e) { return fail(); }
+    try { new window.SimplybookWidget({"widget_type":"iframe","url":"https://liyas.simplybook.it","theme":"concise","theme_settings":{"timeline_hide_unavailable":"1","hide_past_days":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#cfae6b","display_item_mode":"block","booking_nav_bg_color":"#0b0a08","body_bg_color":"#0b0a08","sb_review_image":"","dark_font_color":"#0b0a08","light_font_color":"#eee6d9","btn_color_1":"#cfae6b","sb_company_label_color":"#cfae6b","hide_img_mode":"0","sb_busy":"#3a3326","sb_available":"#cfae6b"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"clear_session":0,"allow_switch_to_ada":0,"predefined":[]},"container_id":"sbw"}); } catch (e) { return fail(); }
     // Kalender da? (iframe vorhanden) – sonst Ersatz-Button zeigen
     setTimeout(function () { if (cal.querySelector('iframe')) document.querySelector('[data-bk-loading]').hidden = true; else fail(); }, 8000);
     var obs = new MutationObserver(function () { if (cal.querySelector('iframe')) { document.querySelector('[data-bk-loading]').hidden = true; obs.disconnect(); } });
@@ -86,7 +86,7 @@
   <p class="foot__legal"><a href="/agb" hreflang="de-CH">CGV (DE)</a> · <a href="/datenschutz" hreflang="de-CH">Confidentialité (DE)</a> · <a href="/impressum" hreflang="de-CH">Mentions légales (DE)</a></p>
   <p class="foot__copy">© 2026 Liyas Lounge · Hammerallee 23, 4600 Olten · Tous droits réservés.</p>
 </footer>
-<script src="/assets/js/lenis.min.js?v=mwjops0r" defer></script>
-<script src="/assets/js/landing.js?v=mwjops0r" defer></script>
+<script src="/assets/js/lenis.min.js?v=mwmt9t8f" defer></script>
+<script src="/assets/js/landing.js?v=mwmt9t8f" defer></script>
 </body>
 </html>
