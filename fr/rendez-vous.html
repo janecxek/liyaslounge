@@ -27,7 +27,7 @@
 <link rel="preload" href="/assets/fonts/bodoni-moda-logo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/landing.min.css?v=mwmt9t8f">
+<link rel="stylesheet" href="/assets/css/landing.min.css?v=mwmtx3js">
 <script>document.documentElement.classList.add('js');document.addEventListener('load',function(e){if(e.target.tagName==='IMG')e.target.classList.add('is-ld')},true);document.addEventListener('error',function(e){if(e.target.tagName==='IMG')e.target.classList.add('is-ld')},true);try{if(sessionStorage.getItem('ll-lx')){document.documentElement.classList.add('lx-in');sessionStorage.removeItem('ll-lx')}if(sessionStorage.getItem('ll-pt')){document.documentElement.classList.add('pt-in');sessionStorage.removeItem('ll-pt')}}catch(e){}</script>
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 
@@ -48,15 +48,21 @@
 </div>
 
 <main id="main">
-<section class="legal bk">
-  <header class="sh"><p class="sh__script">Votre rendez-vous</p><h1 class="sh__h">Réserver en ligne</h1></header>
-  <p class="lead">Choisissez le traitement, le jour et l’heure – vous recevez immédiatement une confirmation.</p>
-  <ul class="bk__notes"><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Consultation gratuite avant ou pendant le traitement – CHF 50 en rendez-vous séparé</span></li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Merci d’annuler au moins 24 heures à l’avance</span></li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Hammerallee 23, 4600 Olten · 1er sous-sol</span></li></ul>
+<section class="bk">
+  <div class="bk__hero">
+    <picture class="bk__bg"><source media="(orientation: portrait) and (max-width: 900px)" type="image/webp" srcset="/assets/img/studio-raum-olten-portrait-480.webp?v=fd418e68 480w, /assets/img/studio-raum-olten-portrait-800.webp?v=fd418e68 800w, /assets/img/studio-raum-olten-portrait-900.webp?v=fd418e68 900w" sizes="100vw"><source type="image/webp" srcset="/assets/img/studio-raum-olten-480.webp?v=88918afb 480w, /assets/img/studio-raum-olten-800.webp?v=88918afb 800w, /assets/img/studio-raum-olten-1200.webp?v=88918afb 1200w, /assets/img/studio-raum-olten-1600.webp?v=88918afb 1600w" sizes="100vw"><img src="/assets/img/studio-raum-olten.jpg?v=88918afb" alt="" width="1600" height="900" style="object-position:50% 45%" fetchpriority="high" decoding="async"></picture>
+    <div class="bk__head">
+      <header class="sh"><p class="sh__script">Votre rendez-vous</p><h1 class="sh__h">Réserver en ligne</h1></header>
+      <p class="lead">Choisissez le traitement, le jour et l’heure – vous recevez immédiatement une confirmation.</p>
+      <ol class="bk__steps"><li><b>1</b>Soin</li><li><b>2</b>Horaire</li><li><b>3</b>Confirmation</li></ol>
+    </div>
+  </div>
   <div class="bk__cal" data-lenis-prevent>
     <div id="sbw"></div>
     <p class="bk__state" data-bk-loading>Chargement du calendrier …</p>
     <div class="bk__fail" data-bk-fail hidden><p>Le calendrier n’a pas pu être chargé.</p><a class="btn btn--gold" href="https://liyas.simplybook.it/v2/" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Ouvrir la réservation sur SimplyBook</span></a></div>
   </div>
+  <ul class="bk__notes"><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Consultation gratuite avant ou pendant le traitement – CHF 50 en rendez-vous séparé</span></li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Merci d’annuler au moins 24 heures à l’avance</span></li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Hammerallee 23, 4600 Olten · 1er sous-sol</span></li></ul>
   <p class="bk__q">Des questions avant ? Écrivez-nous sur WhatsApp. <a href="https://wa.me/41795090660?text=Bonjour%20Liyas%20Lounge%2C%20je%20suis%20int%C3%A9ress%C3%A9e%20par%20un%20traitement%20et%20j%E2%80%99aimerais%20une%20consultation." target="_blank" rel="noopener">WhatsApp <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
   <p class="bk__priv">Le calendrier est fourni par SimplyBook.me, qui peut déposer des cookies techniquement nécessaires. <a href="/datenschutz">Protection des données (allemand)</a></p>
 </section>
@@ -86,7 +92,7 @@
   <p class="foot__legal"><a href="/agb" hreflang="de-CH">CGV (DE)</a> · <a href="/datenschutz" hreflang="de-CH">Confidentialité (DE)</a> · <a href="/impressum" hreflang="de-CH">Mentions légales (DE)</a></p>
   <p class="foot__copy">© 2026 Liyas Lounge · Hammerallee 23, 4600 Olten · Tous droits réservés.</p>
 </footer>
-<script src="/assets/js/lenis.min.js?v=mwmt9t8f" defer></script>
-<script src="/assets/js/landing.js?v=mwmt9t8f" defer></script>
+<script src="/assets/js/lenis.min.js?v=mwmtx3js" defer></script>
+<script src="/assets/js/landing.js?v=mwmtx3js" defer></script>
 </body>
 </html>
