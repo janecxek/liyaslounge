@@ -1,0 +1,63 @@
+/* Liyas Lounge – SimplyBook (Widget CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap');
+
+body, #sb-main-container, #main-content, #content-view, #footer, #sb-timeline, #steps-nav, #menu-active-bg, .step_info_item { background-color: #0b0a08 !important; }
+body, body *:where(:not(.fa, [class*="fa-"], [class*="icon"], [class*="glyph"])) { font-family: 'Montserrat', sans-serif !important; }
+body { color: #eee6d9 !important; font-weight: 300; }
+
+/* Kopfzeile */
+#header.web { background: rgba(7, 7, 7, .92) !important; border-bottom: 1px solid rgba(207, 174, 107, .3); }
+#header a.popup-hide { color: rgba(238, 230, 217, .75) !important; font-size: 12px !important; letter-spacing: .2em; text-transform: uppercase; }
+#header .menu-item.active a, #header a.popup-hide:hover { color: #ecd6a6 !important; }
+
+/* Titelbild */
+#main-buttons { background: linear-gradient(90deg, rgba(7,7,7,.92) 0%, rgba(7,7,7,.7) 40%, rgba(7,7,7,.15) 85%), url('https://liyaslounge.vercel.app/assets/img/hero-paar-olten-2000.webp') 70% 30% / cover no-repeat !important; }
+#main-buttons .company-name { font-family: 'Cormorant Garamond', serif !important; font-weight: 400 !important; color: #eee6d9 !important; letter-spacing: .12em; text-transform: uppercase; }
+
+/* Überschriften */
+.title-main, .cap, h1, h2, h3 { font-family: 'Cormorant Garamond', serif !important; font-weight: 500 !important; letter-spacing: .06em; color: #eee6d9 !important; }
+.title-small { color: #cfae6b !important; letter-spacing: .2em; }
+.step_info_item.active .title-small { color: #ecd6a6 !important; }
+
+/* Buttons & Links */
+a, .read-more { color: #cfae6b !important; }
+.btn { border-radius: 999px !important; overflow: hidden; }
+.btn a { display: block; font-size: 12px !important; font-weight: 500 !important; letter-spacing: .2em; text-transform: uppercase; }
+.btn.book, .btn-primary { background: linear-gradient(110deg, #b48a45, #ecd6a6 45%, #c49a52) !important; border: 0 !important; box-shadow: 0 12px 34px -14px rgba(207,174,107,.7); }
+.btn.book a, .btn-primary, .btn-primary a { color: #0b0a08 !important; }
+.btn.map, .btn.select, .btn-default { background: transparent !important; border: 1px solid #cfae6b !important; }
+.btn.map a, .btn.select a, .btn-default, .btn-default a { color: #ecd6a6 !important; }
+.btn.map:hover, .btn.select:hover { background: #cfae6b !important; }
+.btn.map:hover a, .btn.select:hover a { color: #0b0a08 !important; }
+#sb_scroll_top_btn { background: #cfae6b !important; border-radius: 50%; color: #0b0a08 !important; }
+
+/* Logo */
+#header img { content: url('https://liyaslounge.vercel.app/icon-512.png'); border-radius: 12px; border: 1px solid rgba(207,174,107,.35); }
+
+/* Karten & Kästen */
+.section, .tab, .tab-col { background: #14120f !important; border: 1px solid rgba(207, 174, 107, .18) !important; border-radius: 18px; overflow: hidden; }
+.tab img { filter: saturate(.85); }
+
+/* Telefon ausblenden – keine Anrufe */
+#contacts li:has(.links.phone), .links.phone { display: none !important; }
+
+/* Menü-Button (Handy) */
+.nav-trigger { background-color: transparent !important; border: 1px solid #cfae6b; border-radius: 10px; }
+.nav-trigger i { color: #ecd6a6 !important; }
+
+/* Kalender & Uhrzeiten */
+.date a.sb-available-date { color: #ecd6a6 !important; }
+.date.selected { background: #cfae6b !important; border-radius: 8px; }
+.date.selected a { color: #0b0a08 !important; font-weight: 500; }
+.day-off { color: rgba(238, 230, 217, .3) !important; }
+#sb_time_slots_container .sb-cell.free { background: transparent !important; color: #ecd6a6 !important; border: 1px solid rgba(207, 174, 107, .55) !important; border-radius: 999px; }
+#sb_time_slots_container .sb-cell.free:hover, #sb_time_slots_container .sb-cell.selected { background: #cfae6b !important; color: #0b0a08 !important; }
+
+/* Formular */
+#sb_book_btn, #sb-main-container button[type="submit"], #sb-main-container button.btn, #sb-main-container .btn-primary { background: linear-gradient(110deg, #b48a45, #ecd6a6 45%, #c49a52) !important; color: #0b0a08 !important; border: 0 !important; border-radius: 999px !important; letter-spacing: .2em; text-transform: uppercase; font-size: 12px !important; padding-left: 34px !important; padding-right: 34px !important; }
+#sb-main-container input, #sb-main-container select, #sb-main-container textarea { background: transparent !important; color: #eee6d9 !important; border: 1px solid rgba(207, 174, 107, .4) !important; border-radius: 10px; }
+#sb_book_btn span { color: #0b0a08 !important; font-weight: 500; }
+
+/* Nur im Widget: leere Kopfzeile ausblenden, Schritt-Titel kompakter */
+#header.widget { display: none !important; }
+#steps-nav .title-small { letter-spacing: .08em !important; font-size: 15px !important; }
