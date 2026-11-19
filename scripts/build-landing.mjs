@@ -470,6 +470,16 @@ for (const L of LANGS) {
     var obs = new MutationObserver(function () { if (cal.querySelector('iframe')) { document.querySelector('[data-bk-loading]').hidden = true; obs.disconnect(); } });
     obs.observe(cal, { childList: true, subtree: true });
   }
+  // Schrittwechsel im Kalender: SimplyBook scrollt zum Kalender, kennt aber unsere fixe Navigation nicht
+  window.addEventListener('message', function (e) {
+    if (!/simplybook/.test(e.origin) || typeof e.data !== 'string' || e.data.indexOf('stepChanged') < 0) return;
+    setTimeout(function () {
+      var f = cal.querySelector('iframe'), nav = document.querySelector('[data-nav]');
+      if (!f) return;
+      var top = f.getBoundingClientRect().top, h = (nav ? nav.offsetHeight : 70) + 8;
+      if (top < h && top > -400) window.scrollBy(0, top - h);
+    }, 60);
+  });
   start();
 })();
 </script>`;
