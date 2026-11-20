@@ -332,7 +332,7 @@ function page(L, sub = null) {
     </ul>
     <p class="ct__note" data-up>${esc(t.h.contact.noCalls)}</p>
   </div>
-  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('empfang-olten', '', { sizes: '420px', pos: '50% 55%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
+  <a class="phone" href="${SITE.instagram}" target="_blank" rel="noopener" data-up aria-label="Instagram ${IG}"><span class="phone__screen">${pic('hero-paar-olten-portrait', '', { sizes: '420px', pos: '35% 30%' })}<span class="phone__ig">${ico('ig')} ${IG}</span><span class="phone__follow">${t.follow}</span></span></a>
 </section>`}
 </main>
 
