@@ -952,3 +952,11 @@ html.js img[loading="lazy"].is-ld { animation: imgIn .7s var(--ease) both; }
 /* Gleiche Textgrössen und -farben in allen Abschnitten */
 .tr__lead { font-size: 1rem; line-height: 1.8; }
 #expertin .photo figcaption { font-size: 1.15rem; color: var(--txt2); }
+
+/* Hero (Handy hochkant): Name etwas tiefer, Abstand zur Kinnlinie */
+@media (orientation: portrait) and (max-width: 640px) {
+  .hero:not(.hero--tp) .hero__in { padding-bottom: calc(30px + env(safe-area-inset-bottom)); }
+  .hero:not(.hero--tp) .hero__in { gap: 13px; }
+  .hero:not(.hero--tp) .hero__media img { object-position: 30% 0% !important; }
+  .hero__slogan--script { font-size: min(1.75rem, 7.2vw); margin-top: 6px; }
+}
