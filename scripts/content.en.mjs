@@ -306,13 +306,17 @@ export const EN_TREATMENTS = {
     contra: { title: 'Not suitable for', items: ['Pregnancy', 'Pacemakers or metal implants in the area', 'Acute skin inflammation', 'Fever or acute infections'], note: NOTE },
     steps: [['Consultation', 'We discuss your goals and decide on the zones.'], ['Preparation', 'Cleansing the skin and applying a contact gel.'], ['Treatment', 'The zones are warmed evenly with radiofrequency.'], ['Aftercare', 'Care tips – you can go straight back to your day.']],
     results: { title: 'Results & Course', items: ['A fresher complexion often straight after the treatment', 'Increasing firmness over the following weeks', 'Best results usually with a course of several sessions'], note: RESULT_NOTE, stats: [['30–60', 'Minutes'], ['4–6', 'Sessions recommended'], ['0', 'Days downtime']] },
-    prices: [],
-    priceNote: 'Price on request – depending on the zone and number of sessions. We are happy to advise you.',
+    prices: [
+      { name: 'Small zone', detail: '1 zone', desc: 'Two thirds of the face, neck, décolleté or knees.' },
+      { name: 'Medium zone', detail: '1 zone', desc: 'Full face, neck with décolleté or upper arms.' },
+      { name: 'Large zone', detail: '1 zone', desc: 'Abdomen, thighs or buttocks.' },
+    ],
+    priceNote: 'Combine 2 zones and save CHF 100.',
     faq: [
       ['Is radiofrequency painful?', 'No – most clients find the warmth pleasant and relaxing.'],
       ['How is it different from HIFU and Morpheus8?', 'HIFU works with focused ultrasound in deep layers, Morpheus8 combines radiofrequency with fine needles. Pure radiofrequency is the gentlest option – with no needles at all.'],
       ['How many sessions do I need?', 'We usually recommend a course of 4 to 6 sessions, 1 to 2 weeks apart.'],
-      ['How much does radiofrequency cost in Olten?', 'The price depends on the zone and the number of sessions. We are happy to advise you personally.'],
+      ['How much does radiofrequency cost in Olten?', 'A small zone costs CHF 200, a medium zone CHF 300 and a large zone CHF 400. If you combine 2 zones, you save CHF 100.'],
     ],
   },
   'laser-tattooentfernung-olten': {
