@@ -187,6 +187,8 @@ const I = {
 const ico = (n) => `<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
 const stars = (label) => `<span class="stars" role="img" aria-label="${label}">${ico('star').repeat(5)}</span>`;
 const logo = (cls = '') => `<span class="logo ${cls}" role="img" aria-label="Liyas Lounge"><span class="logo__main" aria-hidden="true">LIYAS</span><span class="logo__script" aria-hidden="true">Lounge</span><span class="logo__tag" aria-hidden="true">Medical Aesthetic &amp; Beauty</span><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i></span>`;
+// Hero: «LIYAS LOUNGE» in einer Zeile, darunter der Claim exakt gleich breit (Buchstaben verteilt)
+const heroBrand = () => `<span class="logo logo--hero hb" aria-hidden="true"><span class="logo__main hb__name">LIYAS LOUNGE</span><span class="hb__tag">${[...'Medical Aesthetic & Beauty'].map((c) => c === ' ' ? '<i class="hb__sp"></i>' : `<span>${esc(c)}</span>`).join('')}</span><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i></span>`;
 const ritual = (steps) => `<ol class="rit" data-rit><i class="rit__line" aria-hidden="true"><i></i></i>${steps.map(([a, b], i) => `<li class="rit__step"><span class="rit__node" aria-hidden="true"></span><div class="rit__txt"><small>${String(i + 1).padStart(2, '0')}</small><b>${esc(a)}</b><p>${esc(b)}</p></div></li>`).join('')}</ol>`;
 const head = (script, h, cls = '') => `<header class="sh ${cls}" data-up><p class="sh__script">${esc(script)}</p><h2 class="sh__h">${esc(h)}</h2></header>`;
 
@@ -233,21 +235,21 @@ function page(L, sub = null) {
 <section class="hero" aria-label="Liyas Lounge">
   <div class="hero__media" data-hero-img>${pic(HOME.heroImage, t.heroAlt, { eager: true, pos: '72% 30%' })}</div>
   <div class="hero__in">
-    <h1 class="hero__logo" data-in>${logo('logo--hero')}<span class="sr">Liyas Lounge – ${esc(t.tagline)}</span></h1>
-    <p class="hero__slogan" data-in style="--d:.35s">${esc(t.slogan[0])} <em>${esc(t.slogan[1])}</em></p>
+    <h1 class="hero__logo" data-in>${heroBrand()}<span class="sr">Liyas Lounge – ${esc(t.tagline)}</span></h1>
+    <p class="hero__slogan hero__slogan--script" data-in style="--d:.35s">${esc(t.slogan[0])} ${esc(t.slogan[1])}</p>
     <div class="hero__ctas" data-in style="--d:.5s"><a class="btn btn--gold" href="${book}">${ico('cal')}<span>${t.book}</span></a><a class="btn btn--line" href="#behandlungen"><span>${t.heroBtn2}</span></a></div>
     ${heroTrust(L, ' data-in style="--d:.65s"')}
   </div>
   <a class="hero__scroll" href="#willkommen" aria-label="${t.scroll}"><span>${t.scroll}</span><i></i></a>
 </section>
 
-<section class="intro" id="willkommen">
+<section class="intro intro--stack" id="willkommen">
   <div class="intro__txt">
-    ${head(t.h.intro.script, t.h.intro.h, 'sh--left')}
-    ${t.h.intro.p.map((x) => `<p class="lead" data-up>${esc(x)}</p>`).join('')}
-    <p class="intro__claim" data-up>${esc(t.h.intro.claim)}</p>
+    ${head(t.h.intro.script, t.h.intro.h)}
+    ${[...t.h.intro.p, t.h.intro.claim].map((x) => `<p class="lead" data-up>${esc(x)}</p>`).join('')}
   </div>
-  <figure class="intro__img" data-up>${pic('paar-olten', t.h.intro.alt, { sizes: '(max-width: 900px) 92vw, 560px', pos: '41% 40%' })}</figure>
+  <figure class="intro__wide" data-up>${pic('paar-olten', t.h.intro.alt, { sizes: '(max-width: 1000px) 100vw, 1000px', pos: '42% 35%' })}</figure>
+  <p class="intro__gold" data-up>${esc(t.h.about.welcome)}</p>
 </section>
 
 <section class="oval tex" id="expertin">
@@ -255,7 +257,6 @@ function page(L, sub = null) {
     ${head(t.h.about.script, t.h.about.h)}
     ${t.h.about.p.map((x) => `<p class="lead" data-up>${esc(x)}</p>`).join('')}
     <figure class="photo" data-up>${pic('beratung-liya-olten', t.h.about.alt, { sizes: '(max-width: 900px) 92vw, 680px', pos: '50% 35%' })}<figcaption>${esc(t.exCap)}</figcaption></figure>
-    <p class="intro__welcome about__welcome" data-up>${esc(t.h.about.welcome)}</p>
     <h3 class="about__sub" data-up>${esc(t.h.about.subH)}</h3>
     <p class="lead" data-up>${esc(t.h.about.subP)}</p>
     ${nudge(t.h.about.nudge)}
@@ -370,7 +371,7 @@ ${sub && !sub.url ? '' : `<link rel="canonical" href="${url}">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/cormorant-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/bodoni-moda-logo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bodoni-moda-logo.woff2?v=2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/landing.min.css?v=${VERSION}">

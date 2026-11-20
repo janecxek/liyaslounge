@@ -424,13 +424,17 @@ export const FR_TREATMENTS = {
       note: RESULT_NOTE,
       stats: [['30–60', 'minutes'], ['4–6', 'séances recommandées'], ['0', 'jour d’éviction']],
     },
-    prices: [],
-    priceNote: 'Prix sur demande – selon la zone et le nombre de séances. Nous vous conseillons volontiers.',
+    prices: [
+      { name: 'Petite zone', detail: '1 zone', desc: 'Deux tiers du visage, cou, décolleté ou genoux.' },
+      { name: 'Zone moyenne', detail: '1 zone', desc: 'Visage complet, cou avec décolleté ou haut des bras.' },
+      { name: 'Grande zone', detail: '1 zone', desc: 'Ventre, cuisses ou fesses.' },
+    ],
+    priceNote: 'En combinant 2 zones, vous bénéficiez de CHF 100 de réduction.',
     faq: [
       ['La radiofréquence est-elle douloureuse ?', 'Non – la plupart des clientes trouvent la chaleur agréable et relaxante.'],
       ['Quelle différence avec le HIFU et Morpheus8 ?', 'Le HIFU agit par ultrasons focalisés dans les couches profondes, Morpheus8 combine radiofréquence et fines aiguilles. La radiofréquence seule est l’option la plus douce – sans aucune aiguille.'],
       ['Combien de séances me faut-il ?', 'Nous recommandons généralement une cure de 4 à 6 séances espacées de 1 à 2 semaines.'],
-      ['Combien coûte la radiofréquence à Olten ?', 'Le prix dépend de la zone et du nombre de séances. Nous vous conseillons volontiers personnellement.'],
+      ['Combien coûte la radiofréquence à Olten ?', 'Une petite zone coûte CHF 200, une zone moyenne CHF 300 et une grande zone CHF 400. En combinant 2 zones, vous bénéficiez de CHF 100 de réduction.'],
     ],
   },
   'laser-tattooentfernung-olten': {
